@@ -1,6 +1,5 @@
 'use strict';
 
-import { logger } from '../../lib/logger.js';
 
 import { data } from '../data.js';
 import { artify } from '../views/artify.js';
@@ -32,11 +31,4 @@ export const artifyHandler = (event) => {
   outputContainer.innerHTML = '';
   outputContainer.appendChild(renderedArtwork);
 
-  logger.add({
-    handler: 'artify',
-    newEntry,
-    renderedArtwork,
-    data,
-    event,
-  });
 };

@@ -1,6 +1,5 @@
 'use strict';
 
-import { logger } from '../../lib/logger.js';
 
 import { data } from '../data.js';
 import { artify } from '../views/artify.js';
@@ -21,12 +20,4 @@ export const changeSeparatorHandler = (event) => {
   const outputContainer = document.getElementById('output');
   outputContainer.innerHTML = '';
   outputContainer.appendChild(renderedArtwork);
-
-  logger.add({
-    handler: 'change separator',
-    newSeparator,
-    renderedArtwork,
-    data,
-    event,
-  });
 };
