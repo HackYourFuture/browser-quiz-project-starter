@@ -1,0 +1,6 @@
+ADDITIONAL FEATURES THAT WOULD BE NICE TO HAVE
+
+- timer
+- store in local storage the question you are at
+- randomize questions
+-
