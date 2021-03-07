@@ -30,7 +30,7 @@ export const data = {
 /**
  *
  */
-const quizData = {
+export const quizData = {
   quiz: {
     // how many questions has the user answered?
     //  you can calculate this value by iterating through the questions
