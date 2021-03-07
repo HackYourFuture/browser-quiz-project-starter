@@ -9,8 +9,25 @@
 export const questionView = (question = {}) => {
      
     const questionDiv = document.createElement('div');
-    questionDiv.innerText = 'I am a nice question';
-  
+    const textDiv = document.createElement('div');
+    textDiv.innerText = question.text;
+
+    
+
+    const answerList = document.createElement('ul');
+
+    for(const key in question.answers) {
+      const answer = question.answers[key];
+      const answerListItem = document.createElement('li');
+
+      answerListItem.innerText = answer;
+
+      answerList.appendChild(answerListItem);
+    }
+
+    questionDiv.appendChild(textDiv);
+    questionDiv.appendChild(answerList);
+
     return questionDiv;
   };
   
