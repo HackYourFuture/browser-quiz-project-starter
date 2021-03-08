@@ -2,21 +2,63 @@
 <html lang="en">
   <head>
     <meta charset="utf8" />
-    <title>your project name</title>
-
+    <title>Exam Project</title>
+    <script
+      src="https://kit.fontawesome.com/ae74dd936f.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
     <link href="./public/style.css" rel="stylesheet" />
   </head>
 
   <body>
     <!-- Put your HTML here -->
-    <div id="user-interface" class="centered">
-      <button id="start">Start the quiz</button>
+    <div class="startContainer">
+      <h1>Start Exam</h1>
+      <div class="startFooter">
+        <div class="startFooterText">Lorem, ipsum dolor.</div>
+        <a id="startButton" href="#" class="startBtn"
+          >Start <i class="fa fa-arrow-right startArrow"></i
+        ></a>
+      </div>
     </div>
-
+    <div class="quizContainer">
+      <h3>Question1</h3>
+      <div class="question m-5">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit?
+      </div>
+      <div class="answerButtons d-grid gap-2 mx-5">
+        <button type="button" class="btn btn-primary btn-lg w-100">
+          Primary
+        </button>
+        <button type="button" class="btn btn-success btn-lg w-100">
+          Primary
+        </button>
+        <button type="button" class="btn btn-danger btn-lg w-100">
+          Primary
+        </button>
+        <button type="button" class="btn btn-primary btn-lg w-100">
+          Primary
+        </button>
+      </div>
+      <div class="quizFooter">
+        <a id="prevButton" href="#" class="prevBtn"
+          ><i class="fa fa-arrow-left prevArrow"></i> Pervious</a
+        >
+        <div class="quizFooterText">1/8</div>
+        <a id="nextButton" href="#" class="nextBtn"
+          >Next <i class="fa fa-arrow-right nextArrow"></i
+        ></a>
+      </div>
+    </div>
     <!-- your data -->
     <script src="./src/data.js" type="module"></script>
     <script src="./src/init/index.js" type="module"></script>
     <!-- Add other files here -->
-    
   </body>
 </html>

@@ -1,13 +1,215 @@
-.centered {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+:root {
+  /* https://medium.com/code-better/css-units-for-font-size-px-em-rem-79f7e592bb97 */
+  font-size: 62.5%;
+  --bs-blue: #ac1460;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #171724;
+  font-family: 'Muli', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  font-size: 1.5rem;
+}
+h1 {
+  font-size: 2.5em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+.startContainer {
+  background-color: #2c2c38;
+  display: flex;
+  width: 80%;
+  height: 60%;
+  position: relative;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.quizContainer {
+  display: none;
+  background-color: #2c2c38;
+  width: 80%;
+  height: 60%;
+  transition: all 0.3s ease-in;
+}
+
+.quizContainer.showQuiz {
+  display: flex;
+  flex-direction: column;
+  background-color: #2c2c38;
+  transform: scale(1.2);
+  justify-content: space-between;
+}
+
+.quizContainer h3 {
+  color: #fff;
+  border-radius: 5px;
+  background-color: #6b39bd;
+  margin: 10px;
+  display: block;
+  padding: 10px;
   text-align: center;
 }
 
-.scrollable {
-  height: auto;
-  max-height: 80vh;
-  overflow: auto;
+.question {
+  font-size: 1em;
+  color: #fff;
+}
+
+@media only screen and (min-width: 576px) {
+  .startContainer,
+  .quizContainer {
+    width: 70%;
+    height: 60%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .startContainer,
+  .quizContainer {
+    width: 60%;
+    height: 60%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .startContainer,
+  .quizContainer {
+    width: 60%;
+    height: 60%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .startContainer,
+  .quizContainer {
+    width: 40%;
+    height: 60%;
+  }
+}
+
+.startFooter {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 60px;
+  width: 100%;
+  background-color: #171724;
+  transform: translateY(100%);
+  transition: transform 0.3s ease-in;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #fff;
+  align-items: center;
+  padding: 0 10px;
+}
+.startContainer:hover > div {
+  transform: translateY(0%);
+}
+
+.startFooter a,
+.quizFooter a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  position: relative;
+}
+
+.startFooter a:hover,
+.quizFooter a:hover {
+  color: #ccc;
+}
+
+.startFooter a:before,
+.quizFooter a:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #fff;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out 0s;
+}
+.startFooter a:hover:before,
+.quizFooter a:hover:before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+.startFooter a:hover .startArrow,
+.quizFooter a:hover .nextArrow {
+  animation: bounceArrowRight 0.5s;
+}
+.quizFooter a:hover .prevArrow {
+  animation: bounceArrowLeft 0.5s;
+}
+
+@keyframes bounceArrowRight {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  25% {
+    opacity: 0;
+    transform: translateX(0.5rem);
+  }
+  26% {
+    opacity: 0;
+    transform: translateX(0.5rem);
+  }
+  55% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes bounceArrowLeft {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  25% {
+    opacity: 0;
+    transform: translateX(-0.5rem);
+  }
+  26% {
+    opacity: 0;
+    transform: translateX(-0.5rem);
+  }
+  55% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.quizFooter {
+  height: 60px;
+  width: 100%;
+  background-color: #171724;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #fff;
+  justify-self: end;
+  align-items: center;
+  padding: 0 10px;
 }
