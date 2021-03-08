@@ -1,5 +1,4 @@
 import { questionView } from '../views/question.view.js';
-
 import { quizData } from '../data.js';
 import { createFooter } from '../views/footer.view.js';
 
@@ -20,4 +19,11 @@ export const quizHandler = (event) => {
   const quizFooter = createFooter(1, quizData.questions.length);
   quizContainer.appendChild(quizFooter);
   document.body.appendChild(quizContainer);
+
+  //reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import
+  import('../listeners/footer.listener.js');
+  // .then((module) => {})
+  // .catch((err) => {
+  //   //alert(err.message);
+  // });
 };
