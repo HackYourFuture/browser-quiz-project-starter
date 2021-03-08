@@ -19,6 +19,53 @@ export const questionView = (question = {}) => {
   questionText.classList.add('m-5');
   questionText.innerText = question.text;
   quizContainer.appendChild(questionText);
+  const answerButtons = document.createElement('div');
+  answerButtons.classList.add('answerButtons');
+  answerButtons.classList.add('d-grid');
+  answerButtons.classList.add('gap-2');
+  answerButtons.classList.add('mx-5');
+  for (const key in question.answers) {
+    const answerButton = document.createElement('button');
+    answerButton.classList.add('btn');
+    answerButton.classList.add('btn-danger');
+    answerButton.classList.add('btn-lg');
+    answerButton.classList.add('w-100');
+    answerButton.innerText = question.answers[key];
+    answerButtons.appendChild(answerButton);
+  }
+  {
+    /* <div class="quizFooter">
+      <a id="prevButton" href="#" class="prevBtn"
+        ><i class="fa fa-arrow-left prevArrow"></i> Pervious</a
+      >
+      <div class="quizFooterText">1/8</div>
+      <a id="nextButton" href="#" class="nextBtn"
+        >Next <i class="fa fa-arrow-right nextArrow"></i
+      ></a>
+    </div> */
+  }
+
+  const quizFooter = document.createElement('div');
+  quizFooter.classList.add('quizFooter');
+  quizFooter.innerHTML = `<a id="prevButton" href="#" class="prevBtn"
+  ><i class="fa fa-arrow-left prevArrow"></i> Pervious</a
+>
+<div class="quizFooterText">1/8</div>
+<a id="nextButton" href="#" class="nextBtn"
+  >Next <i class="fa fa-arrow-right nextArrow"></i
+></a>`;
+
+  // quizFooter.classList.add('quizFooter');
+  // const prevButton = document.createElement('a');
+  // prevButton.id = 'prevButton';
+  // prevButton.classList.add('prevBtn');
+  // const arrowLeft = document.createElement('i');
+  // arrowLeft.classList.add('fa');
+  // arrowLeft.classList.add('fa-arrow-left');
+  // arrowLeft.classList.add('prevArrow');
+
+  quizContainer.appendChild(answerButtons);
+  quizContainer.appendChild(quizFooter);
 
   // const answerList = document.createElement('ul');
 
