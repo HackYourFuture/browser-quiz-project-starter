@@ -6,6 +6,7 @@
  * @param {{}} question - an array of strings, each one will be mirrored around the separator on a new line
  * @return {HTMLDivElement} a PRE element with the rendered string content
  */
+
 export const questionView = (question = {}) => {
   const quizContainer = document.createElement('div');
   quizContainer.classList.add('quizContainer');
@@ -33,27 +34,6 @@ export const questionView = (question = {}) => {
     answerButton.innerText = question.answers[key];
     answerButtons.appendChild(answerButton);
   }
-  {
-    /* <div class="quizFooter">
-      <a id="prevButton" href="#" class="prevBtn"
-        ><i class="fa fa-arrow-left prevArrow"></i> Pervious</a
-      >
-      <div class="quizFooterText">1/8</div>
-      <a id="nextButton" href="#" class="nextBtn"
-        >Next <i class="fa fa-arrow-right nextArrow"></i
-      ></a>
-    </div> */
-  }
-
-  const quizFooter = document.createElement('div');
-  quizFooter.classList.add('quizFooter');
-  quizFooter.innerHTML = `<a id="prevButton" href="#" class="prevBtn"
-  ><i class="fa fa-arrow-left prevArrow"></i> Pervious</a
->
-<div class="quizFooterText">1/8</div>
-<a id="nextButton" href="#" class="nextBtn"
-  >Next <i class="fa fa-arrow-right nextArrow"></i
-></a>`;
 
   // quizFooter.classList.add('quizFooter');
   // const prevButton = document.createElement('a');
@@ -65,7 +45,6 @@ export const questionView = (question = {}) => {
   // arrowLeft.classList.add('prevArrow');
 
   quizContainer.appendChild(answerButtons);
-  quizContainer.appendChild(quizFooter);
 
   // const answerList = document.createElement('ul');
 

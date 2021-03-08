@@ -1,6 +1,7 @@
 import { questionView } from '../views/question.view.js';
 
 import { quizData } from '../data.js';
+import { createFooter } from '../views/footer.view.js';
 
 export const quizHandler = (event) => {
   const startContainer = document.querySelector('.startContainer');
@@ -16,5 +17,7 @@ export const quizHandler = (event) => {
   // parent.insertBefore(questionDOM, button);
   // button.remove();
 
+  const quizFooter = createFooter(1, quizData.questions.length);
+  quizContainer.appendChild(quizFooter);
   document.body.appendChild(quizContainer);
 };
