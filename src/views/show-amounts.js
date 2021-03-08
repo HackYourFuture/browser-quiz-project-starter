@@ -1,9 +1,7 @@
-import { quizData } from '../data.js';
-
-export function createCounts() {
+export function createCounts(data) {
   const counts = document.createElement('div');
   const p = document.createElement('p');
-  p.textContent = `Answered questions: ${quizData.quiz.answered}. Correct answers: ${quizData.quiz.correct}.`;
+  p.textContent = `Answered questions: ${data.quiz.answered}. Correct answers: ${data.quiz.correct}.`;
   counts.appendChild(p);
   return counts;
 }
