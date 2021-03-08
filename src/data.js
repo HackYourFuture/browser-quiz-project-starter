@@ -1,48 +1,41 @@
-export const quizData = {
-  // the questions in the quiz
-  questions: [
-    {
-      text: 'What are the different ways to declare a JS variable?',
-      answers: {
-        a: 'constant, let, variable',
-        b: 'var, const, let, function',
-        c: 'var, let, const',
-      },
-      correct: 'c',
-      selected: null,
-      links: [
-        {
-          text: 'javascript.info',
-          href: 'https://javascript.info/variables',
-        },
-        {
-          text: 'Tyler McGinnis',
-          href: 'https://ui.dev/var-let-const/',
-        },
-      ],
-    },
-    {
-      text: 'What does `typeof` do?',
-      answers: {
-        a: 'changes the type of a primitive value',
-        b: 'returns a string describing the type of a value',
-        c: 'determines if a value is primitive',
-        d: 'can tell the difference between arrays and objects',
-      },
-      correct: 'b',
-      selected: null,
-      links: [
-        {
-          text: 'javascript.info',
-          href: 'https://javascript.info/types#type-typeof',
-        },
-        {
-          text: 'MDN',
-          href:
-            'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof',
-        },
-      ],
-    },
-    // Add more questions here
-  ],
-};
+
+const quizData = [{
+
+},
+{
+  question: 'The most popular programing language in 2020 is ?',
+  answers: ['javascript', 'python', 'java', 'C++'],
+  correct: 'python'
+}, {
+  question: 'JavaScript was created by Brendan Eich in?',
+  answers: ['1994', '1995', '1998', '1992'],
+  correct: '1995'
+}, {
+  question: 'How can we read the properties of an object?',
+  answers: ['print', 'log', 'alert', 'promt'],
+  correct: 'promt'
+}, {
+  question: 'To ask the user for input we use ?',
+  answers: ['bracket', 'index', '==', 'dot notation'],
+  correct: 'dot notation'
+}, {
+  question: 'JavaScript was originally called ?',
+  answers: ['Jave', 'Mocha', 'JSON', 'C++'],
+  correct: 'Mocha'
+}, {
+  question: 'What is === operator in JavaScript ?',
+  answers: ['compare types', 'compare functions', 'compare values and types', 'compare values'],
+  correct: 'compare values and types'
+}, {
+  question: 'JS stands for ?',
+  answers: ['Java', 'JavaScript', 'Python', 'C++'],
+  correct: 'JavaScript'
+}, {
+  question: 'What is an IIFE in JavaScript ?',
+  answers: ['normal function', 'Immediately Invoked Function Expression', 'IIFE does not exist in JavaScritp', 'type of classes is JavaScrotp'],
+  correct: 'Immediately Invoked Function Expression'
+}
+]
+
+
+export default quizData

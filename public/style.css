@@ -1,14 +1,28 @@
-.centered {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+body {
   text-align: center;
+  
+}
+#container {
+  padding: 20px;
+}
+  option {
+  font-size: 20px;
+  width: 500px;
+  border: 2px solid black;
+  padding: 10px;
+  margin: 5px;
 }
 
-.scrollable {
-  height: auto;
-  max-height: 80vh;
-  overflow: auto;
+option:hover {
+  border: 2px solid white;
 }
+button {
+  order: 2px solid white;
+  padding: 10px;
+}
+button:hover {
+  border: 2px solid white;
+}
+
+
 
