@@ -44,6 +44,7 @@ export const quizData = {
   // the questions in the quiz
   questions: [
     {
+      title: 'Variable Declaration',
       text: 'What are the different ways to declare a JS variable?',
       answers: {
         a: 'constant, let, variable',
@@ -64,6 +65,7 @@ export const quizData = {
       ],
     },
     {
+      title: 'typeof Keyword',
       text: 'What does `typeof` do?',
       answers: {
         a: 'changes the type of a primitive value',
@@ -84,6 +86,84 @@ export const quizData = {
             'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof',
         },
       ],
+    },
+    {
+      title: 'JavaScript History',
+      text: 'Which company developed JavaScript?',
+      answers: {
+        a: 'Microsoft',
+        b: 'Sun Microsystems',
+        c: 'Netscape',
+        d: 'Oracle',
+      },
+      correct: 'c',
+      selected: null,
+      links: [],
+    },
+    {
+      title: 'this Keyword',
+      text: 'What is this keyword in JavaScript?',
+      answers: {
+        a: 'refers to the object from where it was called.',
+        b: 'refers to current function',
+        c: 'refers to browser',
+        d: 'refers to global scope',
+      },
+      correct: 'a',
+      selected: null,
+      links: [],
+    },
+    {
+      title: 'JavaScript Data Types',
+      text: 'Which answer is not JavaScript Data Types?',
+      answers: {
+        a: 'String',
+        b: 'Undefined',
+        c: 'Object',
+        d: 'Array',
+      },
+      correct: 'd',
+      selected: null,
+      links: [],
+    },
+    {
+      title: 'isNaN Function',
+      text: 'What is the use of isNaN function?',
+      answers: {
+        a: 'returns true if the argument is not a number',
+        b: 'returns false if the argument is not a number',
+        c: 'returns true if the argument is not null',
+        d: 'returns false if the argument is not null',
+      },
+      correct: 'a',
+      selected: null,
+      links: [],
+    },
+    {
+      title: 'Automatic type conversion',
+      text: 'What would be the result of 3+2+"7"?',
+      answers: {
+        a: '327',
+        b: '12',
+        c: '57',
+        d: '5 7',
+      },
+      correct: 'c',
+      selected: null,
+      links: [],
+    },
+    {
+      title: 'undefined',
+      text: ' What is an undefined value in JavaScript? which answer is wrong.',
+      answers: {
+        a: 'Variable used in the code does not exist',
+        b: 'Variable is not assigned to any value',
+        c: 'Property does not exist',
+        d: 'Variable is null',
+      },
+      correct: 'd',
+      selected: null,
+      links: [],
     },
     // Add more questions here
   ],
