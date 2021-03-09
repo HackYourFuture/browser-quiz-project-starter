@@ -6,7 +6,7 @@ const ANSWERS = quizData.map(element => element.answers)
 
 
 const CORRECT_ANSWERS = quizData.map(element => element.correct)
-
+console.log()
 
 let CURRENT_QUESION = 1;
 
@@ -19,7 +19,7 @@ const container = document.getElementById("container")
 
 function newQuestion(CURRENT_QUESION) {
   container.textContent = ""
-  if (CURRENT_QUESION > 8) {
+  if (CURRENT_QUESION > (CORRECT_ANSWERS.length - 1)) {
     const h2 = document.createElement("h2")
     container.appendChild(h2).innerText = "Thank you for taking JavaScript Quiz !"
     return
