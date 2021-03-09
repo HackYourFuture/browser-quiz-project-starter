@@ -1,9 +1,10 @@
 import { data } from '../data.js';
 import { setClass } from '../views/set-status.js';
 
-export function selectAnswer(event){
+ export function selectAnswer(event){
     const selectedButton = event.target;
     let correct = selectedButton.dataset.correct;
+    console.log(correct)
     
     //2. if the answer is correct
     if (correct) {
@@ -22,6 +23,5 @@ export function selectAnswer(event){
     document.getElementById('start-btn').innerText = 'Repeat';
     document.getElementById('start-btn').classList.remove('hide');
     }
-
   
 }
