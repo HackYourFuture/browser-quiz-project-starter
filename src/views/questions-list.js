@@ -1,4 +1,5 @@
 import { quizData } from "../data.js";
+import { selectAnswer} from '../handlers/select-answer.js';
 
 export function createQuestionList() {
 //    const list = document.createElement('ul');
@@ -28,7 +29,9 @@ export function displayQuestion(){
   console.log(questionArea);
   questionArea.innerHTML = question.text;
   
+  document.querySelectorAll('button').addEventListener('click', selectAnswer);
   return questionArea;
 }
 
 displayQuestion()
+

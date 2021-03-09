@@ -6,7 +6,7 @@ export function renderQuestions() {
     const list = createQuestionList()
     document.body.appendChild(list);
     
-    document.getElementById('answer-buttons').appendChild(button);
+    /* document.getElementById('answer-buttons').appendChild(button); */
 }
 
 

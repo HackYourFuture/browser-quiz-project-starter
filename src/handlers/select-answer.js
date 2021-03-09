@@ -4,13 +4,13 @@ import { setClass } from '../views/set-status.js';
  export function selectAnswer(event){
     const selectedButton = event.target;
     let correct = selectedButton.dataset.correct;
-    console.log(correct)
     
     //2. if the answer is correct
     if (correct) {
         document.getElementById('question-correct').classList.remove('hide');
     }
 
+    // 
     Array.from(document.getElementById('answer-buttons').children).forEach(
     (button) => {
         setClass(button, button.dataset.correct);
