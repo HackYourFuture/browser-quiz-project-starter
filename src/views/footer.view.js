@@ -1,4 +1,5 @@
 export const createFooter = (currentQuestion, totalQuestions) => {
+  currentQuestion++;
   const quizFooter = document.createElement('div');
   quizFooter.classList.add('quizFooter');
   quizFooter.innerHTML = `<a id="prevButton" href="#" class="prevBtn"
