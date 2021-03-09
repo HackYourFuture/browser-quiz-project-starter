@@ -2,15 +2,37 @@
 <html lang="en">
   <head>
     <meta charset="utf8" />
-    <title>your project name</title>
+    <title>JS Ranger Quiz</title>
 
     <link href="./public/style.css" rel="stylesheet" />
   </head>
 
   <body>
-    <!-- Put your HTML here -->
     <div id="user-interface" class="centered">
+      <!-- question-container and the control buttons (next and start)-->
+      <div class="container">
+        <h1>JavaScript Quiz</h1>
+        <p id="question-number" class="hide"> Question number </p>
+        <p id="question-correct" class="hide"> correct answers </p>
       
+      <!-- question-container that is hidden by default -->
+        <div id="question-container" class=" hide ">
+          <div class="question">Question</div>
+          <div id="answer-buttons" class="btn-grid">
+            <button class="btn">Answer 1</button>
+            <button class="btn">Answer 2</button>
+            <button class="btn">Answer 3</button>
+            <button class="btn">Answer 4</button>
+          </div>
+        </div>
+      
+      <!-- control buttons (start and next)-->
+        <div class="controls">
+          <button  id="start-btn" class="start-btn btn">Start</button>
+          <button  id="next-btn" class="next-btn btn hide ">Next</button>
+        <a href=""><button id ="exit" class= "next-btn btn hide"></button></a>
+        </div>
+      </div>
     </div>
 
     <!-- your data -->
