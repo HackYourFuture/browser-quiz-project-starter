@@ -1,5 +1,6 @@
 import { renderQuestions } from '../handlers/render-questions.js';
 import { createQuestionList } from '../views/questions-list.js';
+import { displayQuestion } from '../views/questions-list.js'
 import { renderScore } from '../handlers/render-score.js';
 window.addEventListener('DOMContentLoaded', () => {
   const ui = document.getElementById('user-interface');
@@ -7,3 +8,5 @@ window.addEventListener('DOMContentLoaded', () => {
   renderQuestions(ui, list);
   renderScore();
 });
+
+window.addEventListener('DomContentLoaded', displayQuestion)
