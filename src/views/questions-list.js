@@ -24,10 +24,10 @@ export function getRandomQuestion(item){
 export function displayQuestion(){
   const question = getRandomQuestion(quizData.questions);
   console.log(question.text);
-  const questionArea = document.getElementsByClassName('question');
+  const questionArea = document.getElementById('question');
   console.log(questionArea);
   questionArea.innerHTML = question.text;
-  document.body.append(question.text);
+  
   return questionArea;
 }
 
