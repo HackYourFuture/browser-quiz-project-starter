@@ -4,36 +4,76 @@ const quizData = [{
 },
 {
   question: 'The most popular programing language in 2020 is ?',
-  answers: ['javascript', 'python', 'java', 'C++'],
-  correct: 'python'
+  answers: {
+    a: 'javascript',
+    b: 'python',
+    c: 'java',
+    d: 'C++'
+  },
+  correct: 'b'
 }, {
   question: 'JavaScript was created by Brendan Eich in?',
-  answers: ['1994', '1995', '1998', '1992'],
-  correct: '1995'
+  answers: {
+    a: '1994',
+    b: '1995',
+    c: '1998',
+    d: '1992'
+  },
+  correct: 'b'
 }, {
   question: 'How can we read the properties of an object?',
-  answers: ['print', 'log', 'alert', 'promt'],
-  correct: 'promt'
+  answers: {
+    a: 'print',
+    b: 'log',
+    c: 'alert',
+    d: 'promt'
+  },
+  correct: 'd'
 }, {
   question: 'To ask the user for input we use ?',
-  answers: ['bracket', 'index', '==', 'dot notation'],
-  correct: 'dot notation'
+  answers: {
+    a: 'bracket',
+    b: 'index',
+    c: '==',
+    d: 'dot notation'
+  },
+  correct: 'd'
 }, {
   question: 'JavaScript was originally called ?',
-  answers: ['Jave', 'Mocha', 'JSON', 'C++'],
-  correct: 'Mocha'
+  answers: {
+    a: 'Jave',
+    b: 'Mocha',
+    c: 'JSON',
+    d: 'C++'
+  },
+  correct: 'b'
 }, {
   question: 'What is === operator in JavaScript ?',
-  answers: ['compare types', 'compare functions', 'compare values and types', 'compare values'],
-  correct: 'compare values and types'
+  answers: {
+    a: 'compare types',
+    b: 'compare functions',
+    c: 'compare values and types',
+    d: 'compare values'
+  },
+  correct: 'c'
 }, {
   question: 'JS stands for ?',
-  answers: ['Java', 'JavaScript', 'Python', 'C++'],
-  correct: 'JavaScript'
+  answers: {
+    a: 'Java',
+    b: 'JavaScript',
+    c: 'Python',
+    d: 'C++'
+  },
+  correct: 'b'
 }, {
   question: 'What is an IIFE in JavaScript ?',
-  answers: ['normal function', 'Immediately Invoked Function Expression', 'IIFE does not exist in JavaScritp', 'type of classes is JavaScrotp'],
-  correct: 'Immediately Invoked Function Expression'
+  answers: {
+    a: 'normal function',
+    b: 'Immediately Invoked Function Expression',
+    c: 'IIFE does not exist in JavaScritp',
+    d: 'type of classes is JavaScrotp'
+  },
+  correct: 'b'
 }
 ]
 
