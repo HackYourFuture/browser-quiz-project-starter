@@ -12,7 +12,7 @@ export const questionView = (question = {}) => {
   quizContainer.classList.add('quizContainer');
   quizContainer.classList.add('showQuiz');
   const quizHeader = document.createElement('h3');
-  quizHeader.innerText = 'Question1';
+  quizHeader.innerText = question.title;
   quizContainer.appendChild(quizHeader);
 
   const questionText = document.createElement('div');
@@ -28,7 +28,7 @@ export const questionView = (question = {}) => {
   for (const key in question.answers) {
     const answerButton = document.createElement('button');
     answerButton.classList.add('btn');
-    answerButton.classList.add('btn-danger');
+    answerButton.classList.add('btn-primary');
     answerButton.classList.add('btn-lg');
     answerButton.classList.add('w-100');
     answerButton.innerText = question.answers[key];
