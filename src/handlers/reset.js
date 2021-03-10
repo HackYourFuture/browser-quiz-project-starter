@@ -1,11 +1,7 @@
-import { displayQuestion } from '../views/questions-list.js';
 
 export function resetState() {
-    const nextButton = document.getElementById('next-btn');
-    nextButton.classList.add('hide');
-    while (answerButtonElement.firstChild) {
-        answerButtonElement.removeChild(answerButtonElement.firstChild);
+    const answerButtonsElement = document.getElementById('answer-buttons');
+    while (answerButtonsElement.firstChild) {
+        answerButtonsElement.removeChild(answerButtonsElement.firstChild);
     }
-
-    displayQuestion()
 }

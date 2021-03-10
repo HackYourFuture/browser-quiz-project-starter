@@ -1,4 +1,3 @@
-import { data } from '../data.js';
 import { setStatusClass } from '../views/set-status.js';
 /*import { displayQuestion } from "../views/questions-list.js"; */
 
@@ -11,5 +10,8 @@ import { setStatusClass } from '../views/set-status.js';
     (button) => {
       setStatusClass(button, button.dataset.correct);
       }
-    );    
+    );  
+    
+    const nextButton = document.getElementById('next-btn');
+    nextButton.classList.remove('hide');
 }

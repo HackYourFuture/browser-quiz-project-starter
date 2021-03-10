@@ -28,27 +28,27 @@ export function getRandomQuestion(item){
 
 export function displayQuestion(){
   const question = getRandomQuestion(quizData.questions);
-  const answers = quizData.questions[1].answers;
-  console.log(answers)
+  const answers = question.answers;
 
   const questionArea = document.getElementById('question');
   questionArea.innerHTML = question.text;
   
-  for(let answer in answers) {
+  Object.entries(answers).forEach(answer => {
     const button = document.createElement('button');
-    button.innerText = answer;
-    button.classList.add('btn');
-    if (quizData.questions[3].selected === quizData.questions[2].correct) {
-      button.dataset.correct = quizData.questions[2].correct;
-      console.log(correct)
+    button.classList.add(answer[0]);
+    
+    if (answer[0] === question.correct) {
+      button.dataset.correct = answer.correct;
     }
+    button.innerText = answer[1];
+    button.classList.add('btn');
+
     button.addEventListener('click', selectAnswer);
     const answerButtonsElement = document.getElementById('answer-buttons');
     answerButtonsElement.appendChild(button);
-  };
+  });
  
   return questionArea;
 }
 
-displayQuestion()
 

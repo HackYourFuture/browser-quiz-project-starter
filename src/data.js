@@ -104,7 +104,7 @@ export const quizData = {
         },
       ],
     },
-    {
+    /* {
       text: 'Which one of the following is correct?',
       answers: {
         a: 'i =+ 1',
@@ -392,7 +392,7 @@ export const quizData = {
           href: 'https://www.w3schools.com/quiztest/quiztest.asp?qtest=JS',
         },
       ],
-    },
-  ],
+    },*/
+  ], 
 };
 
