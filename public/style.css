@@ -46,14 +46,12 @@ h3 {
   background-color: #2c2c38;
   width: 80%;
   height: 60%;
-  /* transition: all 0.3s ease-in; */
 }
 
 .quizContainer.showQuiz {
   display: flex;
   flex-direction: column;
   background-color: #2c2c38;
-  /* transform: scale(1.2); */
   justify-content: space-between;
 }
 
