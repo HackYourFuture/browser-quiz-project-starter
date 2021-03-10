@@ -46,7 +46,7 @@ export function displayQuestion(){
     const answerButtonsElement = document.getElementById('answer-buttons');
     answerButtonsElement.appendChild(button);
   };
-  
+ 
   return questionArea;
 }
 
