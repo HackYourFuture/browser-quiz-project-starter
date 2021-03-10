@@ -29,7 +29,6 @@ export function displayQuestion(){
   console.log(questionArea);
   questionArea.innerHTML = question.text;
   
-  document.querySelectorAll('button').addEventListener('click', selectAnswer);
   return questionArea;
 }
 
