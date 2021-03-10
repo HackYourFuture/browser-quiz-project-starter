@@ -55,14 +55,17 @@ export const scoreView = () => {
     ' questions';
   quizContainer.appendChild(summaryText);
 
+  const successPercentage = Math.floor((quizData.quiz.answered * 60)/100);
+  console.log(successPercentage)
+  if(quizData.quiz.correct >= successPercentage){
   const checkIcon = document.createElement('i');
   checkIcon.classList.add('fas', 'fa-check', 'checkIcon');
-
+  quizContainer.appendChild(checkIcon);
+  } else {
   const failedIcon = document.createElement('i');
   failedIcon.classList.add('fas', 'fa-times', 'failedIcon');
-
-  quizContainer.appendChild(checkIcon);
   quizContainer.appendChild(failedIcon);
+  }
 
   document.body.appendChild(quizContainer);
 };
