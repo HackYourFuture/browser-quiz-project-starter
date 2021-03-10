@@ -211,3 +211,17 @@ h3 {
   align-items: center;
   padding: 0 10px;
 }
+
+.checkIcon {
+  font-size: 10rem;
+  color: green;
+  margin: 0 auto;
+  padding-bottom: 30px;
+}
+
+.failedIcon {
+  font-size: 10rem;
+  color: red;
+  margin: 0 auto;
+  padding-bottom: 30px;
+}
