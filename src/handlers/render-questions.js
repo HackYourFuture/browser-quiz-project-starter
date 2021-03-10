@@ -1,6 +1,4 @@
-
 import { createQuestionList } from '../views/questions-list.js';
-
 
 export function renderQuestions() {
     const list = createQuestionList()
