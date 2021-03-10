@@ -12,8 +12,7 @@ window.addEventListener('DOMContentLoaded', () => {
   renderScore();
 });
 
+window.addEventListener('DomContentLoaded', displayQuestion);
 
-window.addEventListener('DomContentLoaded', displayQuestion)
-
-document.getElementById('start-btn').addEventListener('click', startGame)
-document.getElementById('next-btn').addEventListener('click', setNextQuestion)
+document.getElementById('start-btn').addEventListener('click', startGame);
+document.getElementById('next-btn').addEventListener('click', setNextQuestion);
