@@ -1,5 +1,6 @@
 import { quizData } from '../data.js';
 
+
 export function createQuestionList() {}
 
 export function getRandomQuestion(item) {
@@ -8,13 +9,16 @@ export function getRandomQuestion(item) {
 }
 
 export function displayQuestion() {
+
   const question = getRandomQuestion(quizData.questions);
   console.log(question.text);
   const questionArea = document.getElementById('question');
   console.log(questionArea);
   questionArea.innerHTML = question.text;
 
+
   return questionArea;
 }
 
 displayQuestion();
+
