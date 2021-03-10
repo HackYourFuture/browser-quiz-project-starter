@@ -1,20 +1,20 @@
 import { quizData } from '../data.js';
 import { updateQuiz } from './quiz.handler.js';
 
-let currentQuestion = 0;
+
 export const footerHandler = (event) => {
-  console.log(currentQuestion, quizData.questions.length);
+  console.log(quizData.quiz.currentQuestion, quizData.questions.length);
   const quizContainer = document.querySelector('.quizContainer');
   quizContainer.remove();
 
   if (event.target.id === 'nextButton') {
-    if (currentQuestion !== quizData.questions.length - 1) {
-      currentQuestion++;
+    if (quizData.quiz.currentQuestion !== quizData.questions.length - 1) {
+      quizData.quiz.currentQuestion++;
     }
   } else {
-    if (currentQuestion !== 0) {
-      currentQuestion--;
+    if (quizData.quiz.currentQuestion !== 0) {
+      quizData.quiz.currentQuestion--;
     }
   }
-  updateQuiz(quizData.questions[currentQuestion], currentQuestion);
+  updateQuiz(quizData.questions[quizData.quiz.currentQuestion], quizData.quiz.currentQuestion);
 };
