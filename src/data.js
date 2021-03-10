@@ -40,6 +40,9 @@ export const quizData = {
     //  you can calculate this value by iterating through the questions
     //  is selected === correct?
     correct: 0,
+
+  //
+  currentQuestion: 0,
   },
   // the questions in the quiz
   questions: [
