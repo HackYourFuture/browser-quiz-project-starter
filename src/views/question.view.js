@@ -26,6 +26,8 @@ export const questionView = (question = {}) => {
   for (const key in question.answers) {
     const answerButton = document.createElement('button');
     answerButton.classList.add('btn', 'btn-primary', 'btn-lg', 'w-100' );
+    answerButton.setAttribute('data-key', key);
+    answerButton.setAttribute('data-correct', question.correct);
     answerButton.innerText = question.answers[key];
     answerButtons.appendChild(answerButton);
   }
