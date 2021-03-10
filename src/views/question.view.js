@@ -56,7 +56,7 @@ export const scoreView = () => {
   quizContainer.appendChild(summaryText);
 
   const successPercentage = Math.floor((quizData.quiz.answered * 60)/100);
-  
+
   if(quizData.quiz.correct >= successPercentage){
   const checkIcon = document.createElement('i');
   checkIcon.classList.add('fas', 'fa-check', 'checkIcon');
@@ -66,6 +66,5 @@ export const scoreView = () => {
   failedIcon.classList.add('fas', 'fa-times', 'failedIcon');
   quizContainer.appendChild(failedIcon);
   }
-
   document.body.appendChild(quizContainer);
 };
