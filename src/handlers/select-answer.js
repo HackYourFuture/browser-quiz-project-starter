@@ -6,11 +6,10 @@ import { setStatusClass } from '../views/set-status.js';
     let correct = selectedButton.dataset.correct;
     setStatusClass(document.body, correct)
 
-    Array.from(document.getElementById('answer-buttons').children).forEach(
-    (button) => {
+    const answerButton = document.getElementById('answer-buttons').children;
+    for(const button of [...answerButton]) {
       setStatusClass(button, button.dataset.correct);
-      }
-    );  
+      }  
     
     const nextButton = document.getElementById('next-btn');
     nextButton.classList.remove('hide');
