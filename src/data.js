@@ -23,10 +23,8 @@
 export const data = {
   separator: '|',
   lines: [],
-  shuffledQuestions: 0,
+  randomQuestions: 0,
   currentQuestionIndex: 0,
-  questionNumber: 1,
-  questionCorrect: 1,
 };
 
 // here's a suggestion for your game's state, see if this works for your team
@@ -397,3 +395,4 @@ export const quizData = {
     },
   ],
 };
+

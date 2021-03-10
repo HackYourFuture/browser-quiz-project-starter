@@ -51,19 +51,26 @@ text-shadow: 1px 1px 25px rgb(148, 137, 137);
   padding: 5px 10px;
   color: white;
   outline: none;
-  font-size: 1.2rem !important;
+  font-size: 1.2rem;
 }
 
 .btn:hover {
-  border-color: black;
+  border: 2px solid black;
 }
 
+.btn.correct {
+  background-color: green;
+}
+
+.btn.wrong {
+  background-color: red;
+}
 
 .start-btn, .next-btn {
-  font-size: 3rem !important;
+  font-size: 3rem;
   font-weight: bold;
   padding: 10px 20px;
-  font-family: 'Concert One', cursive !important;
+  font-family: 'Concert One', cursive;
 }
 
 .controls {
