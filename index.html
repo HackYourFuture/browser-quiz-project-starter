@@ -12,23 +12,23 @@
       <!-- question-container and the control buttons (next and start)-->
       <div class="container">
         <h1>JavaScript Quiz</h1>
-        <p id="question-number" class="hide"> Question number </p>
-        <p id="question-correct" class="hide"> correct answers </p>
+        <p id="question-number" <!--class="hide"-->> Question number </p>
+        <p id="question-correct" <!--class="hide"-->> correct answers </p>
       
       <!-- question-container that is hidden by default -->
-        <div id="question-container" class=" hide ">
+        <div id="question-container" <!--class=" hide "-->
           <div id="question">Question</div>
           <div id="answer-buttons" class="btn-grid">
-            <button class="btn">Answer 1</button>
-            <button class="btn">Answer 2</button>
-            <button class="btn">Answer 3</button>
-            <button class="btn">Answer 4</button>
+            <button id="a" class="btn">Answer 1</button>
+            <button id="b" class="btn">Answer 2</button>
+            <button id="c" class="btn">Answer 3</button>
+            <button id="d" class="btn">Answer 4</button>
           </div>
         </div>
       
       <!-- control buttons (start and next)-->
         <div class="controls">
-          <button  id="start-btn" class="start-btn btn">Start</button>
+          <button  id="start-btn" class="start-btn btn hide">Start</button>
           <button  id="next-btn" class="next-btn btn hide ">Next</button>
         <a href=""><button id ="exit" class= "next-btn btn hide"></button></a>
         </div>

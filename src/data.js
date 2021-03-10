@@ -43,7 +43,7 @@ export const quizData = {
   },
   // the questions in the quiz
   questions: [
-    {
+    /*{
       text: 'What are the different ways to declare a JS variable?',
       answers: {
         a: 'constant, let, variable',
@@ -62,7 +62,7 @@ export const quizData = {
           href: 'https://ui.dev/var-let-const/',
         },
       ],
-    },
+    },*/
     {
       text: 'What does `typeof` do?',
       answers: {
@@ -84,8 +84,8 @@ export const quizData = {
             'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof',
         },
       ],
-    },    
-    {
+    },
+    /*{
       text: 'The return type of getElementsByClassName() is..',
       answers: {
         a: 'DOM',
@@ -390,6 +390,6 @@ export const quizData = {
           href: 'https://www.w3schools.com/quiztest/quiztest.asp?qtest=JS',
         },
       ],
-    },
+    },*/
   ],
 };
