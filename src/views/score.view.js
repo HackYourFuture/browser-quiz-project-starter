@@ -1,3 +1,4 @@
+import { successPercentage } from '../logic/passScore.logic.js';
 export const scoreView = (quiz) => {
   const quizContainer = document.createElement('div');
   quizContainer.classList.add('quizContainer', 'showQuiz');
@@ -16,7 +17,7 @@ export const scoreView = (quiz) => {
     ' questions';
   quizContainer.appendChild(summaryText);
 
-  const passScore = Math.floor((quiz.answered * 60) / 100);
+  const passScore = successPercentage(quiz);
   const icon = document.createElement('i');
 
   if (quiz.correct > passScore) {
