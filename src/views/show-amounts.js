@@ -1,7 +1,10 @@
-export function createCounts(data) {
-  const counts = document.createElement('div');
-  const p = document.createElement('p');
-  p.textContent = `Answered questions: ${data.quiz.answered}. Correct answers: ${data.quiz.correct}.`;
-  counts.appendChild(p);
-  return counts;
+export function createCountsAnswered(data) {
+  const span = document.createElement('span');
+  span.textContent = `${data.quiz.answered}`;
+  return 'Question number ' + span.innerText;
+}
+export function createCountsCorrect(data) {
+  const span = document.createElement('span');
+  span.textContent = `${data.quiz.correct}`;
+  return 'Correct answers ' + span.innerText;
 }

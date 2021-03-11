@@ -1,16 +1,16 @@
+
 import { quizData } from "../data.js";
 import { selectAnswer } from "../handlers/select-answer.js";
 
-export function createQuestionList() {
-  
-};
+export function createQuestionList() {}
 
-export function getRandomQuestion(item){
-  const randomQuestion = Math.floor(Math.random(item) * item.length) 
-  return item[randomQuestion]
-};
+export function getRandomQuestion(item) {
+  const randomQuestion = Math.floor(Math.random(item) * item.length);
+  return item[randomQuestion];
+}
 
-export function displayQuestion(){
+export function displayQuestion() {
+
   const question = getRandomQuestion(quizData.questions);
   const answers = question.answers;
 
@@ -34,5 +34,3 @@ export function displayQuestion(){
   
   return questionArea;
 }
-
-
