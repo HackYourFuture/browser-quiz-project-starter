@@ -39,7 +39,6 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-
 window.addEventListener('DomContentLoaded', displayQuestion);
 
 document.getElementById('start-btn').addEventListener('click', startGame);

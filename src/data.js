@@ -23,6 +23,8 @@
 export const data = {
   separator: '|',
   lines: [],
+  randomQuestions: 0,
+  currentQuestionIndex: 0,
 };
 
 // here's a suggestion for your game's state, see if this works for your team
@@ -85,7 +87,7 @@ export const quizData = {
         },
       ],
     },
-    /*{
+    {
       text: 'The return type of getElementsByClassName() is..',
       answers: {
         a: 'DOM',
@@ -390,6 +392,7 @@ export const quizData = {
           href: 'https://www.w3schools.com/quiztest/quiztest.asp?qtest=JS',
         },
       ],
-    },*/
-  ],
+    },
+  ], 
 };
+
