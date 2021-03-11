@@ -4,28 +4,12 @@ import { quizData } from '../data.js';
 
 export function renderScore() {
   const qn = document.getElementById('question-number');
+  qn.classList.remove('hide');
   const countAnswered = createCountsAnswered(quizData);
   qn.innerHTML = countAnswered;
 
   const cc = document.getElementById('question-correct');
+  cc.classList.remove('hide');
   const countCorrect = createCountsCorrect(quizData);
   cc.innerHTML = countCorrect;
-}
-
-export function showCount() {
-  console.log('Counting correct answers...');
-  let correct = 0;
-  let selected = 0;
-  for (const question of quizData.questions) {
-    if (question.selected !== null) {
-      selected += 1;
-    }
-    if (question.correct === question.selected) {
-      correct += 1;
-    }
-  }
-  quizData.quiz.answered = selected;
-  quizData.quiz.correct = correct;
-  console.log(`${correct} correct / ${selected} answered `);
-  renderScore();
 }
