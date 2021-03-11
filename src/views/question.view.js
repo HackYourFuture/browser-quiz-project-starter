@@ -35,36 +35,3 @@ export const questionView = (question = {}) => {
   quizContainer.appendChild(answerButtons);
   return quizContainer;
 };
-
-export const scoreView = () => {
-  console.log('hi');
-  const quizContainer = document.createElement('div');
-  quizContainer.classList.add('quizContainer', 'showQuiz');
-
-  const quizHeader = document.createElement('h3');
-  quizHeader.innerText = 'Summary';
-  quizContainer.appendChild(quizHeader);
-
-  const summaryText = document.createElement('div');
-  summaryText.classList.add('question', 'm-5');
-  summaryText.innerText =
-    'Your score is ' +
-    quizData.quiz.correct +
-    '\n You answered ' +
-    quizData.quiz.answered +
-    ' questions';
-  quizContainer.appendChild(summaryText);
-
-  const successPercentage = Math.floor((quizData.quiz.answered * 60)/100);
-
-  if(quizData.quiz.correct >= successPercentage){
-  const checkIcon = document.createElement('i');
-  checkIcon.classList.add('fas', 'fa-check', 'checkIcon');
-  quizContainer.appendChild(checkIcon);
-  } else {
-  const failedIcon = document.createElement('i');
-  failedIcon.classList.add('fas', 'fa-times', 'failedIcon');
-  quizContainer.appendChild(failedIcon);
-  }
-  document.body.appendChild(quizContainer);
-};

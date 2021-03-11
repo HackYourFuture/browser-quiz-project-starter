@@ -1,6 +1,6 @@
 import { quizData } from '../data.js';
 import { updateQuiz } from './quiz.handler.js';
-import { scoreView } from '../views/question.view.js';
+import { scoreView } from '../views/score.view.js';
 
 export const footerHandler = (event) => {
   //debugger;
@@ -14,7 +14,7 @@ export const footerHandler = (event) => {
     }
     if (quizData.quiz.currentQuestion === quizData.questions.length) {
       console.log('end');
-      scoreView();
+      scoreView(quizData.quiz);
     } else {
       updateQuiz(
         quizData.questions[quizData.quiz.currentQuestion],
