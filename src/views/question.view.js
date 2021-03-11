@@ -21,6 +21,11 @@ export const questionView = (question = {}) => {
   questionText.innerText = question.text;
   quizContainer.appendChild(questionText);
 
+  const realScoreText = document.createElement('div');
+  realScoreText.setAttribute('id', 'realScoreText');
+  realScoreText.classList.add('question', 'm-5');
+  quizContainer.appendChild(realScoreText);
+
   const answerButtons = document.createElement('div');
   answerButtons.classList.add('answerButtons', 'd-grid', 'gap-2', 'mx-5');
 

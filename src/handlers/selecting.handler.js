@@ -1,4 +1,5 @@
 import { quizData } from '../data.js';
+import { updateRealScore } from '../handlers/realScore.handler.js';
 
 export const selectingHandler = (event) => {
 
@@ -24,6 +25,9 @@ export const selectingHandler = (event) => {
     quizData.quiz.correct++;
   }
   quizData.quiz.answered++;
+  updateRealScore();
+  
 };
 
-//selamualeykum
+
+

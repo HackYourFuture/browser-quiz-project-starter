@@ -1,6 +1,7 @@
 import { quizData } from '../data.js';
 import { updateQuiz } from './quiz.handler.js';
 import { scoreView } from '../views/score.view.js';
+import { updateRealScore } from '../handlers/realScore.handler.js';
 
 export const footerHandler = (event) => {
   //debugger;
@@ -34,4 +35,5 @@ export const footerHandler = (event) => {
       );
     }
   }
+  updateRealScore();
 };
