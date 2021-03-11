@@ -26,3 +26,4 @@ export const selectingHandler = (event) => {
   quizData.quiz.answered++;
 };
 
+//selamualeykum
