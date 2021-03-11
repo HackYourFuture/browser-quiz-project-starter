@@ -3,7 +3,7 @@ import { quizData } from '../data.js';
 import { createFooter } from '../views/footer.view.js';
 import { addFooterListener } from '../listeners/footer.listener.js';
 import { addSelectingListener } from '../listeners/selecting.listener.js';
-
+import { addMenuBarListener } from '../listeners/menubar.listener.js';
 
 export const quizHandler = (event) => {
   const startContainer = document.querySelector('.startContainer');
@@ -19,4 +19,5 @@ export const updateQuiz = (quiz, currentQuestion) => {
 
   addFooterListener();
   addSelectingListener();
+  addMenuBarListener();
 };

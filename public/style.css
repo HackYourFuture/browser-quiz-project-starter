@@ -20,6 +20,7 @@ body {
   overflow: hidden;
   margin: 0;
   font-size: 1.5rem;
+  cursor: default;
 }
 h1 {
   font-size: 2.5em;
@@ -27,6 +28,11 @@ h1 {
 
 h3 {
   font-size: 1.5em;
+}
+
+h4 {
+  font-size: 1.4em;
+  color: #fff;
 }
 
 .startContainer {
@@ -42,6 +48,7 @@ h3 {
 }
 
 .quizContainer {
+  position: relative;
   display: none;
   background-color: #2c2c38;
   width: 80%;
@@ -76,6 +83,9 @@ h3 {
     width: 70%;
     height: 60%;
   }
+  .overlay {
+    width: 70%;
+  }
 }
 
 @media only screen and (min-width: 768px) {
@@ -83,6 +93,9 @@ h3 {
   .quizContainer {
     width: 60%;
     height: 60%;
+  }
+  .overlay {
+    width: 60%;
   }
 }
 
@@ -92,6 +105,9 @@ h3 {
     width: 60%;
     height: 60%;
   }
+  .overlay {
+    width: 60%;
+  }
 }
 
 @media screen and (min-width: 1200px) {
@@ -99,6 +115,9 @@ h3 {
   .quizContainer {
     width: 40%;
     height: 60%;
+  }
+  .overlay {
+    width: 40%;
   }
 }
 
@@ -226,8 +245,64 @@ h3 {
   padding-bottom: 30px;
 }
 
-#realScoreText {
+.realScoreText {
   color: #6b39bd;
   font-size: 1.5rem;
   text-align: center;
+}
+
+.overlay {
+  background-color: rgba(44, 44, 56, 0.95);
+  position: absolute;
+  width: 80%;
+  height: 100%;
+  width: 0;
+  z-index: 1000;
+  left: 0;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 1.1em;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover,
+.overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 0px;
+  right: 15px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.menuBars {
+  position: absolute;
+  top: 22px;
+  left: 22px;
+  cursor: pointer;
+}
+
+.menuBars a {
+  color: #fff;
+}
+.menuBars a:hover {
+  color: #2c2c38;
 }

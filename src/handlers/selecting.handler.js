@@ -2,7 +2,6 @@ import { quizData } from '../data.js';
 import { updateRealScore } from '../handlers/realScore.handler.js';
 
 export const selectingHandler = (event) => {
-
   const answerButtons = document.querySelectorAll('.answerButtons button');
 
   for (let i = 0; i < answerButtons.length; i++) {
@@ -23,11 +22,9 @@ export const selectingHandler = (event) => {
     event.target.getAttribute('data-correct')
   ) {
     quizData.quiz.correct++;
+  } else {
+    quizData.quiz.wrong++;
   }
   quizData.quiz.answered++;
   updateRealScore();
-  
 };
-
-
-

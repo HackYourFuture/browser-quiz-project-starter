@@ -40,9 +40,9 @@ export const quizData = {
     //  you can calculate this value by iterating through the questions
     //  is selected === correct?
     correct: 0,
-
-  //
-  currentQuestion: 0,
+    wrong: 0,
+    //
+    currentQuestion: 0,
   },
   // the questions in the quiz
   questions: [
@@ -101,7 +101,16 @@ export const quizData = {
       },
       correct: 'c',
       selected: null,
-      links: [],
+      links: [
+        {
+          text: 'Link about this question 1',
+          href: 'https://',
+        },
+        {
+          text: 'Link about this question 2',
+          href: 'https://',
+        },
+      ],
     },
     {
       title: 'this Keyword',
@@ -114,7 +123,16 @@ export const quizData = {
       },
       correct: 'a',
       selected: null,
-      links: [],
+      links: [
+        {
+          text: 'Link about this question 1',
+          href: 'https://',
+        },
+        {
+          text: 'Link about this question 2',
+          href: 'https://',
+        },
+      ],
     },
     {
       title: 'JavaScript Data Types',
@@ -127,7 +145,16 @@ export const quizData = {
       },
       correct: 'd',
       selected: null,
-      links: [],
+      links: [
+        {
+          text: 'Link about this question 1',
+          href: 'https://',
+        },
+        {
+          text: 'Link about this question 2',
+          href: 'https://',
+        },
+      ],
     },
     {
       title: 'isNaN Function',
@@ -140,7 +167,16 @@ export const quizData = {
       },
       correct: 'a',
       selected: null,
-      links: [],
+      links: [
+        {
+          text: 'Link about this question 1',
+          href: 'https://',
+        },
+        {
+          text: 'Link about this question 2',
+          href: 'https://',
+        },
+      ],
     },
     {
       title: 'Automatic type conversion',
@@ -153,7 +189,16 @@ export const quizData = {
       },
       correct: 'c',
       selected: null,
-      links: [],
+      links: [
+        {
+          text: 'Link about this question 1',
+          href: 'https://',
+        },
+        {
+          text: 'Link about this question 2',
+          href: 'https://',
+        },
+      ],
     },
     {
       title: 'undefined',
@@ -166,7 +211,38 @@ export const quizData = {
       },
       correct: 'd',
       selected: null,
-      links: [],
+      links: [
+        {
+          text: 'Link about this question 1',
+          href: 'https://',
+        },
+        {
+          text: 'Link about this question 2',
+          href: 'https://',
+        },
+      ],
+    },
+    {
+      title: 'Compare operator',
+      text: ' What is === operator in JavaScript ?',
+      answers: {
+        a: 'Compare types',
+        b: 'Compare values',
+        c: 'Compare functions',
+        d: 'Compare values and Types',
+      },
+      correct: 'd',
+      selected: null,
+      links: [
+        {
+          text: 'Link about this question 1',
+          href: 'https://',
+        },
+        {
+          text: 'Link about this question 2',
+          href: 'https://',
+        },
+      ],
     },
     // Add more questions here
   ],
