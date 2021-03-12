@@ -17,7 +17,7 @@ export const scoreView = (quiz) => {
     ' questions';
   quizContainer.appendChild(summaryText);
 
-  const passScore = successPercentage(quiz);
+  const passScore = successPercentage();
   const icon = document.createElement('i');
 
   if (quiz.correct > passScore) {
