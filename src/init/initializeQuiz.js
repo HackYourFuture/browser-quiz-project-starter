@@ -1,6 +1,6 @@
 'use strict';
 
-import { QUESTION_CONTAINER_ID, QUIZ_CONTAINER_ID } from "../constants.js";
+import { QUESTION_CONTAINER_ID, QUIZ_CONTAINER_ID, USER_INTERFACE_ID } from "../constants.js";
 import showCurrentQuestion from "../handlers/showCurrentQuestion.js";
 import createDOMElement from "../utils/createDOMElement.js";
 import getDOMElement from "../utils/getDOMElement.js";
@@ -17,7 +17,7 @@ const initializeQuiz = () => {
 }
 
 const setupQuizHTML = () => {
-    const userInterfaceContainer = getDOMElement('user-interface');
+    const userInterfaceContainer = getDOMElement(USER_INTERFACE_ID);
     const quizContainer = createDOMElement('div', { id: QUIZ_CONTAINER_ID });
     const questionContainer = createDOMElement('div', { id: QUESTION_CONTAINER_ID });
 

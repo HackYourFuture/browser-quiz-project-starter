@@ -2,7 +2,7 @@
 
 import createDOMElement from "../utils/createDOMElement.js";
 
-const createQuestionElement = (question) => {
+export const createQuestionElement = (question) => {
     const container = createDOMElement('div');
     const title = createDOMElement('h1');
     title.innerText = question.text;
@@ -20,7 +20,7 @@ const createQuestionElement = (question) => {
     return container;
 }
 
-const createAnswerElement = (answerText) => {
+export const createAnswerElement = (answerText) => {
     const answerElement = createDOMElement('li');
     answerElement.innerText = answerText;
 
