@@ -28,6 +28,7 @@ const setupQuizHTML = () => {
 
     console.log(quizContainer);
     userInterfaceContainer.appendChild(quizContainer);
+    
 }
 
 window.addEventListener('load', initializeQuiz);
