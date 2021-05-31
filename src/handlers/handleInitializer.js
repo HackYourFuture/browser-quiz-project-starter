@@ -4,18 +4,15 @@ import setupQuizHTML from '../views/setupQuizHTML.js';
 import getDOMElement from '../utils/getDOMElement.js';
 import showCurrentQuestion from './showCurrentQuestion.js';
 import showScore from './showScore.js';
-
-
+import clearDOMElement from '../utils/clearDOMElement.js';
 
 const handleInitializer = () => {
+  const userInterfaceContainer = getDOMElement('user-interface');
+  clearDOMElement(userInterfaceContainer);
+  userInterfaceContainer.appendChild(setupQuizHTML());
 
-const userInterfaceContainer = getDOMElement('user-interface');
-
-userInterfaceContainer.appendChild(setupQuizHTML());
-
-showCurrentQuestion();
-showScore();
-
-}
+  showCurrentQuestion();
+  showScore();
+};
 
 export default handleInitializer;
