@@ -5,8 +5,8 @@
     - As a user I can see a question with possible answers
     - and I see a button to take me to the next question
     - When I click on the button it takes me to the next question
-- [ ] User can select an answer for each question
-- [ ] User knows which questions they got correct/incorrect
+- [x] User can select an answer for each question
+- [x] User knows which questions they got correct/incorrect
   - Todo:
     - add handler to select answer
   - Acceptance criteria
