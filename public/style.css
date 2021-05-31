@@ -21,3 +21,7 @@
 .correct {
   background-color: green;
 }
+
+.hide {
+  display: none;
+}

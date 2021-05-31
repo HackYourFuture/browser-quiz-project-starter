@@ -33,7 +33,6 @@ export const createQuestionElement = (question) => {
           }
         });
       } else {
-        e != e.target; // we will discuss this line later with Arsalan;
         title.innerText = 'Click next Button';
         title.style.color = 'red';
         title.style.width = '800px';
