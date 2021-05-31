@@ -11,3 +11,23 @@
   max-height: 80vh;
   overflow: auto;
 }
+
+li {
+  cursor: pointer;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+}
+li:hover{
+  background-color: #ccc;
+}
+
+.selected{
+  background-color: orange;
+}
+.wrong{
+  background-color: red;
+}
+.correct{
+  background-color: green;
+}
