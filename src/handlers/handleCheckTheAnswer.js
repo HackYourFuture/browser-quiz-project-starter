@@ -2,6 +2,7 @@
 
 import { quizData } from "../data.js";
 import { addClass, removeClass } from "../utils/manageClass.js";
+import showScore from "./showScore.js";
 
 const handleCheckTheAnswer = (buttonElement) => {
     buttonElement.innerText = "Next Question";
@@ -12,7 +13,8 @@ const handleCheckTheAnswer = (buttonElement) => {
     removeClass(selectedElement, 'selected');
     if(selectedAnswer === correctAnswer){
         addClass(selectedElement, 'correct');
-        
+        quizData.correctAnswerScore++;
+        showScore();
     }else{
        
         addClass(selectedElement, 'wrong')
@@ -20,6 +22,10 @@ const handleCheckTheAnswer = (buttonElement) => {
         
         addClass(correctAnswerElement, 'correct')
     }
+
+    
 }
 
+
 export default handleCheckTheAnswer;
+
