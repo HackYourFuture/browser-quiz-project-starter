@@ -1,8 +1,11 @@
 'use strict';
 
+import { quizData } from '../data.js';
 import createDOMElement from '../utils/createDOMElement.js';
 
 export const numberOfCorrectAnswers = [];
+export const numberOfWrongAnswers = [];
+export const score = createDOMElement('h3', { className: 'user-score' });
 export const createQuestionElement = (question) => {
   const container = createDOMElement('div');
   const title = createDOMElement('h1');
@@ -15,7 +18,7 @@ export const createQuestionElement = (question) => {
 
     answer.addEventListener('click', (e) => {
       clickCounter++;
-
+      // question.selected = e.target.dataset.answerItemKey; discuss this line with the group
       if (
         e.target.dataset.answerItemKey == question.correct &&
         clickCounter == 1
@@ -26,6 +29,7 @@ export const createQuestionElement = (question) => {
         e.target.dataset.answerItemKey != question.correct &&
         clickCounter == 1
       ) {
+        numberOfWrongAnswers.push(question);
         e.target.parentElement.childNodes.forEach((item) => {
           if (item.dataset.answerItemKey == question.correct) {
             item.classList.add('correct');
@@ -38,13 +42,14 @@ export const createQuestionElement = (question) => {
         title.style.color = 'red';
         title.style.width = '800px';
       }
+      score.innerText = `${numberOfCorrectAnswers.length} correct of ${quizData.questions.length}`;
+      console.log(numberOfWrongAnswers);
+      console.log(quizData, 'quizData');
     });
 
     answerContainer.appendChild(answer);
   }
-  const score = createDOMElement('h3', { className: 'user-score' });
   container.appendChild(score);
-  score.innerText = `You have ${numberOfCorrectAnswers.length} correct answers`;
   container.appendChild(answerContainer);
 
   return container;
