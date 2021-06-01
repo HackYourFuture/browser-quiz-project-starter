@@ -2,6 +2,7 @@
 
 import createDOMElement from '../utils/createDOMElement.js';
 
+export const numberOfCorrectAnswers = [];
 export const createQuestionElement = (question) => {
   const container = createDOMElement('div');
   const title = createDOMElement('h1');
@@ -13,7 +14,6 @@ export const createQuestionElement = (question) => {
     const answer = createAnswerElement(answerKey, question.answers[answerKey]);
 
     answer.addEventListener('click', (e) => {
-      console.log(e);
       clickCounter++;
 
       if (
@@ -21,6 +21,7 @@ export const createQuestionElement = (question) => {
         clickCounter == 1
       ) {
         e.target.classList.add('correct');
+        numberOfCorrectAnswers.push(question);
       } else if (
         e.target.dataset.answerItemKey != question.correct &&
         clickCounter == 1
@@ -41,6 +42,9 @@ export const createQuestionElement = (question) => {
 
     answerContainer.appendChild(answer);
   }
+  const score = createDOMElement('h3', { className: 'user-score' });
+  container.appendChild(score);
+  score.innerText = `You have ${numberOfCorrectAnswers.length} correct answers`;
   container.appendChild(answerContainer);
 
   return container;

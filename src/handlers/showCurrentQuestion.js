@@ -6,12 +6,12 @@ import clearDOMElement from '../utils/clearDOMElement.js';
 import getDOMElement from '../utils/getDOMElement.js';
 import { quizData } from '../data.js';
 
-const showCurrentQuestion = () => {
+export let questionContainer;
+export const showCurrentQuestion = () => {
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
-
+  questionContainer = getDOMElement(QUESTION_CONTAINER_ID);
   const questionDOM = createQuestionElement(currentQuestion);
 
-  const questionContainer = getDOMElement(QUESTION_CONTAINER_ID);
   clearDOMElement(questionContainer);
   questionContainer.appendChild(questionDOM);
 };
