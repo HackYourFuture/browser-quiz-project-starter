@@ -4,7 +4,7 @@
  * This function removes all the html inside the given element
  */
 const clearDOMElement = (DOMElement) => {
-    DOMElement.innerHTML = '';
-}
+  DOMElement.innerHTML = '';
+};
 
 export default clearDOMElement;

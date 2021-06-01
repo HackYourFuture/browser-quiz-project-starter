@@ -4,7 +4,8 @@
   "scripts": {
     "document": "node ./lib/document.js",
     "test": "node ./lib/test.js",
-    "test-ci": "node ./lib/test.js CI"
+    "test-ci": "node ./lib/test.js CI",
+    "format": "npx prettier --config prettier.config.js --write 'src/**/*.js'"
   },
   "repository": {
     "type": "git",

@@ -1,9 +1,9 @@
 'use strict';
 
-import handleNextQuestion from "../handlers/handleNextQuestion.js";
+import handleNextQuestion from '../handlers/handleNextQuestion.js';
 
 const nextQuestion = () => {
-    handleNextQuestion();
-}
+  handleNextQuestion();
+};
 
 export default nextQuestion;
