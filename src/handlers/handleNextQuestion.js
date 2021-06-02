@@ -5,7 +5,7 @@ import { quizData } from '../data.js';
 import createDOMElement from '../utils/createDOMElement.js';
 import { questionContainer } from '../handlers/showCurrentQuestion.js';
 import getDOMElement from '../utils/getDOMElement.js';
-
+import { USER_INTERFACE_ID } from '../constants.js';
 let progressCounter = 1;
 export const progressBar = document.createElement('div');
 progressBar.classList.add('hide');
@@ -24,14 +24,15 @@ const handleNextQuestion = () => {
 
     // result btn function
     resultBtn.addEventListener('click', () => {
-      questionContainer.parentElement.childNodes.forEach((item) =>
-        item.classList.add('hide')
-      );
-
+      //   questionContainer.parentElement.childNodes.forEach((item) =>
+      //     item.classList.add('hide')
+      //   );
+      questionContainer.parentElement.classList.add('hide');
       const resultContainer = createDOMElement('div', {
         className: 'result-container',
       });
       const score = getDOMElement('user-score');
+
       resultContainer.appendChild(score);
       // loop through the correct questions answered array to initialize a new div with h2 and h4
       quizData.correctAnswers.forEach((item, i) => {
@@ -51,7 +52,8 @@ const handleNextQuestion = () => {
         }
         resultContainer.appendChild(newQuestionContainer);
       });
-      questionContainer.parentElement.appendChild(resultContainer);
+      const userInterfaceContainer = getDOMElement(USER_INTERFACE_ID);
+      userInterfaceContainer.appendChild(resultContainer);
     });
   }
   if (quizData.currentQuestionIndex < quizData.questions.length - 1) {
