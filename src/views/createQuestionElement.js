@@ -2,8 +2,8 @@
 
 import { quizData } from '../data.js';
 import createDOMElement from '../utils/createDOMElement.js';
+import getDOMElement from '../utils/getDOMElement.js';
 
-export const score = createDOMElement('h3', { className: 'user-score' });
 export const createQuestionElement = (question) => {
   const container = createDOMElement('div');
   const title = createDOMElement('h1');
@@ -11,6 +11,8 @@ export const createQuestionElement = (question) => {
   container.appendChild(title);
   const answerContainer = createDOMElement('ol');
   let clickCounter = 0;
+  const score = createDOMElement('h3', { id: 'user-score' });
+  score.innerText = `${quizData.correctAnswers.length} correct of ${quizData.questions.length}`;
   for (const answerKey in question.answers) {
     const answer = createAnswerElement(answerKey, question.answers[answerKey]);
 
@@ -42,15 +44,12 @@ export const createQuestionElement = (question) => {
       }
       score.innerText = `${quizData.correctAnswers.length} correct of ${quizData.questions.length}`;
     });
-
     answerContainer.appendChild(answer);
+    container.appendChild(score);
   }
-  container.appendChild(score);
   container.appendChild(answerContainer);
-
   return container;
 };
-
 export const createAnswerElement = (answerKey, answerText) => {
   const answerElement = createDOMElement('li', { className: 'btn' });
   answerElement.innerText = answerText;
