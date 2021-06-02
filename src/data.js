@@ -234,5 +234,110 @@ export const quizData = {
         },
       ],
     },
+    {
+      text: 'How do you declare a JavaScript variable?',
+      answers: {
+        a: 'v carName',
+        b: 'var carName',
+        c: 'variable carName',
+        d: 'variable CARNAME',
+      },
+      correct: 'b',
+      selected: null,
+      links: [
+        {
+          text: 'w3schools',
+          href: 'https://www.w3schools.com/js/js_variables.asp',
+        },
+        {
+          text: 'MDN',
+          href: 'https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Variables',
+        },
+      ],
+    },
+    {
+      text: 'What will the following code return: Boolean(10 > 9)',
+      answers: {
+        a: 'false',
+        b: 'NaN',
+        c: 'true',
+        d: 'null',
+      },
+      correct: 'c',
+      selected: null,
+      links: [
+        {
+          text: 'MDN',
+          href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean',
+        },
+        {
+          text: 'w3schools',
+          href: 'https://www.w3schools.com/js/js_datatypes.asp',
+        },
+      ],
+    },
+    {
+      text: 'Which event occurs when the user clicks on an HTML element?',
+      answers: {
+        a: 'onmouseclick',
+        b: 'mouseclickon',
+        c: 'onclick',
+        d: 'onchange',
+      },
+      correct: 'c',
+      selected: null,
+      links: [
+        {
+          text: 'MDN',
+          href: 'https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events',
+        },
+        {
+          text: 'w3schools',
+          href: 'https://www.w3schools.com/js/js_events.asp',
+        },
+      ],
+    },
+    {
+      text: 'How do you find the number with the highest value of x and y?',
+      answers: {
+        a: 'Math.ceil(x, y)',
+        b: 'top(x, y)',
+        c: 'ceil(x, y)',
+        d: 'Math.max(x, y)',
+      },
+      correct: 'd',
+      selected: null,
+      links: [
+        {
+          text: 'MDN',
+          href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max',
+        },
+        {
+          text: 'w3schools',
+          href: 'https://www.w3schools.com/js/js_math.asp',
+        },
+      ],
+    },
+    {
+      text: 'How do you round the number 7.25, to the nearest integer?',
+      answers: {
+        a: 'Math.rnd(7.25)',
+        b: 'Math.round(7.25)',
+        c: 'rnd(7.25)',
+        d: 'round(7.25)',
+      },
+      correct: 'b',
+      selected: null,
+      links: [
+        {
+          text: 'MDN',
+          href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/round',
+        },
+        {
+          text: 'w3schools',
+          href: 'https://www.w3schools.com/js/js_math.asp',
+        },
+      ],
+    },
   ],
 };
