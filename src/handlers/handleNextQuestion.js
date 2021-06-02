@@ -10,11 +10,6 @@ const handleNextQuestion = (buttonElement) => {
   buttonElement.dataset.status = 'checkAnswer';
 
   
-  let questionIndex;
-  
-  
- 
-  
   // console.log(quizData.selectedQuestionsIndex.length);
   if (quizData.selectedQuestionsIndex.length < quizData.numberOfQuestions) {
     quizData.currentQuestionIndex = generateQuestionIndex();
