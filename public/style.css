@@ -5,7 +5,18 @@
   transform: translate(-50%, -50%);
   text-align: center;
 }
+#quiz-container {
+  border: 2px solid green;
+  padding: 10px;
+  /* display: flex; */
+}
 
+ol {
+  list-style-type: none;
+}
+ol li {
+  margin: 10px;
+}
 .scrollable {
   height: auto;
   max-height: 80vh;

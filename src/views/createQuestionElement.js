@@ -1,6 +1,8 @@
 'use strict';
 
+import { quizData } from '../data.js';
 import createDOMElement from '../utils/createDOMElement.js';
+import getDOMElement from '../utils/getDOMElement.js';
 
 export const createQuestionElement = (question) => {
   const container = createDOMElement('div');
@@ -9,22 +11,25 @@ export const createQuestionElement = (question) => {
   container.appendChild(title);
   const answerContainer = createDOMElement('ol');
   let clickCounter = 0;
+  const score = createDOMElement('h3', { id: 'user-score' });
+  score.innerText = `${quizData.correctAnswers.length} correct of ${quizData.questions.length}`;
   for (const answerKey in question.answers) {
     const answer = createAnswerElement(answerKey, question.answers[answerKey]);
 
     answer.addEventListener('click', (e) => {
-      console.log(e);
       clickCounter++;
-
+      // question.selected = e.target.dataset.answerItemKey; discuss this line with the group
       if (
         e.target.dataset.answerItemKey == question.correct &&
         clickCounter == 1
       ) {
         e.target.classList.add('correct');
+        quizData.correctAnswers.push(question);
       } else if (
         e.target.dataset.answerItemKey != question.correct &&
         clickCounter == 1
       ) {
+        quizData.wrongAnswers.push(question);
         e.target.parentElement.childNodes.forEach((item) => {
           if (item.dataset.answerItemKey == question.correct) {
             item.classList.add('correct');
@@ -37,15 +42,14 @@ export const createQuestionElement = (question) => {
         title.style.color = 'red';
         title.style.width = '800px';
       }
+      score.innerText = `${quizData.correctAnswers.length} correct of ${quizData.questions.length}`;
     });
-
     answerContainer.appendChild(answer);
+    container.appendChild(score);
   }
   container.appendChild(answerContainer);
-
   return container;
 };
-
 export const createAnswerElement = (answerKey, answerText) => {
   const answerElement = createDOMElement('li', { className: 'btn' });
   answerElement.innerText = answerText;
