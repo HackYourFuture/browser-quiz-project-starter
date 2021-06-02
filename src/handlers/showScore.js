@@ -7,7 +7,7 @@ import getDOMElement from "../utils/getDOMElement.js";
 
 const showScore = () => {
     const scoreContentElement  = getDOMElement(SCORE_ID);
-    scoreContentElement.innerText = `Your Score : ${quizData.correctAnswerScore} / ${quizData.questions.length}`;
+    scoreContentElement.innerText = `Your Score : ${quizData.correctAnswerScore} / ${quizData.numberOfQuestions}`;
 
 };
 

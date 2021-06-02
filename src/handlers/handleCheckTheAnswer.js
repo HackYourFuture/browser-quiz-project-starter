@@ -7,7 +7,7 @@ import showScore from './showScore.js';
 
 const handleCheckTheAnswer = (buttonElement) => {
   handleTimer(false);
-  if (quizData.currentQuestionIndex < quizData.questions.length - 1) {
+  if (quizData.selectedQuestionsIndex.length < quizData.numberOfQuestions) {
     buttonElement.innerText = 'Next Question';
     buttonElement.dataset.status = 'nextQuestion';
   } else {
