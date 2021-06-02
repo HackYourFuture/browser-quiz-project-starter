@@ -33,7 +33,6 @@ const setupQuizHTML = () => {
   const nextQuestionButton = createNextQuestionButtonElement();
   quizContainer.appendChild(nextQuestionButton);
 
-  console.log(quizContainer);
   userInterfaceContainer.appendChild(quizContainer);
 };
 

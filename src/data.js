@@ -13,6 +13,8 @@
 
 export const quizData = {
   currentQuestionIndex: 0,
+  correctAnswers: [],
+  wrongAnswers: [],
   // the questions in the quiz
   questions: [
     {
@@ -67,12 +69,8 @@ export const quizData = {
       selected: null,
       links: [
         {
-          text: 'javascript.info',
-          href: 'https://javascript.info/variables',
-        },
-        {
-          text: 'Tyler McGinnis',
-          href: 'https://ui.dev/var-let-const/',
+          text: 'W3Schools.info',
+          href: 'https://www.w3schools.com/js/js_whereto.asp',
         },
       ],
     },
@@ -88,12 +86,8 @@ export const quizData = {
       selected: null,
       links: [
         {
-          text: 'javascript.info',
-          href: 'https://javascript.info/variables',
-        },
-        {
-          text: 'Tyler McGinnis',
-          href: 'https://ui.dev/var-let-const/',
+          text: 'W3Schools.info',
+          href: 'https://www.w3schools.com/tags/att_script_src.asp',
         },
       ],
     },
@@ -109,12 +103,8 @@ export const quizData = {
       selected: null,
       links: [
         {
-          text: 'javascript.info',
-          href: 'https://javascript.info/variables',
-        },
-        {
-          text: 'Tyler McGinnis',
-          href: 'https://ui.dev/var-let-const/',
+          text: 'W3Schools',
+          href: 'https://www.w3schools.com/jsref/met_doc_write.asp',
         },
       ],
     },
@@ -129,13 +119,8 @@ export const quizData = {
       selected: null,
       links: [
         {
-          text: 'javascript.info',
-          href: 'https://javascript.info/types#type-typeof',
-        },
-        {
-          text: 'MDN',
-          href:
-            'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof',
+          text: 'W3Schools',
+          href: 'https://www.w3schools.com/js/js_functions.asp',
         },
       ],
     },
@@ -151,13 +136,8 @@ export const quizData = {
       selected: null,
       links: [
         {
-          text: 'javascript.info',
-          href: 'https://javascript.info/types#type-typeof',
-        },
-        {
-          text: 'MDN',
-          href:
-            'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof',
+          text: 'w3Shools',
+          href: 'https://www.w3schools.com/js/js_datatypes.asp',
         },
       ],
     },
@@ -173,13 +153,8 @@ export const quizData = {
       selected: null,
       links: [
         {
-          text: 'javascript.info',
-          href: 'https://javascript.info/types#type-typeof',
-        },
-        {
-          text: 'MDN',
-          href:
-            'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof',
+          text: 'w3Schools',
+          href: 'https://www.w3schools.com/js/js_if_else.asp',
         },
       ],
     },
@@ -194,13 +169,9 @@ export const quizData = {
       selected: null,
       links: [
         {
-          text: 'javascript.info',
-          href: 'https://javascript.info/types#type-typeof',
-        },
-        {
-          text: 'MDN',
+          text: 'w3School',
           href:
-            'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof',
+            'https://www.w3schools.com/jsref/jsref_while.asp#:~:text=First%2C%20we%20set%20a%20variable,incremented%20by%20one%20(i%2B%2B)',
         },
       ],
     },
@@ -215,13 +186,9 @@ export const quizData = {
       selected: null,
       links: [
         {
-          text: 'javascript.info',
-          href: 'https://javascript.info/types#type-typeof',
-        },
-        {
-          text: 'MDN',
+          text: 'w3Schools',
           href:
-            'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof',
+            'https://www.w3schools.com/js/js_comments.asp#:~:text=Multi%2Dline%20comments%20start%20with,will%20be%20ignored%20by%20JavaScript.',
         },
       ],
     },
