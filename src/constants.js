@@ -9,6 +9,6 @@
 */
 
 export const USER_INTERFACE_ID = 'user-interface';
-export const QUESTION_CONTAINER_ID = 'question-container';
 export const QUIZ_CONTAINER_ID = 'quiz-container';
+export const QUESTION_CONTAINER_ID = 'question-container';
 export const NEXT_QUESTION_BUTTON_ID = 'next-question-button';
