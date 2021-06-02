@@ -2,9 +2,11 @@
 
 import { quizData } from '../data.js';
 import { addClass, removeClass } from '../utils/manageClass.js';
+import handleTimer from './handleTimer.js';
 import showScore from './showScore.js';
 
 const handleCheckTheAnswer = (buttonElement) => {
+  handleTimer(false);
   if (quizData.currentQuestionIndex < quizData.questions.length - 1) {
     buttonElement.innerText = 'Next Question';
     buttonElement.dataset.status = 'nextQuestion';
