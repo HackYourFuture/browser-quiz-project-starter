@@ -2,6 +2,7 @@
 import showResults from './showResults.js';
 import showCurrentQuestion from './showCurrentQuestion.js';
 import { quizData } from '../data.js';
+import { addClass } from '../utils/manageClass.js';
 
 const handleNextQuestion = (buttonElement) => {
   buttonElement.innerText = 'Check The Answer';

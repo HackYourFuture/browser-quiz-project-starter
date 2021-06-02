@@ -2,6 +2,7 @@
 
 import createDOMElement from '../utils/createDOMElement.js';
 import selectAnswer from '../listeners/selectAnswer.js';
+import { addClass } from '../utils/manageClass.js';
 
 const createQuestionElement = (question) => {
   const container = createDOMElement('div');
@@ -10,7 +11,7 @@ const createQuestionElement = (question) => {
   container.appendChild(title);
 
   const answerContainer = createDOMElement('ol');
-
+  addClass(answerContainer, 'hover');
   for (const answerKey in question.answers) {
     const answer = createAnswerElement(answerKey, question.answers[answerKey]);
     answerContainer.appendChild(answer);

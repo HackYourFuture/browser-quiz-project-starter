@@ -12,8 +12,8 @@ const createResultsDOM = (data) => {
     const correctAnswer = createDOMElement('p');
     const questionNum = createDOMElement('h2');
     questionNum.innerText = `Question ${index + 1}: ${question.text}`;
-    userAnswer.innerText = `Your answer was (${question.selected}): ${
-      question.answers[question.selected]
+    userAnswer.innerText = `Your answer was (${question.selected ? question.selected : 'No Selection'}): ${
+      question.answers[question.selected] ? question.answers[question.selected] : 'No Selection'
     }`;
     correctAnswer.innerText = `The correct answer is (${question.correct}): ${
       question.answers[question.correct]
