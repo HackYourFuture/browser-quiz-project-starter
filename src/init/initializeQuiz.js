@@ -3,6 +3,7 @@
 import {
   QUESTION_CONTAINER_ID,
   QUIZ_CONTAINER_ID,
+  SCORE_CONTAINER_ID,
   USER_INTERFACE_ID,
 } from '../constants.js';
 import { showCurrentQuestion } from '../handlers/showCurrentQuestion.js';
@@ -11,8 +12,6 @@ import getDOMElement from '../utils/getDOMElement.js';
 import createNextQuestionButtonElement from '../views/createNextQuestionButtonElement.js';
 import { quizData } from '../data.js';
 import { progressBar } from '../handlers/handleNextQuestion.js';
-
-
 
 const initializeQuiz = () => {
   quizData.currentQuestionIndex = 0;
@@ -24,6 +23,7 @@ const initializeQuiz = () => {
 
 const setupQuizHTML = () => {
   const userInterfaceContainer = getDOMElement(USER_INTERFACE_ID);
+  const scoreContainer = createDOMElement('div', { id: SCORE_CONTAINER_ID });
   const quizContainer = createDOMElement('div', { id: QUIZ_CONTAINER_ID });
   const questionContainer = createDOMElement('div', {
     id: QUESTION_CONTAINER_ID,
@@ -35,6 +35,7 @@ const setupQuizHTML = () => {
   quizContainer.appendChild(nextQuestionButton);
 
   userInterfaceContainer.appendChild(quizContainer);
+  document.body.appendChild(scoreContainer);
 };
 
 const startGame = () => {
