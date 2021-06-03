@@ -14,7 +14,7 @@
 export const quizData = {
   currentQuestionIndex: 0,
   correctAnswerScore: 0,
-  numberOfQuestions: 5,
+  numberOfQuestions: 15,
   selectedQuestionsIndex: [],
   // the questions in the quiz
   questions: [

@@ -5,11 +5,11 @@ import getDOMElement from "../utils/getDOMElement.js";
 import handleCheckTheAnswer from "./handleCheckTheAnswer.js";
 
 let timerInterval = null;
-const handleTimer = (isSet) => {
+const handleTimer = (startTimer) => {
     
     
     clearInterval(timerInterval);
-    if(isSet){
+    if(startTimer === true){
         const timerContainer = getDOMElement(TIMER_ID);
         let counter = 15;
         timerContainer.innerText = `Time left: ${counter} seconds`;
