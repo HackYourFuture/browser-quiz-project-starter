@@ -10,11 +10,11 @@
   color: #abacad;
 }
 
-.scrollable {
+/* .scrollable {
   height: auto;
   max-height: 80vh;
   overflow: auto;
-}
+} */
 
 li {
   padding: 10px;
