@@ -6,6 +6,7 @@ import createDOMElement from '../utils/createDOMElement.js';
 import { questionContainer } from '../handlers/showCurrentQuestion.js';
 import getDOMElement from '../utils/getDOMElement.js';
 import { USER_INTERFACE_ID } from '../constants.js';
+import { createScoreElement } from '../views/createScoreElement.js';
 
 let progressCounter = 1;
 export const progressBar = document.createElement('div');
@@ -29,9 +30,8 @@ const handleNextQuestion = () => {
       const resultContainer = createDOMElement('div', {
         className: 'result-container',
       });
-      const score = getDOMElement('user-score');
+      createScoreElement(quizData);
 
-      document.body.appendChild(score);
       // loop through the correct questions answered array to initialize a new div with h2 and h4
       quizData.correctAnswers.forEach((item, i) => {
         const newQuestionContainer = createDOMElement('div');

@@ -2,6 +2,7 @@
 
 import { quizData } from '../data.js';
 import createDOMElement from '../utils/createDOMElement.js';
+import { createScoreElement } from './createScoreElement.js';
 
 export const createQuestionElement = (question) => {
   const container = createDOMElement('div');
@@ -15,7 +16,6 @@ export const createQuestionElement = (question) => {
     const answer = createAnswerElement(answerKey, question.answers[answerKey]);
 
     answer.addEventListener('click', (e) => {
-      const score = createDOMElement('h3', { id: 'user-score' });
       clickCounter++;
 
       if (
@@ -41,14 +41,8 @@ export const createQuestionElement = (question) => {
         title.style.color = 'red';
         title.style.width = '800px';
       }
-      score.innerText = `${quizData.correctAnswers.length} correct of ${quizData.questions.length}`;
-      const scores = document.querySelectorAll('#user-score');
-      scores.forEach((item, i, items) => {
-        if (i < items.length) {
-          item.remove();
-        }
-      });
-      document.body.appendChild(score);
+
+      createScoreElement(quizData);
     });
     answerContainer.appendChild(answer);
   }
