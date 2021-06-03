@@ -13,21 +13,23 @@
 }
 
 li {
-  cursor: pointer;
   padding: 10px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
 }
-li:hover{
-  background-color: #ccc;
+.hover li{
+  cursor: pointer;
+}
+.hover li:hover{
+  background-color: orange;
 }
 
 .selected{
   background-color: orange;
 }
 .wrong{
-  background-color: red;
+  background-color: red !important;
 }
 .correct{
-  background-color: green;
+  background-color: green !important;
 }

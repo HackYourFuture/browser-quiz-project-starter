@@ -4,16 +4,17 @@ import createDOMElement from '../utils/createDOMElement.js';
 const createResultsDOM = (data) => {
   const resultContainer = createDOMElement('div');
   const totalScoreElement = createDOMElement('p');
-  totalScoreElement.innerText = `Your score was ${data.correctAnswerScore} out of ${data.questions.length}`;
+  totalScoreElement.innerText = `Your score was ${data.correctAnswerScore} out of ${data.numberOfQuestions}`;
   resultContainer.appendChild(totalScoreElement);
-  data.questions.forEach((question, index) => {
+  data.selectedQuestionsIndex.forEach((questionIndex, index) => {
     const questionContainer = createDOMElement('div');
     const userAnswer = createDOMElement('p');
     const correctAnswer = createDOMElement('p');
     const questionNum = createDOMElement('h2');
+    const question = data.questions[questionIndex];
     questionNum.innerText = `Question ${index + 1}: ${question.text}`;
-    userAnswer.innerText = `Your answer was (${question.selected}): ${
-      question.answers[question.selected]
+    userAnswer.innerText = `Your answer was (${question.selected ? question.selected : 'No Selection'}): ${
+      question.answers[question.selected] ? question.answers[question.selected] : 'No Selection'
     }`;
     correctAnswer.innerText = `The correct answer is (${question.correct}): ${
       question.answers[question.correct]
