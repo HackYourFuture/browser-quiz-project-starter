@@ -16,23 +16,30 @@
 }
 
 li {
-  cursor: pointer;
   padding: 10px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
 }
-li:hover {
-  background-color: #ccc;
+
+.hover li{
+  cursor: pointer;
+}
+.hover li:hover{
+  background-color: orange;
+
 }
 
 .selected {
   background-color: orange;
 }
-.wrong {
+
+
+.wrong{
   background-color: red;
 }
-.correct {
+.correct{
   background-color: green;
+
 }
 
 /* Landing-page */
