@@ -141,3 +141,28 @@ li {
       0 -20px 10px 0 rgba(255, 255, 10, 0);
   }
 }
+
+/**************************** start questions section ******************************/
+
+.btn{
+  font-family: 'Monoton', cursive;
+  font-size: 20px;
+  cursor: pointer;
+}
+.btn:hover{
+  opacity: .7;
+  /* margin-bottom: -1px; */
+}
+.btn-check{
+  color: #e2e2e2;
+  background-color: rgba(219, 83, 59, 1);
+}
+.btn-next{
+  color: rgba(0, 0, 0, 1);
+  background: rgb(214, 214, 214);
+}
+.btn-result{
+  color: rgb(34, 148, 49);
+  background: rgb(214, 214, 214);
+}
+/**************************** end questions section ******************************/

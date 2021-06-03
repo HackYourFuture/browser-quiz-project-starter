@@ -3,12 +3,14 @@ import showResults from './showResults.js';
 import showCurrentQuestion from './showCurrentQuestion.js';
 import { quizData } from '../data.js';
 import handleTimer from './handleTimer.js';
+import { addClass, removeClass } from '../utils/manageClass.js';
 
 
 const handleNextQuestion = (buttonElement) => {
   buttonElement.innerText = 'Check The Answer';
   buttonElement.dataset.status = 'checkAnswer';
-
+  removeClass(buttonElement, 'btn-next')
+  addClass(buttonElement, 'btn-check')
   
   // console.log(quizData.selectedQuestionsIndex.length);
   if (quizData.selectedQuestionsIndex.length < quizData.numberOfQuestions) {

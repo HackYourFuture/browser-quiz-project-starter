@@ -11,7 +11,7 @@ const showCurrentQuestion = () => {
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
   // console.log(currentQuestion);
   // console.log(quizData.currentQuestionIndex);
-  const questionDOM = createQuestionElement(currentQuestion);
+  const questionDOM = createQuestionElement(currentQuestion, quizData.selectedQuestionsIndex.length);
 
   const questionContainer = getDOMElement(QUESTION_CONTAINER_ID);
   clearDOMElement(questionContainer);
