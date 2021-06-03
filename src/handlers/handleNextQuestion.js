@@ -11,6 +11,7 @@ import { createScoreElement } from '../views/createScoreElement.js';
 let progressCounter = 1;
 export const progressBar = document.createElement('div');
 progressBar.classList.add('hide');
+progressBar.className="progressBar";
 document.body.appendChild(progressBar);
 progressBar.innerText = `Your Current Question is ${progressCounter} out of ${quizData.questions.length}`;
 

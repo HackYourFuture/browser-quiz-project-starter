@@ -50,6 +50,7 @@ export const createQuestionElement = (question) => {
   container.appendChild(answerContainer);
   return container;
 };
+
 export const createAnswerElement = (answerKey, answerText) => {
   const answerElement = createDOMElement('li', { className: 'btn' });
   answerElement.innerText = answerText;
