@@ -2,7 +2,6 @@
 
 import setupLandingPAge from '../views/setupLandingPage.js';
 import getDOMElement from '../utils/getDOMElement.js';
-
 import clearDOMElement from '../utils/clearDOMElement.js';
 
 const initializeLandingPage = () => {

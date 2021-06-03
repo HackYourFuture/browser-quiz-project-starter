@@ -1,7 +1,6 @@
 'use strict';
 
 import { quizData } from '../data.js';
-import handleInitializer from '../handlers/handleInitializer.js';
 import initializeLandingPage from '../handlers/initializeLandingPage.js';
 
 const resetTheQuiz = () => {
