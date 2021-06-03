@@ -1,11 +1,9 @@
 'use strict';
 
-import handleInitializer from '../handlers/handleInitializer.js';
-
+import initializeLandingPage from '../handlers/initializeLandingPage.js';
 
 const initializeQuiz = () => {
-  handleInitializer();
+  initializeLandingPage();
 };
-  
 
 window.addEventListener('load', initializeQuiz);

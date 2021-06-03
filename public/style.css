@@ -10,11 +10,11 @@
   color: #abacad;
 }
 
-.scrollable {
+/* .scrollable {
   height: auto;
   max-height: 80vh;
   overflow: auto;
-}
+} */
 
 li {
   padding: 10px;
@@ -22,28 +22,25 @@ li {
   border: 1px solid #ccc;
 }
 
-.hover li{
+.hover li {
   cursor: pointer;
 }
-.hover li:hover{
+.hover li:hover {
   background-color: orange;
-
 }
 
 .selected {
   background-color: orange;
 }
 
-
-.wrong{
+.wrong {
   background-color: red;
 }
-.correct{
+.correct {
   background-color: green;
-
 }
 
-/* Landing-page */
+/********************* Start landing-page ***************************/
 
 .container {
   display: flex;
@@ -57,29 +54,15 @@ li {
 .rocket-img {
   max-width: 400px;
   animation: moveInBottom 2s ease-out 0.5s;
-}
-
-@keyframes moveInBottom {
-  0% {
-    opacity: 0;
-    transform: translateY(5rem);
-  }
-  40% {
-    opacity: 0.3;
-  }
-  70% {
-    opacity: 0.7;
-  }
-  100% {
-    opacity: 1;
-    transform: translate(0);
-  }
+  animation-fill-mode: both;
 }
 
 .content-container {
   border-top: 3px solid rgba(219, 83, 59, 1);
   display: flex;
   flex-direction: column;
+  animation: moveInTop 1s ease-out 0.5s;
+  animation-fill-mode: both;
 }
 
 .content-container h1 {
@@ -95,6 +78,8 @@ li {
   display: flex;
   align-self: center;
   justify-content: center;
+  animation: moveInTop 1.3s ease-out 1s;
+  animation-fill-mode: both;
 }
 
 /* Start-button */
@@ -115,6 +100,44 @@ li {
   box-shadow: 0 0 20px 10px rgba(230, 30, 10, 0.6);
   animation: burn 1000ms ease-out forwards;
   cursor: pointer;
+}
+
+@keyframes moveInBottom {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(5rem);
+  }
+  40% {
+    opacity: 0.3;
+  }
+  70% {
+    opacity: 0.7;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInTop {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-2rem);
+  }
+  40% {
+    opacity: 0.1;
+  }
+  70% {
+    opacity: 0.4;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(0);
+  }
 }
 
 @keyframes flare {
@@ -141,27 +164,28 @@ li {
       0 -20px 10px 0 rgba(255, 255, 10, 0);
   }
 }
+/*************************** End landing page *************************************/
 
 /**************************** start questions section ******************************/
 
-.btn{
+.btn {
   font-family: 'Monoton', cursive;
   font-size: 20px;
   cursor: pointer;
 }
-.btn:hover{
-  opacity: .7;
+.btn:hover {
+  opacity: 0.7;
   /* margin-bottom: -1px; */
 }
-.btn-check{
+.btn-check {
   color: #e2e2e2;
   background-color: rgba(219, 83, 59, 1);
 }
-.btn-next{
+.btn-next {
   color: rgba(0, 0, 0, 1);
   background: rgb(214, 214, 214);
 }
-.btn-result{
+.btn-result {
   color: rgb(34, 148, 49);
   background: rgb(214, 214, 214);
 }
