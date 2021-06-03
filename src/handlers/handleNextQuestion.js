@@ -4,7 +4,7 @@ import showCurrentQuestion from './showCurrentQuestion.js';
 import { quizData } from '../data.js';
 import handleTimer from './handleTimer.js';
 
-let counter = 0;
+
 const handleNextQuestion = (buttonElement) => {
   buttonElement.innerText = 'Check The Answer';
   buttonElement.dataset.status = 'checkAnswer';
@@ -19,15 +19,16 @@ const handleNextQuestion = (buttonElement) => {
   } else {
     showResults();
   }
-  counter++;
+  
   console.log(quizData.selectedQuestionsIndex);
 
 };
 
 function generateQuestionIndex(){
-  const index = Math.floor(Math.random() * (quizData.questions.length - 1));
+  const index = Math.floor(Math.random() * quizData.questions.length);
+  // console.log(index);
   if( quizData.selectedQuestionsIndex.includes(index) ){
-    console.log(index);
+    // console.log(index);
     return generateQuestionIndex();
   }
     return index;
