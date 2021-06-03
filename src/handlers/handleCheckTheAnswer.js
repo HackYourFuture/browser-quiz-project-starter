@@ -10,9 +10,13 @@ const handleCheckTheAnswer = (buttonElement) => {
   if (quizData.selectedQuestionsIndex.length < quizData.numberOfQuestions) {
     buttonElement.innerText = 'Next Question';
     buttonElement.dataset.status = 'nextQuestion';
+    removeClass(buttonElement, '.btn-check')
+    addClass(buttonElement, 'btn-next')
   } else {
     buttonElement.innerText = 'Show results';
     buttonElement.dataset.status = 'showResults';
+    removeClass(buttonElement, '.btn-check')
+    addClass(buttonElement, 'btn-result')
   }
 
   const correctAnswer =
