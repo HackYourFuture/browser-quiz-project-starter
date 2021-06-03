@@ -18,5 +18,8 @@
   "homepage": "https://github.com/HackYourFuture/browser-quiz-project-starter",
   "devDependencies": {
     "prettier": "^2.2.1"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1"
   }
 }
