@@ -2,13 +2,14 @@
   "name": "js-quiz-starter",
   "version": "1.0.0",
   "scripts": {
-    "document": "node ./lib/document.js",
-    "test": "node ./lib/test.js",
-    "test-ci": "node ./lib/test.js CI"
+    "prettify": "prettier -w src/**/*.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/HackYourFuture/browser-quiz-project-starter.git"
+  },
+  "engines": {
+    "node": ">= 14.17.3"
   },
   "author": "",
   "license": "MIT",
