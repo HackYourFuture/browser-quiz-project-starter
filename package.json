@@ -2,9 +2,7 @@
   "name": "js-quiz-starter",
   "version": "1.0.0",
   "scripts": {
-    "document": "node ./lib/document.js",
-    "test": "node ./lib/test.js",
-    "test-ci": "node ./lib/test.js CI"
+    "prettify": "prettier -w src/**/*.js"
   },
   "repository": {
     "type": "git",

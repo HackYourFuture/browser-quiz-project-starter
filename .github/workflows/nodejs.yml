@@ -1,7 +1,10 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: merge-changes
+name: prepare-pull-request
+
+env:
+  NODE_VERSION: 14.x
 
 on:
   pull_request:
@@ -11,16 +14,12 @@ jobs:
   document-and-test:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [14.x]
-
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v1
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: ${{ env.NODE_VERSION }}
 
       - run: npm install
       - uses: stefanzweifel/git-auto-commit-action@v4.7.2
@@ -28,16 +27,8 @@ jobs:
           commit_message: installing
           branch: ${{ github.head_ref }}
 
-      - run: npm run document
+      - run: npm run prettify
       - uses: stefanzweifel/git-auto-commit-action@v4.7.2
         with:
-          commit_message: documenting
-          branch: ${{ github.head_ref }}
-
-      - run: npm run test-ci
-        env:
-          CI: true
-      - uses: stefanzweifel/git-auto-commit-action@v4.7.2
-        with:
-          commit_message: testing
+          commit_message: ":nail_care: prettify"
           branch: ${{ github.head_ref }}
