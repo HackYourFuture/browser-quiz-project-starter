@@ -11,7 +11,7 @@ on:
     branches: [master, main]
 
 jobs:
-  document-and-test:
+  install-and-prettify:
     runs-on: ubuntu-latest
 
     steps:
