@@ -8,6 +8,7 @@ import { quizData } from '../data.js';
 
 const initializeQuiz = () => {
   quizData.currentQuestionIndex = 0;
+  setupQuizHTML();
 
   showCurrentQuestion();
 };
