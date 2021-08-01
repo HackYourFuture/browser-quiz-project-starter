@@ -7,6 +7,8 @@ import { createNextQuestionButtonElement } from '../views/questionViews.js';
 import { quizData } from '../data.js';
 
 const initializeQuiz = () => {
+  setupQuizHTML();
+
   quizData.currentQuestionIndex = 0;
 
   showCurrentQuestion();
