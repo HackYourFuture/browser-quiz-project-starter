@@ -39,6 +39,10 @@ index.html
 - `views` this contains code to define what the DOM will look like. They will create the DOM element and give it back. They should never read from/write to the dom, that is what the handlers do.
 - `data.js` this is our data model. Anything we need to store in the browser we place inside the data file
 
+# Project layout design:
+it's not profissional :D but just can use it to start
+![layout design image](tenQProject.jpg)
+
 # Backlog
 
 So what should be built? Below is a collection of user stories you can choose from. Stories inside of each priority level are not necessarily in order, it's up to your group to decide how they fit into your strategy. These are also just suggestion, feel free to change them or create your own! Feel free to get creative.
@@ -67,5 +71,7 @@ So what should be built? Below is a collection of user stories you can choose fr
 
 # Ninja's Team
 The Starter Project is investigated by a bunch of Ninja's to implement some base functionality, some extended nice to have functionality and to make it look nice. 
-This group of Ninja's consists of: 
+This group of Ninja's consists of:
+
+* Obada
 
