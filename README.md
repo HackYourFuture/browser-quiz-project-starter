@@ -66,11 +66,11 @@ So what should be built? Below is a collection of user stories you can choose fr
 - [ ] Anything else you can think of... go nuts!
 
 # Ninja's Team
+
 The Starter Project is investigated by a bunch of Ninja's to implement some base functionality, some extended nice to have functionality and to make it look nice. 
-This group of Ninja's consists of: 
+This group of Ninja's consists of:
 
 * Amar Ibrahim
 * Claudia de Windt
 * Fikret Yilmaz
-
 
