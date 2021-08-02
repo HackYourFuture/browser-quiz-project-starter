@@ -4,9 +4,6 @@ This repository functions as the basis of the quiz project in the [Browsers modu
 
 We have already implemented a very basic UI that can go through the questions to show you how this kind of code is split and how you can use the structure to your advantage. Have a look through it before your first group meeting as it can take a little while to get your head around it!
 
-## We can check our app from here:
-https://j05j4.github.io/browser-quiz-project-ninjas/
-
 ## Development
 
 To run this project locally you will need to open `index.html` in your browser using a local server. LiveServer, `http-server`, `study-lenses`, or any other local static server will work.
@@ -81,5 +78,5 @@ This group of Ninja's consists of:
 * Amar Ibrahim
 * Claudia de Windt
 * Fikret Yilmaz
-
+* Mustafa Sh
 
