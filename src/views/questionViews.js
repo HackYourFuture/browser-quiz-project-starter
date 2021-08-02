@@ -10,6 +10,8 @@ import { createDOMElement } from '../utils/DOMUtils.js';
 export const createAnswerElement = (answerText) => {
   const answerElement = createDOMElement('li');
   answerElement.innerText = answerText;
+  // set class for li
+  answerElement.setAttribute('class', 'answer-options');
 
   return answerElement;
 };
@@ -17,6 +19,7 @@ export const createAnswerElement = (answerText) => {
 /**
  * Create a full question element
  */
+
 export const createQuestionElement = (question) => {
   const container = createDOMElement('div');
   const title = createDOMElement('h1');
@@ -24,6 +27,9 @@ export const createQuestionElement = (question) => {
   container.appendChild(title);
 
   const answerContainer = createDOMElement('ol');
+  // set classes .
+  container.setAttribute('class', 'content-question');
+  answerContainer.setAttribute('class', 'list-answers');
 
   for (const answerKey in question.answers) {
     const answer = createAnswerElement(question.answers[answerKey]);
@@ -45,6 +51,7 @@ export const createNextQuestionButtonElement = () => {
 
   buttonElement.innerText = 'Next question';
   buttonElement.addEventListener('click', nextQuestion);
-
+  // set class for the button
+  buttonElement.setAttribute('class', 'button-element');
   return buttonElement;
 };
