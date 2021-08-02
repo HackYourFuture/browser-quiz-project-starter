@@ -79,5 +79,26 @@ export const quizData = {
       ],
     }
     // Add more questions here
+    {
+      text: 'Which company developed JavaScript?',
+      answers: {
+        a: 'Facebook',
+        b: 'Sun Microsystems, Inc.',
+        c: 'Netscape',
+        d: 'Microsoft',
+      },
+      correct: 'c',
+      selected: null,
+      links: [
+        {
+          text: 'wikipedia',
+          href: 'https://en.wikipedia.org/wiki/Netscape',
+        },
+        {
+          text: 'MDN',
+          href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/About_JavaScript',
+        },
+      ],
+    }
   ],
 };
