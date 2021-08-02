@@ -1,0 +1,21 @@
+<div class="result-container">
+    <!--for right answers-->
+    <div class="right-answers">
+        <div class="result">
+            <h3>${element.question}</h3> <br>
+            <span class="selected correct">${element.answer}</span>
+        </div>
+        <hr>
+    </div>
+    <!--for wrong answers-->
+    <div class="wrong-answers">
+        <div class="result">
+            <h3>${element.question}</h3> <br>
+            <span class="selected wrong">${element.answer}</span>
+            <br>
+            <span class="should-be">${element["should be"]}</span>
+            <hr>
+        </div>
+        <hr>
+    </div>
+</div>
