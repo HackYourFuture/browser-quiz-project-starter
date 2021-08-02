@@ -57,6 +57,27 @@ export const quizData = {
         },
       ],
     },
+    {
+      text: 'What is mean by "this" keyword in javascript?',
+      answers: {
+        a: 'It refers current object',
+        b: 'It refers previous object',
+        c: 'It is variable which contains value',
+        d: 'None of the above'
+      },
+      correct: 'a',
+      selected: null,
+      links: [
+        {
+          text: 'MDN',
+          href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this',
+        },
+        {
+          text: 'Tutorials Teacher',
+          href: 'https://www.tutorialsteacher.com/javascript/this-keyword-in-javascript',
+        },
+      ],
+    }
     // Add more questions here
   ],
 };
