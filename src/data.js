@@ -58,6 +58,23 @@ export const quizData = {
       ],
     },
     {
+      text: 'Which of these methods create a new array without mutated  the original array where the data is coming from ?',
+      answers: {
+        a: 'every()',
+        b: 'fill()',
+        c: 'filter()',
+        d: 'find()'
+      },
+      correct: 'c',
+      selected: null,
+      links: [
+        {
+          text: 'MDN',
+          href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter',
+        }
+      ]
+    },
+    {
       text: 'What is mean by "this" keyword in javascript?',
       answers: {
         a: 'It refers current object',
@@ -77,7 +94,7 @@ export const quizData = {
           href: 'https://www.tutorialsteacher.com/javascript/this-keyword-in-javascript',
         },
       ],
-    }
+    },
     // Add more questions here
     {
       text: 'Which company developed JavaScript?',
