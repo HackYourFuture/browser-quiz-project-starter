@@ -20,3 +20,13 @@ export const handleNextQuestion = () => {
 
   showCurrentQuestion();
 };
+
+const playButton = document.querySelector('#play-btn');
+
+function showContainer(){
+const quizContainer = document.querySelector('.quiz-container');
+quizContainer.classList.remove('hide');
+playButton.classList.add('hide');
+}
+
+playButton.addEventListener('click',showContainer);
