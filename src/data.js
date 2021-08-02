@@ -60,7 +60,7 @@ export const quizData = {
     {
       text: 'which of the following allows you to call a function based on an elapsed time?',
       answers: {
-        a: ' setElapsedTime ()',
+        a: 'setElapsedTime ()',
         b: 'Timeout()',
         c: 'setTimeout()',
         d: 'setTime()',
@@ -91,7 +91,7 @@ export const quizData = {
       links: [
         {
           text: 'W3School',
-          href: 'https://www.w3schools.com/jsref/met_win_prompt.asp ',
+          href: 'https://www.w3schools.com/jsref/met_win_prompt.asp',
         },
         {
           text: 'MDN',
@@ -103,7 +103,7 @@ export const quizData = {
       text: 'Which of the following is the correct syntax of FOR?',
       answers: {
         a: 'for (increment; initialize; test)',
-        b: ' for (initialize; test), increment',
+        b: 'for (initialize; test), increment',
         c: 'for (initialize; test; increment )',
         d: 'for (test; initialize; increment)',
       },
@@ -123,8 +123,8 @@ export const quizData = {
     {
       text: 'You work on a JavaScript project. Which of the following correctly describe the relationships of JavaScript and “objects”?',
       answers: {
-        a: 'JavaScript is Object-oriented ',
-        b: 'JavaScript is Object-based ',
+        a: 'JavaScript is Object-oriented',
+        b: 'JavaScript is Object-based',
         c: 'JavaScript is Object-driven',
         d: 'JavaScript has no relationship with objects',
       },
@@ -211,7 +211,7 @@ export const quizData = {
       text: `Consider the following sequence of JavaScript statements: 
       let a = new Array();  
       a[0]= 12; a[1]= false; a[2]= 'test'; a[3]= a; 
-      Which line in this code will cause an error? `,
+      Which line in this code will cause an error?`,
       answers: {
         a: 'Line 3',
         b: 'Line 4',
@@ -263,7 +263,7 @@ export const quizData = {
       ],
     },
     {
-      text: `The opposite to onmouseover is: `,
+      text: `The opposite to onmouseover is:`,
       answers: {
         a: 'onmouseoff',
         b: 'onmouseout',
