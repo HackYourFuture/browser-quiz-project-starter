@@ -21,6 +21,7 @@ export const handleNextQuestion = () => {
   showCurrentQuestion();
 };
 
+/* This is Fikret code don't just commented out plz don't delete now
 const playButton = document.querySelector('#play-btn');
 
 function showContainer(){
@@ -29,4 +30,4 @@ quizContainer.classList.remove('hide');
 playButton.classList.add('hide');
 }
 
-playButton.addEventListener('click',showContainer);
+playButton.addEventListener('click',showContainer);*/
