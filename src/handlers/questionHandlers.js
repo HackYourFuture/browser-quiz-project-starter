@@ -21,7 +21,9 @@ export const handleNextQuestion = () => {
   showCurrentQuestion();
 };
 
-export const checkingUserAnswer = () => {
+export const handleAnswerCheck = (event) => {
+  console.log(event.target)
+  return
   const questionIndex = quizData.questions;
   questionIndex.forEach((questionX) => {
     if (questionX.selected === questionX.correct) {
