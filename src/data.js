@@ -209,13 +209,13 @@ export const quizData = {
     },
     {
       text: `What is the result for this code >>
-      let fName = "FFF";
-      let sName = "SSS";
+      let fName = "Ninja";
+      let sName = "Team";
       let fullName = fName + sName;
       console.log(fullName);`,
       answers: {
-        a: 'FFFSSS',
-        b: 'FFF SSS',
+        a: 'NinjaTeam',
+        b: 'Ninja Team',
         c: 'fName + sName',
         d: 'undefined',
       },
