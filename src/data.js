@@ -58,7 +58,8 @@ export const quizData = {
       ],
     },
     {
-      text: 'which of the following allows you to call a function based on an elapsed time?',
+      text:
+        'which of the following allows you to call a function based on an elapsed time?',
       answers: {
         a: 'setElapsedTime ()',
         b: 'Timeout()',
@@ -70,16 +71,18 @@ export const quizData = {
       links: [
         {
           text: 'MDN',
-          href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/setTime ',
+          href:
+            'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/setTime ',
         },
         {
           text: 'tutorials point',
-          href:'https://www.tutorialspoint.com/javascript/date_settime.htm',
+          href: 'https://www.tutorialspoint.com/javascript/date_settime.htm',
         },
       ],
     },
     {
-      text: 'You Work on a JavaScript project. How do you prompt users with messages and at the same time requesting user inputs?',
+      text:
+        'You Work on a JavaScript project. How do you prompt users with messages and at the same time requesting user inputs?',
       answers: {
         a: 'alert()',
         b: 'display()',
@@ -95,7 +98,8 @@ export const quizData = {
         },
         {
           text: 'MDN',
-          href:'https://developer.mozilla.org/en-US/docs/Web/API/Window/prompt',
+          href:
+            'https://developer.mozilla.org/en-US/docs/Web/API/Window/prompt',
         },
       ],
     },
@@ -116,12 +120,14 @@ export const quizData = {
         },
         {
           text: 'MDN',
-          href:'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for',
+          href:
+            'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for',
         },
       ],
     },
     {
-      text: 'You work on a JavaScript project. Which of the following correctly describe the relationships of JavaScript and “objects”?',
+      text:
+        'You work on a JavaScript project. Which of the following correctly describe the relationships of JavaScript and “objects”?',
       answers: {
         a: 'JavaScript is Object-oriented',
         b: 'JavaScript is Object-based',
@@ -133,16 +139,19 @@ export const quizData = {
       links: [
         {
           text: 'MDN',
-          href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Details_of_the_Object_Model',
+          href:
+            'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Details_of_the_Object_Model',
         },
         {
           text: 'Wikibooks',
-          href:'https://en.wikibooks.org/wiki/JavaScript/Object-based_programming',
+          href:
+            'https://en.wikibooks.org/wiki/JavaScript/Object-based_programming',
         },
       ],
     },
     {
-      text: 'In your JavaScript code, how do you find out which characters occurs at the 5th position in a string “How are You “?',
+      text:
+        'In your JavaScript code, how do you find out which characters occurs at the 5th position in a string “How are You “?',
       answers: {
         a: 'Substring()',
         b: 'String()',
@@ -154,11 +163,13 @@ export const quizData = {
       links: [
         {
           text: 'MDN',
-          href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charAt',
+          href:
+            'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charAt',
         },
         {
           text: 'meduim.com',
-          href:'https://medium.com/nerd-for-tech/basics-of-javascript-string-charat-method-51c2f92740fb',
+          href:
+            'https://medium.com/nerd-for-tech/basics-of-javascript-string-charat-method-51c2f92740fb',
         },
       ],
     },
@@ -178,11 +189,12 @@ export const quizData = {
       links: [
         {
           text: 'MDN',
-          href: 'https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Arrays',
+          href:
+            'https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Arrays',
         },
         {
           text: 'W3School',
-          href:'https://www.w3schools.com/js/js_arrays.asp',
+          href: 'https://www.w3schools.com/js/js_arrays.asp',
         },
       ],
     },
@@ -192,18 +204,20 @@ export const quizData = {
         a: 'defines a new two-dimensional array a whose dimensions are 2 and 4',
         b: 'defines an array a and assigns the values 2 and 4 to a[1] and a[2]',
         c: 'defines an array a and assigns the values 2 and 4 to a[0] and a[1]',
-        d: 'defines a three-element array whose elements have indexes 2 through 4',
+        d:
+          'defines a three-element array whose elements have indexes 2 through 4',
       },
       correct: 'c',
       selected: null,
       links: [
         {
           text: 'MDN',
-          href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Array',
+          href:
+            'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Array',
         },
         {
           text: 'javaScript.info',
-          href:'https://javascript.info/array',
+          href: 'https://javascript.info/array',
         },
       ],
     },
@@ -223,7 +237,8 @@ export const quizData = {
       links: [
         {
           text: 'codinggame',
-          href: 'https://www.codingame.com/playgrounds/6181/javascript-arrays---tips-tricks-and-examples',
+          href:
+            'https://www.codingame.com/playgrounds/6181/javascript-arrays---tips-tricks-and-examples',
         },
       ],
     },
@@ -241,7 +256,8 @@ export const quizData = {
       links: [
         {
           text: 'coderwall',
-          href: 'https://coderwall.com/p/h4xm0w/why-never-use-new-array-in-javascript',
+          href:
+            'https://coderwall.com/p/h4xm0w/why-never-use-new-array-in-javascript',
         },
       ],
     },
@@ -258,7 +274,8 @@ export const quizData = {
       links: [
         {
           text: 'stackOverflow',
-          href: 'https://stackoverflow.com/questions/25056330/why-is-1-1-11-but-11-1',
+          href:
+            'https://stackoverflow.com/questions/25056330/why-is-1-1-11-but-11-1',
         },
       ],
     },
@@ -275,7 +292,8 @@ export const quizData = {
       links: [
         {
           text: 'javsScript.info',
-          href: 'https://javascript.info/mousemove-mouseover-mouseout-mouseenter-mouseleave',
+          href:
+            'https://javascript.info/mousemove-mouseover-mouseout-mouseenter-mouseleave',
         },
         {
           text: 'W3School',
@@ -317,7 +335,8 @@ export const quizData = {
       links: [
         {
           text: 'MDN',
-          href: 'https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object-oriented_JS',
+          href:
+            'https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object-oriented_JS',
         },
       ],
     },
@@ -350,7 +369,8 @@ export const quizData = {
       links: [
         {
           text: 'MDN',
-          href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN',
+          href:
+            'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN',
         },
       ],
     },
@@ -384,7 +404,8 @@ export const quizData = {
       links: [
         {
           text: 'MDN',
-          href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date',
+          href:
+            'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date',
         },
       ],
     },
@@ -401,7 +422,8 @@ export const quizData = {
       links: [
         {
           text: 'MDN',
-          href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substr',
+          href:
+            'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substr',
         },
       ],
     },
@@ -418,7 +440,8 @@ export const quizData = {
       links: [
         {
           text: 'digitalocean',
-          href: 'https://www.digitalocean.com/community/tutorials/understanding-variables-scope-hoisting-in-javascript',
+          href:
+            'https://www.digitalocean.com/community/tutorials/understanding-variables-scope-hoisting-in-javascript',
         },
       ],
     },

@@ -20,3 +20,16 @@ export const handleNextQuestion = () => {
 
   showCurrentQuestion();
 };
+
+export const checkingUserAnswer = () => {
+  const questionIndex = quizData.questions;
+  questionIndex.forEach((questionX) => {
+    if (questionX.selected === questionX.correct) {
+      console.log(`That's true hora`);
+    } else {
+      console.log(
+        `correct answer is ${questionX.correct}, for more info check links ${questionX.links[0].href}`
+      );
+    }
+  });
+};
