@@ -57,6 +57,65 @@ export const quizData = {
         },
       ],
     },
+    {
+      text: 'Which of these methods create a new array without mutated  the original array where the data is coming from ?',
+      answers: {
+        a: 'every()',
+        b: 'fill()',
+        c: 'filter()',
+        d: 'find()'
+      },
+      correct: 'c',
+      selected: null,
+      links: [
+        {
+          text: 'MDN',
+          href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter',
+        }
+      ]
+    },
+    {
+      text: 'What is mean by "this" keyword in javascript?',
+      answers: {
+        a: 'It refers current object',
+        b: 'It refers previous object',
+        c: 'It is variable which contains value',
+        d: 'None of the above'
+      },
+      correct: 'a',
+      selected: null,
+      links: [
+        {
+          text: 'MDN',
+          href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this',
+        },
+        {
+          text: 'Tutorials Teacher',
+          href: 'https://www.tutorialsteacher.com/javascript/this-keyword-in-javascript',
+        },
+      ],
+    },
     // Add more questions here
+    {
+      text: 'Which company developed JavaScript?',
+      answers: {
+        a: 'Facebook',
+        b: 'Sun Microsystems, Inc.',
+        c: 'Netscape',
+        d: 'Microsoft',
+      },
+      correct: 'c',
+      selected: null,
+      links: [
+        {
+          text: 'wikipedia',
+          href: 'https://en.wikipedia.org/wiki/Netscape',
+        },
+        {
+          text: 'MDN',
+          href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/About_JavaScript',
+        },
+      ],
+    }
   ],
 };
