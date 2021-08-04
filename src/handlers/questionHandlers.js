@@ -22,16 +22,21 @@ export const handleNextQuestion = () => {
 };
 
 export const handleAnswerCheck = (event) => {
-  console.log(event.target)
-  return
-  const questionIndex = quizData.questions;
-  questionIndex.forEach((questionX) => {
-    if (questionX.selected === questionX.correct) {
-      console.log(`That's true hora`);
-    } else {
-      console.log(
-        `correct answer is ${questionX.correct}, for more info check links ${questionX.links[0].href}`
-      );
-    }
-  });
+  let elementCorrectAnswer = event.target;
+  let userAnswer = event.target.getAttribute('data-value');
+  const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
+  const rightAnswer = () => {
+    elementCorrectAnswer.classList.add('correctAnswer');
+  };
+  const wrongAnswer = () => {
+    elementCorrectAnswer.classList.add('wrongAnswer');
+    userAnswer = currentQuestion.correct;
+    elementCorrectAnswer.classList.add('correctAnswer');
+  };
+
+  if (userAnswer !== currentQuestion.correct) {
+    wrongAnswer();
+  } else {
+    rightAnswer();
+  }
 };
