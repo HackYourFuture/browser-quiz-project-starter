@@ -3,7 +3,6 @@
 import { NEXT_QUESTION_BUTTON_ID } from '../constants.js';
 import { nextQuestion } from '../listeners/questionListeners.js';
 import { createDOMElement, getDOMElement } from '../utils/DOMUtils.js';
-
 /**
  * Create an Answer element
  */
@@ -19,6 +18,13 @@ export const createAnswerElement = (answerText) => {
 /**
  * Create a full question element
  */
+
+
+ export  const checkAnswer = function selectedAnswer() {
+  //console.log(e);
+  console.log("Hi I am here")
+};
+
 export const createQuestionElement = (question) => {
   
   const container = createDOMElement('div');
@@ -37,17 +43,21 @@ export const createQuestionElement = (question) => {
   // here we put a unique Id for every button
   let answerKeyNumber = 0;
   let buttonsEl = answerContainer.querySelectorAll("button");
+
   for (const answerKey in question.answers) {
     buttonsEl[answerKeyNumber].id = answerKey;
     answerKeyNumber++
   }
-  
+
+
+
   //!important
-  //buttonsEl.addEventListener("click", checkAnswer); we need to check later
+  buttonsEl.forEach(button => button.addEventListener("click", checkAnswer));//we need to check later
   container.appendChild(answerContainer);
   
   return container;
 };
+
 
 /**
  * Creates and returns the next questions button
