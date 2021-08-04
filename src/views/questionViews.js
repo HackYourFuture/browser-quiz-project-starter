@@ -3,15 +3,18 @@
 import { NEXT_QUESTION_BUTTON_ID } from '../constants.js';
 import { nextQuestion } from '../listeners/questionListeners.js';
 import { createDOMElement } from '../utils/DOMUtils.js';
+import { checkAnswer } from "../listeners/questionListeners.js";
 
 /**
  * Create an Answer element
  */
-export const createAnswerElement = (answerText) => {
+export const createAnswerElement = (answerText, key) => {
   const answerElement = createDOMElement('li');
   answerElement.innerText = answerText;
   // set class for li
   answerElement.setAttribute('class', 'answer-options');
+  answerElement.setAttribute('data-value', key)
+  answerElement.addEventListener('click', checkAnswer)
 
   return answerElement;
 };
@@ -32,7 +35,7 @@ export const createQuestionElement = (question) => {
   answerContainer.setAttribute('class', 'list-answers');
 
   for (const answerKey in question.answers) {
-    const answer = createAnswerElement(question.answers[answerKey]);
+    const answer = createAnswerElement(question.answers[answerKey], answerKey);
     answerContainer.appendChild(answer);
   }
 
