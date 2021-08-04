@@ -22,21 +22,12 @@ export const handleNextQuestion = () => {
 };
 
 export const handleAnswerCheck = (event) => {
-  let elementCorrectAnswer = event.target;
-  let userAnswer = event.target.getAttribute('data-value');
+  let elementChosenAnswer = event.target;
+  let elementAnswer = event.target.getAttribute('data-value');
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
-  const rightAnswer = () => {
-    elementCorrectAnswer.classList.add('correctAnswer');
-  };
-  const wrongAnswer = () => {
-    elementCorrectAnswer.classList.add('wrongAnswer');
-    userAnswer = currentQuestion.correct;
-    elementCorrectAnswer.classList.add('correctAnswer');
-  };
-
-  if (userAnswer !== currentQuestion.correct) {
-    wrongAnswer();
+  if (elementAnswer === currentQuestion.correct) {
+    elementChosenAnswer.classList.add('correctAnswer');
   } else {
-    rightAnswer();
+    elementChosenAnswer.classList.add('wrongAnswer');
   }
 };
