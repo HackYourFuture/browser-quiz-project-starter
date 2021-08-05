@@ -4,7 +4,7 @@ import { NEXT_QUESTION_BUTTON_ID } from '../constants.js';
 import { quizData } from '../data.js';
 import { nextQuestion } from '../listeners/questionListeners.js';
 import { createDOMElement, getDOMElement } from '../utils/DOMUtils.js';
-
+import { checkAnswer } from '../views/answer-selection.js'
 /**
  * Create an Answer element
  */
@@ -22,13 +22,7 @@ export const createAnswerElement = (answerText) => {
  */
 
 
- export  const checkAnswer = function selectedAnswer(e) {
-  if (this.id === quizData.questions[quizData.currentQuestionIndex].correct){
-    this.classList.add("correct-answer");
-  } else {
-    this.classList.add("wrong-answer");
-  }
-};
+
 
 export const createQuestionElement = (question) => {
   
