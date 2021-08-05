@@ -26,8 +26,28 @@ export const handleAnswerCheck = (event) => {
   let elementAnswer = event.target.getAttribute('data-value');
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
   if (elementAnswer === currentQuestion.correct) {
+    elementChosenAnswer.style.pointerEvents = 'none';
     elementChosenAnswer.classList.add('correctAnswer');
   } else {
+    elementChosenAnswer.style.pointerEvents = 'none';
     elementChosenAnswer.classList.add('wrongAnswer');
   }
 };
+
+export const countDownTimer = () => {
+  const startingMinutes = 10;
+  let time = startingMinutes * 60;
+  const countdownEl = document.getElementById('timer');
+  const timeOver = setInterval(updateCountDown, 1000);
+  function updateCountDown() {
+    const minutes = Math.floor(time / 60);
+    let seconds = time % 60;
+    seconds = seconds < 10 ? '0' + seconds : seconds;
+    if (time <= 0) {
+      clearInterval(timeOver);
+    }
+    countdownEl.textContent = ` ${minutes} : ${seconds}`;
+    time--;
+  }
+};
+// countDownTimer();

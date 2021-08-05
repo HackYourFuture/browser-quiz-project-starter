@@ -3,7 +3,8 @@
 import { NEXT_QUESTION_BUTTON_ID } from '../constants.js';
 import { nextQuestion } from '../listeners/questionListeners.js';
 import { createDOMElement } from '../utils/DOMUtils.js';
-import { checkAnswer } from "../listeners/questionListeners.js";
+import { checkAnswer } from '../listeners/questionListeners.js';
+import { startTimer } from '../listeners/questionListeners.js';
 
 /**
  * Create an Answer element
@@ -13,8 +14,8 @@ export const createAnswerElement = (answerText, key) => {
   answerElement.innerText = answerText;
   // set class for li
   answerElement.setAttribute('class', 'answer-options');
-  answerElement.setAttribute('data-value', key)
-  answerElement.addEventListener('click', checkAnswer)
+  answerElement.setAttribute('data-value', key);
+  answerElement.addEventListener('click', checkAnswer);
 
   return answerElement;
 };
@@ -38,7 +39,13 @@ export const createQuestionElement = (question) => {
     const answer = createAnswerElement(question.answers[answerKey], answerKey);
     answerContainer.appendChild(answer);
   }
+  //create timer element
 
+  const paragraphElement = createDOMElement('p');
+  paragraphElement.setAttribute('id', 'timer');
+  paragraphElement.text = startTimer();
+  container.appendChild(paragraphElement);
+  ///end timer element
   container.appendChild(answerContainer);
 
   return container;
@@ -58,3 +65,11 @@ export const createNextQuestionButtonElement = () => {
   buttonElement.setAttribute('class', 'button-element');
   return buttonElement;
 };
+
+//create timer element
+// export const createTimerElement = () => {
+//   const paragraphElement = createDOMElement('p', {
+//     id: timer,
+//   });
+//   return paragraphElement;
+// };
