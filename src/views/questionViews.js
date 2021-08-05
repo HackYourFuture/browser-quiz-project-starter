@@ -29,15 +29,7 @@ export const createQuestionElement = (question) => {
   for (const answerKey in question.answers) {
     const answer = createAnswerElement(question.answers[answerKey]);
     answerContainer.appendChild(answer);
-    
-    // add green background with correct answer and red background with wrong answer
-    // answer.addEventListener("click", ()=>{
-    //   if(answerKey === question.correct){
-    //     answer.style.cssText = "background-color: green; color: white;"
-    //   }else{
-    //     answer.style.cssText = "background-color: red; color: white;"
-    //   }
-    // })
+
   }
 
   container.appendChild(answerContainer);
