@@ -20,3 +20,13 @@ export const handleNextQuestion = () => {
 
   showCurrentQuestion();
 };
+
+export const handleCheckAnswer = (selectedAnswer) => {
+const current_question = quizData.questions[quizData.currentQuestionIndex]
+  if (selectedAnswer === current_question.correct) {
+    selectedAnswer.style.cssText = "background-color : green; color: white;"
+  } else {
+  selectedAnswer.style.cssText = "background-color : red; color: white;"
+  }
+}
+
