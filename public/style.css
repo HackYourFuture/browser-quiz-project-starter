@@ -19,3 +19,25 @@
   max-height: 80vh;
   overflow: auto;
 }
+
+body {
+  background-image:url(/public/backGround.jpg);
+  background-position: fixed;
+}
+
+#quiz-container{
+  width:900px;
+  height:600px;
+  background-color: #353534;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#next-question-button, #last-question-button{
+  background-color:yellow;
+  color:black;
+  width: 100px;
+}
