@@ -1,6 +1,6 @@
 'use strict';
 
-import { NEXT_QUESTION_BUTTON_ID } from '../constants.js';
+import { NEXT_QUESTION_BUTTON_ID, LAST_QUESTION_BUTTON_ID } from '../constants.js';
 import { nextQuestion } from '../listeners/questionListeners.js';
 import { createDOMElement } from '../utils/DOMUtils.js';
 
@@ -38,6 +38,7 @@ export const createQuestionElement = (question) => {
 /**
  * Creates and returns the next questions button
  */
+
 export const createNextQuestionButtonElement = () => {
   const buttonElement = createDOMElement('button', {
     id: NEXT_QUESTION_BUTTON_ID,
@@ -45,6 +46,23 @@ export const createNextQuestionButtonElement = () => {
 
   buttonElement.innerText = 'Next question';
   buttonElement.addEventListener('click', nextQuestion);
-
   return buttonElement;
+  
 };
+
+ /**
+ * Creates and returns the restart test button
+ */
+
+export const createLastQuestionButtonElement = () => {
+  const buttonLastElement = createDOMElement('button', {
+    id: LAST_QUESTION_BUTTON_ID,
+  });
+
+ 
+  buttonLastElement.innerText = 'Restart Test';
+  buttonLastElement.addEventListener('click', nextQuestion);
+  return buttonLastElement;
+};
+
+
