@@ -151,6 +151,6 @@ button {
 .btn-1 a:hover,
 .btn-2 a:hover,
 .btn-3 a:hover {
-  transform: scaleY(0);
+ /* transform: scaleY(0);*/
   background-color: var(--second-color);
 }
