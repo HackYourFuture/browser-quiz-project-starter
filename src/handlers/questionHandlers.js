@@ -22,11 +22,14 @@ export const handleNextQuestion = () => {
 };
 
 export const handleCheckAnswer = (selectedAnswer) => {
-const current_question = quizData.questions[quizData.currentQuestionIndex]
-  if (selectedAnswer === current_question.correct) {
-    selectedAnswer.style.cssText = "background-color : green; color: white;"
-  } else {
-  selectedAnswer.style.cssText = "background-color : red; color: white;"
-  }
-}
+const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
+let clickedAnswer = selectedAnswer.innerText
 
+let currentCorrectAnswer = currentQuestion.answers[currentQuestion.correct];
+
+if(clickedAnswer === currentCorrectAnswer){
+  selectedAnswer.style.cssText = "background-color: green; color: white;"
+} else {
+selectedAnswer.style.cssText = "background-color: red; color: white;"
+}
+}

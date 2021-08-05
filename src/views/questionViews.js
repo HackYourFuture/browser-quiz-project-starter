@@ -1,9 +1,8 @@
 'use strict';
 
 import { NEXT_QUESTION_BUTTON_ID } from '../constants.js';
-import { nextQuestion } from '../listeners/questionListeners.js';
+import { nextQuestion , checkAnswer} from '../listeners/questionListeners.js';
 import { createDOMElement } from '../utils/DOMUtils.js';
-import { checkAnswer } from '../listeners/questionListeners.js';
 
 /**
  * Create an Answer element
