@@ -20,3 +20,14 @@ export const handleNextQuestion = () => {
 
   showCurrentQuestion();
 };
+
+export const handleAnswerCheck = (event) => {
+  let elementChosenAnswer = event.target;
+  let elementAnswer = event.target.getAttribute('data-value');
+  const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
+  if (elementAnswer === currentQuestion.correct) {
+    elementChosenAnswer.classList.add('correctAnswer');
+  } else {
+    elementChosenAnswer.classList.add('wrongAnswer');
+  }
+};
