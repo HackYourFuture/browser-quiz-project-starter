@@ -8,8 +8,14 @@ import { checkAnswer } from '../views/answer-selection.js'
 /**
  * Create an Answer element
  */
-export const createAnswerElement = (answerText) => {
-  const answerElement = createDOMElement('li');
+export const createAnswerElement = (answerText, letters) => {
+  
+  const answerElement = createDOMElement('div');
+  answerElement.className = ("choice-container");
+  const choiceLetter = createDOMElement('p');
+  choiceLetter.className = ("prefixer-container");
+  choiceLetter.innerText = letters.toUpperCase();
+  answerElement.appendChild(choiceLetter);
   const answerButton = createDOMElement("button");
   answerElement.appendChild(answerButton);
   answerButton.innerText = answerText;
@@ -26,23 +32,29 @@ export const createAnswerElement = (answerText) => {
 
 export const createQuestionElement = (question) => {
   
-  const container = createDOMElement('div');
-  const title = createDOMElement('h1');
-  title.innerText = question.text;
-  container.appendChild(title);
-
-  const answerContainer = createDOMElement('ol');
+  const container = document.createElement("div");
+  container.className = ("container");
+  const mainWrapper = document.createElement("div");
+  container.id = ("main-wrapper");
+  container.appendChild(mainWrapper)
+  const questionText = document.createElement("h2");
+  container.id = ("question");
+  questionText.innerText = question.text;
+  mainWrapper.appendChild(questionText);
+  const answersContainer = document.createElement("div");
+  answersContainer.className = ("questions-wrapper");
+  answersContainer.id = ("user-interface");
+  mainWrapper.appendChild(answersContainer);
  
 
   for (const answerKey in question.answers) {
-    const answer = createAnswerElement(question.answers[answerKey]);
-    answerContainer.appendChild(answer);
+    const answer = createAnswerElement(question.answers[answerKey], answerKey);
+    answersContainer.appendChild(answer);
   }
 
   // here we put a unique Id for every button
   let answerKeyNumber = 0;
-  let buttonsEl = answerContainer.querySelectorAll("button");
-
+  let buttonsEl = container.querySelectorAll("button");
   for (const answerKey in question.answers) {
     buttonsEl[answerKeyNumber].id = answerKey;
     answerKeyNumber++
@@ -52,7 +64,7 @@ export const createQuestionElement = (question) => {
 
   //!important
   buttonsEl.forEach(button => button.addEventListener("click", checkAnswer));//we need to check later
-  container.appendChild(answerContainer);
+  //container.appendChild(answerContainer);
   
   return container;
 };
