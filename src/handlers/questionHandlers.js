@@ -1,9 +1,11 @@
 'use strict';
 
-import { QUESTION_CONTAINER_ID } from '../constants.js';
+import { QUESTION_CONTAINER_ID, NEXT_QUESTION_BUTTON_ID } from '../constants.js';
 import { createQuestionElement } from '../views/questionViews.js';
 import { clearDOMElement, getDOMElement } from '../utils/DOMUtils.js';
 import { quizData } from '../data.js';
+import { nextQuestion } from '../listeners/questionListeners.js';
+
 
 export const showCurrentQuestion = () => {
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
@@ -17,7 +19,8 @@ export const showCurrentQuestion = () => {
 
 export const handleNextQuestion = () => {
   quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
-
+  const nextQuestionButton = getDOMElement(NEXT_QUESTION_BUTTON_ID);
+  nextQuestionButton.removeEventListener('click', nextQuestion)
   showCurrentQuestion();
 };
 

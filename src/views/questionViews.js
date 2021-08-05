@@ -33,7 +33,8 @@ export const createQuestionElement = (question) => {
   container.id = 'main-wrapper';
   container.appendChild(mainWrapper);
   const questionText = document.createElement('h2');
-  container.id = 'question';
+  container.id = 'question-container';
+  questionText.id = 'question';
   questionText.innerText = question.text;
   mainWrapper.appendChild(questionText);
   const answersContainer = document.createElement('div');
@@ -70,7 +71,7 @@ export const createNextQuestionButtonElement = () => {
   });
 
   buttonElement.innerText = 'Next question';
-  buttonElement.addEventListener('click', nextQuestion);
+  //buttonElement.addEventListener('click', nextQuestion);
 
   return buttonElement;
 };
