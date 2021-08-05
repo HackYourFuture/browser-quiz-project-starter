@@ -1,10 +1,14 @@
 import { quizData } from '../data.js';
 import { getDOMElement } from '../utils/DOMUtils.js';
+import { NEXT_QUESTION_BUTTON_ID } from '../constants.js'; 
+import { nextQuestion } from '../listeners/questionListeners.js';
 
 const spanEl = getDOMElement('score');
 spanEl.textContent = 0;
 
-export const checkAnswer = function selectedAnswer(e) {
+export const checkAnswer = function selectedAnswer() {
+  const nextQuestionButton = getDOMElement(NEXT_QUESTION_BUTTON_ID);
+  nextQuestionButton.addEventListener('click', nextQuestion);
   const buttonsCon = this.parentElement.parentElement;
   const answerButtons = buttonsCon.querySelectorAll("button");
   if (this.id === quizData.questions[quizData.currentQuestionIndex].correct) {
