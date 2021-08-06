@@ -50,6 +50,7 @@ body {
 }
 h1,
 a,
+h2,
 #next-question-button {
   text-align: center;
   padding: 10px;
@@ -84,6 +85,15 @@ a,
   filter: blur(10px);
   margin: -20px;
   z-index: -1;
+}
+img {
+  width: 10rem;
+  height: 10rem;
+  position: fixed;
+  top: 78%;
+  left: 48.5%;
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
 .container {
   display: flex;
@@ -146,9 +156,9 @@ button {
   display: inline-block;
   margin: 0.7rem;
 }
-.btn-4 #next-question-button{
+.btn-4 #next-question-button {
   text-decoration: none;
-  padding: 15px;
+  padding: 10px;
   color: var(--first-color);
   /* text-transform: uppercase; */
   letter-spacing: 2px;
@@ -166,3 +176,15 @@ button {
 /* #next-question-button{
   width: 50%;
 } */
+
+@media (max-width: 500px) {
+  img {
+    width: 10rem;
+    height: 10rem;
+    position: fixed;
+    top: 78%;
+    left: 45.5%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+}

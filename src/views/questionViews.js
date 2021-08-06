@@ -70,7 +70,7 @@ export const createNextQuestionButtonElement = () => {
     id: NEXT_QUESTION_BUTTON_ID,
   });
 
-  buttonElement.innerText = 'Next question';
+  buttonElement.innerText = 'Next \n Q';
   //buttonElement.addEventListener('click', nextQuestion);
 
   return buttonElement;
