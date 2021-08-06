@@ -1,6 +1,5 @@
 import { getDOMElement } from '../utils/DOMUtils.js';
 import { initializeQuiz } from '../init/initializeQuiz.js';
-​
 const quizContainerEl =getDOMElement('startText')
 const starterEl = getDOMElement('starter');
 const scoreEl = getDOMElement('btn-2');
