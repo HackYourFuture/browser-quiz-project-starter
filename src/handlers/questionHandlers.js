@@ -41,9 +41,22 @@
   quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
   };
   showCurrentQuestion();
-  };
+};
 
-  export const quizIsEnded = () => {
+export const handleCheckAnswer = (selectedAnswer) => {
+const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
+let clickedAnswer = selectedAnswer.innerText
+
+let currentCorrectAnswer = currentQuestion.answers[currentQuestion.correct];
+
+if(clickedAnswer === currentCorrectAnswer){
+  selectedAnswer.style.cssText = "background-color: green; color: white;"
+} else {
+selectedAnswer.style.cssText = "background-color: red; color: white;"
+}
+}
+
+export const quizIsEnded = () => {
   return quizData.currentQuestionIndex >= lengthOfArray;
   };
 
