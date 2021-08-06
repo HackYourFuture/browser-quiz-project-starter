@@ -34,7 +34,7 @@ export const createQuestionElement = (question) => {
   container.appendChild(mainWrapper);
   const questionText = document.createElement('h2');
   container.id = 'question-container';
-  questionText.id = 'question';
+  questionText.id = 'Next question';
   questionText.innerText = question.text;
   mainWrapper.appendChild(questionText);
   const answersContainer = document.createElement('div');
