@@ -5,21 +5,17 @@
   transform: translate(-50%, -50%);
   text-align: center;
 }
-
 .scrollable {
   height: auto;
   max-height: 80vh;
   overflow: auto;
 }
-
 .correct-answer {
   background-color: var(--correct-color);
 }
-
 .wrong-answer {
   background-color: var(--wrong-color);
 }
-
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 /* ------utilities --------*/
 *,
@@ -54,6 +50,7 @@ body {
 }
 h1,
 a,
+h2,
 #next-question-button {
   text-align: center;
   padding: 10px;
@@ -88,6 +85,15 @@ a,
   filter: blur(10px);
   margin: -20px;
   z-index: -1;
+}
+img {
+  width: 10rem;
+  height: 10rem;
+  position: fixed;
+  top: 78%;
+  left: 48.5%;
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
 .container {
   display: flex;
@@ -136,11 +142,11 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-right: 15px;
 }
 .btn-1 a,
 .btn-2 a,
-.btn-3 a,
-.btn-4 #next-question-button {
+.btn-3 a {
   text-decoration: none;
   padding: 15px;
   color: var(--first-color);
@@ -150,6 +156,16 @@ button {
   display: inline-block;
   margin: 0.7rem;
 }
+.btn-4 #next-question-button {
+  text-decoration: none;
+  padding: 10px;
+  color: var(--first-color);
+  /* text-transform: uppercase; */
+  letter-spacing: 2px;
+  position: relative;
+  display: inline-block;
+  margin-right: 0.7rem;
+}
 .btn-1 a:hover,
 .btn-2 a:hover,
 .btn-3 a:hover,
@@ -157,8 +173,18 @@ button {
   /* transform: scaleY(0);*/
   background-color: var(--second-color);
 }
-
 /* #next-question-button{
   width: 50%;
-
 } */
+
+@media (max-width: 500px) {
+  img {
+    width: 10rem;
+    height: 10rem;
+    position: fixed;
+    top: 78%;
+    left: 45.5%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+}
