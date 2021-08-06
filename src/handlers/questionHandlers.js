@@ -55,3 +55,17 @@ if(clickedAnswer === currentCorrectAnswer){
 selectedAnswer.style.cssText = "background-color: red; color: white;"
 }
 }
+
+export const quizIsEnded = () => {
+  return quizData.currentQuestionIndex >= lengthOfArray;
+  };
+
+/**
+ * The restartBtnSetup function resets the buttons when the test is restarted.
+ */
+  const restartBtnSetup = () => {
+    const nextQuestionBtn = getDOMElement(NEXT_QUESTION_BUTTON_ID);
+    const lastQuestionBtn = getDOMElement(LAST_QUESTION_BUTTON_ID);
+    nextQuestionBtn.style.visibility = 'visible';
+    lastQuestionBtn.style.visibility = 'hidden';
+  };
