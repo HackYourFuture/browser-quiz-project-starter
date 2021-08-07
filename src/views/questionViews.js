@@ -11,9 +11,13 @@ export const createAnswerElement = (answerText) => {
   const answerElement = createDOMElement('li');
   answerElement.innerText = answerText;
   answerElement.style.cursor = "pointer";
-  answerElement.addEventListener("click", checkAnswer)
+  answerElement.addEventListener("click", checkAnswer, { passive: true })
+  answerElement.removeEventListener("click", checkAnswer, { capture: false })
+  
+  
   return answerElement;
 };
+
 
 /**
  * Create a full question element
@@ -66,5 +70,3 @@ export const createLastQuestionButtonElement = () => {
   buttonLastElement.addEventListener('click', nextQuestion);
   return buttonLastElement;
 };
-
-
