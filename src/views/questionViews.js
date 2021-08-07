@@ -10,6 +10,7 @@ import { createDOMElement } from '../utils/DOMUtils.js';
 export const createAnswerElement = (answerText) => {
   const answerElement = createDOMElement('li');
   answerElement.innerText = answerText;
+  answerElement.setAttribute('class', 'answers-default')
   answerElement.style.cursor = "pointer";
   answerElement.addEventListener("click", checkAnswer)
   return answerElement;
@@ -22,7 +23,9 @@ export const createQuestionElement = (question) => {
   const container = createDOMElement('div');
   const title = createDOMElement('h1');
   title.innerText = question.text;
+  title.setAttribute('class', 'question-title')
   container.appendChild(title);
+  
 
   const answerContainer = createDOMElement('ol');
 
