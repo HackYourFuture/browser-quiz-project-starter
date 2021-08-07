@@ -35,7 +35,7 @@
   --secondary-color: rgb(0, 56, 73);
   --correct-color: rgb(76, 94, 42);
   --wrong-color: rgb(147, 0, 23);
-  --second-color: rgb(78, 40, 77);
+  --second-color: rgb(122, 122, 122);
   --first-color: rgb(206, 195, 192);
 }
 body {
@@ -146,7 +146,8 @@ button {
 }
 .btn-1 a,
 .btn-2 a,
-.btn-3 a {
+.btn-3 a,
+.btn-4, #btn-4{
   text-decoration: none;
   padding: 15px;
   color: var(--first-color);
@@ -155,7 +156,22 @@ button {
   position: relative;
   display: inline-block;
   margin: 0.7rem;
+  width: 150px;
+  height: 100px;
+
 }
+
+.btn-1,
+.btn-2,
+.btn-3,
+.btn-4, #btn-4
+{
+  width: 150px;
+  margin: 0rem 2rem;
+  height: 100px;
+
+}
+
 .btn-4 #next-question-button {
   text-decoration: none;
   padding: 10px;
@@ -171,7 +187,7 @@ button {
 .btn-3 a:hover,
 .btn-4 #next-question-button:hover {
   /* transform: scaleY(0);*/
-  background-color: var(--second-color);
+  background-color: var(--second-color) !important;
 }
 /* #next-question-button{
   width: 50%;
