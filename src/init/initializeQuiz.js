@@ -5,14 +5,17 @@ import { showCurrentQuestion } from '../handlers/questionHandlers.js';
 import { createDOMElement, getDOMElement } from '../utils/DOMUtils.js';
 import { createNextQuestionButtonElement } from '../views/questionViews.js';
 import { quizData } from '../data.js';
+import { countDownTimer } from '../components/timer.js';
 
-const initializeQuiz = () => {
+export const initializeQuiz = () => {
   quizData.currentQuestionIndex = 0;
+  // Math.floor(Math.random() * quizData.questions.length) + 1;
   setupQuizHTML();
-
   showCurrentQuestion();
+  countDownTimer();
 };
-
+//console.log(quizData.questions[Math.floor(Math.random() * quizData.currentQuestionIndex)]);
+//quizData.questions[Math.floor(Math.random() * quizData.currentQuestionIndex.length)];
 const setupQuizHTML = () => {
   const userInterfaceContainer = getDOMElement('user-interface');
   const quizContainer = createDOMElement('div', { id: QUIZ_CONTAINER_ID });
