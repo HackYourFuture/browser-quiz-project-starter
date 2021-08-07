@@ -35,7 +35,7 @@
   --secondary-color: rgb(0, 56, 73);
   --correct-color: rgb(76, 94, 42);
   --wrong-color: rgb(147, 0, 23);
-  --second-color: rgb(122, 122, 122);
+  --second-color: rgb(0, 0, 0);
   --first-color: rgb(206, 195, 192);
 }
 body {
@@ -64,7 +64,7 @@ h2,
 /*------ Home Page------- */
 .glass-container {
   width: 60rem;
-  height: 40rem;
+  min-height: 40rem;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
   position: relative;
   background: inherit;
@@ -72,6 +72,8 @@ h2,
   border-radius: 8px;
   z-index: 1;
   margin: auto 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 .glass-container:before {
   content: '';
@@ -104,7 +106,7 @@ img {
 /*------ Question section ------- */
 #main-wrapper {
   width: 50rem;
-  height: 25rem;
+  min-height: 25rem;
   margin: 1rem;
   text-align: center;
   padding: 10px;
@@ -146,8 +148,7 @@ button {
 }
 .btn-1 a,
 .btn-2 a,
-.btn-3 a,
-.btn-4, #btn-4{
+.btn-3 a {
   text-decoration: none;
   padding: 15px;
   color: var(--first-color);
@@ -156,22 +157,7 @@ button {
   position: relative;
   display: inline-block;
   margin: 0.7rem;
-  width: 150px;
-  height: 100px;
-
 }
-
-.btn-1,
-.btn-2,
-.btn-3,
-.btn-4, #btn-4
-{
-  width: 150px;
-  margin: 0rem 2rem;
-  height: 100px;
-
-}
-
 .btn-4 #next-question-button {
   text-decoration: none;
   padding: 10px;
@@ -185,9 +171,16 @@ button {
 .btn-1 a:hover,
 .btn-2 a:hover,
 .btn-3 a:hover,
-.btn-4 #next-question-button:hover {
+.btn-4 #next-question-button:hover,
+button#a:hover,
+button#b:hover,
+button#c:hover,
+button#d:hover
+{
   /* transform: scaleY(0);*/
-  background-color: var(--second-color) !important;
+  background-color: var(--second-color);
+  color: rgb(140 115 108);
+  font-weight: bold;
 }
 /* #next-question-button{
   width: 50%;
@@ -203,4 +196,8 @@ button {
     transform: translate(-50%, -50%);
     text-align: center;
   }
+}
+
+#Next-question{
+  padding: 1rem;
 }
