@@ -57,6 +57,20 @@ export const createNextQuestionButtonElement = () => {
 };
 
 /**
+ * Creates show the correct answer button 
+ */
+
+export const createGiveupButtonElement = () => {
+    const giveupButton= createDOMElement('button', {
+        id: LAST_QUESTION_BUTTON_ID,
+    });
+
+    buttonLastElement.innerText = 'Restart Test';
+    buttonLastElement.addEventListener('click', nextQuestion);
+    return buttonLastElement;
+};
+
+/**
  * Creates and returns the restart test button
  */
 

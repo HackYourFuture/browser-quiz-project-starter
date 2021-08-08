@@ -4,6 +4,11 @@
 
 .title {
   text-align: center;
+  color:white;
+  position: relative;
+  z-index: 1;
+  margin-top: 100px;
+  font-size: 50px;
 }
 
 .centered {
@@ -38,13 +43,14 @@ body {
 
 #quiz-container{
   width:900px;
-  height:600px;
+  height:550px;
   background-color: #353534;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: white;
 }
 
 #next-question-button{
@@ -76,20 +82,33 @@ body {
   color:white;
   list-style:none;
   border: 3px solid transparent;
-	  border-image: linear-gradient(to right, #353534 0%, #ffffff 50%, #353534 );
-	  border-image-slice: 1;
+	border-image: linear-gradient(to right, #353534 0%, #ffffff 50%, #353534 );
+	border-image-slice: 1;
   height:30px;
   padding-top:10px;
   width: 800px;
+  margin: 5px;
 }
 .answers-default:first-child, .answers-default:nth-child(2), .answers-default:nth-child(3) {
   border-bottom: none;
 }
 .answers-default:last-child {
   border-bottom: 3px solid transparent;
-	  border-image: linear-gradient(to right, #353534 0%, #ffffff 50%, #353534 );
-	  border-image-slice: 1;
+	border-image: linear-gradient(to right, #353534 0%, #ffffff 50%, #353534 );
+	border-image-slice: 1;
 }
-.title{
-  color:white;
+#answer-container-id{
+  list-style: none;
+  line-height: 1.6;
+  word-spacing: 3px;
+  letter-spacing: 1.5px;
+  }
+#answer-container-id li{
+  margin: 2px;
+  font-size: 22px;
+  font-weight: bold;
+  width: 100%;
+}
+#answer-container-id li:hover{
+ border: 1px solid rgb(245, 242, 242);
 }

@@ -12,7 +12,6 @@ export const showCurrentQuestion = () => {
         showResultPage();
     } else {
         const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
-
         const questionDOM = createQuestionElement(currentQuestion);
         const questionContainer = getDOMElement(QUESTION_CONTAINER_ID);
 

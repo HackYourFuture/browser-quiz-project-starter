@@ -38,10 +38,10 @@ export const quizData = {
     {
       text: 'What does `typeof` do?',
       answers: {
-        a: 'changes the type of a primitive value',
-        b: 'returns a string describing the type of a value',
-        c: 'determines if a value is primitive',
-        d: 'can tell the difference between arrays and objects',
+        a: 'Changes the type of a primitive value',
+        b: 'Returns a string describing the type of a value',
+        c: 'Determines if a value is primitive',
+        d: 'Tells the difference between arrays and objects',
       },
       correct: 'b',
       selected: null,
