@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Chettan+2:wght@400;700&display=swap');
+
 * {
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+  font-family:'Baloo Chettan 2', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 
 .title {
@@ -21,11 +23,11 @@
 }
 
 .correct-answer{
-  background-color: green;
+  background-image:  linear-gradient(to right, #353534 0%, #3dc000 50%, #353534 );
 }
 
 .wrong-answer{
-  background-color: red;
+  background-image:  linear-gradient(to right, #353534 0%, #c02d00 50%, #353534 );
 }
 
 body {
@@ -36,8 +38,9 @@ body {
 
 }
 
+
 #quiz-container{
-  width:900px;
+  width:1000px;
   height:600px;
   background-color: #353534;
   border-radius: 10px;
@@ -52,6 +55,7 @@ body {
   color:black;
   width: 100px;
   height:30px;
+  border: none;
   border-radius:10px;
   position:absolute;
   bottom:50px;
@@ -61,19 +65,25 @@ body {
   color:black;
   width: 100px;
   height:30px;
+  border: none;
   border-radius:10px;
   position:absolute;
   bottom:50px;
 }
 
+#last-question-button:hover, #next-question-button:hover{
+  background-color:#ffdf50;
+  cursor: pointer;
+}
+
 .question-title{
-  color:white;
+  color:beige;
   margin-bottom: 50px;
   font-size: 1.5em;
 }
 
 .answers-default{
-  color:white;
+  color:beige;
   list-style:none;
   border: 3px solid transparent;
 	  border-image: linear-gradient(to right, #353534 0%, #ffffff 50%, #353534 );
@@ -81,6 +91,12 @@ body {
   height:30px;
   padding-top:10px;
   width: 800px;
+  transition: all 1s;
+  cursor: pointer;
+}
+.answers-default:hover{
+  color:black;
+  background-image:  linear-gradient(to right, #353534 0%, #fcd83c 50%, #353534 );
 }
 .answers-default:first-child, .answers-default:nth-child(2), .answers-default:nth-child(3) {
   border-bottom: none;
@@ -91,5 +107,17 @@ body {
 	  border-image-slice: 1;
 }
 .title{
-  color:white;
+  color:beige;
+}
+
+#title-span{
+  font-weight: bold;
+}
+
+#corrects{
+  color:beige;
+}
+
+.final-score-title{
+  color:beige;
 }

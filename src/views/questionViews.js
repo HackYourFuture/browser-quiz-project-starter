@@ -13,6 +13,7 @@ export const createAnswerElement = (answerText, elementID) => {
     });
     answerElement.innerText = answerText;
     answerElement.style.cursor = "pointer";
+    answerElement.classList.add('answers-default','answers-default:hover');
     answerElement.addEventListener("click", checkAnswer, {passive: true})
 
     return answerElement;
@@ -26,7 +27,9 @@ export const createQuestionElement = (question) => {
     const container = createDOMElement('div');
     const title = createDOMElement('h1');
     title.innerText = question.text;
+    title.classList.add('question-title')
     container.appendChild(title);
+    
 
     const answerContainer = createDOMElement('ol', {
         id: ANSWER_CONTAINER_ID,
@@ -79,10 +82,12 @@ export const createQuizResultElement = (numCorrect, numQuestions) => {
     const resultElement = createDOMElement('div');
     const titleElement = createDOMElement('h1');
     titleElement.innerText = "You are a true Warrior!";
+    titleElement.classList.add('final-score-title');
     resultElement.appendChild(titleElement);
 
     const scoreElement = createDOMElement('h2');
     scoreElement.innerText = `You got ${numCorrect} out of ${numQuestions}`;
+    scoreElement.classList.add('final-score-title');
     resultElement.appendChild(scoreElement);
 
     return resultElement;
