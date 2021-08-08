@@ -20,6 +20,14 @@
   overflow: auto;
 }
 
+.correct-answer{
+  background-color: green;
+}
+
+.wrong-answer{
+  background-color: red;
+}
+
 body {
   background-image:url(/public/backGround.jpg);
   background-size: cover;
