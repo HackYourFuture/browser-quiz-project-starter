@@ -8,15 +8,14 @@ import {createDOMElement} from '../utils/DOMUtils.js';
  * Create an Answer element
  */
 export const createAnswerElement = (answerText, elementID) => {
-  const answerElement = createDOMElement('li', {
-      id: elementID,
-  });
-  answerElement.innerText = answerText;
-  answerElement.setAttribute('class', 'answers-default')
-  answerElement.style.cursor = "pointer";
-  answerElement.addEventListener("click", checkAnswer, { passive: true })
-  
-  return answerElement;
+    const answerElement = createDOMElement('li', {
+        id: elementID,
+    });
+    answerElement.innerText = answerText;
+    answerElement.style.cursor = "pointer";
+    answerElement.addEventListener("click", checkAnswer, {passive: true})
+
+    return answerElement;
 };
 
 
@@ -24,11 +23,10 @@ export const createAnswerElement = (answerText, elementID) => {
  * Create a full question element
  */
 export const createQuestionElement = (question) => {
-  const container = createDOMElement('div');
-  const title = createDOMElement('h1');
-  title.innerText = question.text;
-  title.setAttribute('class', 'question-title')
-  container.appendChild(title);
+    const container = createDOMElement('div');
+    const title = createDOMElement('h1');
+    title.innerText = question.text;
+    container.appendChild(title);
 
     const answerContainer = createDOMElement('ol', {
         id: ANSWER_CONTAINER_ID,
@@ -40,7 +38,6 @@ export const createQuestionElement = (question) => {
     }
 
     container.appendChild(answerContainer);
-
     return container;
 };
 
@@ -68,8 +65,25 @@ export const createLastQuestionButtonElement = () => {
         id: LAST_QUESTION_BUTTON_ID,
     });
 
-
     buttonLastElement.innerText = 'Restart Test';
     buttonLastElement.addEventListener('click', nextQuestion);
     return buttonLastElement;
+};
+
+
+/**
+ * Creates and returns the quiz result element
+ */
+
+export const createQuizResultElement = (numCorrect, numQuestions) => {
+    const resultElement = createDOMElement('div');
+    const titleElement = createDOMElement('h1');
+    titleElement.innerText = "You are a true Warrior!";
+    resultElement.appendChild(titleElement);
+
+    const scoreElement = createDOMElement('h2');
+    scoreElement.innerText = `You got ${numCorrect} out of ${numQuestions}`;
+    resultElement.appendChild(scoreElement);
+
+    return resultElement;
 };
