@@ -9,7 +9,6 @@ import {
 } from '../utils/DOMUtils.js';
 import { checkAnswer } from '../listeners/questionListeners.js';
 import { initializeQuiz } from '../init/initializeQuiz.js';
-
 export const showResult = () => {
   const parentDiv = getDOMElement('user-interface');
   const removeChildren = parentDiv.children;
