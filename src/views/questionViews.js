@@ -12,6 +12,7 @@ export const createAnswerElement = (answerText, elementID) => {
       id: elementID,
   });
   answerElement.innerText = answerText;
+  answerElement.setAttribute('class', 'answers-default')
   answerElement.style.cursor = "pointer";
   answerElement.addEventListener("click", checkAnswer, { passive: true })
   
@@ -23,10 +24,11 @@ export const createAnswerElement = (answerText, elementID) => {
  * Create a full question element
  */
 export const createQuestionElement = (question) => {
-    const container = createDOMElement('div');
-    const title = createDOMElement('h1');
-    title.innerText = question.text;
-    container.appendChild(title);
+  const container = createDOMElement('div');
+  const title = createDOMElement('h1');
+  title.innerText = question.text;
+  title.setAttribute('class', 'question-title')
+  container.appendChild(title);
 
     const answerContainer = createDOMElement('ol', {
         id: ANSWER_CONTAINER_ID,
