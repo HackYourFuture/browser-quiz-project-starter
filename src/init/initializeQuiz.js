@@ -7,15 +7,14 @@ import { createNextQuestionButtonElement } from '../views/questionViews.js';
 import { quizData } from '../data.js';
 import { countDownTimer } from '../components/timer.js';
 
-export const initializeQuiz = () => {
+export let initializeQuiz = () => {
   quizData.currentQuestionIndex = 0;
-  // Math.floor(Math.random() * quizData.questions.length) + 1;
+  quizData.questionItem = 0;
+  quizData.score = 0;
   setupQuizHTML();
   showCurrentQuestion();
   countDownTimer();
 };
-//console.log(quizData.questions[Math.floor(Math.random() * quizData.currentQuestionIndex)]);
-//quizData.questions[Math.floor(Math.random() * quizData.currentQuestionIndex.length)];
 const setupQuizHTML = () => {
   const userInterfaceContainer = getDOMElement('user-interface');
   const quizContainer = createDOMElement('div', { id: QUIZ_CONTAINER_ID });
@@ -24,11 +23,8 @@ const setupQuizHTML = () => {
   });
 
   quizContainer.appendChild(questionContainer);
-
   const nextQuestionButton = createNextQuestionButtonElement();
   quizContainer.appendChild(nextQuestionButton);
-
-  console.log(quizContainer);
   userInterfaceContainer.appendChild(quizContainer);
 };
 
