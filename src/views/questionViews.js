@@ -1,43 +1,44 @@
 'use strict';
 
-import { NEXT_QUESTION_BUTTON_ID, LAST_QUESTION_BUTTON_ID  } from '../constants.js';
-import { nextQuestion , checkAnswer} from '../listeners/questionListeners.js';
-import { createDOMElement } from '../utils/DOMUtils.js';
+import {NEXT_QUESTION_BUTTON_ID, LAST_QUESTION_BUTTON_ID, ANSWER_CONTAINER_ID} from '../constants.js';
+import {nextQuestion, checkAnswer} from '../listeners/questionListeners.js';
+import {createDOMElement} from '../utils/DOMUtils.js';
 
 /**
  * Create an Answer element
  */
-export const createAnswerElement = (answerText) => {
-  const answerElement = createDOMElement('li');
-  answerElement.innerText = answerText;
-  answerElement.setAttribute('class', 'answers-default')
-  answerElement.style.cursor = "pointer";
-  answerElement.addEventListener("click", checkAnswer)
-  return answerElement;
+export const createAnswerElement = (answerText, elementID) => {
+    const answerElement = createDOMElement('li', {
+        id: elementID,
+    });
+    answerElement.innerText = answerText;
+    answerElement.style.cursor = "pointer";
+    answerElement.addEventListener("click", checkAnswer, {passive: true})
+
+    return answerElement;
 };
+
 
 /**
  * Create a full question element
  */
 export const createQuestionElement = (question) => {
-  const container = createDOMElement('div');
-  const title = createDOMElement('h1');
-  title.innerText = question.text;
-  title.setAttribute('class', 'question-title')
-  container.appendChild(title);
-  
+    const container = createDOMElement('div');
+    const title = createDOMElement('h1');
+    title.innerText = question.text;
+    container.appendChild(title);
 
-  const answerContainer = createDOMElement('ol');
+    const answerContainer = createDOMElement('ol', {
+        id: ANSWER_CONTAINER_ID,
+    });
 
-  for (const answerKey in question.answers) {
-    const answer = createAnswerElement(question.answers[answerKey]);
-    answerContainer.appendChild(answer);
+    for (const answerKey in question.answers) {
+        const answer = createAnswerElement(question.answers[answerKey], answerKey);
+        answerContainer.appendChild(answer);
+    }
 
-  }
-
-  container.appendChild(answerContainer);
-
-  return container;
+    container.appendChild(answerContainer);
+    return container;
 };
 
 /**
@@ -45,14 +46,14 @@ export const createQuestionElement = (question) => {
  */
 
 export const createNextQuestionButtonElement = () => {
-  const buttonElement = createDOMElement('button', {
-    id: NEXT_QUESTION_BUTTON_ID,
-  });
+    const buttonElement = createDOMElement('button', {
+        id: NEXT_QUESTION_BUTTON_ID,
+    });
 
-  buttonElement.innerText = 'Next question';
-  buttonElement.addEventListener('click', nextQuestion);
-  return buttonElement;
-  
+    buttonElement.innerText = 'Next question';
+    buttonElement.addEventListener('click', nextQuestion);
+    return buttonElement;
+
 };
 
 /**
@@ -60,14 +61,29 @@ export const createNextQuestionButtonElement = () => {
  */
 
 export const createLastQuestionButtonElement = () => {
-  const buttonLastElement = createDOMElement('button', {
-    id: LAST_QUESTION_BUTTON_ID,
-  });
+    const buttonLastElement = createDOMElement('button', {
+        id: LAST_QUESTION_BUTTON_ID,
+    });
 
-
-  buttonLastElement.innerText = 'Restart Test';
-  buttonLastElement.addEventListener('click', nextQuestion);
-  return buttonLastElement;
+    buttonLastElement.innerText = 'Restart Test';
+    buttonLastElement.addEventListener('click', nextQuestion);
+    return buttonLastElement;
 };
 
 
+/**
+ * Creates and returns the quiz result element
+ */
+
+export const createQuizResultElement = (numCorrect, numQuestions) => {
+    const resultElement = createDOMElement('div');
+    const titleElement = createDOMElement('h1');
+    titleElement.innerText = "You are a true Warrior!";
+    resultElement.appendChild(titleElement);
+
+    const scoreElement = createDOMElement('h2');
+    scoreElement.innerText = `You got ${numCorrect} out of ${numQuestions}`;
+    resultElement.appendChild(scoreElement);
+
+    return resultElement;
+};
