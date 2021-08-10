@@ -1,22 +1,32 @@
-import { createDOMElement, getDOMElement } from '../utils/DOMUtils.js';
-import { showResult } from '../views/questionViews.js';
+import { createDOMElement } from '../utils/DOMUtils.js';
+import { quizData } from '../data.js';
+import { handleNextQuestion } from '../handlers/questionHandlers.js';
+import { QUIZ_Interface_ELM } from '../constants.js';
+let timeOver = null;
 export const countDownTimer = () => {
   const timerElement = createDOMElement('p');
   timerElement.classList.add('timer');
-  const container = getDOMElement('user-interface');
-  container.appendChild(timerElement);
-  const startingMinutes = 2.5;
+  QUIZ_Interface_ELM.appendChild(timerElement);
+  const startingMinutes = quizData.timer;
   let time = startingMinutes * 60;
-  const timeOver = setInterval(updateCountDown, 1000);
+  timeOver = setInterval(updateCountDown, 1000);
   function updateCountDown() {
     const minutes = Math.floor(time / 60);
     let seconds = time % 60;
     seconds = seconds < 10 ? '0' + seconds : seconds;
-    if (time <= 0) {
-      clearInterval(timeOver);
-      showResult();
+
+    if (
+      time <= 0 ||
+      quizData.questions[quizData.currentQuestionIndex] === undefined
+    ) {
+      stopTimer();
+      handleNextQuestion();
     }
     timerElement.textContent = ` ${minutes} : ${seconds}`;
     time--;
   }
+};
+
+export const stopTimer = () => {
+  clearInterval(timeOver);
 };

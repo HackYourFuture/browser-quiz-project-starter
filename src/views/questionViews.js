@@ -1,30 +1,39 @@
 'use strict';
 
-import { NEXT_QUESTION_BUTTON_ID } from '../constants.js';
+import { NEXT_QUESTION_BUTTON_ID, QUIZ_Interface_ELM } from '../constants.js';
 import { nextQuestion } from '../listeners/questionListeners.js';
-import {
-  clearDOMElement,
-  createDOMElement,
-  getDOMElement,
-} from '../utils/DOMUtils.js';
+import { clearDOMElement, createDOMElement } from '../utils/DOMUtils.js';
 import { checkAnswer } from '../listeners/questionListeners.js';
-import { initializeQuiz } from '../init/initializeQuiz.js';
+import { initializeQuiz, startingPage } from '../init/initializeQuiz.js';
+import { quizData } from '../data.js';
+
+// QUIZ_CONTAINER_ID
 export const showResult = () => {
-  const parentDiv = getDOMElement('user-interface');
-  const removeChildren = parentDiv.children;
-  for (const child of removeChildren) {
-    child.style.display = 'none';
+  const quizQuestionItems = QUIZ_Interface_ELM.children;
+  for (const questionItem of quizQuestionItems) {
+    questionItem.style.display = 'none';
   }
+  const theFinalScore = quizData.score;
+  const showScore = createDOMElement('h1');
+  QUIZ_Interface_ELM.appendChild(showScore);
+
+  if (theFinalScore > 5) {
+    showScore.textContent = `Hora🪄,  you passed !!!!your score ${theFinalScore}`;
+  } else {
+    showScore.textContent = `Game Over🧙‍♂️! your score ${theFinalScore}`;
+  }
+
+  // create new game btn
   const newButton = createDOMElement('button', { id: 'try-again' });
-  newButton.textContent = 'Try again ';
-  parentDiv.appendChild(newButton);
+  newButton.innerText = 'Try again ';
+
+  QUIZ_Interface_ELM.appendChild(newButton);
   newButton.addEventListener('click', restartGame);
 };
-
+//
 const restartGame = () => {
-  const parentDiv = getDOMElement('user-interface');
-  clearDOMElement(parentDiv);
-  initializeQuiz();
+  clearDOMElement(QUIZ_Interface_ELM);
+  startingPage();
 };
 
 /**
@@ -51,24 +60,25 @@ export const createQuestionElement = (question) => {
   const title = createDOMElement('h1');
   if (question !== undefined) {
     title.innerText = question.text;
-  } else {
-    showResult();
+    // } else {
+    //   showResult();
   }
   container.appendChild(title);
   const answerContainer = createDOMElement('ol');
   // set classes .
   container.setAttribute('class', 'content-question');
   answerContainer.setAttribute('class', 'list-answers');
-  const linksEl = createDOMElement('div');
-  linksEl.setAttribute('class', 'link');
-  const linksContainer = getDOMElement('user-interface');
-  linksContainer.appendChild(linksEl);
-  const scoreEl = createDOMElement('div');
-  scoreEl.setAttribute('class', 'score');
-  linksContainer.appendChild(scoreEl);
-  const questionEl = createDOMElement('div');
-  questionEl.setAttribute('class', 'question');
-  linksContainer.appendChild(questionEl);
+  // if (QUIZ_Interface_ELM.children.length === 0) {
+  //   const linksEl = createDOMElement('div');
+  //   linksEl.setAttribute('class', 'link');
+  //   QUIZ_Interface_ELM.appendChild(linksEl);
+  //   const scoreEl = createDOMElement('div');
+  //   scoreEl.setAttribute('class', 'score');
+  //   QUIZ_Interface_ELM.appendChild(scoreEl);
+  //   const questionEl = createDOMElement('div');
+  //   questionEl.setAttribute('class', 'question');
+  //   QUIZ_Interface_ELM.appendChild(questionEl);
+  // }
   if (question !== undefined) {
     for (const answerKey in question.answers) {
       const answer = createAnswerElement(

@@ -14,6 +14,7 @@ export const quizData = {
   currentQuestionIndex: 0,
   questionItem: 0,
   score: 0,
+  timer: 0.1,
 
   // the questions in the quiz
   questions: [
@@ -243,6 +244,10 @@ export const quizData = {
         },
       ],
     },
+  ],
+};
+const extraQuizData = {
+  questions: [
     {
       text: `Consider the following sequence of JavaScript statements:
       let a = new Array();

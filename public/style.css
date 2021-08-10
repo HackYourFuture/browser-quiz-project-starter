@@ -10,14 +10,69 @@
   --fault: rgb(255, 59, 59);
   --purple: #26003d;
   --grey: #9999;
-  --white: #eee;
+  --smokey: #eee;
   --yellow: #f1ff5c;
   --orange: #ffa260;
 }
 
 body {
-  background-color: var(--purple);
+  color: var(--smokey);
+  background-image: url('../public/images/old-black-background-grunge-texture-dark-wallpaper-blackboard-chalkboard-room-wall_1258-28313.jpg');
 }
+/* starting page */
+#startPageContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+
+  height: 100vh;
+}
+
+#canv {
+  position: relative;
+  top: -15%;
+}
+#startingBtns {
+  display: flex;
+  width: 50%;
+  justify-content: space-around;
+  position: relative;
+  top: -10%;
+}
+button {
+  padding: 0.7em 2em;
+  margin: auto;
+  color: #fff;
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #bc13fe,
+    0 0 82px #bc13fe, 0 0 92px #bc13fe, 0 0 102px #bc13fe, 0 0 151px #bc13fe;
+  background: none;
+  border: 2px solid;
+  font-size: 1em;
+  border: 0.2rem solid #fff;
+  box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #bc13fe,
+    0 0 0.8rem #bc13fe, 0 0 2.8rem #bc13fe, inset 0 0 1.3rem #bc13fe;
+}
+.disabled {
+  box-shadow: none;
+}
+
+.disabled:hover {
+  box-shadow: none;
+  transform: none;
+  border-color: var(--grey);
+}
+button:hover {
+  cursor: pointer;
+}
+.rightAnswer {
+  background-color: var(--yellow);
+  border: 0.2rem solid #fff;
+  box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem var(--yellow),
+    0 0 0.8rem var(--yellow), 0 0 2.8rem var(--yellow),
+    inset 0 0 1.3rem var(--yellow);
+}
+/* */
 .centered {
   display: flex;
   margin: 5% auto;
@@ -26,19 +81,18 @@ body {
   width: 75%;
   height: 560px;
   max-height: 120vh;
-
   text-align: center;
   justify-content: center;
   align-items: center;
   border-radius: 10px;
-  border: 1px solid var(--white);
+  border: 1px solid var(--smokey);
   position: relative;
-  box-shadow: 0 0.1em 1em -0.1em var(--white);
+  box-shadow: 0 0.1em 1em -0.1em var(--smokey);
   position: relative;
 }
 
 .content-question h1 {
-  color: var(--white);
+  color: var(--smokey);
   font-size: 22px;
   font-weight: bold;
 }
@@ -49,7 +103,7 @@ body {
   padding: 12px;
   border: 2px solid;
   margin: 20px;
-  color: var(--white);
+  color: var(--smokey);
   background: none;
   border: 2px solid;
   font-size: 1.2em;
@@ -58,24 +112,7 @@ body {
 }
 .answer-options:hover {
   border-color: var(--yellow);
-  color: var(--white);
-  box-shadow: 0 0.5em 0.5em -0.4em var(--yellow);
-  transform: translateY(-0.25em);
-  cursor: pointer;
-}
-.button-element,
-#try-again {
-  padding: 0.5em 2em;
-  margin: auto;
-  color: var(--orange);
-  background: none;
-  border: 2px solid;
-  font-size: 1em;
-  border-radius: 5px;
-}
-.button-element:hover {
-  border-color: var(--white);
-  color: var(--yellow);
+  color: var(--smokey);
   box-shadow: 0 0.5em 0.5em -0.4em var(--yellow);
   transform: translateY(-0.25em);
   cursor: pointer;
@@ -136,7 +173,7 @@ body {
   top: 2%;
   font-size: 1rem;
   font-weight: bolder;
-  color: var(--white);
+  color: var(--smokey);
 }
 .timer {
   position: absolute;
@@ -144,26 +181,17 @@ body {
   top: 2%;
   font-size: 1.5rem;
   font-weight: bolder;
-  color: var(--white);
+  color: var(--smokey);
 }
-.disabled {
-  color: var(--grey);
-}
-.disabled:hover {
-  color: var(--grey);
-  box-shadow: none;
-  transform: none;
-  border-color: var(--grey);
-}
+
 .link a {
   color: var(--yellow);
   text-decoration: none;
   position: absolute;
   bottom: 2%;
-  left: 47%;
+  left: 46.5%;
 }
 .question {
-  color: white;
   position: absolute;
   top: 2%;
 }
