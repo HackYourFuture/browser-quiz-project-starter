@@ -24,7 +24,7 @@ export const startingPage = () => {
   QUIZ_Interface_BOX.appendChild(startPageContainer);
 
   const gifImage = createDOMElement('img', { id: 'gifImage' });
-  gifImage.src = '../public/images/Wizard.gif';
+  gifImage.src = 'https://i.postimg.cc/59L9FKsL/Wizard.gif';
 
   const canvasElm = createDOMElement('canvas', { id: 'canv' });
   canvasElm.setAttribute('width', '600');
