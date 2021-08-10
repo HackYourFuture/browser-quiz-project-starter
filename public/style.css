@@ -8,11 +8,12 @@
 :root {
   --correct: rgb(92, 253, 92);
   --fault: rgb(255, 59, 59);
-  --purple: #26003d;
+  --purple: #bc13fe;
   --grey: #9999;
   --smokey: #eee;
   --yellow: #f1ff5c;
   --orange: #ffa260;
+  --white: #fff;
 }
 
 body {
@@ -43,15 +44,17 @@ body {
 button {
   padding: 0.7em 2em;
   margin: auto;
-  color: #fff;
-  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #bc13fe,
-    0 0 82px #bc13fe, 0 0 92px #bc13fe, 0 0 102px #bc13fe, 0 0 151px #bc13fe;
+  color: var(--white);
+  text-shadow: 0 0 7px var(--white), 0 0 10px var(--white),
+    0 0 21px var(--white), 0 0 42px var(--purple), 0 0 82px var(--purple),
+    0 0 92px var(--purple), 0 0 102px var(--purple), 0 0 151px var(--purple);
   background: none;
   border: 2px solid;
   font-size: 1em;
-  border: 0.2rem solid #fff;
-  box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #bc13fe,
-    0 0 0.8rem #bc13fe, 0 0 2.8rem #bc13fe, inset 0 0 1.3rem #bc13fe;
+  border: 0.2rem solid var(--white);
+  box-shadow: 0 0 0.2rem var(--white), 0 0 0.2rem var(--white),
+    0 0 2rem var(--purple), 0 0 0.8rem var(--purple), 0 0 2.8rem var(--purple),
+    inset 0 0 1.3rem var(--purple);
 }
 .disabled {
   box-shadow: none;
@@ -67,9 +70,9 @@ button:hover {
 }
 .rightAnswer {
   background-color: var(--yellow);
-  border: 0.2rem solid #fff;
-  box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem var(--yellow),
-    0 0 0.8rem var(--yellow), 0 0 2.8rem var(--yellow),
+  border: 0.2rem solid var(--white);
+  box-shadow: 0 0 0.2rem var(--white), 0 0 0.2rem var(--white),
+    0 0 2rem var(--yellow), 0 0 0.8rem var(--yellow), 0 0 2.8rem var(--yellow),
     inset 0 0 1.3rem var(--yellow);
 }
 /* */
@@ -124,8 +127,10 @@ button:hover {
   overflow: auto;
 }
 .correctAnswer {
-  border-color: var(--correct);
-  color: var(--correct);
+  border: 0.2rem solid var(--correct);
+  box-shadow: 0 0 0.2rem var(--white), 0 0 0.2rem var(--white),
+    0 0 2rem var(--correct), 0 0 0.8rem var(--correct),
+    0 0 2.8rem var(--correct), inset 0 0 1.3rem var(--correct);
 }
 .correctAnswer:hover {
   border-color: var(--correct);
@@ -154,8 +159,11 @@ button:hover {
   }
 }
 .wrongAnswer {
-  border-color: var(--fault);
-  color: var(--fault);
+  border: 0.2rem solid var(--fault);
+  box-shadow: 0 0 0.2rem var(--white), 0 0 0.2rem var(--white),
+    0 0 2rem var(--fault), 0 0 0.8rem var(--fault), 0 0 2.8rem var(--fault),
+    inset 0 0 1.3rem var(--fault);
+
   box-shadow: 0 0.5em 0.5em -0.4em var(--fault);
   transform: translateY(-0.25em);
   cursor: pointer;
@@ -194,4 +202,15 @@ button:hover {
 .question {
   position: absolute;
   top: 2%;
+}
+#showScore span {
+  font-size: 3rem;
+  font-weight: bolder;
+  color: var(--white);
+  text-shadow: 0 0 7px var(--white), 0 0 10px var(--white),
+    0 0 21px var(--white), 0 0 42px var(--purple), 0 0 82px var(--purple),
+    0 0 92px var(--purple), 0 0 102px var(--purple), 0 0 151px var(--purple);
+}
+#gifImage {
+  width: 1200px;
 }

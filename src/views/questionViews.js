@@ -14,12 +14,22 @@ export const showResult = () => {
   }
 
   const theFinalScore = quizData.score;
-  const showScore = createDOMElement('h1');
-  QUIZ_Interface_BOX.appendChild(showScore);
+  const showScore = createDOMElement('h1', { id: 'showScore' });
 
-  theFinalScore >= 5
-    ? (showScore.textContent = `Hora🪄,  you passed !!!!your score ${theFinalScore}`)
-    : (showScore.textContent = `Game Over🧙‍♂️! your score ${theFinalScore}`);
+  const wizardImg = createDOMElement('img');
+
+  if (theFinalScore < 5) {
+    showScore.innerHTML = `Game Over!!! your score is <span>${theFinalScore}<span>`;
+    wizardImg.src =
+      'https://i.postimg.cc/1zy7HQZf/d8ee68d4f24e481c3c534e7286fd4352.gif';
+
+    wizardImg.setAttribute('height', '250');
+  } else {
+    showScore.innerHTML = `Hooray!!! you passed !!!!your score is <span>${theFinalScore}<span>`;
+    wizardImg.src =
+      'https://i.postimg.cc/ZnGkVMT0/Vast-Opulent-Lark-max-1mb.gif';
+  }
+  QUIZ_Interface_BOX.append(showScore, wizardImg);
 
   const newButton = createDOMElement('button', { id: 'try-again' });
   newButton.innerText = 'Try again';
