@@ -3,7 +3,7 @@
 import {
   QUESTION_CONTAINER_ID,
   QUIZ_CONTAINER_ID,
-  QUIZ_Interface_ELM,
+  QUIZ_Interface_BOX,
 } from '../constants.js';
 import { showCurrentQuestion } from '../handlers/questionHandlers.js';
 import {
@@ -15,46 +15,41 @@ import { createNextQuestionButtonElement } from '../views/questionViews.js';
 import { quizData } from '../data.js';
 
 export const startingPage = () => {
-  QUIZ_Interface_ELM.style.border = 'none';
-  QUIZ_Interface_ELM.style.boxShadow = 'none';
+  QUIZ_Interface_BOX.style.border = 'none';
+  QUIZ_Interface_BOX.style.boxShadow = 'none';
 
   const startPageContainer = createDOMElement('div', {
     id: 'startPageContainer',
   });
-
-  QUIZ_Interface_ELM.appendChild(startPageContainer);
+  QUIZ_Interface_BOX.appendChild(startPageContainer);
 
   const gifImage = createDOMElement('img', { id: 'gifImage' });
   gifImage.src = '../public/images/Wizard.gif';
+
   const canvasElm = createDOMElement('canvas', { id: 'canv' });
   canvasElm.setAttribute('width', '600');
   canvasElm.setAttribute('height', '250');
 
-  const startingBtns = createDOMElement('div', {
-    id: 'startingBtns',
-  });
+  const startingBtns = createDOMElement('div', { id: 'startingBtns' });
 
   startPageContainer.append(gifImage, canvasElm, startingBtns);
 
-  const easyBtn = createDOMElement('button', {
-    id: 'easyBtn ',
-  });
+  const easyBtn = createDOMElement('button', { id: 'easyBtn ' });
   easyBtn.textContent = 'Easy JS quiz';
-  //
 
-  const mediumBtn = createDOMElement('button', {
-    id: 'mediumBtn',
-  });
+  const mediumBtn = createDOMElement('button', { id: 'mediumBtn' });
   mediumBtn.textContent = 'Medium JS quiz';
-  const hardBtn = createDOMElement('button', {
-    id: 'hardBtn',
-  });
+
+  const hardBtn = createDOMElement('button', { id: 'hardBtn' });
   hardBtn.textContent = 'Hard JS quiz';
+
   startingBtns.append(easyBtn, mediumBtn, hardBtn);
+
   easyBtn.addEventListener('click', chooseTheGameLevel);
   mediumBtn.addEventListener('click', chooseTheGameLevel);
   hardBtn.addEventListener('click', chooseTheGameLevel);
-  //www.geeksforgeeks.org/how-to-create-a-curve-text-using-css3-canvas/
+
+  //--------------------- www.geeksforgeeks.org/how-to-create-a-curve-text-using-css3-canvas/-------------//
   function roundJSText() {
     let canvas = document.getElementById('canv');
     let context = canvas.getContext('2d');
@@ -62,7 +57,7 @@ export const startingPage = () => {
     context.fillStyle = '#e5e5e5';
     context.textAlign = 'center';
     let string = 'JavaScript';
-    let angle = Math.PI * 0.6; // in radians
+    let angle = Math.PI * 0.6;
     let radius = 200;
     context.translate(300, 300);
     context.rotate((-1 * angle) / 1.9);
@@ -76,22 +71,31 @@ export const startingPage = () => {
   }
   roundJSText();
 };
+//---------------------------------- ENDING FUNCTION GEEKSFORGEEKS ---------------------------------//
+
 const chooseTheGameLevel = (event) => {
   const easyLevel = getDOMElement('easyBtn ');
   const mediumLevel = getDOMElement('mediumBtn');
   const hardLevel = getDOMElement('hardBtn');
-  if (event.target === easyLevel) {
-    quizData.timer = 1;
-  } else if (event.target === mediumLevel) {
-    quizData.timer = 0.5;
-  } else if (event.target === hardLevel) {
-    quizData.timer = 0.2;
+
+  switch (event.target) {
+    case easyLevel:
+      quizData.timer = 1;
+      break;
+
+    case mediumLevel:
+      quizData.timer = 0.5;
+      break;
+
+    case hardLevel:
+      quizData.timer = 0.1;
+      break;
   }
 
-  QUIZ_Interface_ELM.style.border = '1px solid #eee';
-  QUIZ_Interface_ELM.style.boxShadow = ' 0 0.1em 1em -0.1em #eee';
+  QUIZ_Interface_BOX.style.border = '1px solid #eee';
+  QUIZ_Interface_BOX.style.boxShadow = ' 0 0.1em 1em -0.1em #eee';
 
-  clearDOMElement(QUIZ_Interface_ELM);
+  clearDOMElement(QUIZ_Interface_BOX);
   initializeQuiz();
 };
 
@@ -99,31 +103,30 @@ export let initializeQuiz = () => {
   quizData.currentQuestionIndex = 0;
   quizData.questionItem = 0;
   quizData.score = 0;
+
   setupQuizHTML();
   showCurrentQuestion();
 };
+
 const setupQuizHTML = () => {
   const quizContainer = createDOMElement('div', { id: QUIZ_CONTAINER_ID });
   const questionContainer = createDOMElement('div', {
     id: QUESTION_CONTAINER_ID,
   });
-
-  quizContainer.appendChild(questionContainer);
   const nextQuestionButton = createNextQuestionButtonElement();
-  quizContainer.appendChild(nextQuestionButton);
-  QUIZ_Interface_ELM.appendChild(quizContainer);
+
+  quizContainer.append(questionContainer, nextQuestionButton);
 
   const linksEl = createDOMElement('div');
   linksEl.setAttribute('class', 'link');
-  QUIZ_Interface_ELM.appendChild(linksEl);
-  //
+
   const scoreEl = createDOMElement('div');
   scoreEl.setAttribute('class', 'score');
-  QUIZ_Interface_ELM.appendChild(scoreEl);
-  //
+
   const questionEl = createDOMElement('div');
   questionEl.setAttribute('class', 'question');
-  QUIZ_Interface_ELM.appendChild(questionEl);
+
+  QUIZ_Interface_BOX.append(quizContainer, linksEl, scoreEl, questionEl);
 };
 
 window.addEventListener('load', startingPage);
