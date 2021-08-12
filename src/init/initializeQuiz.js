@@ -69,12 +69,12 @@ export const startingPage = () => {
       context.restore();
     }
   }
+  //---------------------------------- ENDING FUNCTION GEEKSFORGEEKS ---------------------------------//
   roundJSText();
 };
-//---------------------------------- ENDING FUNCTION GEEKSFORGEEKS ---------------------------------//
 
 const chooseTheGameLevel = (event) => {
-  const easyLevel = getDOMElement('easyBtn ');
+  const easyLevel = getDOMElement('easyBtn');
   const mediumLevel = getDOMElement('mediumBtn');
   const hardLevel = getDOMElement('hardBtn');
 

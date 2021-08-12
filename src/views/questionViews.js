@@ -7,7 +7,7 @@ import { checkAnswer } from '../listeners/questionListeners.js';
 import { startingPage } from '../init/initializeQuiz.js';
 import { quizData } from '../data.js';
 
-export const showResult = () => {
+const showResult = () => {
   const quizQuestionItems = QUIZ_Interface_BOX.children;
   for (const questionItem of quizQuestionItems) {
     questionItem.style.display = 'none';
@@ -46,7 +46,7 @@ const restartGame = () => {
 /**
  * Create an Answer element
  */
-export const createAnswerElement = (answerText, key) => {
+const createAnswerElement = (answerText, key) => {
   const answerElement = createDOMElement('li');
   answerElement.innerText = answerText;
 
