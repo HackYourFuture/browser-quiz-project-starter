@@ -27,6 +27,7 @@ export const countDownTimer = () => {
     }
     timerElement.textContent = ` ${minutes} : ${seconds}`;
     time--;
+    console.log(time);
   }
 };
 

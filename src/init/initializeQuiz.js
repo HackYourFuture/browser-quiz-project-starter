@@ -34,7 +34,7 @@ export const startingPage = () => {
 
   startPageContainer.append(gifImage, canvasElm, startingBtns);
 
-  const easyBtn = createDOMElement('button', { id: 'easyBtn ' });
+  const easyBtn = createDOMElement('button', { id: 'easyBtn' });
   easyBtn.textContent = 'Easy JS quiz';
 
   const mediumBtn = createDOMElement('button', { id: 'mediumBtn' });
@@ -77,7 +77,7 @@ const chooseTheGameLevel = (event) => {
   const easyLevel = getDOMElement('easyBtn');
   const mediumLevel = getDOMElement('mediumBtn');
   const hardLevel = getDOMElement('hardBtn');
-
+  console.log(easyLevel);
   switch (event.target) {
     case easyLevel:
       quizData.timer = 1;
@@ -99,7 +99,7 @@ const chooseTheGameLevel = (event) => {
   initializeQuiz();
 };
 
-export let initializeQuiz = () => {
+export const initializeQuiz = () => {
   quizData.currentQuestionIndex = 0;
   quizData.questionItem = 0;
   quizData.score = 0;

@@ -8,10 +8,11 @@ import { startingPage } from '../init/initializeQuiz.js';
 import { quizData } from '../data.js';
 
 const showResult = () => {
-  const quizQuestionItems = QUIZ_Interface_BOX.children;
-  for (const questionItem of quizQuestionItems) {
-    questionItem.style.display = 'none';
-  }
+  //const quizQuestionItems = QUIZ_Interface_BOX;
+  // for (const questionItem of quizQuestionItems) {
+  //   questionItem.style.display = 'none';
+  // }
+  clearDOMElement(QUIZ_Interface_BOX);
 
   const theFinalScore = quizData.score;
   const showScore = createDOMElement('h1', { id: 'showScore' });

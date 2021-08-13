@@ -8,13 +8,12 @@ import { countDownTimer, stopTimer } from '../components/timer.js';
 
 export const showCurrentQuestion = () => {
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
+
   const questionDOM = createQuestionElement(currentQuestion);
 
   const questionContainer = getDOMElement(QUESTION_CONTAINER_ID);
   clearDOMElement(questionContainer);
   questionContainer.appendChild(questionDOM);
-
-  quizData.questionItem++;
 
   const questionCounter = document.querySelector('.question');
   questionCounter.textContent = `Question ${quizData.questionItem} / ${quizData.questions.length}`;
@@ -26,9 +25,9 @@ export const showCurrentQuestion = () => {
   disabledBtn.setAttribute('disabled', 'disabled');
   disabledBtn.classList.add('disabled');
 
-  const links = document.querySelector('.link');
-
   if (currentQuestion !== undefined) {
+    quizData.questionItem++;
+    const links = document.querySelector('.link');
     currentQuestion.links.forEach((link) => {
       links.innerHTML = `<a href='${link.href}' target='_blank'>Need help?</a>`;
     });
