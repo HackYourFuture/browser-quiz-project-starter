@@ -31,3 +31,16 @@ export const createDOMElement = (tag, options) => {
 export const getDOMElement = (id) => {
   return document.getElementById(id);
 };
+
+export const getKeyByValue = (object, value) => {
+  return Object.keys(object).find(key => object[key] === value);
+};
+
+// Checking if the User Answer is Correct or Not
+export const getQuestionAnswers = (selectedAnswer, correctAnswer) => {
+  if (selectedAnswer === correctAnswer) {
+    return true
+  } else {
+    return false
+  }
+};
