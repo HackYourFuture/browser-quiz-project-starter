@@ -1,7 +1,10 @@
 'use strict';
 
-import { showCurrentQuestion, nextQuestionIndex } from '../handlers/questionHandlers.js';
+import { handleNextQuestion,handleSelectedAnswer } from '../handlers/questionHandlers.js';
+
 export const nextQuestion = () => {
-  nextQuestionIndex();
-  showCurrentQuestion();
+  handleNextQuestion();
 };
+export const selectedAnswer = ()=> {
+  handleSelectedAnswer()
+}
