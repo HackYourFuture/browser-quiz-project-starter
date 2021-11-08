@@ -135,5 +135,39 @@ export const quizData = {
         }
       ],
     },
+    {
+      text: `Which method could append items to an array without changing the array itself?`,
+      answers: {
+        a: 'push',
+        b: 'splice',
+        c: 'concat',
+        d: 'length'
+      },
+      correct: 'c',
+      selected: null,
+      links: [
+        {
+          text: 'samanthaming',
+          href: 'https://www.samanthaming.com/tidbits/87-5-ways-to-append-item-to-array/',
+        }
+      ],
+    },
+    {
+      text: `Which declaration keyword can not have a block scope?`,
+      answers: {
+        a: 'var',
+        b: 'let',
+        c: 'const',
+        d: 'None of the above'
+      },
+      correct: 'a',
+      selected: null,
+      links: [
+        {
+          text: 'w3schools',
+          href: 'https://www.w3schools.com/js/js_scope.asp',
+        }
+      ],
+    },
   ],
 };
