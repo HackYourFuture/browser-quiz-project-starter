@@ -21,6 +21,7 @@ export const handleNextQuestion = () => {
   showCurrentQuestion();
 };
 
-export const handleSelectedAnswer = (e) => {
+export function handleSelectedAnswer(evt) {
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
-  console.log(getKeyByValue(currentQuestion.answers, e.target.innerHTML)||' ') }
+  currentQuestion.selected = getKeyByValue(currentQuestion.answers, evt.target.textContent)
+}
