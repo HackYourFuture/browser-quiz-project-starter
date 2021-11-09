@@ -1,7 +1,7 @@
 'use strict';
 
 import { NEXT_QUESTION_BUTTON_ID } from '../constants.js';
-import { nextQuestion } from '../listeners/questionListeners.js';
+import { nextQuestion, selectedAnswer } from '../listeners/questionListeners.js';
 import { createDOMElement } from '../utils/DOMUtils.js';
 
 /**
@@ -10,7 +10,7 @@ import { createDOMElement } from '../utils/DOMUtils.js';
 export const createAnswerElement = (answerText) => {
   const answerElement = createDOMElement('li');
   answerElement.innerText = answerText;
-
+  answerElement.addEventListener('click', selectedAnswer)
   return answerElement;
 };
 
