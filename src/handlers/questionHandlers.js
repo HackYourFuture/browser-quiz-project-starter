@@ -23,12 +23,10 @@ export const handleNextQuestion = () => {
 
 export function handleSelectedAnswer(evt) {
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
-
   currentQuestion.selected = getKeyByValue(currentQuestion.answers, evt.target.textContent)
 };
 
 export function handleQuestionResult() {
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
   const isCorrect = getQuestionAnswers(currentQuestion.selected, currentQuestion.correct);
-}
-
+};
