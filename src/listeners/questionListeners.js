@@ -7,9 +7,6 @@ export const nextQuestion = () => {
 };
 
 export const selectedAnswer = (e) => {
-  handleSelectedAnswer(e)
-};
-
-export const questionResult = () => {
-  handleQuestionResult()
+  handleSelectedAnswer(e);
+  handleQuestionResult();
 };
