@@ -2,7 +2,6 @@
 
 import { NEXT_QUESTION_BUTTON_ID } from '../constants.js';
 import { nextQuestion, selectedAnswer } from '../listeners/questionListeners.js';
-//import { handleSelectedAnswer } from '../handlers/questionHandlers.js';
 import { createDOMElement } from '../utils/DOMUtils.js';
 
 /**

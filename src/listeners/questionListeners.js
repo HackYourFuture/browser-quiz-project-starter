@@ -5,6 +5,6 @@ import { handleNextQuestion,handleSelectedAnswer } from '../handlers/questionHan
 export const nextQuestion = () => {
   handleNextQuestion();
 };
- export const selectedAnswer = (e)=> {
-   handleSelectedAnswer(e)
- }
+export const selectedAnswer = (e)=> {
+  handleSelectedAnswer(e)
+}
