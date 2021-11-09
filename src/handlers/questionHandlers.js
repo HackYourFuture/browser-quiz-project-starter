@@ -5,7 +5,7 @@ import { createQuestionElement } from '../views/questionViews.js';
 import { clearDOMElement, getDOMElement } from '../utils/DOMUtils.js';
 import { quizData } from '../data.js';
 
-export const nextQuestionIndex = () => {
+export const incrementQuestionIndex = () => {
   quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
 }
 const createQuestionDOM = () => {
@@ -17,9 +17,18 @@ const createQuestionDOM = () => {
 const clearQuestionContainer = () => {
   const questionContainer = getDOMElement(QUESTION_CONTAINER_ID);
   clearDOMElement(questionContainer);
-  questionContainer.appendChild(createQuestionDOM());
+  return questionContainer;
 }
+
+const addToQuestionContainer = () => {
+  const questionDOM = createQuestionDOM();
+  const questionContainer = clearQuestionContainer();
+  questionContainer.appendChild(questionDOM);
+}
+
+
 export const showCurrentQuestion = () => {
   createQuestionDOM();
   clearQuestionContainer();
+  addToQuestionContainer();
 }

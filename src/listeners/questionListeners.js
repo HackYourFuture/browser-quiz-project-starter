@@ -1,7 +1,7 @@
 'use strict';
 
-import { showCurrentQuestion, nextQuestionIndex } from '../handlers/questionHandlers.js';
+import { showCurrentQuestion, incrementQuestionIndex } from '../handlers/questionHandlers.js';
 export const nextQuestion = () => {
-  nextQuestionIndex();
+  incrementQuestionIndex();
   showCurrentQuestion();
 };
