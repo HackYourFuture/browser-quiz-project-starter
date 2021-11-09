@@ -2,7 +2,7 @@
 
 import { QUESTION_CONTAINER_ID } from '../constants.js';
 import { createQuestionElement } from '../views/questionViews.js';
-import { clearDOMElement, getDOMElement, getKeyByValue, getQuestionAnswers } from '../utils/DOMUtils.js';
+import { clearDOMElement, getDOMElement, getKeyByValue, checkAnswer } from '../utils/DOMUtils.js';
 import { quizData } from '../data.js';
 
 export const showCurrentQuestion = () => {
@@ -28,5 +28,5 @@ export function handleSelectedAnswer(evt) {
 
 export function handleQuestionResult() {
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
-  return getQuestionAnswers(currentQuestion.selected, currentQuestion.correct);
+  return checkAnswer(currentQuestion.selected, currentQuestion.correct);
 };

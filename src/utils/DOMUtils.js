@@ -32,7 +32,7 @@ export const getDOMElement = (id) => {
   return document.getElementById(id);
 };
 
-  /*
+/*
 *Get a key from objects. Used for getting the option when the answer selected
 */
 export const getKeyByValue = (object, value) => {
@@ -40,10 +40,4 @@ export const getKeyByValue = (object, value) => {
 }
 
 // Checking if the User Answer is Correct or Not
-export const getQuestionAnswers = (selectedAnswer, correctAnswer) => {
-  if (selectedAnswer === correctAnswer) {
-    return true
-  } else {
-    return false
-  }
-};
+export const checkAnswer = (selectedAnswer, correctAnswer) => selectedAnswer === correctAnswer;
