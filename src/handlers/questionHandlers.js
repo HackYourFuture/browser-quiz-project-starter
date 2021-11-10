@@ -8,27 +8,16 @@ import { quizData } from '../data.js';
 export const incrementQuestionIndex = () => {
   quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
 }
-const createQuestionDOM = () => {
-  const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
-  
-  return createQuestionElement(currentQuestion);
-}
-
-const clearQuestionContainer = () => {
-  const questionContainer = getDOMElement(QUESTION_CONTAINER_ID);
-  clearDOMElement(questionContainer);
-  return questionContainer;
-}
-
-const addToQuestionContainer = () => {
-  const questionDOM = createQuestionDOM();
-  const questionContainer = clearQuestionContainer();
-  questionContainer.appendChild(questionDOM);
-}
-
 
 export const showCurrentQuestion = () => {
-  createQuestionDOM();
-  clearQuestionContainer();
-  addToQuestionContainer();
+  const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
+  const questionElement = createQuestionElement(currentQuestion);
+  const questionContainer = getDOMElement(QUESTION_CONTAINER_ID);
+  clearDOMElement(questionContainer);
+  questionContainer.appendChild(questionElement);
+}
+
+export const clearQuizContainer = () => {
+  const quizContainer = getDOMElement(QUIZ_CONTAINER_ID);
+  clearDOMElement(quizContainer);
 }
