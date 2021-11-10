@@ -169,5 +169,46 @@ export const quizData = {
         }
       ],
     },
+    {
+      text: `What is the correct syntax for referring to an external script called "xxx.js"?`,
+      answers: {
+        a: '<script name="xxx.js">',
+        b: '<script href="xxx.js">',
+        c: '<script src="xxx.js">'
+      },
+      correct: 'c',
+      selected: null,
+      links: [
+        {
+          text: 'w3schools',
+          href: 'https://www.w3schools.com/tags/att_script_src.asp',
+        },
+        {
+          text: 'w3schools',
+          href: 'https://www.w3schools.com/js/js_whereto.asp',
+        }
+      ],
+    },
+    {
+      text: `How do you round the number 7.25 to the nearest integer?`,
+      answers: {
+        a: 'round(7.25)',
+        b: 'Math.round(7.25)',
+        c: 'Math.rnd(7.25)',
+        d: 'rnd(7.25)'
+      },
+      correct: 'b',
+      selected: null,
+      links: [
+        {
+          text: 'MDN',
+          href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/round',
+        },
+        {
+          text: 'w3schools',
+          href: 'https://www.w3schools.com/jsref/jsref_round.asp',
+        }
+      ],
+    },
   ],
 };
