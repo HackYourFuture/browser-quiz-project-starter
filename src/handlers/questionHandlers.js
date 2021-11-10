@@ -29,5 +29,8 @@ export function handleSelectedAnswer(evt) {
 
 export function handleQuestionResult() {
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
-  return checkAnswer(currentQuestion.selected, currentQuestion.correct);
+  const isCorrect = checkAnswer(currentQuestion.selected, currentQuestion.correct);
+  if (isCorrect){
+    quizData.currentTotalScore += 1
+  }
 };
