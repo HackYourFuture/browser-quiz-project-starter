@@ -31,9 +31,13 @@ export const createDOMElement = (tag, options) => {
 export const getDOMElement = (id) => {
   return document.getElementById(id);
 };
-  /*
+
+/*
 *Get a key from objects. Used for getting the option when the answer selected
 */
 export const getKeyByValue = (object, value) => {
   return Object.keys(object).find(key => object[key] === value);
 }
+
+// Checking if the User Answer is Correct or Not
+export const checkAnswer = (selectedAnswer, correctAnswer) => selectedAnswer === correctAnswer;

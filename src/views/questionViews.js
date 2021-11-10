@@ -10,7 +10,7 @@ import { createDOMElement } from '../utils/DOMUtils.js';
 export const createAnswerElement = (answerText) => {
   const answerElement = createDOMElement('li');
   answerElement.innerText = answerText;
-  answerElement.addEventListener('click', selectedAnswer)
+  answerElement.addEventListener('click', selectedAnswer);
   return answerElement;
 };
 
