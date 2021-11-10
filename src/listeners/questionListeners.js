@@ -1,9 +1,10 @@
 'use strict';
 
-import { handleNextQuestion,handleSelectedAnswer } from '../handlers/questionHandlers.js';
+import { showCurrentQuestion, incrementQuestionIndex, clearQuizContainer, handleSelectedAnswer } from '../handlers/questionHandlers.js';
 
 export const nextQuestion = () => {
-  handleNextQuestion();
+  incrementQuestionIndex();
+  showCurrentQuestion();
 };
 export const selectedAnswer = (e)=> {
   handleSelectedAnswer(e)

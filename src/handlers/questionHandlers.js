@@ -5,21 +5,22 @@ import { createQuestionElement } from '../views/questionViews.js';
 import { clearDOMElement, getDOMElement, getKeyByValue } from '../utils/DOMUtils.js';
 import { quizData } from '../data.js';
 
+export const incrementQuestionIndex = () => {
+  quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
+}
+
 export const showCurrentQuestion = () => {
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
-
-  const questionDOM = createQuestionElement(currentQuestion);
-
+  const questionElement = createQuestionElement(currentQuestion);
   const questionContainer = getDOMElement(QUESTION_CONTAINER_ID);
   clearDOMElement(questionContainer);
-  questionContainer.appendChild(questionDOM);
-};
+  questionContainer.appendChild(questionElement);
+}
 
-export const handleNextQuestion = () => {
-  quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
-
-  showCurrentQuestion();
-};
+export const clearQuizContainer = () => {
+  const quizContainer = getDOMElement(QUIZ_CONTAINER_ID);
+  clearDOMElement(quizContainer);
+}
 
 export function handleSelectedAnswer(evt) {
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
