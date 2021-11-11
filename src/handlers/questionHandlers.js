@@ -1,6 +1,6 @@
 'use strict';
 
-import { QUESTION_CONTAINER_ID } from '../constants.js';
+import { QUESTION_CONTAINER_ID, card, inactive } from '../constants.js';
 import { createQuestionElement } from '../views/questionViews.js';
 import { clearDOMElement, getDOMElement, getKeyByValue, checkAnswer } from '../utils/DOMUtils.js';
 import { quizData } from '../data.js';
@@ -16,6 +16,26 @@ export const showCurrentQuestion = () => {
   clearDOMElement(questionContainer);
   questionContainer.appendChild(questionElement);
 };
+
+let currentItem = document.getElementsByClassName('card1');
+let i = 0;
+let step = 10;
+let layer = inactive.length;
+export const deleteQuestionCard = () => {
+  i = i + 1;
+  step += 10;
+  layer -= 1;
+
+  if (i < card.length) {
+    const nextItem = card[i];
+
+    currentItem = nextItem.classList.add("active");
+    document.getElementById("step").style.width = step + "%";
+
+    card[layer].style.height = "0";
+    card[layer].style.padding = "0";
+  }
+}
 
 export const clearQuizContainer = () => {
   const quizContainer = getDOMElement(QUIZ_CONTAINER_ID);
