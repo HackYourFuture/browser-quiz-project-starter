@@ -14,15 +14,14 @@ export const clearDOMElement = (DOMElement) => {
  *  id - the id of the element
  */
 export const createDOMElement = (tag, options) => {
-  const { id } = options || {};
-  const { className } = options || {};
+  const { id, className } = options || {};
 
   const element = document.createElement(tag);
 
   if (id != null) {
     element.id = id;
   }
-  else if (className != null) {
+  if (className != null) {
     element.className = className;
   }
 

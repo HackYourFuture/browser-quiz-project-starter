@@ -2,8 +2,8 @@
 
 import { NEXT_QUESTION_BUTTON_ID } from '../constants.js';
 import { nextQuestion, selectedAnswer } from '../listeners/questionListeners.js';
-import { createDOMElement } from '../utils/DOMUtils.js';
-import { quizData } from '../data.js'
+import { createDOMElement, getDOMElement } from '../utils/DOMUtils.js';
+import { QUIZ_CONTAINER_ID, SPAN_ID } from '../constants.js';
 
 /**
  * Create an Answer element
@@ -18,20 +18,17 @@ export const createAnswerElement = (answerText) => {
 // Create UpToDate Score Element
 export const createScoreElement = (currentTotalScore) => {
   const quizStatusBar = createDOMElement('div', { className: 'quiz-status' });
-  const currentScore = createDOMElement('a', { className: 'current-score' });
+  const currentScore = createDOMElement('span', { id: SPAN_ID, className: 'current-score' });
   quizStatusBar.appendChild(currentScore);
-
-  currentScore.text = currentTotalScore;
-  return currentScore;
-}
+  currentScore.innerText = currentTotalScore;
+  return quizStatusBar;
+};
 
 // Create a Question Card
 export const createQuestionElement = (question) => {
-  const outerCardContainer = createDOMElement('div');
-  outerCardContainer.className = 'outer-container';
+  const outerCardContainer = createDOMElement('div', { className: 'outer-container' });
 
-  const innerCardContainer = createDOMElement('div');
-  innerCardContainer.className = 'inner-container';
+  const innerCardContainer = createDOMElement('div', { className: 'inner-container' });
 
   outerCardContainer.appendChild(innerCardContainer);
 

@@ -1,7 +1,7 @@
 'use strict';
 
-import { QUESTION_CONTAINER_ID } from '../constants.js';
-import { createQuestionElement } from '../views/questionViews.js';
+import { QUESTION_CONTAINER_ID, QUIZ_CONTAINER_ID, SPAN_ID } from '../constants.js';
+import { createQuestionElement, createScoreElement } from '../views/questionViews.js';
 import { clearDOMElement, getDOMElement, getKeyByValue, checkAnswer, getCardElements, getCurrentItem, getInactiveCardElements } from '../utils/DOMUtils.js';
 import { quizData, animationData } from '../data.js';
 
@@ -19,9 +19,8 @@ export const showCurrentQuestion = () => {
 
 export const showCurrentScore = () => {
   const currentScore = quizData.currentTotalScore;
-  const scoreElement = createScoreElement(currentScore);
-  const quizContainer = getDOMElement(QUIZ_CONTAINER_ID);
-  quizContainer.appendChild(scoreElement);
+  const scoreSpan = getDOMElement(SPAN_ID);
+  scoreSpan.innerText = currentScore;
 };
 
 export const deleteQuestionCard = () => {
