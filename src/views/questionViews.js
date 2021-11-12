@@ -14,6 +14,17 @@ export const createAnswerElement = (answerText) => {
   return answerElement;
 };
 
+// Create a Reference Element
+export const createReferenceElement = (linkData) => {
+  const referenceElement = createDOMElement('li');
+  const referenceLink = createDOMElement('a');
+  referenceElement.appendChild(referenceLink);
+
+  referenceLink.text = linkData.text;
+  referenceLink.href = linkData.href;
+  return referenceLink;
+};
+
 // Create a Question Card
 export const createQuestionElement = (question) => {
   const outerCardContainer = createDOMElement('div');
@@ -84,6 +95,15 @@ export const createQuestionElement = (question) => {
   }
 
   content.appendChild(answerContainer);
+
+  const referenceContainer = createDOMElement('ul');
+
+  for (const referenceLink in question.links) {
+    const link = createReferenceElement(question.links[referenceLink]);
+    referenceContainer.appendChild(link);
+  }
+
+  content.appendChild(referenceContainer);
 
   return outerCardContainer;
 };

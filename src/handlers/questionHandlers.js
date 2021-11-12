@@ -17,6 +17,15 @@ export const showCurrentQuestion = () => {
   questionContainer.appendChild(questionElement);
 };
 
+export const showCurrentReference = () => {
+  const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
+  const currentReference = currentQuestion.links;
+  const referenceElement = createReferenceElement(currentReference);
+  const questionContainer = getDOMElement(QUESTION_CONTAINER_ID);
+  clearDOMElement(questionContainer);
+  questionContainer.appendChild(referenceElement);
+};
+
 let currentItem = document.getElementsByClassName('card1');
 let layer = 9;
 let i = 0;
