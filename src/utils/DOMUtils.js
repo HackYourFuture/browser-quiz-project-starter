@@ -15,11 +15,15 @@ export const clearDOMElement = (DOMElement) => {
  */
 export const createDOMElement = (tag, options) => {
   const { id } = options || {};
+  const { className } = options || {};
 
   const element = document.createElement(tag);
 
   if (id != null) {
     element.id = id;
+  }
+  else if (className != null) {
+    element.className = className;
   }
 
   return element;
@@ -41,3 +45,8 @@ export const getKeyByValue = (object, value) => {
 
 // Checking if the User Answer is Correct or Not
 export const checkAnswer = (selectedAnswer, correctAnswer) => selectedAnswer === correctAnswer;
+
+// Stackable Card Parameters
+export const getCardElements = () => document.getElementsByClassName('card');
+export const getInactiveCardElements = () => document.getElementsByClassName('inactive');
+export let getCurrentItem = () => document.getElementsByClassName('card1');
