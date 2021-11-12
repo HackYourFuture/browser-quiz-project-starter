@@ -18,9 +18,9 @@ export const showCurrentQuestion = () => {
 };
 
 let currentItem = document.getElementsByClassName('card1');
+let layer = 9;
 let i = 0;
 let step = 10;
-let layer = inactive.length;
 export const deleteQuestionCard = () => {
   i = i + 1;
   step += 10;
@@ -35,7 +35,7 @@ export const deleteQuestionCard = () => {
     card[layer].style.height = "0";
     card[layer].style.padding = "0";
   }
-}
+};
 
 export const clearQuizContainer = () => {
   const quizContainer = getDOMElement(QUIZ_CONTAINER_ID);
