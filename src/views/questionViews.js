@@ -18,7 +18,7 @@ export const createAnswerElement = (answerText) => {
 // Create UpToDate Score Element
 export const createScoreElement = (currentTotalScore) => {
   const quizStatusBar = createDOMElement('div', { className: 'quiz-status' });
-  const currentScore = createDOMElement('span', { id: SPAN_ID, className: 'current-score' });
+  const currentScore = createDOMElement('span', { id: SCORE_SPAN_ID, className: 'current-score' });
   quizStatusBar.appendChild(currentScore);
   currentScore.innerText = currentTotalScore;
   return quizStatusBar;
