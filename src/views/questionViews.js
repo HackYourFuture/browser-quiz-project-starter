@@ -23,7 +23,7 @@ export const createReferenceElement = (linkData) => {
 
   referenceLink.text = linkData.text;
   referenceLink.href = linkData.href;
-  return referenceLink;
+  return referenceElement;
 };
 
 // Create UpToDate Score Element
@@ -55,10 +55,10 @@ export const createQuestionElement = (question) => {
 
   const referenceContainer = createDOMElement('ul');
 
-  for (const referenceLink in question.links) {
-    const link = createReferenceElement(question.links[referenceLink]);
+  question.links.forEach((questionLink) => {
+    const link = createReferenceElement(questionLink);
     referenceContainer.appendChild(link);
-  }
+  })
 
   container.appendChild(referenceContainer);
 
