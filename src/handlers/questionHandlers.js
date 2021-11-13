@@ -22,7 +22,7 @@ export const showCurrentQuestion = () => {
 
 export const showCurrentScore = () => {
   const currentScore = quizData.currentTotalScore;
-  const scoreSpan = getDOMElement(SPAN_ID);
+  const scoreSpan = getDOMElement(SCORE_SPAN_ID);
   scoreSpan.innerText = currentScore;
 };
 
