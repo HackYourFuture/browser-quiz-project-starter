@@ -1,10 +1,9 @@
 'use strict';
 
-import { QUESTION_CONTAINER_ID } from '../constants.js';
+import { QUESTION_CONTAINER_ID, QUIZ_CONTAINER_ID, SCORE_SPAN_ID } from '../constants.js';
 import { createQuestionElement, createReferenceElement } from '../views/questionViews.js';
 import { clearDOMElement, getDOMElement, getKeyByValue, checkAnswer } from '../utils/DOMUtils.js';
-import { quizData } from '../data.js';
-import { nextQuestion } from '../listeners/questionListeners.js'
+import { quizData, animationData } from '../data.js';
 
 export const incrementQuestionIndex = () => {
   quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
@@ -26,8 +25,13 @@ export const showCurrentReference = () => {
   const currentReference = currentQuestion.links;
   const referenceElement = createReferenceElement(currentReference);
   const questionContainer = getDOMElement(QUESTION_CONTAINER_ID);
-  clearDOMElement(questionContainer);
   questionContainer.appendChild(referenceElement);
+};
+
+export const showCurrentScore = () => {
+  const currentScore = quizData.currentTotalScore;
+  const scoreSpan = getDOMElement(SCORE_SPAN_ID);
+  scoreSpan.innerText = currentScore;
 };
 
 export const clearQuizContainer = () => {
@@ -45,5 +49,8 @@ export function handleSelectedAnswer(evt) {
 
 export function handleQuestionResult() {
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
-  return checkAnswer(currentQuestion.selected, currentQuestion.correct);
+  const isCorrect = checkAnswer(currentQuestion.selected, currentQuestion.correct);
+  if (isCorrect) {
+    quizData.currentTotalScore += 1
+  }
 };
