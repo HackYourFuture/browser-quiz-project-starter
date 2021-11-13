@@ -3,7 +3,7 @@
 import {
   showCurrentQuestion,
   incrementQuestionIndex,
-  clearQuizContainer,
+  deleteQuestionCard,
   handleSelectedAnswer,
   handleQuestionResult,
 } from '../handlers/questionHandlers.js';
@@ -11,6 +11,7 @@ import {
 export const nextQuestion = () => {
   incrementQuestionIndex();
   showCurrentQuestion();
+  deleteQuestionCard();
 };
 
 export const selectedAnswer = (e) => {

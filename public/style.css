@@ -62,6 +62,11 @@
   transition: ease-in-out 1s;
 }
 
+.active > .card-content {
+  opacity: 1;
+  transition: ease-in-out 1s;
+}
+
 .progress-container {
   background-color: #0b898b;
   height: 8px;

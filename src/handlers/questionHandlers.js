@@ -12,29 +12,30 @@ export const incrementQuestionIndex = () => {
 export const showCurrentQuestion = () => {
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
   const questionContainer = getDOMElement(QUESTION_CONTAINER_ID);
-  deleteQuestionCard();
 };
 
 export const deleteQuestionCard = () => {
   const card = getCardElements();
   let currentContent = getCurrentContent();
-  const inactive = getInactiveCardElements();
   const cardContent = getCardContent();
+  const cardContentNumber = 9 - animationData.i
+
+  cardContent[cardContentNumber].classList.remove("active");
+
+  card[animationData.layer - 1].style.height = "0";
+  card[animationData.layer - 1].style.padding = "0";
+  card[animationData.layer - 1].classList.remove("active");
+  card[animationData.layer - 1].classList.add("inactive");
 
   animationData.i += 1;
   animationData.step += 10;
   animationData.layer -= 1;
 
-  cardContent[animationData.i - 1].classList.remove("active");
-
   if (animationData.i < cardContent.length) {
-    const nextItem = cardContent[animationData.i];
-
-    currentContent = nextItem.classList.add("active");
     document.getElementById("step").style.width = animationData.step + "%";
-
-    card[animationData.layer + 1].style.height = "0";
-    card[animationData.layer + 1].style.padding = "0";
+    const nextCardContentNumber = 9 - animationData.i;
+    const nextItem = cardContent[nextCardContentNumber];
+    currentContent = nextItem.classList.add("active");
   }
 };
 
