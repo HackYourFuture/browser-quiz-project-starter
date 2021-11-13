@@ -13,11 +13,8 @@ export const showCurrentQuestion = () => {
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
   const questionElement = createQuestionElement(currentQuestion);
   const questionContainer = getDOMElement(QUESTION_CONTAINER_ID);
-  const button = getDOMElement(NEXT_QUESTION_BUTTON_ID);
-
   clearDOMElement(questionContainer);
   questionContainer.appendChild(questionElement);
-  button.removeEventListener('click', nextQuestion)
 };
 
 export const showCurrentReference = () => {
