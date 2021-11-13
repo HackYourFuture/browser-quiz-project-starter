@@ -25,23 +25,22 @@ export const createQuestionElement = (question) => {
   const numberOfCard = quizData.questions.length;
   let previousCard = undefined;
   for (let i = numberOfCard; i > 0; i--) {
-    const translateCard = 8 * i;
     let newCard = undefined;
     let cardContent = undefined;
+
     if (i != 1) {
       newCard = createDOMElement('div', { className: `card card${i} inactive` });
       cardContent = createDOMElement('div', { className: 'card-content' });
     } else {
       newCard = createDOMElement('div', { className: `card card${i}` });
       cardContent = createDOMElement('div', { className: 'card-content active' });
+      i = 0;
     }
-
-    // newCard.style.right = `${translateCard}px`;
-    // newCard.style.top = `${translateCard}px`;
 
     if (previousCard) {
       previousCard.appendChild(newCard);
       previousCard.appendChild(cardContent);
+
 
       const title = createDOMElement('h1');
       title.innerText = quizData.questions[i].text;

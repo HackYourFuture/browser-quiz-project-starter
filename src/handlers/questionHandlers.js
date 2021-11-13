@@ -33,8 +33,8 @@ export const deleteQuestionCard = () => {
     currentContent = nextItem.classList.add("active");
     document.getElementById("step").style.width = animationData.step + "%";
 
-    card[animationData.layer].style.height = "0";
-    card[animationData.layer].style.padding = "0";
+    card[animationData.layer + 1].style.height = "0";
+    card[animationData.layer + 1].style.padding = "0";
   }
 };
 
