@@ -27,19 +27,38 @@ export const createQuestionElement = (question) => {
   for (let i = numberOfCard; i > 0; i--) {
     const translateCard = 8 * i;
     let newCard = undefined;
+    let cardContent = undefined;
     if (i != 1) {
       newCard = createDOMElement('div', { className: `card card${i} inactive` });
+      cardContent = createDOMElement('div', { className: 'card-content' });
     } else {
       newCard = createDOMElement('div', { className: `card card${i}` });
+      cardContent = createDOMElement('div', { className: 'card-content active' });
     }
 
-    newCard.style.right = `${translateCard}px`;
-    newCard.style.top = `${translateCard}px`;
+    // newCard.style.right = `${translateCard}px`;
+    // newCard.style.top = `${translateCard}px`;
 
     if (previousCard) {
       previousCard.appendChild(newCard);
+      previousCard.appendChild(cardContent);
+
+      const title = createDOMElement('h1');
+      title.innerText = quizData.questions[i].text;
+      cardContent.appendChild(title);
+
+      const answerContainer = createDOMElement('ol');
+
+      for (const answerKey in quizData.questions[i].answers) {
+        const answer = createAnswerElement(quizData.questions[i].answers[answerKey]);
+        answerContainer.appendChild(answer);
+      }
+
+      cardContent.appendChild(answerContainer);
+
     } else {
       innerCardContainer.appendChild(newCard);
+      innerCardContainer.appendChild(cardContent);
     }
 
     previousCard = newCard;
@@ -51,23 +70,6 @@ export const createQuestionElement = (question) => {
   progressContainer.appendChild(step);
 
   previousCard.appendChild(progressContainer);
-
-  const cardContent = createDOMElement('div', { className: 'card-content' });
-  previousCard.appendChild(cardContent);
-
-  const title = createDOMElement('h1');
-  title.innerText = question.text;
-
-  cardContent.appendChild(title);
-
-  const answerContainer = createDOMElement('ol');
-
-  for (const answerKey in question.answers) {
-    const answer = createAnswerElement(question.answers[answerKey]);
-    answerContainer.appendChild(answer);
-  }
-
-  cardContent.appendChild(answerContainer);
 
   return outerCardContainer;
 };

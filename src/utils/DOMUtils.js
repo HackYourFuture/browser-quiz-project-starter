@@ -48,4 +48,5 @@ export const checkAnswer = (selectedAnswer, correctAnswer) => selectedAnswer ===
 // Stackable Card Parameters
 export const getCardElements = () => document.getElementsByClassName('card');
 export const getInactiveCardElements = () => document.getElementsByClassName('inactive');
-export const getCurrentItem = () => document.getElementsByClassName('card1');
+export const getCurrentContent = () => document.getElementsByClassName('card-content active');
+export const getCardContent = () => document.getElementsByClassName("card-content");

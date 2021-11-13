@@ -36,11 +36,6 @@
   transition: .3s ease;
   box-shadow: 0 3px 10px -2px rgba(0,0,0,0.35);
 }
-.active {
-    display: block;
-    margin: 0 auto;
-    transition: ease-in-out 1s;
-  }
 .card1 {
   border-radius: 5px 5px 0 0;
   padding: 0;
@@ -52,9 +47,19 @@
 .card1,.card3,.card5,.card7,.card9 {
   background-color: #00898b;
 }
+
 .card-content {
   position: absolute;
   top: 5%;
+  opacity: 0;
+  width: 100%;
+  margin: 0 auto;
+}
+.active {
+  display: block;
+  margin: 0 auto;
+  opacity: 1;
+  transition: ease-in-out 1s;
 }
 
 .progress-container {

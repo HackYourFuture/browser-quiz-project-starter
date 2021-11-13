@@ -2,7 +2,7 @@
 
 import { QUESTION_CONTAINER_ID } from '../constants.js';
 import { createQuestionElement } from '../views/questionViews.js';
-import { clearDOMElement, getDOMElement, getKeyByValue, checkAnswer, getCardElements, getCurrentItem, getInactiveCardElements } from '../utils/DOMUtils.js';
+import { clearDOMElement, getDOMElement, getKeyByValue, checkAnswer, getCardElements, getCurrentContent, getInactiveCardElements, getCardContent } from '../utils/DOMUtils.js';
 import { quizData, animationData } from '../data.js';
 
 export const incrementQuestionIndex = () => {
@@ -17,17 +17,20 @@ export const showCurrentQuestion = () => {
 
 export const deleteQuestionCard = () => {
   const card = getCardElements();
-  let currentItem = getCurrentItem();
+  let currentContent = getCurrentContent();
   const inactive = getInactiveCardElements();
+  const cardContent = getCardContent();
 
   animationData.i += 1;
   animationData.step += 10;
   animationData.layer -= 1;
 
-  if (animationData.i < card.length) {
-    const nextItem = card[animationData.i - 1];
+  cardContent[animationData.i - 1].classList.remove("active");
 
-    currentItem = nextItem.classList.add("active");
+  if (animationData.i < cardContent.length) {
+    const nextItem = cardContent[animationData.i];
+
+    currentContent = nextItem.classList.add("active");
     document.getElementById("step").style.width = animationData.step + "%";
 
     card[animationData.layer].style.height = "0";
