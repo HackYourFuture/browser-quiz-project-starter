@@ -1,6 +1,6 @@
 'use strict';
 
-import { QUESTION_CONTAINER_ID, QUIZ_CONTAINER_ID, SPAN_ID } from '../constants.js';
+import { QUESTION_CONTAINER_ID, QUIZ_CONTAINER_ID, SCORE_SPAN_ID } from '../constants.js';
 import { createQuestionElement } from '../views/questionViews.js';
 import { clearDOMElement, getDOMElement, getKeyByValue, checkAnswer } from '../utils/DOMUtils.js';
 import { quizData, animationData } from '../data.js';
