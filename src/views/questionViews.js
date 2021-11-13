@@ -3,7 +3,7 @@
 import { NEXT_QUESTION_BUTTON_ID } from '../constants.js';
 import { selectedAnswer } from '../listeners/questionListeners.js';
 import { createDOMElement } from '../utils/DOMUtils.js';
-import { SPAN_ID } from '../constants.js';
+import { SCORE_SPAN_ID } from '../constants.js';
 
 /**
  * Create an Answer element
