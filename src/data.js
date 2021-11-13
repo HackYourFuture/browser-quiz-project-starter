@@ -212,3 +212,9 @@ export const quizData = {
     },
   ],
 };
+
+export let animationData = {
+  i: 0,
+  step: 10,
+  layer: 9
+};

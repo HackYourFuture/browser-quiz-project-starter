@@ -44,3 +44,8 @@ export const getKeyByValue = (object, value) => {
 
 // Checking if the User Answer is Correct or Not
 export const checkAnswer = (selectedAnswer, correctAnswer) => selectedAnswer === correctAnswer;
+
+// Stackable Card Parameters
+export const getCardElements = () => document.getElementsByClassName('card');
+export const getInactiveCardElements = () => document.getElementsByClassName('inactive');
+export const getCurrentItem = () => document.getElementsByClassName('card1');

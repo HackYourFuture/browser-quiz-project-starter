@@ -3,6 +3,7 @@
 import { NEXT_QUESTION_BUTTON_ID } from '../constants.js';
 import { nextQuestion, selectedAnswer } from '../listeners/questionListeners.js';
 import { createDOMElement } from '../utils/DOMUtils.js';
+import { quizData } from '../data.js';
 
 /**
  * Create an Answer element
@@ -14,14 +15,50 @@ export const createAnswerElement = (answerText) => {
   return answerElement;
 };
 
-/**
- * Create a full question element
- */
+// Create Stackable Question Cards
 export const createQuestionElement = (question) => {
-  const container = createDOMElement('div');
+  const outerCardContainer = createDOMElement('div', { className: 'outer-container' });
+  const innerCardContainer = createDOMElement('div', { className: 'inner-container' });
+  outerCardContainer.appendChild(innerCardContainer);
+
+  // Create the Questions Card, Give the proper className & Translate
+  const numberOfCard = quizData.questions.length;
+  let previousCard = undefined;
+  for (let i = numberOfCard; i > 0; i--) {
+    const translateCard = 8 * i;
+    let newCard = undefined;
+    if (i != 1) {
+      newCard = createDOMElement('div', { className: `card card${i} inactive` });
+    } else {
+      newCard = createDOMElement('div', { className: `card card${i}` });
+    }
+
+    newCard.style.right = `${translateCard}px`;
+    newCard.style.top = `${translateCard}px`;
+
+    if (previousCard) {
+      previousCard.appendChild(newCard);
+    } else {
+      innerCardContainer.appendChild(newCard);
+    }
+
+    previousCard = newCard;
+  }
+
+  const progressContainer = createDOMElement('div', { className: 'progress-container' });
+  const step = createDOMElement('div', { id: 'step' });
+
+  progressContainer.appendChild(step);
+
+  previousCard.appendChild(progressContainer);
+
+  const cardContent = createDOMElement('div', { className: 'card-content' });
+  previousCard.appendChild(cardContent);
+
   const title = createDOMElement('h1');
   title.innerText = question.text;
-  container.appendChild(title);
+
+  cardContent.appendChild(title);
 
   const answerContainer = createDOMElement('ol');
 
@@ -30,9 +67,9 @@ export const createQuestionElement = (question) => {
     answerContainer.appendChild(answer);
   }
 
-  container.appendChild(answerContainer);
+  cardContent.appendChild(answerContainer);
 
-  return container;
+  return outerCardContainer;
 };
 
 /**
