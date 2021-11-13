@@ -4,6 +4,7 @@ import {
   showCurrentQuestion,
   incrementQuestionIndex,
   showCurrentReference,
+  showCurrentScore,
   clearQuizContainer,
   handleSelectedAnswer,
   handleQuestionResult,
@@ -13,6 +14,7 @@ export const nextQuestion = () => {
   incrementQuestionIndex();
   showCurrentQuestion();
   showCurrentReference();
+  showCurrentScore();
 };
 
 export const selectedAnswer = (e) => {
