@@ -215,6 +215,6 @@ export const quizData = {
 
 export let animationData = {
   i: -1,
-  step: 0,
+  step: -10,
   layer: 10
 };

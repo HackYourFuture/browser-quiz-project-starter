@@ -13,20 +13,24 @@
 }
 
 .outer-container {
-  margin: 0 auto 45vh;
+  margin: 50px auto;
 }
 .inner-container {
   min-width: 800px;
   height: 400px;
   width: 100%;
+  position: absolute;
+  top: 20px;
+  left: -520px;
 }
 
 .card {
   position: absolute;
+  right: 8px;
+  top: 8px;
   margin: 0 auto;
   width: 720px;
   border-radius: 5px;
-  padding: 8px 0px;
   height: 320px;
   box-sizing: border-box;
   transition: .3s ease;
@@ -65,15 +69,17 @@
 #step {
   background-color: #004e4f;
   height: 8px;
-  width: 10%;
+  width: 0%;
   border-radius: 0 0 0 5px;
 }
 
 button {
+  position: fixed;
   width: 120px;
   height: 120px;
   border: none;
-  margin-left: 800px;
+  margin-left: 360px;
+  margin-top: 155px;
   background-color: #004e4f;
   color: white;
   border-radius: 50%;
