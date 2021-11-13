@@ -30,7 +30,10 @@ export const clearQuizContainer = () => {
 
 export function handleSelectedAnswer(evt) {
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
+  const nextQuestionButton = getDOMElement(NEXT_QUESTION_BUTTON_ID);
+
   currentQuestion.selected = getKeyByValue(currentQuestion.answers, evt.target.textContent);
+  button.addEventListener('click', nextQuestion);
 };
 
 export function handleQuestionResult() {

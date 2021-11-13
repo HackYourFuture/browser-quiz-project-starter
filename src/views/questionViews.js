@@ -74,7 +74,6 @@ export const createNextQuestionButtonElement = () => {
   });
 
   buttonElement.innerText = 'Next question';
-  buttonElement.addEventListener('click', nextQuestion);
 
   return buttonElement;
 };
