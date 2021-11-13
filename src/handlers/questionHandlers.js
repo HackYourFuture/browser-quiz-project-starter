@@ -22,7 +22,6 @@ export const showCurrentReference = () => {
   const currentReference = currentQuestion.links;
   const referenceElement = createReferenceElement(currentReference);
   const questionContainer = getDOMElement(QUESTION_CONTAINER_ID);
-  clearDOMElement(questionContainer);
   questionContainer.appendChild(referenceElement);
 };
 
