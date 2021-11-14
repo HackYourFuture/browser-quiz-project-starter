@@ -61,11 +61,13 @@ body{
   width: 100%;
   margin: 0 auto;
   color: white;
+  visibility: hidden;
 }
 .active {
   display: block;
   margin: 0 auto;
   opacity: 1;
+  visibility: visible;
 }
 
 @keyframes neon {
