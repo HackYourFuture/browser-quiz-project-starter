@@ -1,6 +1,6 @@
 'use strict';
 
-import { QUESTION_CONTAINER_ID, QUIZ_CONTAINER_ID, SCORE_SPAN_ID } from '../constants.js';
+import { QUESTION_CONTAINER_ID, QUIZ_CONTAINER_ID, NEXT_QUESTION_BUTTON_ID, SCORE_SPAN_ID } from '../constants.js';
 import { createQuestionElement } from '../views/questionViews.js';
 import { clearDOMElement, getDOMElement, getKeyByValue, checkAnswer, getCardElements, getCurrentContent, getInactiveCardElements, getCardContent } from '../utils/DOMUtils.js';
 import { quizData, animationData } from '../data.js';
@@ -55,7 +55,7 @@ export function handleSelectedAnswer(evt) {
   const nextQuestionButton = getDOMElement(NEXT_QUESTION_BUTTON_ID);
 
   currentQuestion.selected = getKeyByValue(currentQuestion.answers, evt.target.textContent);
-  button.addEventListener('click', nextQuestion);
+  nextQuestionButton.addEventListener('click', nextQuestion);
 };
 
 export function handleQuestionResult() {
