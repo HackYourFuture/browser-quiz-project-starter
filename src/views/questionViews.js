@@ -18,7 +18,7 @@ export const createAnswerElement = (answerText) => {
 // Create a Reference Element
 export const createReferenceElement = (linkData) => {
   const referenceElement = createDOMElement('li');
-  const referenceLink = createDOMElement('a');
+  const referenceLink = createDOMElement('a', { className: 'current-reference' });
   referenceElement.appendChild(referenceLink);
 
   referenceLink.text = linkData.text;
@@ -37,12 +37,8 @@ export const createScoreElement = (currentTotalScore) => {
 
 // Create Stackable Question Cards
 export const createQuestionElement = () => {
-  const outerCardContainer = createDOMElement('div', {
-    className: 'outer-container'
-  });
-  const innerCardContainer = createDOMElement('div', {
-    className: 'inner-container'
-  });
+  const outerCardContainer = createDOMElement('div', { className: 'outer-container' });
+  const innerCardContainer = createDOMElement('div', { className: 'inner-container' });
   outerCardContainer.appendChild(innerCardContainer);
 
   // Create the Questions Card, Give the proper className & Translate
@@ -81,6 +77,17 @@ export const createQuestionElement = () => {
     }
 
     cardContent.appendChild(answerContainer);
+
+    // Adding The References
+    const referenceContainer = createDOMElement('ul', { className: 'reference-container' });
+
+    quizData.questions[i].links.forEach((questionLink) => {
+      const link = createReferenceElement(questionLink);
+      referenceContainer.appendChild(link);
+    })
+
+    cardContent.appendChild(referenceContainer);
+
     newCard.appendChild(cardContent);
 
     if (previousCard) {
@@ -102,15 +109,6 @@ export const createQuestionElement = () => {
   progressContainer.appendChild(step);
 
   previousCard.appendChild(progressContainer);
-  
-    const referenceContainer = createDOMElement('ul');
-
-  question.links.forEach((questionLink) => {
-    const link = createReferenceElement(questionLink);
-    referenceContainer.appendChild(link);
-  })
-
-  innerCardContainer.appendChild(referenceContainer);
 
   return outerCardContainer;
 };

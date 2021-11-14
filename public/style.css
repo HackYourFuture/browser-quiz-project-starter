@@ -2,6 +2,9 @@ body{
   background-color:black;
 }
 
+li {
+  list-style-type: none;
+}
 .centered {
   position: fixed;
   top: 20%;
@@ -86,6 +89,20 @@ inset 0 0 35px #228dff, 0 0 40px #228dff, 0 0 50px #228dff, 0 0 75px #228dff;
   transition: ease-in-out 1s;
 }
 
+.reference-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+.current-reference {
+  text-decoration: none;
+  color: #ff9100;
+  background-color: white;
+  padding: 4px 8px;
+  border-radius: 20px;
+  font-size: medium;
+  font-weight: 900;
+}
+
 .progress-container {
   background-color: #FF10F0;
   height: 8px;
@@ -96,7 +113,7 @@ inset 0 0 35px #228dff, 0 0 40px #228dff, 0 0 50px #228dff, 0 0 75px #228dff;
   border-radius: 0 0 5px 5px;
 }
 #step {
-  background-color: #b40fa9;
+  background-color: #770a70;
   height: 8px;
   width: 0%;
   border-radius: 0 0 0 5px;
