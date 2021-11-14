@@ -13,6 +13,8 @@ export const incrementQuestionIndex = () => {
 export const showCurrentQuestion = () => {
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
   const questionContainer = getDOMElement(QUESTION_CONTAINER_ID);
+  const nextQuestionButton = getDOMElement(NEXT_QUESTION_BUTTON_ID);
+  nextQuestionButton.removeEventListener('click', nextQuestion);
 };
 
 export const deleteQuestionCard = () => {
