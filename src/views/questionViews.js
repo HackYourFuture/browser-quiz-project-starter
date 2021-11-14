@@ -15,6 +15,17 @@ export const createAnswerElement = (answerText) => {
   return answerElement;
 };
 
+// Create a Reference Element
+export const createReferenceElement = (linkData) => {
+  const referenceElement = createDOMElement('li');
+  const referenceLink = createDOMElement('a');
+  referenceElement.appendChild(referenceLink);
+
+  referenceLink.text = linkData.text;
+  referenceLink.href = linkData.href;
+  return referenceElement;
+};
+
 // Create UpToDate Score Element
 export const createScoreElement = (currentTotalScore) => {
   const quizStatusBar = createDOMElement('div', { className: 'quiz-status' });
@@ -91,6 +102,15 @@ export const createQuestionElement = () => {
   progressContainer.appendChild(step);
 
   previousCard.appendChild(progressContainer);
+  
+    const referenceContainer = createDOMElement('ul');
+
+  question.links.forEach((questionLink) => {
+    const link = createReferenceElement(questionLink);
+    referenceContainer.appendChild(link);
+  })
+
+  innerCardContainer.appendChild(referenceContainer);
 
   return outerCardContainer;
 };
