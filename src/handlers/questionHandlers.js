@@ -4,6 +4,7 @@ import { QUESTION_CONTAINER_ID, QUIZ_CONTAINER_ID, NEXT_QUESTION_BUTTON_ID, SCOR
 import { createQuestionElement } from '../views/questionViews.js';
 import { clearDOMElement, getDOMElement, getKeyByValue, checkAnswer, getCardElements, getCurrentContent, getInactiveCardElements, getCardContent } from '../utils/DOMUtils.js';
 import { quizData, animationData } from '../data.js';
+import { nextQuestion } from '../listeners/questionListeners.js';
 
 export const incrementQuestionIndex = () => {
   quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
