@@ -19,7 +19,7 @@ export const deleteQuestionCard = () => {
   const card = getCardElements();
   let currentContent = getCurrentContent();
   const cardContent = getCardContent();
-  const cardContentNumber = 9 - animationData.i
+  const cardContentNumber = 9 - animationData.i;
 
   cardContent[cardContentNumber].classList.remove("active");
 
@@ -31,6 +31,8 @@ export const deleteQuestionCard = () => {
   animationData.i += 1;
   animationData.step += 10;
   animationData.layer -= 1;
+
+  card[9 - animationData.i].style.animation = 'neon 2s ease-in-out infinite alternate';
 
   if (animationData.i < cardContent.length) {
     document.getElementById("step").style.width = animationData.step + "%";
