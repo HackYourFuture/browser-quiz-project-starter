@@ -4,6 +4,7 @@ import { QUESTION_CONTAINER_ID, QUIZ_CONTAINER_ID, NEXT_QUESTION_BUTTON_ID, SCOR
 import { createQuestionElement } from '../views/questionViews.js';
 import { clearDOMElement, getDOMElement, getKeyByValue, checkAnswer } from '../utils/DOMUtils.js';
 import { quizData, animationData } from '../data.js';
+import { nextQuestion } from '../listeners/questionListeners.js';
 
 export const incrementQuestionIndex = () => {
   quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
@@ -15,6 +16,8 @@ export const showCurrentQuestion = () => {
   const questionContainer = getDOMElement(QUESTION_CONTAINER_ID);
   clearDOMElement(questionContainer);
   questionContainer.appendChild(questionElement);
+  const nextQuestionButton = getDOMElement(NEXT_QUESTION_BUTTON_ID);
+  nextQuestionButton.removeEventListener('click', nextQuestion);
 };
 
 export const showCurrentScore = () => {
@@ -33,7 +36,7 @@ export function handleSelectedAnswer(evt) {
   const nextQuestionButton = getDOMElement(NEXT_QUESTION_BUTTON_ID);
 
   currentQuestion.selected = getKeyByValue(currentQuestion.answers, evt.target.textContent);
-  button.addEventListener('click', nextQuestion);
+  nextQuestionButton.addEventListener('click', nextQuestion);
 };
 
 export function handleQuestionResult() {
