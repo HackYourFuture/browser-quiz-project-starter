@@ -135,6 +135,34 @@ inset 0 0 35px #228dff, 0 0 40px #228dff, 0 0 50px #228dff, 0 0 75px #228dff;
   font-weight: 900;
 }
 
+.correct-answer {
+  animation: neonGreen 2s ease-in-out infinite alternate;
+}
+@keyframes neonGreen {
+  from {
+    box-shadow: inset 0 0 10px #fff, inset 0 0 20px #fff, 0 0 30px #fff, inset 0 0 40px #b6ff00,
+    inset 0 0 70px #b6ff00, 0 0 80px #b6ff00, 0 0 100px #b6ff00, 0 0 150px #b6ff00;
+  }
+  to {
+    box-shadow: inset 0 0 5px #fff, inset 0 0 10px #fff, 0 0 15px #fff, inset 0 0 20px #b6ff00,
+    inset 0 0 35px #b6ff00, 0 0 40px #b6ff00, 0 0 50px #b6ff00, 0 0 75px #b6ff00;
+  }
+}
+
+.wrong-answer {
+  animation: neonRed 2s ease-in-out infinite alternate;
+}
+@keyframes neonRed {
+  from {
+    box-shadow: inset 0 0 10px #fff, inset 0 0 20px #fff, 0 0 30px #fff, inset 0 0 40px #ff1177,
+    inset 0 0 70px #ff1177, 0 0 80px #ff1177, 0 0 100px #ff1177, 0 0 150px #ff1177
+  }
+  to {
+    box-shadow: inset 0 0 5px #fff, inset 0 0 10px #fff, 0 0 15px #fff, inset 0 0 20px #ff1177,
+    inset 0 0 35px #ff1177, 0 0 40px #ff1177, 0 0 50px #ff1177, 0 0 75px #ff1177;
+  }
+}
+
 .progress-container {
   background-color: #FF10F0;
   height: 8px;

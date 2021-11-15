@@ -65,13 +65,27 @@ export function handleSelectedAnswer(evt) {
 
   currentQuestion.selected = getKeyByValue(currentQuestion.answers, evt.target.textContent);
   nextQuestionButton.addEventListener('click', nextQuestion);
-};
-
-export function handleQuestionResult() {
-  const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
   const isCorrect = checkAnswer(currentQuestion.selected, currentQuestion.correct);
   if (isCorrect) {
     quizData.currentTotalScore += 1;
+    evt.target.classList.add('correct-answer');
+  } else {
+    evt.target.classList.add('wrong-answer');
+    const allAnswerElement = document.querySelectorAll('ol li');
+    switch (currentQuestion.correct) {
+      case 'a':
+        allAnswerElement[0].classList.add('correct-answer');
+        break;
+      case 'b':
+        allAnswerElement[1].classList.add('correct-answer');
+        break;
+      case 'c':
+        allAnswerElement[2].classList.add('correct-answer');
+        break;
+      case 'd':
+        allAnswerElement[3].classList.add('correct-answer');
+        break;
+    }
   }
 };
 
