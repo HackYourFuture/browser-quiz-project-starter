@@ -71,7 +71,7 @@ export function handleSelectedAnswer(evt) {
     evt.target.classList.add('correct-answer');
   } else {
     evt.target.classList.add('wrong-answer');
-    const allAnswerElement = document.querySelectorAll('ol li');
+    const allAnswerElement = document.querySelector('.card-content.active').querySelectorAll('ol li');
     switch (currentQuestion.correct) {
       case 'a':
         allAnswerElement[0].classList.add('correct-answer');
