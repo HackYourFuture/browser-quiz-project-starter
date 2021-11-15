@@ -1,10 +1,10 @@
 'use strict';
 
 import { QUESTION_CONTAINER_ID, QUIZ_CONTAINER_ID, NEXT_QUESTION_BUTTON_ID, SCORE_SPAN_ID } from '../constants.js';
-import { createQuestionElement } from '../views/questionViews.js';
 import { clearDOMElement, getDOMElement, getKeyByValue, checkAnswer, getCardElements, getCurrentContent, getInactiveCardElements, getCardContent } from '../utils/DOMUtils.js';
 import { quizData, animationData } from '../data.js';
-import { nextQuestion } from '../listeners/questionListeners.js';
+import { nextQuestion, showResult } from '../listeners/questionListeners.js';
+import { createResultContainerElement } from '../views/questionViews.js'
 
 export const incrementQuestionIndex = () => {
   quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
@@ -42,6 +42,12 @@ export const deleteQuestionCard = () => {
     const nextItem = cardContent[nextCardContentNumber];
     currentContent = nextItem.classList.add("active");
   }
+  if (animationData.i == 9) {
+    const nextQuestionButton = getDOMElement(NEXT_QUESTION_BUTTON_ID);
+    nextQuestionButton.innerText = 'Show Result';
+    nextQuestionButton.removeEventListener('click', nextQuestion);
+    nextQuestionButton.addEventListener('click', showResult);
+  }
 };
 
 export const showCurrentScore = () => {
@@ -66,7 +72,15 @@ export function handleSelectedAnswer(evt) {
 export function handleQuestionResult() {
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
   const isCorrect = checkAnswer(currentQuestion.selected, currentQuestion.correct);
+  const correctAnswer = currentQuestion.answers[currentQuestion.selected];
   if (isCorrect) {
-    quizData.currentTotalScore += 1
+    quizData.currentTotalScore += 1;
   }
+};
+
+export const showQuizResult = () => {
+  clearQuizContainer();
+  const userInterfaceContainer = getDOMElement('user-interface');
+  const resultPage = createResultContainerElement();
+  userInterfaceContainer.appendChild(resultPage);
 };
