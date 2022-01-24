@@ -10,7 +10,7 @@
     font-family: 'Dongle', sans-serif;
 }
  body{
-  background:linear-gradient(rgba(0, 0, 0, 0.7), rgba(58, 58, 57, 0.85)), url(/Assets/main_background.jpg);
+  background:linear-gradient(rgba(0, 0, 0, 0.7), rgba(58, 58, 57, 0.85)), url("../Assets/main\ background.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
