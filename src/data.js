@@ -61,10 +61,10 @@ export const quizData = {
     {
       text: 'What is the correct syntax for referring to an external script called "xxx.js"?',
       answers: {
-        a: '<script href="xxx.js">',
-        b: '<script name="xxx.js">',
-        c: '<script src="xxx.js">',
-        d: '<script type="module">',
+        a: '&lt;script href="xxx.js"&gt;',
+        b: '&lt;script name="xxx.js"&gt;',
+        c: '&lt;script src="xxx.js"&gt;',
+        d: '&lt;script type="module"&gt;',
       },
       correct: 'c',
       selected: null,
@@ -171,7 +171,7 @@ export const quizData = {
     {
       text: 'What IIFE refers to in javascript',
       answers: {
-        a: 'Imadietley Invoked Function Expression',
+        a: 'Immediately Invoked Function Expression',
         b: 'normal function',
         c: 'IIFE does not exist in JavaScript',
         d: 'type of classes in JavaScript',

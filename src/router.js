@@ -1,6 +1,8 @@
 'use strict';
 
 import { initQuestionPage } from './pages/questionPage.js';
+import { welcomePage } from './pages/welcomePage.js';
+import { resultPage } from './pages/resultPage.js';
 import { USER_INTERFACE_ID } from './constants.js';
 
 export const router = (page) => {
@@ -10,6 +12,12 @@ export const router = (page) => {
   switch (page) {
     case 'question':
       initQuestionPage(userInterfaceElement);
+      break;
+    case 'welcome':
+      welcomePage(userInterfaceElement);
+      break;
+    case 'result':
+      resultPage(userInterfaceElement);
       break;
   }
 };

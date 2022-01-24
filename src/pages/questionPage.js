@@ -8,9 +8,9 @@ import { quizData } from '../data.js';
 import { router } from '../router.js';
 
 export const initQuestionPage = (userInterface) => {
-  const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
+  const currentQuestion = quizData.questions[quizData.currentQuestionIndex++];
 
-  const questionElement = getQuestionElement(currentQuestion.text);
+  const questionElement = getQuestionElement(currentQuestion.text, isLastQuestion());
   userInterface.appendChild(questionElement);
 
   const answersListElement = document.getElementById(ANSWERS_LIST_ID);
@@ -21,12 +21,20 @@ export const initQuestionPage = (userInterface) => {
   }
 
   document
-    .getElementById(NEXT_QUESTION_BUTTON_ID)
-    .addEventListener('click', nextQuestion);
+    .getElementById(isLastQuestion() ? GET_RESULT_BUTTON_ID : NEXT_QUESTION_BUTTON_ID)
+    .addEventListener('click', nextStep);
 };
 
-const nextQuestion = () => {
-  quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
+const nextStep = () => {
 
-  router('question');
+  if (isLastQuestion()) {
+    router('result');
+  }
+  else {
+    router('question');
+  }
+};
+
+const isLastQuestion = () => {
+  return (quizData.currentQuestionIndex < quizData.questions.length ? false : true);
 };
