@@ -57,31 +57,30 @@ export const quizData = {
         },
       ],
     },
-    // Add more questions here
     {
-      text: 'What is the correct syntax for referring to an external script called "xxx.js"?',
+      text: 'What is the correct syntax for spread operator in JavaScript?',
       answers: {
-        a: '<script href="xxx.js">',
-        b: '<script name="xxx.js">',
-        c: '<script src="xxx.js">',
-        d: '<script type="module">',
+        a: '===',
+        b: '[...rest]',
+        c: '[...array]',
+        d: 'if ( foo >= bar)',
       },
       correct: 'c',
       selected: null,
       links: [
         {
-          text: 'w3 schools',
-          href: 'https://www.w3schools.com/js/js_whereto.asp',
+          text: 'javascript.info',
+          href: 'https://javascript.info/rest-parameters-spread',
         },
         {
           text: 'MDN',
           href:
-            'https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script',
+            'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax',
         },
       ],
     },
     {
-      text: 'How does a FOR loop star in javascript?',
+      text: 'How does a FOR loop starts in javascript?',
       answers: {
         a: 'for(let i = 0; i <= 5)',
         b: 'for let i = 1 to 5',
