@@ -10,55 +10,47 @@ import { router } from '../router.js';
 
 export const initQuestionPage = (userInterface) => {
 
-  const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
-  console.log(currentQuestion);
+  const currentQuestion = quizData.questions[quizData.currentQuestionIndex++];  //get CURRENT object
 
-  //const currentQuestion = quizData.questions[quizData.currentQuestionIndex++];
-
-
-  const questionElement = getQuestionElement(currentQuestion.text, isLastQuestion());
+  const questionElement = getQuestionElement(currentQuestion.text, isLastQuestion());  //get Q-A div
   userInterface.appendChild(questionElement);
 
-  const answersListElement = document.getElementById(ANSWERS_LIST_ID);
+  const answersListElement = document.getElementById(ANSWERS_LIST_ID); //get the answers UL
 
-  for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
+  for (const [key, answerText] of Object.entries(currentQuestion.answers)) {  //populate it with LI's
     const answerElement = createAnswerElement(key, answerText);
-    console.log(key);
     answerElement.setAttribute('data-key', key);
-    console.log(answerElement.dataset);
     answersListElement.appendChild(answerElement);
   }
-  console.log(answersListElement);
-  answersListElement.addEventListener('click', chooseAnswer);
+  
+  answersListElement.addEventListener('click', chooseAnswer);  //put EvListener on the UL
+
   function chooseAnswer(e) {
     currentQuestion.selected = e.target.dataset.key;
-    console.log(e.target);
+
     if (currentQuestion.selected !== currentQuestion.correct) {
-      console.log('false');
       e.target.style.border = '2px solid red';
     } else {
-      console.log('true');
       e.target.style.border = '2px solid green';
     }
-    console.dir(this);
+
     const options = Array.from(this.children);
-    console.log(options);
     options.forEach((option) => {
       if (option.dataset.key !== currentQuestion.selected) {
         option.style.border = '';
       }
     });
+
     const correctAnswer = document.querySelector(`li[data-key="${currentQuestion.correct}"]`);
-    console.log(correctAnswer)
     correctAnswer.style.backgroundColor = "green";
   }
 
-  document
+  document  //show the right button -> put EvListener on it -> on click choose the next step
     .getElementById(isLastQuestion() ? GET_RESULT_BUTTON_ID : NEXT_QUESTION_BUTTON_ID)
     .addEventListener('click', nextStep);
 };
 
-const nextStep = () => {
+const nextStep = () => { //decide: where to go next - next Q or the RESULT page ?
 
   if (isLastQuestion()) {
     router('result');
@@ -68,6 +60,6 @@ const nextStep = () => {
   }
 };
 
-const isLastQuestion = () => {
+const isLastQuestion = () => { //returns true/false - is the CURRENT Q the last or not?
   return (quizData.currentQuestionIndex < quizData.questions.length ? false : true);
 };
