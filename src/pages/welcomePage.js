@@ -5,11 +5,10 @@ import { router } from '../router.js';
 import {START_QUIZ_BUTTON_ID} from '../constants.js';
 
 export const welcomePage = (userInterface) => {
-
   const welcomeElement = createWelcomeElement();
   userInterface.appendChild(welcomeElement);
 
   document
     .getElementById(START_QUIZ_BUTTON_ID)
-    .addEventListener('click', router('question'));
+    .addEventListener('click', function() {router('question')});
 };

@@ -18,7 +18,7 @@ export const getQuestionElement = (question, isLast) => {
     <ul id="${ANSWERS_LIST_ID}"></ul>
 
     <button id="${isLast ? GET_RESULT_BUTTON_ID : NEXT_QUESTION_BUTTON_ID}">
-      Next question
+      ${isLast ? 'Get result' : 'Next question'}
     </button>
   `;
 

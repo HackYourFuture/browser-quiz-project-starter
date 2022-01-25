@@ -19,5 +19,7 @@ export const router = (page) => {
     case 'result':
       resultPage(userInterfaceElement);
       break;
+    default:
+      console.log('router received wrong string');
   }
 };
