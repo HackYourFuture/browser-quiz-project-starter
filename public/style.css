@@ -1,6 +1,4 @@
 
-<<<<<<< HEAD
-=======
 @import url('https://fonts.googleapis.com/css2?family=Dongle&display=swap');
 
 *{
@@ -19,14 +17,12 @@
     height: 100vh;
 }
 
->>>>>>> 217619db8066fcd4ab53f9663050b78ee3798ef1
 .centered {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-<<<<<<< HEAD
   border: 3px solid white;
   border-radius: 10px;
   width: 50vw;
@@ -41,7 +37,6 @@
 .centered button {
   font-size: 48px;
   margin-top: 50px;
-=======
   
 }
 .dashboard {
@@ -55,7 +50,6 @@
   max-height: 70vh;
   box-shadow: 0px 0px 10px 0px rgb(247, 246, 244);
 
->>>>>>> 217619db8066fcd4ab53f9663050b78ee3798ef1
 }
 
 .scrollable {
