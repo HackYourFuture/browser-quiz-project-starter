@@ -9,7 +9,12 @@ import { quizData } from '../data.js';
 import { router } from '../router.js';
 
 export const initQuestionPage = (userInterface) => {
-  const currentQuestion = quizData.questions[quizData.currentQuestionIndex++];
+
+  const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
+  console.log(currentQuestion);
+
+  //const currentQuestion = quizData.questions[quizData.currentQuestionIndex++];
+
 
   const questionElement = getQuestionElement(currentQuestion.text, isLastQuestion());
   userInterface.appendChild(questionElement);
@@ -18,7 +23,34 @@ export const initQuestionPage = (userInterface) => {
 
   for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
     const answerElement = createAnswerElement(key, answerText);
+    console.log(key);
+    answerElement.setAttribute('data-key', key);
+    console.log(answerElement.dataset);
     answersListElement.appendChild(answerElement);
+  }
+  console.log(answersListElement);
+  answersListElement.addEventListener('click', chooseAnswer);
+  function chooseAnswer(e) {
+    currentQuestion.selected = e.target.dataset.key;
+    console.log(e.target);
+    if (currentQuestion.selected !== currentQuestion.correct) {
+      console.log('false');
+      e.target.style.border = '2px solid red';
+    } else {
+      console.log('true');
+      e.target.style.border = '2px solid green';
+    }
+    console.dir(this);
+    const options = Array.from(this.children);
+    console.log(options);
+    options.forEach((option) => {
+      if (option.dataset.key !== currentQuestion.selected) {
+        option.style.border = '';
+      }
+    });
+    const correctAnswer = document.querySelector(`li[data-key="${currentQuestion.correct}"]`);
+    console.log(correctAnswer)
+    correctAnswer.style.backgroundColor = "green";
   }
 
   document
