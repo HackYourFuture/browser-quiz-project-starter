@@ -42,8 +42,10 @@ export const initQuestionPage = (userInterface) => {
       if (option.dataset.key !== currentQuestion.selected) {
         option.style.border = '';
       }
-      
     });
+    const correctAnswer = document.querySelector(`li[data-key="${currentQuestion.correct}"]`);
+    console.log(correctAnswer)
+    correctAnswer.style.backgroundColor = "green";
   }
 
   document
