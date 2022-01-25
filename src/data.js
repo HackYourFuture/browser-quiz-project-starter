@@ -170,7 +170,7 @@ export const quizData = {
     {
       text: 'What IIFE refers to in javascript',
       answers: {
-        a: 'Imadietley Invoked Function Expression',
+        a: 'Immediately Invoked Function Expression',
         b: 'normal function',
         c: 'IIFE does not exist in JavaScript',
         d: 'type of classes in JavaScript',
