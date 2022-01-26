@@ -135,3 +135,14 @@ ul li{
   transform: translateY(-0.1rem);
   transition: transform 150ms;
 }
+
+.correct-select {
+  border: 2px solid green;
+}
+.wrong-select {
+  border: 2px solid red;
+}
+
+.correct-answer {
+  background-color: green;
+}
