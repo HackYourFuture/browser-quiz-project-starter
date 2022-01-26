@@ -5,8 +5,9 @@ import {START_QUIZ_BUTTON_ID} from '../constants.js';
 export const createWelcomeElement = () => {
     const element = document.createElement('div');
     element.innerHTML = String.raw`
-    <p>This is the starting page</p>
-    <button id="${START_QUIZ_BUTTON_ID}">Start quiz</button>
+    <h1>Welcome To JS Strijders</h1>
+    <img src="public/Assets/Add a heading.png" alt="ninja warrior">
+    <button class ="btn" id="${START_QUIZ_BUTTON_ID}">Start quiz</button>
     `;
     return element;
 }
