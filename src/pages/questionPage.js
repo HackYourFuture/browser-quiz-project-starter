@@ -11,6 +11,7 @@ import { router } from '../router.js';
 export const initQuestionPage = (userInterface) => {
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex++];
   let click = false;
+  let clickCount = 0;
   
   const questionElement = getQuestionElement(
     currentQuestion.text,
@@ -50,15 +51,9 @@ export const initQuestionPage = (userInterface) => {
       
       options.forEach((option) => {option.removeEventListener('click', chooseAnswer)});
   }
-  
-  document
-    .getElementById(
-      isLastQuestion() ? GET_RESULT_BUTTON_ID : NEXT_QUESTION_BUTTON_ID
-    )
-    .addEventListener('click', function() {nextStep(click);});
-};
 
-const nextStep = (click) => {
+  const nextStep = (click) => {
+  clickCount++;
   if (!click) {
     document.getElementById(ANSWERS_LIST_ID).appendChild(document.createElement('p').appendChild(document.createTextNode('You have to Select Something!!!')));
   }
@@ -68,6 +63,13 @@ const nextStep = (click) => {
     router('question');
     console.log(`correct: ${quizData.correctSum}, wrong: ${quizData.wrongSum}`);
   }
+};
+  
+  document
+    .getElementById(
+      isLastQuestion() ? GET_RESULT_BUTTON_ID : NEXT_QUESTION_BUTTON_ID
+    )
+    .addEventListener('click', function() {nextStep(click);});
 };
 
 const isLastQuestion = () => {
