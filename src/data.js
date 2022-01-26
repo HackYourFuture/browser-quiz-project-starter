@@ -212,28 +212,6 @@ export const quizData = {
       ],
     },
     {
-      text: 'when was JavaScript created by Brendan Eich?',
-      answers: {
-        a: '1994',
-        b: '1992',
-        c: '1998',
-        d: '1995',
-      },
-      correct: 'd',
-      selected: null,
-      links: [
-        {
-          text: 'javascript history',
-          href: 'https://medium.com/@_benaston/lesson-1a-the-history-of-javascript-8c1ce3bffb17#:~:text=JavaScript%20was%20created%20by%20Brendan,his%20time%20at%20Netscape%20Communications.',
-        },
-        {
-          text: 'Wikipedia',
-          href:
-            'https://en.wikipedia.org/wiki/JavaScript',
-        },
-      ],
-    },
-    {
       text: 'What is === operator in JavaScript?',
       answers: {
         a: 'compare values and types',
