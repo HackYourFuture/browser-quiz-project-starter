@@ -10,7 +10,8 @@ import { router } from '../router.js';
 
 export const initQuestionPage = (userInterface) => {
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex++];
-  let alreadyChosen = false;
+  let click = false;
+  
   const questionElement = getQuestionElement(
     currentQuestion.text,
     isLastQuestion()
@@ -24,48 +25,48 @@ export const initQuestionPage = (userInterface) => {
     answerElement.setAttribute('data-key', key);
     answersListElement.appendChild(answerElement);
   }
+
   const options = Array.from(answersListElement.children);
   options.forEach( option => {
-    if (!alreadyChosen){
       option.addEventListener('click', chooseAnswer);
-    }
   })
 
   function chooseAnswer(e) {
-    alreadyChosen = true;
+    click = true;
     currentQuestion.selected = e.target.dataset.key;
-    options.forEach((option) => {
-      if (option.dataset.key !== currentQuestion.selected) {
-        option.className = '';
-      }
-      
-    });
-
+    
     if (currentQuestion.selected !== currentQuestion.correct) {
       e.target.classList.add('wrong-select');
-    } else {
-      e.target.classList.add('correct-select');
+      quizData.wrongSum++;
     }
-
+    else {
+      quizData.correctSum++;
+    }
+    
     const correctAnswer = document.querySelector(
       `li[data-key="${currentQuestion.correct}"]`
-    );
-    correctAnswer.style.backgroundColor = 'green';
-    
+      );
+      correctAnswer.style.backgroundColor = 'green';
+      
+      options.forEach((option) => {option.removeEventListener('click', chooseAnswer)});
   }
   
   document
     .getElementById(
       isLastQuestion() ? GET_RESULT_BUTTON_ID : NEXT_QUESTION_BUTTON_ID
     )
-    .addEventListener('click', nextStep);
+    .addEventListener('click', function() {nextStep(click);});
 };
 
-const nextStep = () => {
-  if (isLastQuestion()) {
+const nextStep = (click) => {
+  if (!click) {
+    document.getElementById(ANSWERS_LIST_ID).appendChild(document.createElement('p').appendChild(document.createTextNode('You have to Select Something!!!')));
+  }
+  else if (isLastQuestion()) {
     router('result');
   } else {
     router('question');
+    console.log(`correct: ${quizData.correctSum}, wrong: ${quizData.wrongSum}`);
   }
 };
 
