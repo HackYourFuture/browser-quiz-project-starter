@@ -3,7 +3,7 @@
 import { ANSWERS_LIST_ID } from '../constants.js';
 import { NEXT_QUESTION_BUTTON_ID } from '../constants.js';
 import { GET_RESULT_BUTTON_ID } from '../constants.js';
-
+import { quizData } from '../data.js';
 /**
  * Create a full question element
  * @returns {Element}
@@ -13,6 +13,17 @@ export const getQuestionElement = (question, isLast) => {
 
   // I use String.raw just to get fancy colors for the HTML in VS Code.
   element.innerHTML = String.raw`
+  <div id="hud">
+  <div id="hud-item">
+     <p class="hud-prefix"> Question </p>
+     <h2 class="hud-main-text" > ${quizData.currentQuestionIndex}/10</h2>
+  </div>
+ <div id="hud-item">
+  <p class="hud-prefix">Score</p>
+  <h2 class="hud-main-text" >${quizData.correctSum}/10</h>
+ </div>
+ </div>
+  
     <h1>${question}</h1>
 
     <ul id="${ANSWERS_LIST_ID}"></ul>
