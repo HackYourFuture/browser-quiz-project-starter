@@ -12,7 +12,10 @@ export const initQuestionPage = (userInterface) => {
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex++];
   let click = false;
   let clickCount = 0;
-  
+  const score = document.createElement('p');
+  score.classList.add('score-counter')
+  score.innerHTML = quizData.correctSum;
+   userInterface.appendChild(score)
   const questionElement = getQuestionElement(
     currentQuestion.text,
     isLastQuestion()
@@ -55,7 +58,13 @@ export const initQuestionPage = (userInterface) => {
   const nextStep = (click) => {
   clickCount++;
   if (!click) {
-    document.getElementById(ANSWERS_LIST_ID).appendChild(document.createElement('p').appendChild(document.createTextNode('You have to Select Something!!!')));
+    
+    if(clickCount < 2){
+
+      const clickError = document.createElement('p');
+      clickError.innerHTML = 'You have to Select Something!!!';
+      answersListElement.appendChild(clickError);
+    }
   }
   else if (isLastQuestion()) {
     router('result');

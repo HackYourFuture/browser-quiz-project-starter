@@ -149,3 +149,7 @@ ul li{
 .correct-answer {
   background-color: green;
 }
+.score-counter {
+  color: aliceblue;
+  font-size: 46px;
+}
