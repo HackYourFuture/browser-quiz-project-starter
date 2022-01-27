@@ -15,7 +15,7 @@ export const getQuestionElement = (question, isLast) => {
   element.innerHTML = String.raw`
  <div id="hud">
   <div id="hud-item">
-     <p class="hud-prefix"> Question </p>
+     <p class="hud-prefix"> Questions </p>
      <h2 class="hud-main-text" > ${quizData.currentQuestionIndex}/10</h2>
   </div>
   <div id="hud-item">
