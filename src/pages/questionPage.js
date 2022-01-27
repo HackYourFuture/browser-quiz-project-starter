@@ -4,8 +4,7 @@ import { ANSWERS_LIST_ID } from '../constants.js';
 import { NEXT_QUESTION_BUTTON_ID } from '../constants.js';
 import { GET_RESULT_BUTTON_ID } from '../constants.js';
 import { getQuestionElement } from '../views/questionView.js';
-import { getAnswerElement } from '../views/answerView.js';
-import { getErrorElement } from '../views/clickErrorView.js';
+import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
 import { router } from '../router.js';
 import { TIMER_ELEMENT_ID } from '../constants.js';
@@ -26,20 +25,15 @@ export const initQuestionPage = (userInterface) => {
   const answersListElement = document.getElementById(ANSWERS_LIST_ID);
 
   for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
-    const answerElement = getAnswerElement(key, answerText);
+    const answerElement = createAnswerElement(key, answerText);
     answerElement.setAttribute('data-key', key);
     answersListElement.appendChild(answerElement);
   }
 
-  for (const option of answersListElement.children) {
-      option.addEventListener('click', chooseAnswer);
-  }
-
-  document
-    .getElementById(
-      isLastQuestion() ? GET_RESULT_BUTTON_ID : NEXT_QUESTION_BUTTON_ID
-    )
-    .addEventListener('click', function() {nextStep(click)});
+  const options = Array.from(answersListElement.children);
+  options.forEach((option) => {
+    option.addEventListener('click', chooseAnswer);
+  });
 
   function chooseAnswer(e) {
     click = true;
@@ -62,13 +56,12 @@ export const initQuestionPage = (userInterface) => {
     }
     const correctAnswer = document.querySelector(
       `li[data-key="${currentQuestion.correct}"]`
-
     );
     correctAnswer.style.backgroundColor = 'green';
 
-    for (const option of answersListElement.children) {
-      option.removeEventListener('click', chooseAnswer)
-    };
+    options.forEach((option) => {
+      option.removeEventListener('click', chooseAnswer);
+    });
   }
 
   setTimer();
@@ -76,7 +69,8 @@ export const initQuestionPage = (userInterface) => {
     clickCount++;
     if (!click) {
       if (clickCount < 2) {
-        const clickError = getErrorElement(isLastQuestion());
+        const clickError = document.createElement('p');
+        clickError.innerHTML = 'You have to Select Something!!!';
         answersListElement.appendChild(clickError);
       }
     } else if (isLastQuestion()) {
@@ -94,15 +88,10 @@ export const initQuestionPage = (userInterface) => {
     .addEventListener('click', function () {
       nextStep(click);
     });
-
 };
 
-function isLastQuestion() {
+const isLastQuestion = () => {
   return quizData.currentQuestionIndex < quizData.questions.length
     ? false
     : true;
 };
-
-};
-
-
