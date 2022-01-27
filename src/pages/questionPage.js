@@ -14,7 +14,7 @@ export const initQuestionPage = (userInterface) => {
   let clickCount = 0;
   const score = document.createElement('p');
   score.classList.add('score-counter')
-  score.innerHTML = quizData.correctSum;
+  score.innerHTML = `score: ${quizData.correctSum}/10`;
    userInterface.appendChild(score)
   const questionElement = getQuestionElement(
     currentQuestion.text,

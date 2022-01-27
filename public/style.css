@@ -1,21 +1,20 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Dongle&display=swap');
 
-*{
-    margin: 0;
-    padding: 0;
-    outline: none;
-    user-select: none;
-    box-sizing: border-box;
-    font-family: 'Dongle', sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  user-select: none;
+  box-sizing: border-box;
+  font-family: 'Dongle', sans-serif;
 }
- body{
-  background:linear-gradient(rgba(0, 0, 0, 0.7), rgba(58, 58, 57, 0.85)), url(/public/Assets/main_background.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 100vh;
-
+body {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(58, 58, 57, 0.85)),
+    url(/public/Assets/main_background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
 }
 
 h1 {
@@ -33,8 +32,7 @@ h1 {
   border: 3px solid white;
   border-radius: 10px;
   width: 50vw;
-  min-height: 50vh;
-  
+  min-height: 70vh;
 }
 
 /* .centered p {
@@ -61,15 +59,13 @@ h1 {
   justify-content: center;
   align-items: center;
   text-align: center;
-
 }
-.dashboard img{
+.dashboard img {
   display: block;
   margin: auto;
   border: 1px solid black;
   border-radius: 10%;
   height: 250px;
-  
 }
 .scrollable {
   height: auto;
@@ -82,14 +78,13 @@ ul {
   /* width: 60%; */
   margin: 0 auto;
 }
-ul li{
+ul li {
   border: 1px solid black;
   font-size: 2rem;
   margin: 1rem 0;
   padding: 0 1rem;
   cursor: pointer;
 }
-
 
 /* utilities */
 .flex-column {
@@ -107,7 +102,7 @@ ul li{
 }
 
 /* Button styling */
-.btn{
+.btn {
   font-size: 2rem;
   padding: 0.5rem 6rem;
   width: 20rem;
@@ -132,7 +127,9 @@ ul li{
   background-color: rgb(230, 225, 203);
 }
 
-.btn:hover ,ul li:hover,.next-question-btn:hover{
+.btn:hover,
+ul li:hover,
+.next-question-btn:hover {
   cursor: pointer;
   box-shadow: 0 0.4rem 1.4rem 0 rgba(255, 255, 255, 0.5);
   transform: translateY(-0.1rem);
