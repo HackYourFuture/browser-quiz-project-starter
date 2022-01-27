@@ -7,16 +7,19 @@ import { getQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
 import { router } from '../router.js';
+import { TIMER_ELEMENT_ID } from '../constants.js';
+import { setTimer } from '../views/timerView.js';
 
 export const initQuestionPage = (userInterface) => {
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex++];
   let click = false;
   let clickCount = 0;
-  
+
   const questionElement = getQuestionElement(
     currentQuestion.text,
     isLastQuestion()
   );
+
   userInterface.appendChild(questionElement);
 
   const answersListElement = document.getElementById(ANSWERS_LIST_ID);
@@ -28,54 +31,63 @@ export const initQuestionPage = (userInterface) => {
   }
 
   const options = Array.from(answersListElement.children);
-  options.forEach( option => {
-      option.addEventListener('click', chooseAnswer);
-  })
+  options.forEach((option) => {
+    option.addEventListener('click', chooseAnswer);
+  });
 
   function chooseAnswer(e) {
     click = true;
     currentQuestion.selected = e.target.dataset.key;
-    
+    const timer = document.getElementById(TIMER_ELEMENT_ID);
+    //console.log(timer);
+    const remainedTime = timer.innerHTML.slice(3);
+    console.log(remainedTime);
     if (currentQuestion.selected !== currentQuestion.correct) {
       e.target.classList.add('wrong-select');
       quizData.wrongSum++;
-    }
-    else {
+    } else {
+      e.target.classList.add('correct-select');
       quizData.correctSum++;
     }
-    
+    if( currentQuestion.selected === currentQuestion.correct){
+      if(remainedTime > 30){
+        quizData.timeScore++;
+      }
+    }
     const correctAnswer = document.querySelector(
       `li[data-key="${currentQuestion.correct}"]`
-      );
-      correctAnswer.style.backgroundColor = 'green';
-      
-      options.forEach((option) => {option.removeEventListener('click', chooseAnswer)});
+    );
+    correctAnswer.style.backgroundColor = 'green';
+
+    options.forEach((option) => {
+      option.removeEventListener('click', chooseAnswer);
+    });
   }
 
+  setTimer();
   const nextStep = (click) => {
-  clickCount++;
-  if (!click) {
-    
-    if(clickCount < 2){
-
-      const clickError = document.createElement('p');
-      clickError.innerHTML = 'You have to Select Something!!!';
-      answersListElement.appendChild(clickError);
+    clickCount++;
+    if (!click) {
+      if (clickCount < 2) {
+        const clickError = document.createElement('p');
+        clickError.innerHTML = 'You have to Select Something!!!';
+        answersListElement.appendChild(clickError);
+      }
+    } else if (isLastQuestion()) {
+      router('result');
+    } else {
+      router('question');
+      console.log(quizData.timeScore)
     }
-  }
-  else if (isLastQuestion()) {
-    router('result');
-  } else {
-    router('question');
-    console.log(`correct: ${quizData.correctSum}, wrong: ${quizData.wrongSum}`);
-  }
-};
-  
+  };
+
   document
     .getElementById(
       isLastQuestion() ? GET_RESULT_BUTTON_ID : NEXT_QUESTION_BUTTON_ID
     )
-    .addEventListener('click', function() {nextStep(click);});
+    .addEventListener('click', function () {
+      nextStep(click);
+    });
 };
 
 const isLastQuestion = () => {

@@ -15,6 +15,7 @@ export const quizData = {
   currentQuestionIndex: 0,
   wrongSum: 0,
   correctSum: 0,
+  timeScore: 0,
   // the questions in the quiz
   questions: [
     {
