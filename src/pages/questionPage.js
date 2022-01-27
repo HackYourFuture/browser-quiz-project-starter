@@ -4,7 +4,7 @@ import { ANSWERS_LIST_ID } from '../constants.js';
 import { NEXT_QUESTION_BUTTON_ID } from '../constants.js';
 import { GET_RESULT_BUTTON_ID } from '../constants.js';
 import { getQuestionElement } from '../views/questionView.js';
-import { createAnswerElement } from '../views/answerView.js';
+import { getAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
 import { router } from '../router.js';
 
@@ -22,15 +22,14 @@ export const initQuestionPage = (userInterface) => {
   const answersListElement = document.getElementById(ANSWERS_LIST_ID);
 
   for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
-    const answerElement = createAnswerElement(key, answerText);
+    const answerElement = getAnswerElement(key, answerText);
     answerElement.setAttribute('data-key', key);
     answersListElement.appendChild(answerElement);
   }
 
-  const options = Array.from(answersListElement.children);
-  options.forEach( option => {
+  for (const option of answersListElement.children) {
       option.addEventListener('click', chooseAnswer);
-  })
+  }
 
   function chooseAnswer(e) {
     click = true;
@@ -49,7 +48,9 @@ export const initQuestionPage = (userInterface) => {
       );
       correctAnswer.style.backgroundColor = 'green';
       
-      options.forEach((option) => {option.removeEventListener('click', chooseAnswer)});
+      for (const option of answersListElement.children) {
+        option.removeEventListener('click', chooseAnswer)
+      };
   }
 
   const nextStep = (click) => {
@@ -67,7 +68,6 @@ export const initQuestionPage = (userInterface) => {
     router('result');
   } else {
     router('question');
-    console.log(`correct: ${quizData.correctSum}, wrong: ${quizData.wrongSum}`);
   }
 };
   
