@@ -24,6 +24,7 @@ export const quizData = {
         a: 'constant, let, variable',
         b: 'var, const, let, function',
         c: 'var, let, const',
+        d: 'var, let, break, class',
       },
       correct: 'c',
       selected: null,
@@ -187,8 +188,7 @@ export const quizData = {
         },
         {
           text: 'MDN',
-          href:
-            'https://developer.mozilla.org/en-US/docs/Glossary/IIFE',
+          href: 'https://developer.mozilla.org/en-US/docs/Glossary/IIFE',
         },
       ],
     },
@@ -209,8 +209,7 @@ export const quizData = {
         },
         {
           text: 'MDN',
-          href:
-            'https://developer.mozilla.org/en-US/docs/Web/API/console/log',
+          href: 'https://developer.mozilla.org/en-US/docs/Web/API/console/log',
         },
       ],
     },

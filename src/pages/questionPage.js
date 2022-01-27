@@ -3,12 +3,13 @@
 import { ANSWERS_LIST_ID } from '../constants.js';
 import { NEXT_QUESTION_BUTTON_ID } from '../constants.js';
 import { GET_RESULT_BUTTON_ID } from '../constants.js';
+import { TIMER_ELEMENT_ID } from '../constants.js';
 import { getQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
+import { setTimer } from '../views/timerView.js';
+import { getErrorElement } from '../views/clickErrorView.js';
 import { quizData } from '../data.js';
 import { router } from '../router.js';
-import { TIMER_ELEMENT_ID } from '../constants.js';
-import { setTimer } from '../views/timerView.js';
 
 export const initQuestionPage = (userInterface) => {
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex++];
@@ -30,18 +31,15 @@ export const initQuestionPage = (userInterface) => {
     answersListElement.appendChild(answerElement);
   }
 
-  const options = Array.from(answersListElement.children);
-  options.forEach((option) => {
+  for (const option of answersListElement.children) {
     option.addEventListener('click', chooseAnswer);
-  });
+  }
 
   function chooseAnswer(e) {
     click = true;
     currentQuestion.selected = e.target.dataset.key;
     const timer = document.getElementById(TIMER_ELEMENT_ID);
-    //console.log(timer);
     const remainedTime = timer.innerHTML.slice(3);
-    console.log(remainedTime);
     if (currentQuestion.selected !== currentQuestion.correct) {
       e.target.classList.add('wrong-select');
       quizData.wrongSum++;
@@ -49,8 +47,8 @@ export const initQuestionPage = (userInterface) => {
       e.target.classList.add('correct-select');
       quizData.correctSum++;
     }
-    if( currentQuestion.selected === currentQuestion.correct){
-      if(remainedTime > 30){
+    if (currentQuestion.selected === currentQuestion.correct) {
+      if (remainedTime > 30) {
         quizData.timeScore++;
       }
     }
@@ -59,27 +57,25 @@ export const initQuestionPage = (userInterface) => {
     );
     correctAnswer.style.backgroundColor = 'green';
 
-    options.forEach((option) => {
+    for (const option of answersListElement.children) {
       option.removeEventListener('click', chooseAnswer);
-    });
+    }
   }
 
   setTimer();
-  const nextStep = (click) => {
+  function nextStep(click) {
     clickCount++;
     if (!click) {
       if (clickCount < 2) {
-        const clickError = document.createElement('p');
-        clickError.innerHTML = 'You have to Select Something!!!';
+        const clickError = getErrorElement(isLastQuestion());
         answersListElement.appendChild(clickError);
       }
     } else if (isLastQuestion()) {
       router('result');
     } else {
       router('question');
-      console.log(quizData.timeScore)
     }
-  };
+  }
 
   document
     .getElementById(
@@ -90,8 +86,8 @@ export const initQuestionPage = (userInterface) => {
     });
 };
 
-const isLastQuestion = () => {
+function isLastQuestion() {
   return quizData.currentQuestionIndex < quizData.questions.length
     ? false
     : true;
-};
+}

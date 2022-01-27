@@ -1,7 +1,6 @@
 'use strict';
 
 export const getReferenceElement = (text, href) => {
-
   const element = document.createElement('li');
 
   element.innerHTML = String.raw`
@@ -9,4 +8,4 @@ export const getReferenceElement = (text, href) => {
   `;
 
   return element;
-}
+};
