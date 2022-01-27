@@ -16,9 +16,9 @@ export const getQuestionElement = (question, isLast) => {
   
   // I use String.raw just to get fancy colors for the HTML in VS Code.
   element.innerHTML = String.raw`
-  <div id="hud">
+ <div id="hud">
   <div id="hud-item">
-     <p class="hud-prefix"> Question </p>
+     <p class="hud-prefix"> Questions </p>
      <h2 class="hud-main-text" > ${quizData.currentQuestionIndex}/10</h2>
   </div>
   <div id="hud-item">
@@ -34,13 +34,13 @@ export const getQuestionElement = (question, isLast) => {
  </div>
  </div>
   
-    <h1>${question}</h1>
+ <h1>${question}</h1>
 
-    <ul id="${ANSWERS_LIST_ID}"></ul>
+ <ul id="${ANSWERS_LIST_ID}"></ul>
 
-    <button class="next-question-btn" id="${isLast ? GET_RESULT_BUTTON_ID : NEXT_QUESTION_BUTTON_ID}">
+ <button class="next-question-btn" id="${isLast ? GET_RESULT_BUTTON_ID : NEXT_QUESTION_BUTTON_ID}">
       ${isLast ? 'Get result' : 'Next question'}
-    </button>
+ </button>
   `;
   
   

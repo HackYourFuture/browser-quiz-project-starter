@@ -1,6 +1,5 @@
 'use strict';
 
-
 import { REFERENCE_LIST_ID } from '../constants.js';
 import { quizData } from '../data.js';
 
