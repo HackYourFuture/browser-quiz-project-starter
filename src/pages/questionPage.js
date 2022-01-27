@@ -5,6 +5,7 @@ import { NEXT_QUESTION_BUTTON_ID } from '../constants.js';
 import { GET_RESULT_BUTTON_ID } from '../constants.js';
 import { getQuestionElement } from '../views/questionView.js';
 import { getAnswerElement } from '../views/answerView.js';
+import { getErrorElement } from '../views/clickErrorView.js';
 import { quizData } from '../data.js';
 import { router } from '../router.js';
 
@@ -31,6 +32,12 @@ export const initQuestionPage = (userInterface) => {
       option.addEventListener('click', chooseAnswer);
   }
 
+  document
+    .getElementById(
+      isLastQuestion() ? GET_RESULT_BUTTON_ID : NEXT_QUESTION_BUTTON_ID
+    )
+    .addEventListener('click', function() {nextStep(click)});
+
   function chooseAnswer(e) {
     click = true;
     currentQuestion.selected = e.target.dataset.key;
@@ -53,33 +60,27 @@ export const initQuestionPage = (userInterface) => {
       };
   }
 
-  const nextStep = (click) => {
+  function nextStep(click) {
   clickCount++;
-  if (!click) {
-    
-    if(clickCount < 2){
 
-      const clickError = document.createElement('p');
-      clickError.innerHTML = 'You have to Select Something!!!';
+  if (!click) {
+    if(clickCount < 2) {
+      const clickError = getErrorElement(isLastQuestion());
       answersListElement.appendChild(clickError);
     }
-  }
-  else if (isLastQuestion()) {
+  } else if (isLastQuestion()) {
     router('result');
   } else {
     router('question');
   }
 };
-  
-  document
-    .getElementById(
-      isLastQuestion() ? GET_RESULT_BUTTON_ID : NEXT_QUESTION_BUTTON_ID
-    )
-    .addEventListener('click', function() {nextStep(click);});
-};
 
-const isLastQuestion = () => {
+function isLastQuestion() {
   return quizData.currentQuestionIndex < quizData.questions.length
     ? false
     : true;
 };
+
+};
+
+
