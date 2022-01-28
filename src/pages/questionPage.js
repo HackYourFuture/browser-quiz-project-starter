@@ -40,6 +40,8 @@ export const initQuestionPage = (userInterface) => {
     currentQuestion.selected = e.target.dataset.key;
     const timer = document.getElementById(TIMER_ELEMENT_ID);
     const remainedTime = timer.innerHTML.slice(3);
+    localStorage.setItem(quizData.currentQuestionIndex,remainedTime);
+    console.log(localStorage);
     if (currentQuestion.selected !== currentQuestion.correct) {
       e.target.classList.add('wrong-select');
       quizData.wrongSum++;
