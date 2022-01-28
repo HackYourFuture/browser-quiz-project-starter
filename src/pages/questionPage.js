@@ -1,6 +1,6 @@
 'use strict';
 
-import { ANSWERS_LIST_ID } from '../constants.js';
+import { ANSWERS_LIST_ID, REFERENCE_LIST_ID } from '../constants.js';
 import { NEXT_QUESTION_BUTTON_ID } from '../constants.js';
 import { GET_RESULT_BUTTON_ID } from '../constants.js';
 import { TIMER_ELEMENT_ID } from '../constants.js';
@@ -10,6 +10,7 @@ import { setTimer } from '../views/timerView.js';
 import { getErrorElement } from '../views/clickErrorView.js';
 import { quizData } from '../data.js';
 import { router } from '../router.js';
+import { getReferenceElement } from '../views/referenceView.js';
 
 export const initQuestionPage = (userInterface) => {
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex++];
@@ -40,7 +41,7 @@ export const initQuestionPage = (userInterface) => {
     currentQuestion.selected = e.target.dataset.key;
     const timer = document.getElementById(TIMER_ELEMENT_ID);
     const remainedTime = timer.innerHTML.slice(3);
-    localStorage.setItem(quizData.currentQuestionIndex,remainedTime);
+    localStorage.setItem(quizData.currentQuestionIndex, remainedTime);
     console.log(localStorage);
     if (currentQuestion.selected !== currentQuestion.correct) {
       e.target.classList.add('wrong-select');
@@ -78,6 +79,13 @@ export const initQuestionPage = (userInterface) => {
       router('question');
     }
   }
+  const reference = document.getElementById(REFERENCE_LIST_ID);
+  console.log(currentQuestion.links);
+  currentQuestion.links.forEach((link) => {
+    console.log(link);
+    const referenceElement = getReferenceElement(link.text, link.href);
+    reference.appendChild(referenceElement);
+  });
 
   document
     .getElementById(

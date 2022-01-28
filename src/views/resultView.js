@@ -1,6 +1,5 @@
 'use strict';
 
-import { REFERENCE_LIST_ID } from '../constants.js';
 import { quizData } from '../data.js';
 
 export const createResultElement = () => {
@@ -10,8 +9,11 @@ export const createResultElement = () => {
         <p>You have finished the quiz about JavaScript.</p>
         <p>Correct answers: ${quizData.correctSum}</p>
         <p>Wrong answers: ${quizData.wrongSum}</p>
+        <p>fast answering score: ${quizData.timeScore}/10 points</p>
         <p>For more about JavaScript, visit:</p>
-        <ol id="${REFERENCE_LIST_ID}"></ol>
+        <a href="https://www.w3schools.com/" class="link reference-link">https://w3schools.com</a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" class="link reference-link">MDN-WebDocs/javascript</a>
+        <a href="https://javascript.info/" class="link reference-link">https://javascript.info</a>
     `;
   return element;
 };

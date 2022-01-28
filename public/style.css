@@ -169,3 +169,17 @@ ul li:hover,
 #hud-item h2{
   font-size: 2rem;
 }
+.reference-link {
+  display: block;
+  color: #000000;
+}
+.reference-link:visited{
+  color: black;
+}
+#reference-list a {
+  color:black;
+  display: block;
+}
+#reference-list a:visited {
+  color:black;
+}
