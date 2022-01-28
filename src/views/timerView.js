@@ -8,13 +8,12 @@ export const setTimer = () => {
   setInterval(updateTimer, 1000);
 
   function updateTimer() {
-    let minutes = '00' ;
-    let seconds = time ;
+    let seconds = time;
 
     seconds = seconds < 10 ? '0' + seconds : seconds;
 
-     seconds > 0
-      ? (timer.innerHTML = `${minutes}:${seconds}`)
+    seconds > 0
+      ? (timer.innerHTML = `00:${seconds}`)
       : (timer.innerHTML = '00:00');
     time--;
   }
