@@ -13,7 +13,7 @@ import { REFERENCE_LIST_ID } from '../constants.js';
  */
 export const getQuestionElement = (question, isLast) => {
   const element = document.createElement('div');
-  
+  element.id = "question-interface"
   // I use String.raw just to get fancy colors for the HTML in VS Code.
   element.innerHTML = String.raw`
   <div id="hud">

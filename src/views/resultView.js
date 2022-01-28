@@ -4,6 +4,7 @@ import { quizData } from '../data.js';
 
 export const createResultElement = () => {
   const element = document.createElement('div');
+  element.id = "result-interface";
   element.innerHTML = String.raw`
         <h1>Congratulations!</h1>
         <p>You have finished the quiz about JavaScript.</p>
