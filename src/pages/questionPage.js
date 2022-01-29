@@ -4,20 +4,39 @@ import { ANSWERS_LIST_ID, REFERENCE_LIST_ID } from '../constants.js';
 import { NEXT_QUESTION_BUTTON_ID } from '../constants.js';
 import { GET_RESULT_BUTTON_ID } from '../constants.js';
 import { TIMER_ELEMENT_ID } from '../constants.js';
-import { getQuestionElement } from '../views/questionView.js';
+import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
 import { setTimer } from '../views/timerView.js';
-import { getErrorElement } from '../views/clickErrorView.js';
+import { createErrorElement } from '../views/clickErrorView.js';
 import { quizData } from '../data.js';
 import { router } from '../router.js';
-import { getReferenceElement } from '../views/referenceView.js';
+import { createReferenceElement } from '../views/referenceView.js';
 
-export const initQuestionPage = (userInterface) => {
+export const initQuestionPage = (userInterface, refresh = '') => {
+
+  if (refresh === '') {
+    const {currentQuestionIndex, wrongSum, correctSum, timeScore} = quizData;
+
+    const session = {
+      currentQuestionIndex, wrongSum, correctSum, timeScore,
+    };
+
+    sessionStorage.setItem(`question${quizData.currentQuestionIndex}`, JSON.stringify(session));
+
+  } else {
+    const session = JSON.parse(sessionStorage.getItem(refresh));
+
+    quizData.currentQuestionIndex = session.currentQuestionIndex;
+    quizData.wrongSum = session.wrongSum;
+    quizData.correctSum = session.correctSum;
+    quizData.timeScore = session.timeScore;
+  }
+
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex++];
   let click = false;
   let clickCount = 0;
 
-  const questionElement = getQuestionElement(
+  const questionElement = createQuestionElement(
     currentQuestion.text,
     isLastQuestion()
   );
@@ -37,12 +56,12 @@ export const initQuestionPage = (userInterface) => {
   }
 
   function chooseAnswer(e) {
+
     click = true;
     currentQuestion.selected = e.target.dataset.key;
     const timer = document.getElementById(TIMER_ELEMENT_ID);
     const remainedTime = timer.innerHTML.slice(3);
-    localStorage.setItem(quizData.currentQuestionIndex, remainedTime);
-    console.log(localStorage);
+
     if (currentQuestion.selected !== currentQuestion.correct) {
       e.target.classList.add('wrong-select');
       quizData.wrongSum++;
@@ -66,24 +85,24 @@ export const initQuestionPage = (userInterface) => {
   }
 
   setTimer();
+
   function nextStep(click) {
     clickCount++;
     if (!click) {
       if (clickCount < 2) {
-        const clickError = getErrorElement(isLastQuestion());
+        const clickError = createErrorElement(isLastQuestion());
         answersListElement.appendChild(clickError);
       }
-    } else if (isLastQuestion()) {
-      router('result');
     } else {
-      router('question');
+      sessionStorage.removeItem(`question${quizData.currentQuestionIndex - 1}`);
+      isLastQuestion() ? router('result') : router('question');
     }
   }
+
   const reference = document.getElementById(REFERENCE_LIST_ID);
-  console.log(currentQuestion.links);
+
   currentQuestion.links.forEach((link) => {
-    console.log(link);
-    const referenceElement = getReferenceElement(link.text, link.href);
+    const referenceElement = createReferenceElement(link.text, link.href);
     reference.appendChild(referenceElement);
   });
 

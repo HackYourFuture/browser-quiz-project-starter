@@ -1,6 +1,6 @@
 'use strict';
 
-export const getReferenceElement = (text, href) => {
+export const createReferenceElement = (text, href) => {
   const element = document.createElement('li');
 
   element.innerHTML = String.raw`

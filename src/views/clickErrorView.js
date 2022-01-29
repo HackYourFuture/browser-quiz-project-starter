@@ -1,6 +1,7 @@
 'use strict';
 
-export const getErrorElement = (isLast) => {
+export const createErrorElement = (isLast) => {
+  
   const element = document.createElement('p');
 
   element.innerHTML = String.raw`

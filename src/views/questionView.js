@@ -11,7 +11,7 @@ import { REFERENCE_LIST_ID } from '../constants.js';
  * Create a full question element
  * @returns {Element}
  */
-export const getQuestionElement = (question, isLast) => {
+export const createQuestionElement = (question, isLast) => {
   const element = document.createElement('div');
   element.id = "question-interface"
   // I use String.raw just to get fancy colors for the HTML in VS Code.

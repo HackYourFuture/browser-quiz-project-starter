@@ -2,14 +2,14 @@
 
 import { quizData } from '../data.js';
 
-export const createResultElement = () => {
+export const createResultElement = (correctSum, wrongSum) => {
   const element = document.createElement('div');
   element.id = "result-interface";
   element.innerHTML = String.raw`
         <h1>Congratulations!</h1>
         <p>You have finished the quiz about JavaScript.</p>
-        <p>Correct answers: ${quizData.correctSum}</p>
-        <p>Wrong answers: ${quizData.wrongSum}</p>
+        <p>Correct answers: ${correctSum}</p>
+        <p>Wrong answers: ${wrongSum}</p>
         <p>fast answering score: ${quizData.timeScore}/10 points</p>
         <p>For more about JavaScript, visit:</p>
         <a href="https://www.w3schools.com/" class="link reference-link">https://w3schools.com</a>
