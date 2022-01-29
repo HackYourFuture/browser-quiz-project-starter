@@ -65,18 +65,26 @@ h1 {
   display: inline-block;
   margin: auto;
   /*border: 1px solid black;*/
-  border-radius: 10%;
+  -o-object-fit: cover;
+     object-fit: cover;
   max-width: 100%;
   max-height: 100%;
 }
 
 .img-container {
   display: inline-block;
-  max-width: 40%;
+  max-width: 260px;
+  max-height: 260px;
   min-width: 160px;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+  -webkit-animation: pictureMove 4s infinite linear alternate;
+          animation: pictureMove 4s infinite linear alternate;
+}
+
+br {
+  height: 5px;
 }
 
 #welcome-interface {
@@ -109,15 +117,18 @@ h1 {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .instruction {
   text-align: start;
   display: inline-block;
   width: 50%;
-  border: 1px solid black;
   -ms-flex-preferred-size: 300px;
       flex-basis: 300px;
+  min-height: 250px;
 }
 
 .instruction h3 {
@@ -129,7 +140,7 @@ h1 {
   list-style: square;
   list-style-position: outside;
   max-width: 300px;
-  border: 1px solid red;
+  /*border: 1px solid red;*/
   line-height: 1.5rem;
   margin: auto 0;
   font-size: 1.25rem;
@@ -211,7 +222,10 @@ ul {
 .next-question-btn {
   font-size: 2rem;
   padding: 0.5rem 6rem;
-  /* width: 25rem; */
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 25rem;
   text-align: center;
   border: 0.1rem solid #000000;
   margin-top: 1rem;
@@ -304,4 +318,34 @@ ol {
 
 #reference-list a:visited {
   color: black;
+}
+
+@-webkit-keyframes pictureMove {
+  0% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  50% {
+    -webkit-transform: scale(0.75);
+            transform: scale(0.75);
+  }
+  100% {
+    -webkit-transform: translateY(1);
+            transform: translateY(1);
+  }
+}
+
+@keyframes pictureMove {
+  0% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  50% {
+    -webkit-transform: scale(0.75);
+            transform: scale(0.75);
+  }
+  100% {
+    -webkit-transform: translateY(1);
+            transform: translateY(1);
+  }
 }
