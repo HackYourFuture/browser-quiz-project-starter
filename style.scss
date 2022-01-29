@@ -209,7 +209,7 @@ br {
 }
 #hud {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin-top: 0.5rem;
 }
 
@@ -223,6 +223,15 @@ br {
 
 #hud-item h2 {
   font-size: 2rem;
+}
+#hud-item {
+  width:100px
+}
+#hud img {
+  width:100px;
+  height: 100px;
+  margin: 0;
+  animation: pictureMove 4s infinite linear alternate;
 }
 .reference-link {
   display: block;

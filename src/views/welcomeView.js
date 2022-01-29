@@ -21,7 +21,7 @@ export const createWelcomeElement = () => {
     </ul>
     </div>
     <div class="img-container">
-    <img src="public/Assets/Add a heading.png" alt="ninja warrior">
+    <img src="public/Assets/welcome-logo.png" alt="ninja warrior">
     </div>
     </div>
     <button class ="btn" id="${START_QUIZ_BUTTON_ID}">Start quiz</button>

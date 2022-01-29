@@ -25,7 +25,7 @@ export const getQuestionElement = (question, isLast) => {
      <p class="hud-prefix"> Timer </p>
      <h2 id="${TIMER_ELEMENT_ID}" class="hud-main-text" ></h2>
   </div>
-  
+  <img src="public/Assets/ninja-warrior.png" alt="ninja warrior">
   
  <div id="hud-item">
   <p class="hud-prefix">Score</p>
