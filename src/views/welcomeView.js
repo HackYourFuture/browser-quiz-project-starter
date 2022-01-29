@@ -11,13 +11,13 @@ export const createWelcomeElement = () => {
     <div class="instruction">
     <h3>User Guide</h3>
     <ul>
-    <li>You have 1min to answer each Question</li>
+    <li>You have 1 min for each question</li>
     <hr>
-    <li>In case of answering in below 30 Seconds you get an extra 'time Score'</li>
+    <li>Answer within 30 sec and get extra 'time points'</li>
     <hr>
-    <li>Feel confused? check the resources of each question to study more</li>
+    <li>Feel confused? Check out the references</li>
     <hr>
-    <li>You can check your final Score at the result page</li>
+    <li>You will see your final score in the end</li>
     </ul>
     </div>
     <div class="img-container">

@@ -1,7 +1,8 @@
 'use strict';
 
 import { createResultElement } from '../views/resultView.js';
-import { getReferenceElement } from '../views/referenceView.js';
+import { createReferenceElement } from '../views/referenceView.js';
+import { quizData } from '../data.js';
 
 export const resultPage = (userInterface, refresh = '') => {
   
@@ -22,7 +23,7 @@ export const resultPage = (userInterface, refresh = '') => {
 
     for (const {links} of quizData.questions) {
       for (const link of links) {
-          const referenceElement = getReferenceElement(link.text, link.href);
+          const referenceElement = createReferenceElement(link.text, link.href);
           referenceListElement.appendChild(referenceElement);  
         }
         
