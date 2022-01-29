@@ -26,18 +26,22 @@ export const getQuestionElement = (question, isLast) => {
      <h2 id="${TIMER_ELEMENT_ID}" class="hud-main-text" ></h2>
   </div>
   
+  
  <div id="hud-item">
   <p class="hud-prefix">Score</p>
   <h2 class="hud-main-text" >${quizData.correctSum}/10</h>
-  <p class="hud-prefix">Time Score</p>
-  <h2 class="hud-main-text" >${quizData.timeScore}</h>
  </div>
+ <div id="hud-item">
+ <p class="hud-prefix">Time Score</p>
+ <h2 class="hud-main-text" >${quizData.timeScore}</h>
+ </div>
+
  </div>
   
     <h1>${question}</h1>
 
     <ul id="${ANSWERS_LIST_ID}"></ul>
-    <p>Need more resources?<p>
+    <p>Need more resources?</p>
     <ol id="${REFERENCE_LIST_ID}"></ol>
 
     <button class="next-question-btn" id="${

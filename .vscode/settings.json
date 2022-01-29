@@ -1,8 +1,4 @@
 {
-    "cSpell.words": [
-        "Eich",
-        "Ginnis",
-        "IIFE",
-        "Strijders"
-    ]
+  "cSpell.words": ["Eich", "Ginnis", "IIFE", "Strijders"],
+  "liveServer.settings.multiRootWorkspaceName": "browser-quiz-project-starter"
 }

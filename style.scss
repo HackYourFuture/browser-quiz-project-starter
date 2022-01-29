@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Dongle&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  user-select: none;
+  box-sizing: border-box;
+  font-family: 'Dongle', sans-serif;
+}
+body {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(58, 58, 57, 0.85)),
+    url(/public/Assets/main_background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+}
+
+h1 {
+  font-size: 3rem;
+  color: #000000;
+  height: 100px;
+  line-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  border: 3px solid white;
+  border-radius: 10px;
+  width: 50vw;
+  min-height: 70vh;
+}
+
+.dashboard {
+  background-color: rgba(236, 169, 22, 0.8);
+  border: 2px solid rgba(236, 169, 22, 1);
+  border-radius: 2%;
+  padding: 2rem 1rem;
+  width: 60%;
+  min-height: 70%;
+  max-height: 90vh;
+  box-shadow: 0px 0px 10px 0px rgb(247, 246, 244);
+  margin: 0 auto;
+  /*display: flex;
+  justify-content: center;
+  align-items: center;*/
+  text-align: center;
+}
+.dashboard img {
+  display: inline-block;
+  margin: auto;
+  border: 1px solid black;
+  border-radius: 10%;
+  max-width: 100%;
+  max-height: 100%;
+  /*height: 250px;*/
+}
+.img-container {
+  display: inline-block;
+  max-width: 40%;
+  min-width:160px
+}
+#welcome-interface {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+}
+#welcome-interface > div:first-child{
+  display: flex;
+  justify-content: space-evenly;
+ 
+}
+
+.instruction {
+  text-align: start;
+  display: inline-block;
+  width: 40%;
+}
+
+.instruction li {
+  list-style: square;
+  list-style-position: outside;
+}
+.scrollable {
+  height: auto;
+  max-height: 80vh;
+  overflow: auto;
+}
+#question-interface {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 80%;
+}
+
+ul {
+  list-style: none;
+  /* width: 60%; */
+  margin: 0 auto;
+}
+.answer-item {
+  border: 1px solid black;
+  font-size: 2rem;
+  margin: 1rem 0;
+  padding: 0 1rem;
+  cursor: pointer;
+  min-width: 400px;
+}
+
+/* utilities */
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+/* Button styling */
+.btn {
+  font-size: 2rem;
+  padding: 0.5rem 6rem;
+  width: 20rem;
+  text-align: center;
+  border: 0.1rem solid #000000;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  text-decoration: none;
+  color: #000000;
+  background-color: rgb(230, 225, 203);
+}
+.next-question-btn {
+  font-size: 2rem;
+  padding: 0.5rem 6rem;
+
+  /* width: 25rem; */
+  text-align: center;
+  border: 0.1rem solid #000000;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  text-decoration: none;
+  color: #000000;
+  background-color: rgb(230, 225, 203);
+}
+
+.btn:hover,
+ul li:hover,
+.next-question-btn:hover {
+  cursor: pointer;
+  box-shadow: 0 0.4rem 1.4rem 0 rgba(255, 255, 255, 0.5);
+  transform: translateY(-0.1rem);
+  transition: transform 150ms;
+}
+
+.correct-select {
+  border: 2px solid green;
+}
+.wrong-select {
+  border: 2px solid red;
+}
+
+.correct-answer {
+  background-color: green;
+}
+.score-counter,
+.question-counter {
+  color: aliceblue;
+  font-size: 46px;
+  display: inline-block;
+}
+#hud {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+}
+
+.hud-prefix {
+  text-align: center;
+  font-size: 1.5rem;
+}
+.hud-main-text {
+  text-align: center;
+}
+
+#hud-item h2 {
+  font-size: 2rem;
+}
+.reference-link {
+  display: block;
+  color: #000000;
+}
+.reference-link:visited {
+  color: black;
+}
+ol {
+  display: flex;
+  justify-content: space-evenly;
+  list-style-position: inside;
+}
+
+#reference-list a {
+  color: black;
+  display: inline-block;
+}
+#reference-list a:visited {
+  color: black;
+}
