@@ -2,7 +2,7 @@
 
 import { quizData } from '../data.js';
 
-export const createResultElement = () => {
+export const createResultElement = (correctSum, wrongSum) => {
   const element = document.createElement('div');
   element.id = "result-interface";
   element.innerHTML = String.raw`

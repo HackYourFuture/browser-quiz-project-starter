@@ -12,7 +12,26 @@ import { quizData } from '../data.js';
 import { router } from '../router.js';
 import { getReferenceElement } from '../views/referenceView.js';
 
-export const initQuestionPage = (userInterface) => {
+export const initQuestionPage = (userInterface, refresh = '') => {
+
+  if (refresh === '') {
+    const {currentQuestionIndex, wrongSum, correctSum, timeScore} = quizData;
+
+    const session = {
+      currentQuestionIndex, wrongSum, correctSum, timeScore,
+    };
+
+    sessionStorage.setItem(`question${quizData.currentQuestionIndex}`, JSON.stringify(session));
+
+  } else {
+    const session = JSON.parse(sessionStorage.getItem(refresh));
+
+    quizData.currentQuestionIndex = session.currentQuestionIndex;
+    quizData.wrongSum = session.wrongSum;
+    quizData.correctSum = session.correctSum;
+    quizData.timeScore = session.timeScore;
+  }
+
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex++];
   let click = false;
   let clickCount = 0;
@@ -41,8 +60,7 @@ export const initQuestionPage = (userInterface) => {
     currentQuestion.selected = e.target.dataset.key;
     const timer = document.getElementById(TIMER_ELEMENT_ID);
     const remainedTime = timer.innerHTML.slice(3);
-    localStorage.setItem(quizData.currentQuestionIndex, remainedTime);
-    console.log(localStorage);
+    localStorage.setItem(quizData.currentQuestionIndex,remainedTime);
     if (currentQuestion.selected !== currentQuestion.correct) {
       e.target.classList.add('wrong-select');
       quizData.wrongSum++;
@@ -66,6 +84,7 @@ export const initQuestionPage = (userInterface) => {
   }
 
   setTimer();
+
   function nextStep(click) {
     clickCount++;
     if (!click) {
@@ -73,10 +92,9 @@ export const initQuestionPage = (userInterface) => {
         const clickError = getErrorElement(isLastQuestion());
         answersListElement.appendChild(clickError);
       }
-    } else if (isLastQuestion()) {
-      router('result');
     } else {
-      router('question');
+      sessionStorage.removeItem(`question${quizData.currentQuestionIndex - 1}`);
+      isLastQuestion() ? router('result') : router('question');
     }
   }
   const reference = document.getElementById(REFERENCE_LIST_ID);
