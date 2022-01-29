@@ -14,7 +14,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 h1 {
@@ -83,7 +83,7 @@ br {
   > div {
     display: flex;
     justify-content: space-evenly;
-    flex-wrap: wrap;
+    
     width: 100%;
     align-items: center;
 }
@@ -124,10 +124,11 @@ br {
   width: 80%;
 }
 
-ul {
+#answers-list {
   list-style: none;
   /* width: 60%; */
   margin: 0 auto;
+  min-height:300px
 }
 .answer-item {
   border: 1px solid black;

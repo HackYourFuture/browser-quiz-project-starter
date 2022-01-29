@@ -15,7 +15,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 h1 {
@@ -114,8 +114,6 @@ br {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   width: 100%;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -164,10 +162,11 @@ br {
   width: 80%;
 }
 
-ul {
+#answers-list {
   list-style: none;
   /* width: 60%; */
   margin: 0 auto;
+  min-height: 300px;
 }
 
 .answer-item {
