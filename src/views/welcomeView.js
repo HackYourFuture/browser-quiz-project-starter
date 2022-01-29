@@ -12,13 +12,16 @@ export const createWelcomeElement = () => {
     <h3>User Guide</h3>
     <ul>
     <li>You have 1min to answer each Question</li>
+    <hr>
     <li>In case of answering in below 30 Seconds you get an extra 'time Score'</li>
+    <hr>
     <li>Feel confused? check the resources of each question to study more</li>
+    <hr>
     <li>You can check your final Score at the result page</li>
     </ul>
     </div>
     <div class="img-container">
-    <img src="public/Assets/Add a heading.png" alt="ninja warrior">
+    <img src="public/Assets/welcome-logo.png" alt="ninja warrior">
     </div>
     </div>
     <button class ="btn" id="${START_QUIZ_BUTTON_ID}">Start quiz</button>
