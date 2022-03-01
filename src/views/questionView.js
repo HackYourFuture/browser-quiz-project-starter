@@ -1,6 +1,6 @@
 import { createAndAppend } from '../helpers/dom-helpers.js';
 
-export const createQuestionElement = (parent, question) => {
+export const createQuestionView = (parent, question) => {
   const container = createAndAppend(parent, 'div');
   createAndAppend(container, 'h1', { text: question });
   const answersList = createAndAppend(container, 'ul');

@@ -1,21 +1,21 @@
 import { clearElement } from '../helpers/dom-helpers.js';
-import { createQuestionElement } from '../views/questionView.js';
-import { createAnswerElement } from '../views/answerView.js';
+import { createQuestionView } from '../views/questionView.js';
+import { createAnswerView } from '../views/answerView.js';
 import { quizData } from '../data.js';
 
 export const initQuestionPage = () => {
-  const userInterface = document.getElementById('root');
-  clearElement(userInterface);
+  const root = document.getElementById('root');
+  clearElement(root);
 
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
 
-  const { answersList, nextQuestionButton } = createQuestionElement(
-    userInterface,
+  const { answersList, nextQuestionButton } = createQuestionView(
+    root,
     currentQuestion.text
   );
 
   for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
-    createAnswerElement(answersList, key, answerText);
+    createAnswerView(answersList, key, answerText);
   }
 
   nextQuestionButton.addEventListener('click', nextQuestion);

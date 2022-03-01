@@ -1,14 +1,12 @@
 import { clearElement } from '../helpers/dom-helpers.js';
-import { createWelcomeElement } from '../views/welcomeView.js';
+import { createWelcomeView } from '../views/welcomeView.js';
 import { initQuestionPage } from './questionPage.js';
 
 export const initWelcomePage = () => {
-  const userInterface = document.getElementById('root');
-  clearElement(userInterface);
+  const root = document.getElementById('root');
+  clearElement(root);
 
-  userInterface.innerHTML = '';
-
-  const { startQuizButton } = createWelcomeElement(userInterface);
+  const { startQuizButton } = createWelcomeView(root);
   startQuizButton.addEventListener('click', startQuiz);
 };
 
