@@ -1,26 +1,15 @@
-'use strict';
+import { createAndAppend } from '../helpers/dom-helpers.js';
 
-import { ANSWERS_LIST_ID } from '../constants.js';
-import { NEXT_QUESTION_BUTTON_ID } from '../constants.js';
+export const createQuestionElement = (parent, question) => {
+  const container = createAndAppend(parent, 'div');
+  createAndAppend(container, 'h1', { text: question });
+  const answersList = createAndAppend(container, 'ul');
+  const nextQuestionButton = createAndAppend(container, 'button', {
+    text: 'Next Question',
+  });
 
-/**
- * Create a full question element
- * @returns {Element}
- */
-export const createQuestionElement = (question) => {
-  const element = document.createElement('div');
-
-  // I use String.raw just to get fancy colors for the HTML in VS Code.
-  element.innerHTML = String.raw`
-    <h1>${question}</h1>
-
-    <ul id="${ANSWERS_LIST_ID}">
-    </ul>
-
-    <button id="${NEXT_QUESTION_BUTTON_ID}">
-      Next question
-    </button>
-  `;
-
-  return element;
+  return {
+    answersList,
+    nextQuestionButton,
+  };
 };

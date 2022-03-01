@@ -1,13 +1,5 @@
-'use strict';
+import { createAndAppend } from '../helpers/dom-helpers.js';
 
-/**
- * Create an Answer element
- * @returns {Element}
- */
-export const createAnswerElement = (key, answerText) => {
-  const element = document.createElement('li');
-  element.innerHTML = String.raw`
-    ${key}: ${answerText};
-  `;
-  return element;
+export const createAnswerElement = (parent, key, text) => {
+  createAndAppend(parent, 'li', { text: `${key}: ${text}` });
 };
