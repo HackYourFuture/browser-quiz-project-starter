@@ -6,10 +6,10 @@ export const initWelcomePage = () => {
   const userInterface = document.getElementById('user-interface');
   clearElement(userInterface);
 
-  const { welcomeView, startQuizBtn } = createWelcomeView();
-  userInterface.appendChild(welcomeView);
+  const welcomeView = createWelcomeView();
+  userInterface.appendChild(welcomeView.root);
 
-  startQuizBtn.addEventListener('click', startQuiz);
+  welcomeView.startQuizBtn.addEventListener('click', startQuiz);
 };
 
 const startQuiz = () => {
