@@ -12,14 +12,13 @@ export const initQuestionPage = (appRoot) => {
     currentQuestion.answers
   ).map(([key, answerText]) => createAnswerView(key, answerText));
 
-  const { root, nextQuestionBtn } = createQuestionView(
-    currentQuestion.text,
-    answerViews
+  const questionView = createQuestionView(currentQuestion.text, answerViews);
+
+  appRoot.appendChild(questionView.root);
+
+  questionView.nextQuestionBtn.addEventListener('click', () =>
+    nextQuestion(appRoot)
   );
-
-  appRoot.appendChild(root);
-
-  nextQuestionBtn.addEventListener('click', () => nextQuestion(appRoot));
 };
 
 const nextQuestion = (appRoot) => {
