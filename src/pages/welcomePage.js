@@ -2,16 +2,15 @@ import { clearElement } from '../helpers/dom-helpers.js';
 import { createWelcomeView } from '../views/welcomeView.js';
 import { initQuestionPage } from './questionPage.js';
 
-export const initWelcomePage = () => {
-  const userInterface = document.getElementById('user-interface');
-  clearElement(userInterface);
+export const initWelcomePage = (appRoot) => {
+  clearElement(appRoot);
 
   const welcomeView = createWelcomeView();
-  userInterface.appendChild(welcomeView.root);
+  appRoot.appendChild(welcomeView.root);
 
-  welcomeView.startQuizBtn.addEventListener('click', startQuiz);
+  welcomeView.startQuizBtn.addEventListener('click', () => startQuiz(appRoot));
 };
 
-const startQuiz = () => {
-  initQuestionPage();
+const startQuiz = (appRoot) => {
+  initQuestionPage(appRoot);
 };

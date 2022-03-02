@@ -3,9 +3,8 @@ import { createQuestionView } from '../views/questionView.js';
 import { createAnswerView } from '../views/answerView.js';
 import { quizData } from '../data.js';
 
-export const initQuestionPage = () => {
-  const userInterface = document.getElementById('user-interface');
-  clearElement(userInterface);
+export const initQuestionPage = (appRoot) => {
+  clearElement(appRoot);
 
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
 
@@ -18,12 +17,12 @@ export const initQuestionPage = () => {
     answerViews
   );
 
-  userInterface.appendChild(root);
+  appRoot.appendChild(root);
 
-  nextQuestionBtn.addEventListener('click', nextQuestion);
+  nextQuestionBtn.addEventListener('click', () => nextQuestion(appRoot));
 };
 
-const nextQuestion = () => {
+const nextQuestion = (appRoot) => {
   quizData.currentQuestionIndex += 1;
-  initQuestionPage();
+  initQuestionPage(appRoot);
 };
