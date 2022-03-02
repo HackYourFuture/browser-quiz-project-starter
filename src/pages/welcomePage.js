@@ -3,11 +3,13 @@ import { createWelcomeView } from '../views/welcomeView.js';
 import { initQuestionPage } from './questionPage.js';
 
 export const initWelcomePage = () => {
-  const root = document.getElementById('root');
-  clearElement(root);
+  const userInterface = document.getElementById('user-interface');
+  clearElement(userInterface);
 
-  const { startQuizButton } = createWelcomeView(root);
-  startQuizButton.addEventListener('click', startQuiz);
+  const { welcomeView, startQuizBtn } = createWelcomeView();
+  userInterface.appendChild(welcomeView);
+
+  startQuizBtn.addEventListener('click', startQuiz);
 };
 
 const startQuiz = () => {

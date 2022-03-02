@@ -1,15 +1,21 @@
-import { createAndAppend } from '../helpers/dom-helpers.js';
+import { createElement } from '../helpers/dom-helpers.js';
 
-export const createQuestionView = (parent, question) => {
-  const container = createAndAppend(parent, 'div');
-  createAndAppend(container, 'h1', { text: question });
-  const answersList = createAndAppend(container, 'ul');
-  const nextQuestionButton = createAndAppend(container, 'button', {
-    text: 'Next Question',
-  });
+export const createQuestionView = (question, answerViews) => {
+  const questionView = createElement();
+
+  const h1 = createElement('h1', { text: question });
+  questionView.appendChild(h1);
+
+  const answersList = createElement('ul');
+  questionView.appendChild(answersList);
+
+  answerViews.forEach((answerView) => answersList.appendChild(answerView));
+
+  const nextQuestionBtn = createElement('button', { text: 'Next Question' });
+  questionView.appendChild(nextQuestionBtn);
 
   return {
-    answersList,
-    nextQuestionButton,
+    questionView,
+    nextQuestionBtn,
   };
 };

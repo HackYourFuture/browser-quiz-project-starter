@@ -4,21 +4,23 @@ import { createAnswerView } from '../views/answerView.js';
 import { quizData } from '../data.js';
 
 export const initQuestionPage = () => {
-  const root = document.getElementById('root');
-  clearElement(root);
+  const userInterface = document.getElementById('user-interface');
+  clearElement(userInterface);
 
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
 
-  const { answersList, nextQuestionButton } = createQuestionView(
-    root,
-    currentQuestion.text
+  const answerViews = Object.entries(
+    currentQuestion.answers
+  ).map(([key, answerText]) => createAnswerView(key, answerText));
+
+  const { questionView, nextQuestionBtn } = createQuestionView(
+    currentQuestion.text,
+    answerViews
   );
 
-  for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
-    createAnswerView(answersList, key, answerText);
-  }
+  userInterface.appendChild(questionView);
 
-  nextQuestionButton.addEventListener('click', nextQuestion);
+  nextQuestionBtn.addEventListener('click', nextQuestion);
 };
 
 const nextQuestion = () => {

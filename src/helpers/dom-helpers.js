@@ -1,6 +1,4 @@
-export function createAndAppend(parent, tagName = 'div', options = {}) {
-  console.assert(parent instanceof HTMLElement);
-
+export function createElement(tagName = 'div', options = {}) {
   const elem = document.createElement(tagName);
 
   // `text` is not a regular attribute but must be set via `.textContent`
@@ -16,7 +14,6 @@ export function createAndAppend(parent, tagName = 'div', options = {}) {
     elem.textContent = text;
   }
 
-  parent.appendChild(elem);
   return elem;
 }
 

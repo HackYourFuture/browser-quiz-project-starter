@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/HackYourFuture/browser-quiz-project-starter",
   "devDependencies": {
+    "eslint": "^8.10.0",
     "prettier": "^2.2.1"
   }
 }
