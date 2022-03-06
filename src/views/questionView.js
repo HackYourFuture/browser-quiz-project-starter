@@ -1,7 +1,8 @@
 'use strict';
 
-import { ANSWERS_LIST_ID } from '../constants.js';
+import { ANSWERS_LIST_ID, MAX_QUESTIONS } from '../constants.js';
 import { NEXT_QUESTION_BUTTON_ID } from '../constants.js';
+import { quizData } from '../data.js';
 
 /**
  * Create a full question element
@@ -9,18 +10,37 @@ import { NEXT_QUESTION_BUTTON_ID } from '../constants.js';
  */
 export const createQuestionElement = (question) => {
   const element = document.createElement('div');
-
+  element.classList.add('flex-center', 'flex-column');
   // I use String.raw just to get fancy colors for the HTML in VS Code.
   element.innerHTML = String.raw`
-    <h1>${question}</h1>
+  <div id="hud">
+  <div id="hud-item">
+    <p id="progressText" class="hud-prefix">
+      Question 
+    </p>
+    <h3 class="hud-main-text">
+    ${quizData.currentQuestionIndex + 1} / ${MAX_QUESTIONS}
+    </h3>
+    </div>
+  <div id="hud-item">
+    <p class="hud-prefix">
+      Score
+    </p>
+    <h3 class="hud-main-text">
+    0
+    </h3>
+  </div>
+</div>
 
-    <ul id="${ANSWERS_LIST_ID}">
-    </ul>
+<h2 class="question-text">${question}</h2>
 
-    <button id="${NEXT_QUESTION_BUTTON_ID}">
-      Next question
-    </button>
-  `;
+<ul id="${ANSWERS_LIST_ID}" class="choices-list">
+</ul>
+
+<button id="${NEXT_QUESTION_BUTTON_ID}" class="btn">
+Next question
+</button>
+`;
 
   return element;
 };
