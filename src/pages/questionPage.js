@@ -23,7 +23,7 @@ export const initQuestionPage = () => {
 
   for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
     const answerElement = createAnswerElement(key, answerText);
-    answerElement.setAttribute('info-key', key);
+    answerElement.setAttribute('data-key', key);
     answerElement.addEventListener('click', chooseAnswer);
     answersListElement.appendChild(answerElement);
   }
@@ -52,10 +52,11 @@ function chooseAnswer() {
     this.classList.add(classApply);
   
   } else {
+    this.classList.add(classApply);
     const correctAnswer = document.querySelector(
-      `li[info-key="${currentQuestion.correct}"]`
+      `li[data-key="${currentQuestion.correct}"]`
     );
     correctAnswer.classList.add('show-correct-answer');
-    this.classList.add(classApply);
+    
   }
 }
