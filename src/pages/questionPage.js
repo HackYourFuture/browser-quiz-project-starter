@@ -23,7 +23,16 @@ export const initQuestionPage = () => {
 
   for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
     const answerElement = createAnswerElement(key, answerText);
+    answerElement.id = key;
     answersListElement.appendChild(answerElement);
+    answerElement.addEventListener('click', function () {
+      quizData.currentQuestionAnswer = answerElement.id;
+      answersListElement
+        .querySelectorAll('.selected')
+        .forEach((element) => element.classList.remove('selected'));
+      answerElement.classList.add('selected');
+      console.log(quizData.currentQuestionAnswer);
+    });
   }
 
   document
