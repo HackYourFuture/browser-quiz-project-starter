@@ -18,5 +18,9 @@
   "homepage": "https://github.com/HackYourFuture/browser-quiz-project-starter",
   "devDependencies": {
     "prettier": "^2.2.1"
+  },
+  "dependencies": {
+    "liveserver": "^0.1.20",
+    "sass": "^1.52.3"
   }
 }

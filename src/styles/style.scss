@@ -1,0 +1,113 @@
+$stack-width: clamp(390px,100%,100vw);
+$stack-height: clamp(390px,100%,100vh);
+$stack-font: 'Roboto', sans-serif;
+$stack-font-size: 18px;
+$primary-color: rgb(5, 37, 43);
+$accent-color:  rgb(16, 76, 85);
+$text-color: rgba(0, 244, 77, 0.705);
+$button-color: rgb(11, 71, 70);
+$background-overlay-opacity: .5;
+:root{
+  --grid-size : 5px;
+  --button-border-size: 5px;
+}
+html {
+  scroll-behavior: smooth;
+}
+* {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: $stack-font-size;
+  text-rendering: geometricPrecision;
+  // animation: fadeIn-effect-anime 1s 1;
+
+}
+
+@media (max-width: 390px) {
+  * {
+      --grid-size: 3px;
+      --button-border-size: 2px;
+  }
+}
+@media (max-height: 390px) {
+  * {
+      --grid-size: 3px;
+      --button-border-size: 2px;
+  }
+}
+@keyframes fadeIn-effect-anime {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@mixin user-interface-props ($index, $position) {
+  z-index: $index;
+  position: $position;
+  height: calc($stack-height * .7);
+  width: calc($stack-width * .8);
+  margin: 0;
+}
+button {
+  background-color: unset;
+  color: $text-color;
+  border: var(--button-border-size) solid $accent-color;
+  padding-right: 2em;
+  padding-left: 2em;
+  padding-top: .5em;
+  padding-bottom: .5em;
+  
+}
+.centered {
+  @include user-interface-props(20,fixed);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: $text-color;
+  border: 1px dotted red;
+}
+  
+.scrollable {
+height: auto;
+max-height: 80vh;
+overflow: auto;
+}
+
+ul {
+list-style: none;
+}
+
+#user-interface {
+
+}
+@mixin background-props ($index,$position){
+  top:0;
+  bottom: 0;
+  margin: 0;
+  left: 0;
+  width: $stack-width;
+  height: $stack-height;
+  z-index: $index;
+  position: $position;
+}
+#background {
+  @include background-props(9,absolute);
+}
+
+#background-overlay {
+  @include background-props(8,fixed);
+  background-image: url("https://assets.codepen.io/8174275/background-grid.png");
+  background-repeat: space;
+  background-size: var(--grid-size) var(--grid-size);
+  opacity: $background-overlay-opacity;
+}
+#background-underlay {
+  @include background-props(7,fixed);
+  background-image: linear-gradient(
+    117deg,
+    $primary-color,
+    $accent-color,
+  );
+}
