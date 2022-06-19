@@ -13,6 +13,7 @@
 
 export const quizData = {
   currentQuestionIndex: 0,
+  currentQuestionAnswer: null,
   // the questions in the quiz
   questions: [
     {
