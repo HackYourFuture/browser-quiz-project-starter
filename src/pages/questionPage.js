@@ -8,7 +8,7 @@ import {
 import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
-
+import { timer } from '../views/timerViews.js';
 export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
@@ -18,6 +18,8 @@ export const initQuestionPage = () => {
   const questionElement = createQuestionElement(currentQuestion.text);
 
   userInterface.appendChild(questionElement);
+  userInterface.appendChild(timer);
+
 
   const answersListElement = document.getElementById(ANSWERS_LIST_ID);
 
@@ -33,6 +35,5 @@ export const initQuestionPage = () => {
 
 const nextQuestion = () => {
   quizData.currentQuestionIndex += 1;
-
   initQuestionPage();
 };

@@ -4,6 +4,7 @@ import { USER_INTERFACE_ID, START_QUIZ_BUTTON_ID, ACTIVE_BUTTON_ANIMATION} from 
 import { createWelcomeElement } from '../views/welcomeView.js';
 import { initQuestionPage } from './questionPage.js';
 import {setButtonActive} from './button.js';
+import { setTime } from '../views/timerViews.js';
 
 export const initWelcomePage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
@@ -20,5 +21,6 @@ export const initWelcomePage = () => {
 };
 
 const startQuiz = () => {
+  setTime(true);
   initQuestionPage();
 };
