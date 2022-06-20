@@ -24,9 +24,9 @@ export const createQuestionElement = (question) => {
 
   return element;
 };
-export const progressElement=(questionIndex,score)=>{
-const element=document.createElement('div');
-element.innerHTML=String.raw`
+export const createProgressElement = (questionIndex, score) => {
+  const element = document.createElement('div');
+  element.innerHTML = String.raw`
 <div id="userProgress">
   <div className="progressItem"> 
     <p id="progressText">Question ${questionIndex}/10</p>
@@ -40,5 +40,7 @@ element.innerHTML=String.raw`
     <h1 id="score">${score}</h1>
   </div>
 </div>`;
-return element;
-}
+  const progressBarInside = element.querySelector('#progressBarInside');
+  progressBarInside.style.width = `${questionIndex * 10}%`;
+  return element;
+};
