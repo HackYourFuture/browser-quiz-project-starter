@@ -22,8 +22,8 @@ export function setTime(start) {
 }
 function increaseTimer() {
     ++totalSeconds;
-  minutes.innerText = pad(totalSeconds % 60);
-        seconds.innerText = pad(parseInt(totalSeconds / 60));
+  minutes.innerHTML = pad(totalSeconds % 60);
+        seconds.innerHTML = pad(parseInt(totalSeconds / 60));
 }
 function pad(val) {
   let valString = val + "";
