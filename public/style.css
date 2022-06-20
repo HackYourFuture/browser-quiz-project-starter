@@ -15,3 +15,13 @@
 ul {
   list-style: none;
 }
+
+.correct {
+  background-color: green;
+}
+.wrong {
+  background-color: red;
+}
+.selected{
+  border-style: solid;
+}

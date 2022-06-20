@@ -30,7 +30,6 @@ export const initQuestionPage = () => {
         .querySelectorAll('.selected')
         .forEach((element) => element.classList.remove('selected'));
       answerElement.classList.add('selected');
-      console.log(quizData.currentQuestionAnswer);
     });
   }
 
@@ -40,7 +39,19 @@ export const initQuestionPage = () => {
 };
 
 const nextQuestion = () => {
+  const correctAnswer = quizData.questions[quizData.currentQuestionIndex].correct;
+  const classAdd = quizData.currentQuestionAnswer === correctAnswer ? 'correct' : 'wrong';
+  const body = document.getElementById(USER_INTERFACE_ID);
+  if(quizData.currentQuestionAnswer === correctAnswer ){
+    body.classList.add(classAdd)
+  } else{
+    body.classList.add(classAdd)
+  }
   quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
 
-  initQuestionPage();
+  setTimeout(() => {
+    initQuestionPage();
+    body.classList.remove(classAdd)
+  }, 1500);
+  
 };
