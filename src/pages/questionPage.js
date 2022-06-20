@@ -40,18 +40,19 @@ export const initQuestionPage = () => {
 
 const nextQuestion = () => {
   const correctAnswer = quizData.questions[quizData.currentQuestionIndex].correct;
-  const classAdd = quizData.currentQuestionAnswer === correctAnswer ? 'correct' : 'wrong';
+  const addClass = quizData.currentQuestionAnswer === correctAnswer ? 'correct' : 'wrong';
   const body = document.getElementById(USER_INTERFACE_ID);
   if(quizData.currentQuestionAnswer === correctAnswer ){
-    body.classList.add(classAdd)
+    body.classList.add(addClass)
   } else{
-    body.classList.add(classAdd)
+    body.classList.add(addClass)
   }
   quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
+  document.getElementById(NEXT_QUESTION_BUTTON_ID).removeEventListener('click', nextQuestion);
 
   setTimeout(() => {
     initQuestionPage();
-    body.classList.remove(classAdd)
+    body.classList.remove(addClass)
   }, 1500);
   
 };
