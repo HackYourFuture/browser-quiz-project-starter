@@ -24,3 +24,21 @@ export const createQuestionElement = (question) => {
 
   return element;
 };
+export const progressElement=(questionIndex,score)=>{
+const element=document.createElement('div');
+element.innerHTML=String.raw`
+<div id="userProgress">
+  <div className="progressItem"> 
+    <p id="progressText">Question ${questionIndex}/10</p>
+    <div id="progressBar">
+      <div id="progressBarInside">
+      </div>
+    </div>
+  </div>
+  <div className="progressItem">
+    <p id="scoreText">Score</p>
+    <h1 id="score">${score}</h1>
+  </div>
+</div>`;
+return element;
+}
