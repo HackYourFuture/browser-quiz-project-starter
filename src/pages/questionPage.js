@@ -8,6 +8,7 @@ import {
 import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
+import { createAlertElement } from '../views/questionView.js';
 
 export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
@@ -32,7 +33,15 @@ export const initQuestionPage = () => {
 };
 
 const nextQuestion = () => {
-  quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
-
+  if (quizData.currentQuestionAnswer===null){
+    const userInterface = document.getElementById(USER_INTERFACE_ID);
+    const alertElement = createAlertElement();
+    userInterface.appendChild(alertElement);
+  
+  }
+  else if (questions[currentQuestionIndex].correct === quizData.currentQuestionAnswer){
+  quizData.currentQuestionIndex++;
   initQuestionPage();
+  }
+
 };
