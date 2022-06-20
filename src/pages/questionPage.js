@@ -20,6 +20,7 @@ export const initQuestionPage = () => {
 
   const questionElement = createQuestionElement(currentQuestion.text);
   const userProgress = createProgressElement(
+    quizData.questions.length,
     quizData.currentQuestionIndex + 1,
     50
   );
