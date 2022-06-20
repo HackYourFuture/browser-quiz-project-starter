@@ -22,16 +22,20 @@ ul {
 
 li {
   display: inline-block;
-  width: 30%;
-  margin-top: 5%;
+  width: calc(50% - 90px);
+  /*I had to make it calc(50% - 90px) because display:inline-block
+  gives default margin(left and right) like font-size which is 20px in our case.
+  20px*4 = 80px + my margin-right 5px*2=10 => 80px+10px =90px */
+  margin-top: 5rem;
   margin-right: 5px;
   text-align: left;
-  padding: 1% 0% 1% 5%;
+  padding: 1rem 0 1rem 5rem;
   background-color: grey;
   color: white;
   border-radius: 25px;
   font-family: 'Kdam Thmor Pro', sans-serif;
-  font-size: large;
+  font-size: 20px;
+  cursor: pointer;
 }
 
 li.selected {
@@ -39,16 +43,16 @@ li.selected {
   color: black;
   border: solid;
   border-color: brown;
-  font-size: 20px;
+  font-size: 25px;
   transition: all 0.3s;
 }
 
 h1 {
-  margin-top: 12%;
+  margin-top: 12rem;
   color: white;
   background-color: rgb(61, 4, 4);
   border-radius: 25px;
-  padding: 1% 0 1% 0;
+  padding: 1rem 0 1rem 0;
 }
 
 button {
