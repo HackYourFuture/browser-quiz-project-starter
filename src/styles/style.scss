@@ -1,24 +1,27 @@
 $stack-width: clamp(390px,100%,100vw);
 $stack-height: clamp(390px,100%,100vh);
 $stack-font: 'Roboto', sans-serif;
-$stack-font-size: 18px;
-$primary-color: rgb(5, 37, 43);
-$accent-color:  rgb(16, 76, 85);
+$primary-color: rgb(14, 14, 14);
+$accent-color:  rgb(2, 31, 37);
 $text-color: rgba(0, 244, 77, 0.705);
-$button-color: rgb(11, 71, 70);
-$background-overlay-opacity: .5;
+$text-color-matrix: rgb(9, 255, 0);
+$button-color-stroke: rgba(3, 81, 29, 0.08);
+$button-color-background: rgba(8, 97, 26, 0.169);
+$background-overlay-opacity: .51;
 :root{
   --grid-size : 5px;
   --button-border-size: 5px;
+  --stack-font-size: 18px;
+  --primary-color: rgb(0, 44, 44);
+  --accent-color:  rgb(0, 0, 0);
 }
 html {
   scroll-behavior: smooth;
 }
 * {
   font-family: 'Share Tech Mono', monospace;
-  font-size: $stack-font-size;
+  font-size: var(--stack-font-size);
   text-rendering: geometricPrecision;
-  // animation: fadeIn-effect-anime 1s 1;
 
 }
 
@@ -26,47 +29,75 @@ html {
   * {
       --grid-size: 3px;
       --button-border-size: 2px;
+      --stack-font-size: 14px;
   }
 }
 @media (max-height: 390px) {
   * {
       --grid-size: 3px;
       --button-border-size: 2px;
+      --stack-font-size: 14px;
   }
 }
+
 @keyframes fadeIn-effect-anime {
   0% {
-    opacity: 0;
+    opacity: .3;
   }
   100% {
     opacity: 1;
   }
 }
+@keyframes active-effect-anime {
+  33% {
+    transform: scale(2);
+    filter:drop-shadow(.1em .2em 1em $text-color-matrix);
+  }
+  66%{
+    transform: rotate(270deg) scale(3);
+  }
+  77%{
+    transform: rotate(0deg)scale(2);
+  }
+  100%{
+    transform: scale(.1);
+  }
+
+}
 @mixin user-interface-props ($index, $position) {
   z-index: $index;
   position: $position;
   height: calc($stack-height * .7);
-  width: calc($stack-width * .8);
+  width: $stack-width;
   margin: 0;
 }
 button {
-  background-color: unset;
+  background-color: $button-color-background;
   color: $text-color;
-  border: var(--button-border-size) solid $accent-color;
+  border: var(--button-border-size) solid $button-color-stroke;
   padding-right: 2em;
   padding-left: 2em;
   padding-top: .5em;
   padding-bottom: .5em;
-  
+  font-size: calc(var(--stack-font-size) * 1.15);
+
+}
+button:hover{
+  filter:drop-shadow(.1em .2em .7em $text-color-matrix);
+  animation: fadeIn-effect-anime .79s 1;
+}
+body{
+  width: $stack-width;
+  height: $stack-height;
 }
 .centered {
   @include user-interface-props(20,fixed);
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  left: 0%;
+  top: 10%;
   text-align: center;
   color: $text-color;
-  border: 1px dotted red;
+  animation: fadeIn-effect-anime 1s 1;
+  
 }
   
 .scrollable {
@@ -79,9 +110,6 @@ ul {
 list-style: none;
 }
 
-#user-interface {
-
-}
 @mixin background-props ($index,$position){
   top:0;
   bottom: 0;
@@ -93,9 +121,19 @@ list-style: none;
   position: $position;
 }
 #background {
-  @include background-props(9,absolute);
+  @include background-props(9,fixed);
 }
-
+#background-matrix {
+  @include background-props(7,fixed);
+  display: flex;
+  align-content: space-between;
+  justify-content: space-evenly;
+  align-items: space-around;
+  flex-wrap: wrap;
+  flex-direction: column;
+  color: $text-color;
+  opacity: $background-overlay-opacity;
+}
 #background-overlay {
   @include background-props(8,fixed);
   background-image: url("https://assets.codepen.io/8174275/background-grid.png");
@@ -105,9 +143,28 @@ list-style: none;
 }
 #background-underlay {
   @include background-props(7,fixed);
-  background-image: linear-gradient(
-    117deg,
-    $primary-color,
-    $accent-color,
-  );
+}
+@keyframes matrix-anime {
+  0% {
+    filter:drop-shadow(.3em -.1em .5em $text-color-matrix);
+  }
+  33% {
+    filter:drop-shadow(-.1em .3em .7em $text-color-matrix);
+  }
+  100% {
+    filter:drop-shadow(.3em -.1em .3em $text-color-matrix);
+  }
+}
+span[id^='background-span-matrix-']{
+  color:$text-color-matrix;
+  filter:drop-shadow(.3em .3em .3em $text-color-matrix);
+  filter: saturate(5);
+  
+}
+h6{
+  font-size: calc(var(--stack-font-size) * 3);
+  filter:drop-shadow(.1em .2em .3em $text-color-matrix);
+  animation: matrix-anime 3s infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
 }
