@@ -24,7 +24,11 @@ export const createQuestionElement = (question) => {
 
   return element;
 };
-export const createProgressElement = (numberOfQuestions,questionIndex, score) => {
+export const createProgressElement = (
+  numberOfQuestions,
+  questionIndex,
+  numberOfCorrects
+) => {
   const element = document.createElement('div');
   element.innerHTML = String.raw`
 <div id="user-progress">
@@ -36,11 +40,24 @@ export const createProgressElement = (numberOfQuestions,questionIndex, score) =>
     </div>
   </div>
   <div className="progress-item">
+  <ul class="fa-ul">
+    <li><span class="fa-li"><i class="fa-solid fa-xmark" style="color:#e03131"></i></span>: ${
+      questionIndex - numberOfCorrects
+    }</li>
+    <li><span class="fa-li"><i class="fa-solid fa-check" style="color:rgb(11, 223, 36)"></i></span>: ${numberOfCorrects}</li>
+  </ul>
+
+
+  
+  </div>
+  <div className="progress-item">
     <p id="score-text">Score</p>
-    <h1 id="score">${score}</h1>
+    <h1 id="score">${numberOfCorrects * 10}</h1>
   </div>
 </div>`;
   const progressBarInside = element.querySelector('#progress-bar-inside');
-  progressBarInside.style.width = `${questionIndex /numberOfQuestions* 100}%`;
+  progressBarInside.style.width = `${
+    (questionIndex / numberOfQuestions) * 100
+  }%`;
   return element;
 };
