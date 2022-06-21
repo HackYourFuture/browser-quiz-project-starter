@@ -9,7 +9,7 @@ import { NEXT_QUESTION_BUTTON_ID } from '../constants.js';
  */
 export const createQuestionElement = (question) => {
   const element = document.createElement('div');
-
+element.classList.add('question');
   // I use String.raw just to get fancy colors for the HTML in VS Code.
   element.innerHTML = String.raw`
     <h1>${question}</h1>
@@ -33,7 +33,7 @@ export const createProgressElement = (
   element.innerHTML = String.raw`
 <div id="user-progress">
   <div className="progress-item"> 
-    <p id="progress-text">Question ${questionIndex}/${numberOfQuestions}</p>
+    <h2 id="progress-text">Question ${questionIndex}/${numberOfQuestions}</h2>
     <div id="progress-bar">
       <div id="progress-bar-inside">
       </div>
@@ -51,8 +51,8 @@ export const createProgressElement = (
   
   </div>
   <div className="progress-item">
-    <p id="score-text">Score</p>
-    <h1 id="score">${numberOfCorrects * 10}</h1>
+    <h2 id="score-text">Score</h2>
+    <h2 id="score">${numberOfCorrects * 10}</h2>
   </div>
 </div>`;
   const progressBarInside = element.querySelector('#progress-bar-inside');
