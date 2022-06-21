@@ -40,7 +40,6 @@ export const initQuestionPage = () => {
         .querySelectorAll('.selected')
         .forEach((element) => element.classList.remove('selected'));
       answerElement.classList.add('selected');
-      console.log(answerElement)
     });
   }
 
