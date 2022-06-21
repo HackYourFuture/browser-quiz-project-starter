@@ -1,6 +1,6 @@
 .centered {
   position: fixed;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
@@ -24,7 +24,7 @@ ul {
 
 li {
   width: calc(50% - 3rem - 3px);
-  margin-top: 5rem;
+  margin-top: 1rem;
   margin-right: 1rem;
   text-align: left;
   padding: 1rem 1rem 1rem 1rem;
@@ -46,7 +46,6 @@ li.selected {
 }
 
 h1 {
-  margin-top: 12rem;
   color: white;
   background-color: rgb(61, 4, 4);
   border-radius: 25px;
@@ -71,14 +70,13 @@ button:hover {
   width: 85px;
 }
 
-
 .correct {
   background-color: green;
 }
 .wrong {
   background-color: red;
 }
-.selected{
+.selected {
   border-style: solid;
 }
 
@@ -86,7 +84,7 @@ button:hover {
   display: flex;
   justify-content: space-between;
   text-align: center;
-  margin-bottom: 200px;
+  margin-bottom: 100px;
 }
 #progress-bar {
   width: 150px;
