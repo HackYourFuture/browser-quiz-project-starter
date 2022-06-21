@@ -71,6 +71,17 @@ button:hover {
   width: 85px;
 }
 
+
+.correct {
+  background-color: green;
+}
+.wrong {
+  background-color: red;
+}
+.selected{
+  border-style: solid;
+}
+
 #user-progress {
   display: flex;
   justify-content: space-between;
