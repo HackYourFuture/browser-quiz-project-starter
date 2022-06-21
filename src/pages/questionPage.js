@@ -35,10 +35,12 @@ export const initQuestionPage = () => {
     answersListElement.appendChild(answerElement);
     answerElement.addEventListener('click', function () {
       quizData.currentQuestionAnswer = key;
+      quizData.currentAnswerElement = answerElement;
       answersListElement
         .querySelectorAll('.selected')
         .forEach((element) => element.classList.remove('selected'));
       answerElement.classList.add('selected');
+      console.log(answerElement)
     });
   }
 
@@ -50,18 +52,20 @@ export const initQuestionPage = () => {
 const nextQuestion = () => {
   const correctAnswer = quizData.questions[quizData.currentQuestionIndex].correct;
   const addClass = quizData.currentQuestionAnswer === correctAnswer ? 'correct' : 'wrong';
-  const body = document.getElementById(USER_INTERFACE_ID);
+  const answerBody = quizData.currentAnswerElement;
   if(quizData.currentQuestionAnswer === correctAnswer ){
-    body.classList.add(addClass)
+    answerBody.classList.remove('selected')
+    answerBody.classList.add(addClass)
   } else{
-    body.classList.add(addClass)
+    answerBody.classList.remove('selected')
+    answerBody.classList.add(addClass)
   }
   quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
   document.getElementById(NEXT_QUESTION_BUTTON_ID).removeEventListener('click', nextQuestion);
 
   setTimeout(() => {
     initQuestionPage();
-    body.classList.remove(addClass)
+    answerBody.classList.remove(addClass)
   }, 1500);
   
 };
