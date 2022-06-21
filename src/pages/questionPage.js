@@ -5,7 +5,10 @@ import {
   NEXT_QUESTION_BUTTON_ID,
   USER_INTERFACE_ID,
 } from '../constants.js';
-import { createQuestionElement } from '../views/questionView.js';
+import {
+  createQuestionElement,
+  createProgressElement,
+} from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
 
@@ -16,7 +19,13 @@ export const initQuestionPage = () => {
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
   document.title = currentQuestion.text.substring(0, 60) + '...';
   const questionElement = createQuestionElement(currentQuestion.text);
+  const userProgress = createProgressElement(
+    quizData.questions.length,
+    quizData.currentQuestionIndex + 1,
+    50
+  );
 
+  userInterface.appendChild(userProgress);
   userInterface.appendChild(questionElement);
 
   const answersListElement = document.getElementById(ANSWERS_LIST_ID);
