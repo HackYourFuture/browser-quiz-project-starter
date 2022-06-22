@@ -12,6 +12,8 @@ import {
 import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
 
+
+let currentAnswerElement= [];
 export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
@@ -35,7 +37,7 @@ export const initQuestionPage = () => {
     answersListElement.appendChild(answerElement);
     answerElement.addEventListener('click', function () {
       quizData.currentQuestionAnswer = key;
-      quizData.currentAnswerElement = answerElement;
+      currentAnswerElement = answerElement;
       answersListElement
         .querySelectorAll('.selected')
         .forEach((element) => element.classList.remove('selected'));
@@ -51,20 +53,19 @@ export const initQuestionPage = () => {
 const nextQuestion = () => {
   const correctAnswer = quizData.questions[quizData.currentQuestionIndex].correct;
   const addClass = quizData.currentQuestionAnswer === correctAnswer ? 'correct' : 'wrong';
-  const answerBody = quizData.currentAnswerElement;
   if(quizData.currentQuestionAnswer === correctAnswer ){
-    answerBody.classList.remove('selected')
-    answerBody.classList.add(addClass)
+    currentAnswerElement.classList.remove('selected')
+    currentAnswerElement.classList.add(addClass)
   } else{
-    answerBody.classList.remove('selected')
-    answerBody.classList.add(addClass)
+    currentAnswerElement.classList.remove('selected')
+    currentAnswerElement.classList.add(addClass)
   }
   quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
   document.getElementById(NEXT_QUESTION_BUTTON_ID).removeEventListener('click', nextQuestion);
 
   setTimeout(() => {
     initQuestionPage();
-    answerBody.classList.remove(addClass)
+    currentAnswerElement.classList.remove(addClass)
   }, 1500);
   
 };
