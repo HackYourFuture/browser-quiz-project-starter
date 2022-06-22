@@ -30,7 +30,7 @@ body {
   font-family: 'Roboto Slab', serif;
 }
 .welcome-page{
-  width:70%;
+  height:70%;
   background-image: linear-gradient(to bottom, rgba(255, 255, 0, 0.401), rgba(0, 0, 255, 0.363)),url(/public/programming-code-coding-or-hacker-background-vector.jpeg);
   background-repeat: no-repeat;
   background-size:cover;
@@ -40,16 +40,28 @@ body {
 .welcome-page h1{
   font-size: 50px;
   margin: 1,3rem auto;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
 }
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #d3ebcd, 0 0 30px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #aedbce, 0 0 40px #ff4dd3ed, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
+
 .about-quiz{
   display: flex;
   flex-direction: column;
   align-items: center;
   list-style-type: none;
-  font-size: 1,5rem;
+  font-size: 24px;
   color: #aedbce;
   font-weight: bold;
-  width:60%;
+  width:80%;
   height: auto;
   margin:5px auto;
   padding: 10px 5px;
@@ -99,7 +111,7 @@ color:#d3ebcd
 
 #answers-list li {
   width: 70%;
-  min-height: 40px;
+  min-height: 50px;
   margin-top: 10px;
   text-align:left;
   padding: 10px;
