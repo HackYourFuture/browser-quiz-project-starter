@@ -22,7 +22,7 @@ export const initQuestionPage = () => {
   const userProgress = createProgressElement(
     quizData.questions.length,
     quizData.currentQuestionIndex + 1,
-    1
+    0
   );
 
   userInterface.appendChild(userProgress);

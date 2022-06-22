@@ -42,7 +42,7 @@ export const createProgressElement = (
   <div className="progress-item">
   <ul class="fa-ul">
     <li><span class="fa-li"><i class="fa-solid fa-xmark" style="color:#e03131"></i></span>: ${
-      questionIndex - numberOfCorrects
+      questionIndex - numberOfCorrects-1
     }</li>
     <li><span class="fa-li"><i class="fa-solid fa-check" style="color:rgb(11, 223, 36)"></i></span>: ${numberOfCorrects}</li>
   </ul>
