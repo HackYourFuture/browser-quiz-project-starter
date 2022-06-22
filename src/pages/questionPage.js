@@ -52,16 +52,17 @@ const nextQuestion = () => {
   const correctAnswer = quizData.questions[quizData.currentQuestionIndex].correct;
   const addClass = quizData.currentQuestionAnswer === correctAnswer ? 'correct' : 'wrong';
   const body = document.getElementById(USER_INTERFACE_ID);
-    if (quizData.currentQuestionAnswer===null){
+  if (quizData.currentQuestionAnswer===null){
     const alertElement = createAlertElement();
     body.appendChild(alertElement);
+    quizData.currentQuestionIndex = quizData.currentQuestionIndex -1;
   }
-
-  if(quizData.currentQuestionAnswer === correctAnswer ){
+  else if(quizData.currentQuestionAnswer === correctAnswer ){
     body.classList.add(addClass)
   } else{
     body.classList.add(addClass)
   }
+  quizData.currentQuestionAnswer=null
   quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
   document.getElementById(NEXT_QUESTION_BUTTON_ID).removeEventListener('click', nextQuestion);
 
