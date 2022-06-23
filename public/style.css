@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .centered {
   position: fixed;
   top: 40%;
@@ -7,90 +12,174 @@
   min-width: 80%;
   min-height: 40%;
 }
-
+#user-interface{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
 .scrollable {
   height: auto;
   max-height: 80vh;
   overflow: auto;
 }
+body {
+  background-color: #041c32;
+  color: #aedbce;
+  font-size: 16px;
+  font-family: 'Chakra Petch', sans-serif;
+}
+.welcome-page{
+  height:70%;
+  background-image: linear-gradient(to bottom, rgba(255, 255, 0, 0.401), rgba(0, 0, 255, 0.363)),url(/public/programming-code-coding-or-hacker-background-vector.jpeg);
+  background-repeat: no-repeat;
+  background-size:cover;
+  padding: 5px 0;
+  margin:50px auto;
+}
+.welcome-page h1{
+  font-size: 50px;
+  margin: 1,3rem auto;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #d3ebcd, 0 0 30px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #aedbce, 0 0 40px #ff4dd3ed, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
 
-ul {
-  list-style: none;
-  overflow: hidden;
-  justify-content: center;
+.about-quiz{
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  list-style-type: none;
+  font-size: 24px;
+  color: #aedbce;
+  font-weight: bold;
+  width:80%;
+  height: auto;
+  margin:5px auto;
+  padding: 10px 5px;
+  
+}
+.about-quiz li{
+  margin:5px 0;
+}
+.about-quiz li a{
+color:#d3ebcd
+}
+#start-quiz-button{
+  border-radius: 10px;
+  background-color: #635666;
+  border: none;
+  color: #aedbce;
+  text-align: center;
+  font-size: 16px;
+  padding: 12px;
+  width:max-content;
+  height: auto;
+}
+#start-quiz-button:hover {
+  color: #635666;
+  background-color: #aedbce;
+  border: 2px solid #635666;
+  transition: all 0.5s;
 }
 
-li {
-  width: calc(50% - 3rem - 3px);
-  margin-top: 1rem;
-  margin-right: 1rem;
-  text-align: left;
-  padding: 1rem 1rem 1rem 1rem;
-  background-color: grey;
-  color: white;
-  border-radius: 25px;
-  font-family: 'Kdam Thmor Pro', sans-serif;
-  font-size: 20px;
-  cursor: pointer;
+#answers-list {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  overflow: hidden;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 15px;
 }
-
-li.selected {
-  background-color: white;
-  color: black;
-  border: solid;
-  border-color: brown;
-  font-size: 25px;
+#answers-list li.selected {
+  background: #d3ebcd;
+  color: #635666;
+  border: solid #635666;
   transition: all 0.3s;
 }
 
-h1 {
-  color: white;
-  background-color: rgb(61, 4, 4);
-  border-radius: 25px;
-  padding: 1rem 0 1rem 0;
+#answers-list li {
+  width: 70%;
+  min-height: 50px;
+  margin-top: 10px;
+  text-align:left;
+  padding: 10px;
+  background-color: #aedbce;
+  color: #635666;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
 }
 
-button {
-  border-radius: 20px;
-  background-color: #aa2c06;
+#answers-list li.selected {
+  border-style: solid;
+}
+#answers-list li.correct {
+  background-color: green;
+}
+#answers-list li.wrong {
+  background-color: red;
+}
+
+
+.question {
+  width: 60%;
+  margin: 0px auto;
+  min-height: 400px;
+  background-color: #d3ebcd;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.question h1 {
+  margin-top: 10px;
+  color: #635666;
+  padding: 5px 0;
+}
+
+#next-question-button {
+  border-radius: 10px;
+  background-color: #635666;
   border: none;
-  color: #ffffff;
+  color: #aedbce;
   text-align: center;
-  font-size: 15px;
+  font-size: 16px;
   padding: 12px;
-  width: 100px;
+  width: 120px;
   transition: all 0.5s;
   cursor: pointer;
   margin: 35px 5px 5px 5px;
 }
 
-button:hover {
-  width: 85px;
+#next-question-button:hover {
+  color: #635666;
+  background-color: #aedbce;
+  border: 2px solid #635666;
+  transition: all 0.3s;
 }
 
-.correct {
-  background-color: green;
-}
-.wrong {
-  background-color: red;
-}
-.selected {
-  border-style: solid;
-}
-
-#user-progress {
+.user-progress {
+  width:70%;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   text-align: center;
-  margin-bottom: 100px;
+  margin-bottom: 40px;
 }
 #progress-bar {
-  width: 150px;
+  width: 200px;
   height: 20px;
-  border: 2px solid rgb(11, 223, 36);
-  margin-top: 2rem;
+  border: 3px solid rgb(11, 223, 36);
+  margin-top: 2px;
   border-radius: 50px;
   overflow: hidden;
 }
@@ -99,6 +188,7 @@ button:hover {
   background-color: rgb(11, 223, 36);
   width: 0%;
 }
+
 .fa-ul {
-  font-size: 30px;
+  font-size: 25px;
 }

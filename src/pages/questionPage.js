@@ -12,7 +12,9 @@ import {
 import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
 import { addAnswerToStorage, clearAnswersFromStorage } from '../storage.js';
+import { createAlertElement } from '../views/questionView.js';
 
+let currentAnswerElement = [];
 export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
@@ -23,7 +25,7 @@ export const initQuestionPage = () => {
   const userProgress = createProgressElement(
     quizData.questions.length,
     quizData.currentQuestionIndex + 1,
-    1
+    0
   );
 
   userInterface.appendChild(userProgress);
@@ -36,6 +38,7 @@ export const initQuestionPage = () => {
     answersListElement.appendChild(answerElement);
     answerElement.addEventListener('click', function () {
       quizData.currentQuestionAnswer = key;
+      currentAnswerElement = answerElement;
       answersListElement
         .querySelectorAll('.selected')
         .forEach((element) => element.classList.remove('selected'));
@@ -55,19 +58,30 @@ const nextQuestion = () => {
   const addClass =
     quizData.currentQuestionAnswer === correctAnswer ? 'correct' : 'wrong';
   const body = document.getElementById(USER_INTERFACE_ID);
-  if (quizData.currentQuestionAnswer === correctAnswer) {
-    body.classList.add(addClass);
+
+  if (quizData.currentQuestionAnswer === null) {
+    const alertElement = createAlertElement();
+    body.appendChild(alertElement);
+    quizData.currentQuestionIndex = quizData.currentQuestionIndex - 1;
+  } else if (quizData.currentQuestionAnswer === correctAnswer) {
+    currentAnswerElement.classList.remove('selected');
+    currentAnswerElement.classList.add(addClass);
   } else {
-    body.classList.add(addClass);
+    currentAnswerElement.classList.remove('selected');
+    currentAnswerElement.classList.add(addClass);
   }
-  quizData.currentQuestionIndex<quizData.questions.length-1?quizData.currentQuestionIndex++ :clearAnswersFromStorage();
-  
+  quizData.currentQuestionAnswer = null;
+  quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
     .removeEventListener('click', nextQuestion);
 
+  quizData.currentQuestionIndex < quizData.questions.length - 1
+    ? quizData.currentQuestionIndex++
+    : clearAnswersFromStorage();
+
   setTimeout(() => {
     initQuestionPage();
-    body.classList.remove(addClass);
+    currentAnswerElement.classList.remove(addClass);
   }, 1500);
 };
