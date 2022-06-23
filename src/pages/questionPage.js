@@ -11,6 +11,7 @@ import {
 } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
+import { createAlertElement } from '../views/questionView.js';
 
 
 let currentAnswerElement= [];
@@ -53,13 +54,19 @@ export const initQuestionPage = () => {
 const nextQuestion = () => {
   const correctAnswer = quizData.questions[quizData.currentQuestionIndex].correct;
   const addClass = quizData.currentQuestionAnswer === correctAnswer ? 'correct' : 'wrong';
-  if(quizData.currentQuestionAnswer === correctAnswer ){
+  const body = document.getElementById(USER_INTERFACE_ID);
+  if (quizData.currentQuestionAnswer===null) {
+    const alertElement = createAlertElement();
+    body.appendChild(alertElement);
+    quizData.currentQuestionIndex = quizData.currentQuestionIndex -1;
+  } else if(quizData.currentQuestionAnswer === correctAnswer ) {
     currentAnswerElement.classList.remove('selected')
     currentAnswerElement.classList.add(addClass)
-  } else{
+  } else {
     currentAnswerElement.classList.remove('selected')
     currentAnswerElement.classList.add(addClass)
   }
+  quizData.currentQuestionAnswer = null
   quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
   document.getElementById(NEXT_QUESTION_BUTTON_ID).removeEventListener('click', nextQuestion);
 
@@ -67,5 +74,4 @@ const nextQuestion = () => {
     initQuestionPage();
     currentAnswerElement.classList.remove(addClass)
   }, 1500);
-  
 };
