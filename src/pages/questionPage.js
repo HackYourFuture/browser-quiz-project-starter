@@ -11,6 +11,7 @@ import {
 } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
+import { createAlertElement } from '../views/questionView.js';
 
 export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
@@ -51,11 +52,17 @@ const nextQuestion = () => {
   const correctAnswer = quizData.questions[quizData.currentQuestionIndex].correct;
   const addClass = quizData.currentQuestionAnswer === correctAnswer ? 'correct' : 'wrong';
   const body = document.getElementById(USER_INTERFACE_ID);
-  if(quizData.currentQuestionAnswer === correctAnswer ){
+  if (quizData.currentQuestionAnswer===null){
+    const alertElement = createAlertElement();
+    body.appendChild(alertElement);
+    quizData.currentQuestionIndex = quizData.currentQuestionIndex -1;
+  }
+  else if(quizData.currentQuestionAnswer === correctAnswer ){
     body.classList.add(addClass)
   } else{
     body.classList.add(addClass)
   }
+  quizData.currentQuestionAnswer=null
   quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
   document.getElementById(NEXT_QUESTION_BUTTON_ID).removeEventListener('click', nextQuestion);
 
@@ -63,5 +70,4 @@ const nextQuestion = () => {
     initQuestionPage();
     body.classList.remove(addClass)
   }, 1500);
-  
 };

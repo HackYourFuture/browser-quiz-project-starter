@@ -2,6 +2,7 @@
 
 import { ANSWERS_LIST_ID } from '../constants.js';
 import { NEXT_QUESTION_BUTTON_ID } from '../constants.js';
+import { ALERT_DIDNT_ANSWER } from '../constants.js';
 
 /**
  * Create a full question element
@@ -24,6 +25,14 @@ export const createQuestionElement = (question) => {
 
   return element;
 };
+
+export const createAlertElement =()=>{
+  const alert=document.createElement('div');
+  alert.innerHTML = String.raw`
+  <p id="${ALERT_DIDNT_ANSWER}"> are you sure that you have answerd ? </p> `;
+  return alert
+}
+
 export const createProgressElement = (numberOfQuestions,questionIndex, score) => {
   const element = document.createElement('div');
   element.innerHTML = String.raw`
@@ -44,3 +53,4 @@ export const createProgressElement = (numberOfQuestions,questionIndex, score) =>
   progressBarInside.style.width = `${questionIndex /numberOfQuestions* 100}%`;
   return element;
 };
+
