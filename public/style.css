@@ -24,7 +24,10 @@ ul {
 
 li {
   width: calc(50% - 3rem - 3px);
+
+
   margin-top: 1rem;
+
   margin-right: 1rem;
   text-align: left;
   padding: 1rem 1rem 1rem 1rem;
