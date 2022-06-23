@@ -2,6 +2,7 @@
 
 import { ANSWERS_LIST_ID } from '../constants.js';
 import { NEXT_QUESTION_BUTTON_ID } from '../constants.js';
+import { ALERT_DIDNT_ANSWER } from '../constants.js';
 
 /**
  * Create a full question element
@@ -24,6 +25,14 @@ export const createQuestionElement = (question) => {
 
   return element;
 };
+
+export const createAlertElement = () => {
+  const alert = document.createElement('div');
+  alert.innerHTML = String.raw`
+  <p id="${ALERT_DIDNT_ANSWER}"> are you sure that you have answerd ? </p> `;
+  return alert;
+};
+
 export const createProgressElement = (
   numberOfQuestions,
   questionIndex,
@@ -42,7 +51,7 @@ export const createProgressElement = (
   <div className="progress-item">
   <ul class="fa-ul">
     <li><span class="fa-li"><i class="fa-solid fa-xmark" style="color:#e03131"></i></span>: ${
-      questionIndex - numberOfCorrects-1
+      questionIndex - numberOfCorrects - 1
     }</li>
     <li><span class="fa-li"><i class="fa-solid fa-check" style="color:rgb(11, 223, 36)"></i></span>: ${numberOfCorrects}</li>
   </ul>

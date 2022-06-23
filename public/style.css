@@ -83,8 +83,6 @@ color:#d3ebcd
   padding: 12px;
   width:max-content;
   height: auto;
-  cursor: pointer;
-  margin: 2em;
 }
 #start-quiz-button:hover {
   color: #635666;
@@ -120,6 +118,16 @@ color:#d3ebcd
   border-radius: 10px;
   font-size: 16px;
   cursor: pointer;
+}
+
+#answers-list li.selected {
+  border-style: solid;
+}
+#answers-list li.correct {
+  background-color: green;
+}
+#answers-list li.wrong {
+  background-color: red;
 }
 
 
