@@ -69,11 +69,10 @@ const nextQuestion = () => {
     currentAnswerElement.classList.add(addClass);
   }
 
-  if (quizData.currentQuestionIndex == quizData.questions.length - 1) {
+  if (quizData.currentQuestionIndex === quizData.questions.length - 1) {
     const nextQuestionButton = (document.getElementById(
       NEXT_QUESTION_BUTTON_ID
-    ).innerHTML = String.raw`
-      Result`);
+    ).innerText = 'Result');
 
     const seeResults = () => {
       initResultPage();
