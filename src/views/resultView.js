@@ -1,9 +1,5 @@
 'use strict';
 
-/**
- * Create a full question element
- * @returns {Element}
- */
 export const createResultElement = (results) => {
   const element = document.createElement('div');
   element.classList.add('container');

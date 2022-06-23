@@ -12,9 +12,9 @@ import {
 import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
 import { createAlertElement } from '../views/questionView.js';
+import { initResultPage } from '../pages/resultPage.js';
 
-
-let currentAnswerElement= [];
+let currentAnswerElement = [];
 export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
@@ -52,26 +52,45 @@ export const initQuestionPage = () => {
 };
 
 const nextQuestion = () => {
-  const correctAnswer = quizData.questions[quizData.currentQuestionIndex].correct;
-  const addClass = quizData.currentQuestionAnswer === correctAnswer ? 'correct' : 'wrong';
+  const correctAnswer =
+    quizData.questions[quizData.currentQuestionIndex].correct;
+  const addClass =
+    quizData.currentQuestionAnswer === correctAnswer ? 'correct' : 'wrong';
   const body = document.getElementById(USER_INTERFACE_ID);
-  if (quizData.currentQuestionAnswer===null) {
+  if (quizData.currentQuestionAnswer === null) {
     const alertElement = createAlertElement();
     body.appendChild(alertElement);
-    quizData.currentQuestionIndex = quizData.currentQuestionIndex -1;
-  } else if(quizData.currentQuestionAnswer === correctAnswer ) {
-    currentAnswerElement.classList.remove('selected')
-    currentAnswerElement.classList.add(addClass)
+    quizData.currentQuestionIndex = quizData.currentQuestionIndex - 1;
+  } else if (quizData.currentQuestionAnswer === correctAnswer) {
+    currentAnswerElement.classList.remove('selected');
+    currentAnswerElement.classList.add(addClass);
   } else {
-    currentAnswerElement.classList.remove('selected')
-    currentAnswerElement.classList.add(addClass)
+    currentAnswerElement.classList.remove('selected');
+    currentAnswerElement.classList.add(addClass);
   }
-  quizData.currentQuestionAnswer = null
-  quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
-  document.getElementById(NEXT_QUESTION_BUTTON_ID).removeEventListener('click', nextQuestion);
 
-  setTimeout(() => {
-    initQuestionPage();
-    currentAnswerElement.classList.remove(addClass)
-  }, 1500);
+  if (quizData.currentQuestionIndex == quizData.questions.length - 1) {
+    const nextQuestionButton = (document.getElementById(
+      NEXT_QUESTION_BUTTON_ID
+    ).innerHTML = String.raw`
+      Result`);
+
+    const seeResults = () => {
+      initResultPage();
+    };
+    document
+      .getElementById(NEXT_QUESTION_BUTTON_ID)
+      .addEventListener('click', seeResults);
+  } else {
+    quizData.currentQuestionAnswer = null;
+    quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
+    document
+      .getElementById(NEXT_QUESTION_BUTTON_ID)
+      .removeEventListener('click', nextQuestion);
+
+    setTimeout(() => {
+      initQuestionPage();
+      currentAnswerElement.classList.remove(addClass);
+    }, 1500);
+  }
 };
