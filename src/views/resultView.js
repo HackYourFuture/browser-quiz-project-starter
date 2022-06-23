@@ -22,9 +22,8 @@ export const createResultElement = (results) => {
 
     const newLink = document.createElement('a');
     newLink.innerHTML = String.raw`
-     ${result.links[result.links.text]}`;
-    const hrefLink = result.links[result.links.href];
-    newLink.setAttribute('href', hrefLink);
+    ${result.links[result.links.text]}`;
+    newLink.setAttribute('href', result.links[result.links.href]);
     questionCard.appendChild(newLink);
   });
 
