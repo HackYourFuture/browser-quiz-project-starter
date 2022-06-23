@@ -25,7 +25,7 @@ export const createResultElement = (results) => {
      ${result.links[result.links.text]}`;
     const hrefLink = result.links[result.links.href];
     newLink.setAttribute('href', hrefLink);
-    questionCard.appendChild(a);
+    questionCard.appendChild(newLink);
   });
 
   return element;
