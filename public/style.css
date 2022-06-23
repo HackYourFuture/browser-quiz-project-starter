@@ -200,15 +200,26 @@ body {
 
 .container {
   background-color: white;
-  margin-top: 17rem;
+  margin-top: 15rem;
   display: flex;
   flex-wrap: wrap;
-  width: 90%;
+  width: 100%;
   height: auto;
+  padding: 1rem;
+  border-radius: 10px;
 }
 
 .question-card {
   width: 45%;
+  height: 150px;
   color: black;
-  margin: 15px;
+  margin: auto;
+  margin-top: 1rem;
+  padding: 20px;
+  border: 2px silver solid;
+  border-radius: 10px;
+}
+
+.question-card h2 {
+  font-size: 1.2rem;
 }
