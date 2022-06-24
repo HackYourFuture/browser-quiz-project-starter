@@ -18,6 +18,7 @@ import {
 } from '../lib/storage.js';
 import { createAlertElement } from '../views/questionView.js';
 import { initResultPage } from '../pages/resultPage.js';
+import { delayQuestionPage } from '../constants.js';
 
 let currentAnswerElement = [];
 let numberOfCorrects = getNumberOfCorrectsFromStorage();
@@ -102,5 +103,5 @@ const nextQuestion = () => {
   setTimeout(() => {
     initQuestionPage();
     currentAnswerElement.classList.remove(addClass);
-  }, 300);
+  }, delayQuestionPage);
 };
