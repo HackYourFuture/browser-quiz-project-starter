@@ -16,6 +16,7 @@ import {
   addNumberOfCorrectsToStorage,
   clearAllDataFromStorage,
   getNumberOfCorrectsFromStorage,
+  getTimerFromStorage,
 } from '../lib/storage.js';
 import { createAlertElement } from '../views/questionView.js';
 
@@ -67,40 +68,33 @@ const nextQuestion = () => {
     quizData.currentQuestionAnswer === correctAnswer ? 'correct' : 'wrong';
   const body = document.getElementById(USER_INTERFACE_ID);
 
+  //user must answer question. shows alert when its not answerd.
   if (quizData.currentQuestionAnswer === null) {
     const alertElement = createAlertElement();
     body.appendChild(alertElement);
-  } else if (quizData.currentQuestionAnswer === correctAnswer) {
-    currentAnswerElement.classList.remove('selected');
-    currentAnswerElement.classList.add(addClass);
-    numberOfCorrects++;
-    addNumberOfCorrectsToStorage(numberOfCorrects);
-    addAnswerToStorage(
-      quizData.currentQuestionAnswer,
-      quizData.currentQuestionIndex
-    );
-
-    // we check here that we are in last question or not
-    //then we increase current question index or removing all data from storage
-    quizData.currentQuestionIndex < quizData.questions.length - 1
-      ? quizData.currentQuestionIndex++
-      : clearAllDataFromStorage();
-  } else {
-    currentAnswerElement.classList.remove('selected');
-    currentAnswerElement.classList.add(addClass);
-    addAnswerToStorage(
-      quizData.currentQuestionAnswer,
-      quizData.currentQuestionIndex
-    );
-
-    // we check here that we are in last question or not
-    //then we increase current question index or removing all data from storage
-    quizData.currentQuestionIndex < quizData.questions.length - 1
-      ? quizData.currentQuestionIndex++
-      : clearAllDataFromStorage();
+    return;
   }
-  
+
+  if (quizData.currentQuestionAnswer === correctAnswer) {
+    numberOfCorrects++;
+  }
+  addNumberOfCorrectsToStorage(numberOfCorrects);
+  addAnswerToStorage(
+    quizData.currentQuestionAnswer,
+    quizData.currentQuestionIndex
+  );
+  currentAnswerElement.classList.remove('selected');
+  currentAnswerElement.classList.add(addClass);
+
   quizData.currentQuestionAnswer = null;
+
+  // we check here that we are in last question or not
+  //then we increase current question index or removing all data from storage
+  quizData.currentQuestionIndex < quizData.questions.length - 1
+    ? quizData.currentQuestionIndex++
+    : clearAllDataFromStorage();
+
+ 
 
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)

@@ -1,5 +1,7 @@
 'use strict';
 
+import { QUIZ_TIME } from "../constants.js";
+
 export const addAnswerToStorage = (answer, index) => {
   let answers = getAnswersFromStorage();
   answers[index] = answer;
@@ -19,22 +21,22 @@ export const addStartTimeToStorage = () => {
 };
 export const getTimerFromStorage = () => {
   const startTime = JSON.parse(localStorage.getItem('startTime'));
-  const realTime = new Date().getTime();
-  const timer = 300 - (realTime - startTime) / 1000;
+  const currentTime = new Date().getTime();
+  const timer = QUIZ_TIME - (currentTime - startTime) / 1000;
   return Math.floor(timer);
 };
 
 export const addNumberOfCorrectsToStorage = (number) => {
   let numberOfCorrects = getNumberOfCorrectsFromStorage();
   numberOfCorrects = number;
-  localStorage.setItem('numberOfCorrects', JSON.stringify(numberOfCorrects));
+  localStorage.setItem('numberOfCorrects', numberOfCorrects.toString());
 };
 
 export const getNumberOfCorrectsFromStorage = () => {
   let numberOfCorrects;
   localStorage.getItem('numberOfCorrects') === null
     ? (numberOfCorrects = 0)
-    : (numberOfCorrects = JSON.parse(localStorage.getItem('numberOfCorrects')));
+    : (numberOfCorrects = Number(localStorage.getItem('numberOfCorrects')));
   return numberOfCorrects;
 };
 export const clearAllDataFromStorage = () => {

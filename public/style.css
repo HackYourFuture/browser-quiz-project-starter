@@ -53,6 +53,11 @@ body {
   }
 } */
 }
+#alert-didnt-answer{
+  color:red;
+  margin-top: 10px;
+}
+
 
 .about-quiz{
   display: flex;
