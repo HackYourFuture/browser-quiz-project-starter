@@ -4,6 +4,7 @@ import {
   ANSWERS_LIST_ID,
   NEXT_QUESTION_BUTTON_ID,
   USER_INTERFACE_ID,
+  NEXT_QUESTION_DELAY,
 } from '../constants.js';
 import {
   createQuestionElement,
@@ -18,7 +19,6 @@ import {
 } from '../lib/storage.js';
 import { createAlertElement } from '../views/questionView.js';
 import { initResultPage } from '../pages/resultPage.js';
-import { delayQuestionPage } from '../constants.js';
 
 let currentAnswerElement = [];
 const correctSound = new Audio('../../public/sounds/sound_correct.mp3');
@@ -101,10 +101,9 @@ const nextQuestion = () => {
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
     .removeEventListener('click', nextQuestion);
-  
-const delayQuestionPage = '1000';
+
   setTimeout(() => {
     initQuestionPage();
     currentAnswerElement.classList.remove(addClass);
-  }, delayQuestionPage);
+  }, NEXT_QUESTION_DELAY);
 };

@@ -13,4 +13,4 @@ export const ANSWERS_LIST_ID = 'answers-list';
 export const NEXT_QUESTION_BUTTON_ID = 'next-question-button';
 export const ALERT_DIDNT_ANSWER = 'alert-didnt-answer';
 export const QUIZ_TIME = 300;
-export const delayQuestionPage = 1000;
+export const NEXT_QUESTION_DELAY = 1000;
