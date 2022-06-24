@@ -100,9 +100,10 @@ const nextQuestion = () => {
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
     .removeEventListener('click', nextQuestion);
-
+  
+const delayQuestionPage = '1000';
   setTimeout(() => {
     initQuestionPage();
     currentAnswerElement.classList.remove(addClass);
-  }, 300);
+  }, delayQuestionPage);
 };
