@@ -4,6 +4,7 @@ import {
   ANSWERS_LIST_ID,
   NEXT_QUESTION_BUTTON_ID,
   USER_INTERFACE_ID,
+  NEXT_QUESTION_DELAY,
 } from '../constants.js';
 import {
   createQuestionElement,
@@ -14,11 +15,10 @@ import { quizData } from '../data.js';
 import {
   addAnswerToStorage,
   addNumberOfCorrectsToStorage,
-  clearAllDataFromStorage,
   getNumberOfCorrectsFromStorage,
-  getTimerFromStorage,
 } from '../lib/storage.js';
 import { createAlertElement } from '../views/questionView.js';
+import { initResultPage } from '../pages/resultPage.js';
 
 let currentAnswerElement = [];
 const correctSound = new Audio('../../public/sounds/sound_correct.mp3');
@@ -71,7 +71,7 @@ const nextQuestion = () => {
   isCorrect ? correctSound.play() : wrongSound.play();
   const body = document.getElementById(USER_INTERFACE_ID);
 
-  //user must answer question. shows alert when its not answerd.
+  //user must answer question. shows alert when its not answered.
   if (quizData.currentQuestionAnswer === null) {
     const alertElement = createAlertElement();
     body.appendChild(alertElement);
@@ -96,7 +96,7 @@ const nextQuestion = () => {
   //then we increase current question index or removing all data from storage
   quizData.currentQuestionIndex < quizData.questions.length - 1
     ? quizData.currentQuestionIndex++
-    : clearAllDataFromStorage();
+    : initResultPage();
 
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
@@ -105,5 +105,5 @@ const nextQuestion = () => {
   setTimeout(() => {
     initQuestionPage();
     currentAnswerElement.classList.remove(addClass);
-  }, 1500);
+  }, NEXT_QUESTION_DELAY);
 };

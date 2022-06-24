@@ -12,8 +12,8 @@
   min-width: 80%;
   min-height: 40%;
 }
-#user-interface{
-  display:flex;
+#user-interface {
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
@@ -29,37 +29,43 @@ body {
   font-size: 16px;
   font-family: 'Chakra Petch', sans-serif;
 }
-.welcome-page{
-  height:70%;
-  background-image: linear-gradient(to bottom, rgba(255, 255, 0, 0.401), rgba(0, 0, 255, 0.363)),url(/public/programming-code-coding-or-hacker-background-vector.jpeg);
+.welcome-page {
+  height: 70%;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(255, 255, 0, 0.401),
+      rgba(0, 0, 255, 0.363)
+    ),
+    url(/public/programming-code-coding-or-hacker-background-vector.jpeg);
   background-repeat: no-repeat;
-  background-size:cover;
+  background-size: cover;
   padding: 5px 0;
-  margin:50px auto;
+  margin: 50px auto;
 }
-.welcome-page h1{
+.welcome-page h1 {
   font-size: 50px;
-  margin: 1,3rem auto;
+  margin: 1, 3rem auto;
   -webkit-animation: glow 1s ease-in-out infinite alternate;
   -moz-animation: glow 1s ease-in-out infinite alternate;
   animation: glow 1s ease-in-out infinite alternate;
 }
 @-webkit-keyframes glow {
   from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #d3ebcd, 0 0 30px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #d3ebcd,
+      0 0 30px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
   }
   to {
-    text-shadow: 0 0 20px #fff, 0 0 30px #aedbce, 0 0 40px #ff4dd3ed, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    text-shadow: 0 0 20px #fff, 0 0 30px #aedbce, 0 0 40px #ff4dd3ed,
+      0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
   }
 }
 
-#alert-didnt-answer{
-  color:red;
+#alert-didnt-answer {
+  color: red;
   margin-top: 10px;
 }
 
-
-.about-quiz{
+.about-quiz {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -67,19 +73,18 @@ body {
   font-size: 24px;
   color: #aedbce;
   font-weight: bold;
-  width:80%;
+  width: 80%;
   height: auto;
-  margin:5px auto;
+  margin: 5px auto;
   padding: 10px 5px;
-  
 }
-.about-quiz li{
-  margin:5px 0;
+.about-quiz li {
+  margin: 5px 0;
 }
-.about-quiz li a{
-color:#d3ebcd
+.about-quiz li a {
+  color: #d3ebcd;
 }
-#start-quiz-button{
+#start-quiz-button {
   border-radius: 10px;
   background-color: #635666;
   border: none;
@@ -87,7 +92,7 @@ color:#d3ebcd
   text-align: center;
   font-size: 16px;
   padding: 12px;
-  width:max-content;
+  width: max-content;
   height: auto;
 }
 #start-quiz-button:hover {
@@ -117,7 +122,7 @@ color:#d3ebcd
   width: 70%;
   min-height: 50px;
   margin-top: 10px;
-  text-align:left;
+  text-align: left;
   padding: 10px;
   background-color: #aedbce;
   color: #635666;
@@ -135,7 +140,6 @@ color:#d3ebcd
 #answers-list li.wrong {
   background-color: red;
 }
-
 
 .question {
   width: 60%;
@@ -174,7 +178,7 @@ color:#d3ebcd
 }
 
 .user-progress {
-  width:70%;
+  width: 70%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -197,4 +201,36 @@ color:#d3ebcd
 
 .fa-ul {
   font-size: 25px;
+}
+
+.container {
+  background-color: white;
+  margin-top: 15rem;
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  height: 32rem;
+  padding: 1rem;
+  border-radius: 10px;
+  overflow-y: scroll;
+}
+.container h1 {
+  width: 100%;
+}
+#topbox {
+  width: 100%;
+}
+.question-result-card {
+  width: 45%;
+  height: 10rem;
+  color: black;
+  margin: auto;
+  margin-top: 1rem;
+  padding: 20px;
+  border: 2px silver solid;
+  border-radius: 10px;
+}
+
+.question-result-card h2 {
+  font-size: 1.2rem;
 }
