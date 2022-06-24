@@ -21,6 +21,8 @@ import {
 import { createAlertElement } from '../views/questionView.js';
 
 let currentAnswerElement = [];
+const correctSound = new Audio('../../public/sounds/sound_correct.mp3');
+const wrongSound = new Audio('../../public/sounds/sound_wrong.mp3');
 let numberOfCorrects = getNumberOfCorrectsFromStorage();
 
 export const initQuestionPage = () => {
@@ -77,7 +79,11 @@ const nextQuestion = () => {
 
   if (quizData.currentQuestionAnswer === correctAnswer) {
     numberOfCorrects++;
+    correctSound.play();
+  } else {
+    wrongSound.play();
   }
+
   addNumberOfCorrectsToStorage(numberOfCorrects);
   addAnswerToStorage(
     quizData.currentQuestionAnswer,
@@ -93,8 +99,6 @@ const nextQuestion = () => {
   quizData.currentQuestionIndex < quizData.questions.length - 1
     ? quizData.currentQuestionIndex++
     : clearAllDataFromStorage();
-
- 
 
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
