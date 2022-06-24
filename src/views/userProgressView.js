@@ -1,6 +1,6 @@
 'use strict';
 
-import { USER_PROGRESS_ID } from "../constants.js";
+import { USER_PROGRESS_ID } from '../constants.js';
 
 export const createProgressElement = (
   numberOfQuestions,
@@ -8,8 +8,7 @@ export const createProgressElement = (
   numberOfCorrects
 ) => {
   const element = document.createElement('div');
-  element.setAttribute('id',`${USER_PROGRESS_ID}`);
-
+  element.setAttribute('id', `${USER_PROGRESS_ID}`);
   element.appendChild(createProgressBar(questionIndex, numberOfQuestions));
   element.appendChild(
     createNumberOfCorrectElement(questionIndex, numberOfCorrects)
@@ -58,5 +57,10 @@ export const createScoreElement = (numberOfCorrects) => {
     <h2 id="score-text">Score</h2>
     <h2 id="score">${numberOfCorrects * 10}</h2>
     `;
+  return element;
+};
+export const createTimeElement = () => {
+  const element = document.createElement('div');
+  element.classList.add('progress-time-item');
   return element;
 };
