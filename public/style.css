@@ -60,7 +60,17 @@ body {
   }
 }
 
+<<<<<<< HEAD
 .about-quiz {
+=======
+#alert-didnt-answer{
+  color:red;
+  margin-top: 10px;
+}
+
+
+.about-quiz{
+>>>>>>> master
   display: flex;
   flex-direction: column;
   align-items: center;
