@@ -21,8 +21,8 @@ import {
 import { createAlertElement } from '../views/questionView.js';
 
 let currentAnswerElement = [];
-const correctSound = new Audio('../../public/sounds/sound_correct.mp3');
-const wrongSound = new Audio('../../public/sounds/sound_wrong.mp3');
+const correctSound = new Audio('public/sounds/sound_correct.mp3');
+const wrongSound = new Audio('public/sounds/sound_wrong.mp3');
 let numberOfCorrects = getNumberOfCorrectsFromStorage();
 
 export const initQuestionPage = () => {
