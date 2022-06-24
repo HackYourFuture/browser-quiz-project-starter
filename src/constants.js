@@ -14,3 +14,4 @@ export const NEXT_QUESTION_BUTTON_ID = 'next-question-button';
 export const ALERT_DIDNT_ANSWER = 'alert-didnt-answer';
 export const QUIZ_TIME = 300;
 export const NEXT_QUESTION_DELAY = 1000;
+export const USER_PROGRESS_ID='user-progress'

@@ -135,7 +135,7 @@ body {
   border-style: solid;
 }
 #answers-list li.correct {
-  background-color: green;
+  background-color: rgb(11, 223, 36);
 }
 #answers-list li.wrong {
   background-color: red;
@@ -177,7 +177,7 @@ body {
   transition: all 0.3s;
 }
 
-.user-progress {
+#user-progress {
   width: 70%;
   display: flex;
   align-items: center;
