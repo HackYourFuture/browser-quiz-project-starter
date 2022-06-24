@@ -66,8 +66,9 @@ export const initQuestionPage = () => {
 const nextQuestion = () => {
   const correctAnswer =
     quizData.questions[quizData.currentQuestionIndex].correct;
-  const addClass =
-    quizData.currentQuestionAnswer === correctAnswer ? 'correct' : 'wrong';
+  const isCorrect = quizData.currentQuestionAnswer === correctAnswer;
+  const addClass = isCorrect ? 'correct' : 'wrong';
+  isCorrect ? correctSound.play() : wrongSound.play();
   const body = document.getElementById(USER_INTERFACE_ID);
 
   //user must answer question. shows alert when its not answerd.
@@ -77,11 +78,8 @@ const nextQuestion = () => {
     return;
   }
 
-  if (quizData.currentQuestionAnswer === correctAnswer) {
+  if (isCorrect) {
     numberOfCorrects++;
-    correctSound.play();
-  } else {
-    wrongSound.play();
   }
 
   addNumberOfCorrectsToStorage(numberOfCorrects);
