@@ -14,7 +14,6 @@ import { quizData } from '../data.js';
 import {
   addAnswerToStorage,
   addNumberOfCorrectsToStorage,
-  clearAllDataFromStorage,
   getNumberOfCorrectsFromStorage,
 } from '../lib/storage.js';
 import { createAlertElement } from '../views/questionView.js';
@@ -92,22 +91,9 @@ const nextQuestion = () => {
   //then we increase current question index or removing all data from storage
   quizData.currentQuestionIndex < quizData.questions.length - 1
     ? quizData.currentQuestionIndex++
-    : clearAllDataFromStorage();
+    : initResultPage();
 
   quizData.currentQuestionAnswer = null;
-
-  if (quizData.currentQuestionIndex === quizData.questions.length - 1) {
-    const nextQuestionButton = (document.getElementById(
-      NEXT_QUESTION_BUTTON_ID
-    ).innerText = 'Result');
-
-    const seeResults = () => {
-      initResultPage();
-    };
-    document
-      .getElementById(NEXT_QUESTION_BUTTON_ID)
-      .addEventListener('click', seeResults);
-  }
 
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
@@ -116,5 +102,5 @@ const nextQuestion = () => {
   setTimeout(() => {
     initQuestionPage();
     currentAnswerElement.classList.remove(addClass);
-  }, 1500);
+  }, 300);
 };

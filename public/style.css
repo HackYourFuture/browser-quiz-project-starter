@@ -220,7 +220,7 @@ body {
 #topbox {
   width: 100%;
 }
-.question-card {
+.question-result-card {
   width: 45%;
   height: 10rem;
   color: black;
@@ -231,6 +231,6 @@ body {
   border-radius: 10px;
 }
 
-.question-card h2 {
+.question-result-card h2 {
   font-size: 1.2rem;
 }
