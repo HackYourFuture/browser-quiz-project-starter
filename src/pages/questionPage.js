@@ -21,6 +21,8 @@ import {
 import { createAlertElement } from '../views/questionView.js';
 
 let currentAnswerElement = [];
+const correctSound = new Audio('../../public/sounds/sound_correct.mp3');
+const wrongSound = new Audio('../../public/sounds/sound_wrong.mp3');
 let numberOfCorrects = getNumberOfCorrectsFromStorage();
 
 export const initQuestionPage = () => {
@@ -64,8 +66,9 @@ export const initQuestionPage = () => {
 const nextQuestion = () => {
   const correctAnswer =
     quizData.questions[quizData.currentQuestionIndex].correct;
-  const addClass =
-    quizData.currentQuestionAnswer === correctAnswer ? 'correct' : 'wrong';
+  const isCorrect = quizData.currentQuestionAnswer === correctAnswer;
+  const addClass = isCorrect ? 'correct' : 'wrong';
+  isCorrect ? correctSound.play() : wrongSound.play();
   const body = document.getElementById(USER_INTERFACE_ID);
 
   //user must answer question. shows alert when its not answerd.
@@ -75,9 +78,10 @@ const nextQuestion = () => {
     return;
   }
 
-  if (quizData.currentQuestionAnswer === correctAnswer) {
+  if (isCorrect) {
     numberOfCorrects++;
   }
+
   addNumberOfCorrectsToStorage(numberOfCorrects);
   addAnswerToStorage(
     quizData.currentQuestionAnswer,
@@ -93,8 +97,6 @@ const nextQuestion = () => {
   quizData.currentQuestionIndex < quizData.questions.length - 1
     ? quizData.currentQuestionIndex++
     : clearAllDataFromStorage();
-
- 
 
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
