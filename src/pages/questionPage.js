@@ -6,11 +6,9 @@ import {
   USER_INTERFACE_ID,
   NEXT_QUESTION_DELAY,
 } from '../constants.js';
-import {
-  createQuestionElement,
-  createProgressElement,
-} from '../views/questionView.js';
+import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
+import { createProgressElement } from '../views/userProgressView.js';
 import { quizData } from '../data.js';
 import {
   addAnswerToStorage,
@@ -48,14 +46,16 @@ export const initQuestionPage = () => {
   for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
     const answerElement = createAnswerElement(key, answerText);
     answersListElement.appendChild(answerElement);
-    answerElement.addEventListener('click', function () {
+    //handler function for answer element click event.
+    const selectAnswer = () => {
       quizData.currentQuestionAnswer = key;
       currentAnswerElement = answerElement;
       answersListElement
         .querySelectorAll('.selected')
         .forEach((element) => element.classList.remove('selected'));
       answerElement.classList.add('selected');
-    });
+    };
+    answerElement.addEventListener('click', selectAnswer);
   }
 
   document

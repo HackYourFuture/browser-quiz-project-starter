@@ -7,7 +7,7 @@ import {
   getNumberOfCorrectsFromStorage,
 } from '../lib/storage.js';
 import { createResultElement } from '../views/resultView.js';
-import { createProgressElement } from '../views/questionView.js';
+import { createProgressElement } from '../views/userProgressView.js';
 
 export const initResultPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
