@@ -40,7 +40,7 @@ body {
 .welcome-page h1{
   font-size: 50px;
   margin: 1,3rem auto;
-/*   -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
   -moz-animation: glow 1s ease-in-out infinite alternate;
   animation: glow 1s ease-in-out infinite alternate;
 }
@@ -51,8 +51,8 @@ body {
   to {
     text-shadow: 0 0 20px #fff, 0 0 30px #aedbce, 0 0 40px #ff4dd3ed, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
   }
-} */
 }
+
 #alert-didnt-answer{
   color:red;
   margin-top: 10px;
