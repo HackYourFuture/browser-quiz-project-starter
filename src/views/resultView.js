@@ -3,6 +3,10 @@
 export const createResultElement = (results) => {
   const element = document.createElement('div');
   element.classList.add('container');
+  element.innerHTML = String.raw`
+  <h1>RESULT</h1>
+  `;
+
   /*will add cons answers from storage*/
   results.forEach((result) => {
     const questionCard = document.createElement('div');

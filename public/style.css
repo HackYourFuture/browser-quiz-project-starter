@@ -203,15 +203,21 @@ body {
   margin-top: 15rem;
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
-  height: auto;
+  width: 80%;
+  height: 32rem;
   padding: 1rem;
   border-radius: 10px;
+  overflow-y: scroll;
 }
-
+.container h1 {
+  width: 100%;
+}
+#topbox {
+  width: 100%;
+}
 .question-card {
   width: 45%;
-  height: 150px;
+  height: 10rem;
   color: black;
   margin: auto;
   margin-top: 1rem;
