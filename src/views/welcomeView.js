@@ -2,7 +2,7 @@
  * Create the welcome screen
  * @returns {Element}
  */
-export const createWelcomeElement = (onStartClick) => {
+export const createWelcomeView = (onStartClick) => {
   const element = document.createElement('div');
   element.innerHTML = String.raw`
     <h1>Welcome</h1>

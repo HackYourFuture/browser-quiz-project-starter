@@ -4,7 +4,7 @@ import { createAnswerElement } from './answerView.js';
  * Create a full question element
  * @returns {Element}
  */
-export const createQuestionElement = (currentQuestion, onNextClick) => {
+export const createQuestionView = (currentQuestion, onNextClick) => {
   const element = document.createElement('div');
 
   // I use String.raw just to get fancy colors for the HTML in VS Code.

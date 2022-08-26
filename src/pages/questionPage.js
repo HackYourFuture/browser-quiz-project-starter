@@ -1,5 +1,5 @@
 import { loadPage } from '../helpers/loadPage.js';
-import { createQuestionElement } from '../views/questionView.js';
+import { createQuestionView } from '../views/questionView.js';
 
 export const initQuestionPage = (data) => {
   const nextQuestion = () => {
@@ -8,5 +8,5 @@ export const initQuestionPage = (data) => {
   };
 
   const currentQuestion = data.questions[data.currentQuestionIndex];
-  return createQuestionElement(currentQuestion, nextQuestion);
+  return createQuestionView(currentQuestion, nextQuestion);
 };
