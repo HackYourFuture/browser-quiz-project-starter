@@ -1,7 +1,6 @@
 {
   "name": "js-quiz-starter",
   "version": "1.0.0",
-  "type": "module",
   "scripts": {
     "document": "node ./lib/document.js",
     "test": "node ./lib/test.js",

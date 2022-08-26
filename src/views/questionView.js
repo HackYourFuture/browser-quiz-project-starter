@@ -1,26 +1,32 @@
-'use strict';
-
-import { ANSWERS_LIST_ID } from '../constants.js';
-import { NEXT_QUESTION_BUTTON_ID } from '../constants.js';
+import { createAnswerElement } from './answerView.js';
 
 /**
  * Create a full question element
  * @returns {Element}
  */
-export const createQuestionElement = (question) => {
+export const createQuestionElement = (currentQuestion, onNextClick) => {
   const element = document.createElement('div');
 
   // I use String.raw just to get fancy colors for the HTML in VS Code.
   element.innerHTML = String.raw`
-    <h1>${question}</h1>
+    <h1>${currentQuestion.text}</h1>
 
-    <ul id="${ANSWERS_LIST_ID}">
+    <ul id="answerList">
     </ul>
 
-    <button id="${NEXT_QUESTION_BUTTON_ID}">
+    <button id="btnNext">
       Next question
     </button>
   `;
+
+  const answerList = element.querySelector('#answerList');
+
+  for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
+    const answerElement = createAnswerElement(key, answerText);
+    answerList.appendChild(answerElement);
+  }
+
+  element.querySelector('#btnNext').addEventListener('click', onNextClick);
 
   return element;
 };
