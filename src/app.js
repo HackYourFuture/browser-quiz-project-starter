@@ -6,9 +6,9 @@ import { finalSummaryPage } from './pages/finalSummaryPage.js';
 
 const loadApp = () => {
   quizData.currentQuestionIndex = 0;
-  // console.log(quizData)
-  // initWelcomePage();
-  finalSummaryPage()
+
+  initWelcomePage();
+
 };
 
 window.addEventListener('load', loadApp);

@@ -1,4 +1,3 @@
-
 import { createFinalSummaryElement } from '../views/finalSummaryView.js';
 import { USER_INTERFACE_ID } from '../constants.js';
 
