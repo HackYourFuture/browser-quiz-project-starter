@@ -59,7 +59,7 @@ export const quizData = {
       ],
     },
     {
-      text: '',
+      text: 'How do we say goodbye in spanish?',
       answers: {
         a: 'Hola',
         b: 'Au Revoir',
@@ -239,8 +239,5 @@ export const quizData = {
       ],
     },
 
-    
-    
-    // Add more questions here
   ],
 };
