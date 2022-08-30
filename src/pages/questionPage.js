@@ -12,6 +12,15 @@ export const initQuestionPage = (data) => {
     }
   };
 
+  const handleAnswer = (currentQuestion, selected) => {
+    currentQuestion.selected = selected;
+    console.log({ currentQuestion });
+    view.showAnswer(currentQuestion);
+  };
+
   const currentQuestion = data.questions[data.currentQuestionIndex];
-  return createQuestionView(currentQuestion, nextQuestion);
+
+  const view = createQuestionView(currentQuestion, nextQuestion, handleAnswer);
+
+  return view;
 };

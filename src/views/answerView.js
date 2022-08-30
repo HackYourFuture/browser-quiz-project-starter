@@ -9,5 +9,5 @@ export const createAnswerElement = (key, answerText) => {
   element.innerHTML = String.raw`
     ${key}: ${answerText};
   `;
-  return element;
+  return { element };
 };

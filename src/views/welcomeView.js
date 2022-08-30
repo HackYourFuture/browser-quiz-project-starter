@@ -9,5 +9,5 @@ export const createWelcomeView = (onStartClick) => {
     <button id="btnStart">start quiz</button>
   `;
   element.querySelector('#btnStart').addEventListener('click', onStartClick);
-  return element;
+  return { element };
 };
