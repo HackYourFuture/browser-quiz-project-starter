@@ -33,15 +33,13 @@ export const createQuestionView = (
     //not when user clicks
     answerElement.addEventListener('click', () => {
       handleAnswer(currentQuestion, key);
-      showAnswer(currentQuestion);
     });
-    //y
   }
 
   element.querySelector('#btnNext').addEventListener('click', onNextClick);
 
   const showAnswer = (currentQuestion) => {
-    console.log(currentQuestion);
+    console.log({ currentQuestion });
 
     const answers = element.querySelectorAll('.answer-item');
     for (let i = 0; i < answers.length; i++) {
@@ -49,5 +47,5 @@ export const createQuestionView = (
     }
   };
 
-  return { element };
+  return { element, showAnswer };
 };
