@@ -15,3 +15,8 @@
 ul {
   list-style: none;
 }
+
+/*to prevent change answer*/
+.disabled {
+  pointer-events: none;
+}

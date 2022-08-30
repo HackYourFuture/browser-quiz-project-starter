@@ -57,6 +57,28 @@ export const quizData = {
         },
       ],
     },
+    {
+      text: 'What does `typeof` do?',
+      answers: {
+        a: 'changes the type of a primitive value',
+        b: 'returns a string describing the type of a value',
+        c: 'determines if a value is primitive',
+        d: 'can tell the difference between arrays and objects',
+      },
+      correct: 'b',
+      selected: null,
+      links: [
+        {
+          text: 'javascript.info',
+          href: 'https://javascript.info/types#type-typeof',
+        },
+        {
+          text: 'MDN',
+          href:
+            'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof',
+        },
+      ],
+    },
     // Add more questions here
   ],
 };
