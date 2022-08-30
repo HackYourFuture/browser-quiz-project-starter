@@ -55,7 +55,7 @@ export const quizData = {
         {
           text: 'F1Mix',
           href:
-            'https://f1mix.com/results/2015-formula-1-world-championship/,
+            'https://f1mix.com/results/2015-formula-1-world-championship/',
         },
       ],
     },
