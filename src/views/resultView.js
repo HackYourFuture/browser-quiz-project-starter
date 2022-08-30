@@ -11,5 +11,5 @@ export const createResultView = (onRestartClick) => {
   element
     .querySelector('#btnRestart')
     .addEventListener('click', onRestartClick);
-  return element;
+  return { element };
 };
