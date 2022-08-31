@@ -26,6 +26,14 @@ export const initQuestionPage = () => {
     answersListElement.appendChild(answerElement);
   }
 
+  answersListElement.addEventListener("click",()=>{
+    
+    setTimeout(()=>{
+      document.getElementById(NEXT_QUESTION_BUTTON_ID).classList.remove("hide"); 
+    },2000)
+
+})
+
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
     .addEventListener('click', nextQuestion);
