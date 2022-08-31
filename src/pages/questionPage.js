@@ -91,6 +91,7 @@ export const initQuestionPage = () => {
     } else {
       answerElement.className = 'wrong-answer';
       answerElement.id = key;
+      console.log(key);
       answersListElement.appendChild(answerElement);
     }
   }
@@ -111,7 +112,6 @@ export const initQuestionPage = () => {
   const wrong = document.getElementsByClassName('wrong-answer');
   for (let i = 0; i < wrong.length; i++) {
     wrong[i].addEventListener('click', (e) => {
-      console.log('which element I click on', e.target);
       console.log('wrong', e.target.id);
       if (currentQuestion.selected === null) {
         currentQuestion.selected = e.target.id;
