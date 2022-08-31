@@ -17,7 +17,7 @@ export const initQuestionPage = () => {
 
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
 
-  detectEndOfQuiz()
+
 
   const questionElement = createQuestionElement(currentQuestion.text);
 
