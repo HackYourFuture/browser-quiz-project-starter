@@ -1,14 +1,12 @@
 import { createAnswerElement } from './answerView.js';
+import { findElementsWithIds } from '../helpers/findElementsWithIds.js';
 
-/**
+/*
  * Create a full question element
  * @returns {{Element}}
  */
-export const createQuestionView = (
-  currentQuestion,
-  onNextClick,
-  handleAnswer
-) => {
+export const createQuestionView = (props) => {
+  const { currentQuestion, onNextClick, handleAnswer } = props;
   const element = document.createElement('div');
 
   // I use String.raw just to get fancy colors for the HTML in VS Code.
@@ -23,10 +21,10 @@ export const createQuestionView = (
     </button>
   `;
 
-  const answerList = element.querySelector('#answerList');
+  const { answerList, btnNext } = findElementsWithIds(element);
 
   for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
-    const { element: answerElement } = createAnswerElement(key, answerText);
+    const { element: answerElement } = createAnswerElement({ key, answerText });
     answerList.appendChild(answerElement);
     //y - added addEventListener to each answer element and sended key, answerText, correctAnswer and selectedAnswer parameters to answerHandle function
     //y - used arrow function in addEventListener to send parameters. If we don't use arrow function, the function will invoked when the page is loaded,
@@ -36,7 +34,7 @@ export const createQuestionView = (
     });
   }
 
-  element.querySelector('#btnNext').addEventListener('click', onNextClick);
+  btnNext.addEventListener('click', onNextClick);
 
   const showAnswer = (currentQuestion) => {
     console.log({ currentQuestion });

@@ -2,7 +2,8 @@
  * Create an Answer element
  * @returns {Element}
  */
-export const createAnswerElement = (key, answerText) => {
+export const createAnswerElement = (props) => {
+  const { key, answerText } = props;
   const element = document.createElement('li');
   //y - added classname to each li element (answer-item)
   element.classList.add('answer-item');
