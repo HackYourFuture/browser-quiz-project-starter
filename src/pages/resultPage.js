@@ -4,5 +4,6 @@ import { initWelcomePage } from './welcomePage.js';
 
 export const initResultPage = (data) => {
   const onRestartClick = () => loadPage(initWelcomePage, data);
-  return createResultView(onRestartClick, data);
+  const props = { onRestartClick, data };
+  return createResultView(props);
 };

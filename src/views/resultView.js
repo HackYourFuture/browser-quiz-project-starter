@@ -1,8 +1,11 @@
+import { findElementsWithIds } from '../helpers/findElementsWithIds.js';
+
 /**
  * Create the result screen
  * @returns {Element}
  */
-export const createResultView = (onRestartClick, data) => {
+export const createResultView = (props) => {
+  const { data, onRestartClick } = props;
   const element = document.createElement('div');
   let resultText = '';
   let score = 0;
@@ -32,8 +35,8 @@ export const createResultView = (onRestartClick, data) => {
     <h3> Your score is ${score}</h3>
     <button id="btnRestart">restart the quiz</button>
   `;
-  element
-    .querySelector('#btnRestart')
-    .addEventListener('click', onRestartClick);
+
+  const { btnRestart } = findElementsWithIds(element);
+  btnRestart.addEventListener('click', onRestartClick);
   return { element };
 };

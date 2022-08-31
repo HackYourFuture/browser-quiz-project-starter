@@ -3,7 +3,7 @@ import { createQuestionView } from '../views/questionView.js';
 import { initResultPage } from './resultPage.js';
 
 export const initQuestionPage = (data) => {
-  const nextQuestion = () => {
+  const onNextClick = () => {
     if (data.currentQuestionIndex === data.questions.length - 1) {
       loadPage(initResultPage, data);
     } else {
@@ -20,7 +20,8 @@ export const initQuestionPage = (data) => {
 
   const currentQuestion = data.questions[data.currentQuestionIndex];
 
-  const view = createQuestionView(currentQuestion, nextQuestion, handleAnswer);
+  const props = { currentQuestion, onNextClick, handleAnswer };
+  const view = createQuestionView(props);
 
   return view;
 };
