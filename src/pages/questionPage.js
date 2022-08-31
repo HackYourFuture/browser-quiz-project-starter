@@ -21,103 +21,45 @@ export const initQuestionPage = () => {
 
   const answersListElement = document.getElementById(ANSWERS_LIST_ID);
 
-  // for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
-  //   const answerElement = createAnswerElement(key, answerText);
-  //   answersListElement.appendChild(answerElement);
-  //   answerElement.addEventListener('click', checkAnswer);
-  //   const checkAnswer = (e) => {
-  //     const selectedAnswer = key;
-  //     // console.log('DATA', quizData);
-  //     // If current question .selected is null, it means the user hasn't clicked on any answer
-  //     if (currentQuestion.selected === null) {
-  //       // give this value because it is null
-  //       currentQuestion.selected = selectedAnswer;
-  //       // now its not null
-  //       if (selectedAnswer === currentQuestion.correct) {
-  //         e.target.style.background = 'green';
-  //       } else {
-  //         e.target.style.background = 'red';
-  //       }
-  //     }
-  //   }
-  // }
-
-  // for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
-  //   const answerElement = createAnswerElement(key, answerText);
-
-  //   const correctAnswer = currentQuestion.correct;
-  //   if (correctAnswer === key) {
-  //     answerElement.id = 'right-answer';
-  //     answersListElement.appendChild(answerElement);
-  //   } else {
-  //     answerElement.className = 'wrong-answer';
-  //     answersListElement.appendChild(answerElement);
-  //   }
-  // }
-
-  // for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
-  //   const answerElement = createAnswerElement(key, answerText);
-  //   answersListElement.appendChild(answerElement);
-  //   answerElement.addEventListener('click', () => {
-  //     const correctAnswer = currentQuestion.correct;
-  //     if (correctAnswer === key) {
-  //       answerElement.id = 'right-answer';
-  //     } else {
-  //       answerElement.className = 'wrong-answer';
-  //     }
-  //   })
-  // }
-
-  // const right = document.getElementById('right-answer');
-  // right.style.background = 'green';
-  // quizData.rightAnswers++;
-
-  // const wrong = document.getElementsByClassName('wrong-answer');
-  // for (let i = 0; i < wrong.length; i++) {
-  //   wrong[i].style.background = 'red';
-  //   right.style.background = 'green';
-  // }
-
+  //in this loop we will have :
+  // this part key, answerText      //this part will have the data ex:["a",'constant, let, variable'...]
   for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
     const answerElement = createAnswerElement(key, answerText);
 
+    // assign a variable to the right answer ex: correctAnswer ="a"
     const correctAnswer = currentQuestion.correct;
-    // const selectedAnswer = currentQuestion.correct;
-
+    answersListElement.appendChild(answerElement);
+    //key has value from the loop & give li.id the key
+    answerElement.id = key;  
+    
+    // condition : if correctAnswer which is in the data.js(correct) === key (come from the loop)
     if (correctAnswer === key) {
-      answerElement.className = 'right-answer';
-      answerElement.id = key;
-      answersListElement.appendChild(answerElement);
+      answerElement.className = 'right-answer'; //give li class   
     } else {
       answerElement.className = 'wrong-answer';
-      answerElement.id = key;
-      console.log(key);
-      answersListElement.appendChild(answerElement);
     }
   }
 
   const right = document.getElementsByClassName('right-answer')[0];
   right.addEventListener('click', (e) => {
-    console.log('which element I click on', e.target);
-    console.log('right', e.target.id);
-    if (currentQuestion.selected === null) {
-      currentQuestion.selected = e.target.id;
 
-      console.log('DATA', quizData);
+    // if user didnt click on answer that means the currentQuestion.selected will still be empty
+    if (currentQuestion.selected === null) {
+      
+      // now i got answer so now  currentQuestion.selected has value(so we cant click in other button)
+      currentQuestion.selected = e.target.id;
       right.style.background = 'green';
-      quizData.rightAnswers++;
+      quizData.rightAnswers++; // add one right answer
     }
   });
 
   const wrong = document.getElementsByClassName('wrong-answer');
-  for (let i = 0; i < wrong.length; i++) {
+  for (let i = 0; i < wrong.length; i++) { 
     wrong[i].addEventListener('click', (e) => {
-      console.log('wrong', e.target.id);
       if (currentQuestion.selected === null) {
         currentQuestion.selected = e.target.id;
-
-        console.log('DATA', quizData);
         wrong[i].style.background = 'red';
+   // in this line while I have wrong answer will give me the right one at the same time
         right.style.background = 'green';
       }
     });
