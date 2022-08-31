@@ -16,47 +16,241 @@ export const quizData = {
   // the questions in the quiz
   questions: [
     {
-      text: 'What are the different ways to declare a JS variable?',
+      text: "In what movie Thor's hammer was first shown?",
       answers: {
-        a: 'constant, let, variable',
-        b: 'var, const, let, function',
-        c: 'var, let, const',
+        a: 'Iron Man',
+        b: 'The Incredible Hulk',
+        c: 'Iron Man 2',
+        d: 'The first avenger',
+      },
+      correct: 'c',
+      selected: 'null',
+      links: [
+        {
+          text: 'About Thor',
+          href: 'https://en.wikipedia.org/wiki/Thor_(film)',
+        },
+        {
+          text: 'Marvel Cinematic Universe',
+          href: 'https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe',
+        },
+      ],
+    },
+    {
+      text: 'When Red Skull stealed Tesseract?',
+      answers: {
+        a: '1940',
+        b: '1956',
+        c: '1942',
+        d: 'There are no information about this',
       },
       correct: 'c',
       selected: null,
       links: [
         {
-          text: 'javascript.info',
-          href: 'https://javascript.info/variables',
+          text: 'About Red Skull',
+          href: 'https://en.wikipedia.org/wiki/Red_Skull',
         },
         {
-          text: 'Tyler McGinnis',
-          href: 'https://ui.dev/var-let-const/',
+          text: 'About Captain America',
+          href: 'https://en.wikipedia.org/wiki/Captain_America',
         },
       ],
     },
     {
-      text: 'What does `typeof` do?',
+      text:
+        'Which country did Natasha Romanoff went to to recruit Bruce Banner??',
       answers: {
-        a: 'changes the type of a primitive value',
-        b: 'returns a string describing the type of a value',
-        c: 'determines if a value is primitive',
-        d: 'can tell the difference between arrays and objects',
+        a: 'Nepal',
+        b: 'India',
+        c: 'China',
+        d: 'Thailand',
       },
       correct: 'b',
       selected: null,
       links: [
         {
-          text: 'javascript.info',
-          href: 'https://javascript.info/types#type-typeof',
+          text: 'About Natasha Romanoff',
+          href: 'https://en.wikipedia.org/wiki/Black_Widow_(Natasha_Romanova)',
         },
         {
-          text: 'MDN',
-          href:
-            'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof',
+          text: 'About Hulk',
+          href: 'https://en.wikipedia.org/wiki/Hulk',
         },
       ],
     },
-    // Add more questions here
+    {
+      text: "What is the name of Nick Fury's cat that swallowed the Tessaract?",
+      answers: {
+        a: 'Poose',
+        b: 'Fellow',
+        c: 'Goose',
+        d: 'Pops',
+      },
+      correct: 'c',
+      selected: null,
+      links: [
+        {
+          text: 'About Nick Fury',
+          href: 'https://en.wikipedia.org/wiki/Nick_Fury',
+        },
+        {
+          text: 'About Tesseract',
+          href: 'https://en.wikipedia.org/wiki/Infinity_Stones#Space_Stone',
+        },
+      ],
+    },
+    {
+      text: "What is the name of Tony Stark's daughter?",
+      answers: {
+        a: 'Megan',
+        b: 'Sony',
+        c: 'Sheryl',
+        d: 'Morgan',
+      },
+      correct: 'd',
+      selected: null,
+      links: [
+        {
+          text: 'About Tony Stark',
+          href:
+            'https://en.wikipedia.org/wiki/Tony_Stark_(Marvel_Cinematic_Universe)',
+        },
+        {
+          text: 'Marvel Cinematic Universe',
+          href: 'https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe',
+        },
+      ],
+    },
+    {
+      text: "What is the name of Thor's ex-girlfriend?",
+      answers: {
+        a: 'Jody',
+        b: 'Jane',
+        c: 'Marry',
+        d: 'Morgan',
+      },
+      correct: 'd',
+      selected: null,
+      links: [
+        {
+          text: 'About Thor',
+          href:
+            'https://en.wikipedia.org/wiki/Thor_(Marvel_Cinematic_Universe)',
+        },
+        {
+          text: 'Marvel Cinematic Universe',
+          href: 'https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe',
+        },
+      ],
+    },
+    {
+      text: 'What color is the reality stone?',
+      answers: {
+        a: 'Red',
+        b: 'Blue',
+        c: 'Purple',
+        d: 'Yellow',
+      },
+      correct: 'a',
+      selected: null,
+      links: [
+        {
+          text: 'About Infinity stones',
+          href: 'https://en.wikipedia.org/wiki/Infinity_Stones',
+        },
+        {
+          text: 'Marvel Cinematic Universe',
+          href: 'https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe',
+        },
+      ],
+    },
+    {
+      text: 'In what country was Tony Stark/Iron Man captured?',
+      answers: {
+        a: 'Pakistan',
+        b: 'Iraq',
+        c: 'Afghanistan',
+        d: 'Iran',
+      },
+      correct: 'c',
+      selected: null,
+      links: [
+        {
+          text: 'About Tony Stark',
+          href:
+            'https://en.wikipedia.org/wiki/Tony_Stark_(Marvel_Cinematic_Universe)',
+        },
+        {
+          text: 'Marvel Cinematic Universe',
+          href: 'https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe',
+        },
+      ],
+    },
+    {
+      text: "What is the name of Peter Quill's father?",
+      answers: {
+        a: 'Krass',
+        b: 'Ego',
+        c: 'Deral',
+        d: 'Ing',
+      },
+      correct: 'b',
+      selected: null,
+      links: [
+        {
+          text: 'About Peter Quill',
+          href: 'https://en.wikipedia.org/wiki/Star-Lord',
+        },
+        {
+          text: 'Marvel Cinematic Universe',
+          href: 'https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe',
+        },
+      ],
+    },
+    {
+      text:
+        'How many years have passed since Thanos flicked the glove and when the Hulk flicked it again?',
+      answers: {
+        a: '10',
+        b: '4',
+        c: '20',
+        d: '5',
+      },
+      correct: 'd',
+      selected: null,
+      links: [
+        {
+          text: 'About Thanos',
+          href: 'https://en.wikipedia.org/wiki/Thanos',
+        },
+        {
+          text: 'About Hulk',
+          href: 'https://en.wikipedia.org/wiki/Hulk',
+        },
+      ],
+    },
+    {
+      text: "What was the nickname of Wanda's brother?",
+      answers: {
+        a: 'Nickel',
+        b: 'Iron',
+        c: 'Mercury',
+        d: 'Xenon',
+      },
+      correct: 'c',
+      selected: null,
+      links: [
+        {
+          text: 'About Wanda',
+          href:
+            'https://en.wikipedia.org/wiki/Wanda_Maximoff_(Marvel_Cinematic_Universe)',
+        },
+        {
+          text: 'Marvel Cinematic Universe',
+          href: 'https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe',
+        },
+      ],
+    },
   ],
 };
