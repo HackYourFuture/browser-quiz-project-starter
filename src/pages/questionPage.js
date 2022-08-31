@@ -81,38 +81,46 @@ export const initQuestionPage = () => {
   for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
     const answerElement = createAnswerElement(key, answerText);
 
-    // const correctAnswer = currentQuestion.correct;
-    const selectedAnswer = currentQuestion.correct;
+    const correctAnswer = currentQuestion.correct;
+    // const selectedAnswer = currentQuestion.correct;
 
-    if (selectedAnswer === key) {
-      answerElement.id = 'right-answer';
+    if (correctAnswer === key) {
+      answerElement.className = 'right-answer';
+      answerElement.id = key;
       answersListElement.appendChild(answerElement);
     } else {
       answerElement.className = 'wrong-answer';
+      answerElement.id = key;
       answersListElement.appendChild(answerElement);
     }
   }
 
-  const right = document.getElementById('right-answer');
-  right.addEventListener('click', () => {
-    // if (currentQuestion.selected === null) {
-    //   currentQuestion.selected = selectedAnswer;
-    // }
-    console.log('DATA', quizData);
-    right.style.background = 'green';
-    quizData.rightAnswers++;
-  })
+  const right = document.getElementsByClassName('right-answer')[0];
+  right.addEventListener('click', (e) => {
+    console.log('which element I click on', e.target);
+    console.log('right', e.target.id);
+    if (currentQuestion.selected === null) {
+      currentQuestion.selected = e.target.id;
+
+      console.log('DATA', quizData);
+      right.style.background = 'green';
+      quizData.rightAnswers++;
+    }
+  });
 
   const wrong = document.getElementsByClassName('wrong-answer');
   for (let i = 0; i < wrong.length; i++) {
-    wrong[i].addEventListener('click', () => {
-      // if (currentQuestion.selected === null) {
-      //   currentQuestion.selected = selectedAnswer;
-      // }
-      console.log('DATA', quizData);
-      wrong[i].style.background = 'red';
-      right.style.background = 'green';
-    })
+    wrong[i].addEventListener('click', (e) => {
+      console.log('which element I click on', e.target);
+      console.log('wrong', e.target.id);
+      if (currentQuestion.selected === null) {
+        currentQuestion.selected = e.target.id;
+
+        console.log('DATA', quizData);
+        wrong[i].style.background = 'red';
+        right.style.background = 'green';
+      }
+    });
   }
 
   document
@@ -124,4 +132,4 @@ const nextQuestion = () => {
   quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
 
   initQuestionPage();
-}
+};
