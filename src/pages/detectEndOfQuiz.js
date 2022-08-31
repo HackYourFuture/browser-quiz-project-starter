@@ -1,5 +1,5 @@
 import { quizData } from "../data.js";
-import { finalSummaryPage } from "../pages/finalSummaryPage.js";
+import { finalSummaryPage } from "./finalSummaryPage.js";
 
 export const detectEndOfQuiz = () => {
   const { currentQuestionIndex, questions } = quizData

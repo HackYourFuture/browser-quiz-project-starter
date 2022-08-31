@@ -8,12 +8,16 @@ import {
 import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
+import { detectEndOfQuiz } from './detectEndOfQuiz'
+
 
 export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
 
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
+
+  detectEndOfQuiz()
 
   const questionElement = createQuestionElement(currentQuestion.text);
 
