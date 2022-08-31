@@ -28,14 +28,18 @@ export const initQuestionPage = () => {
 
   const correctAnswer=(e)=>{
     const selectedAnswer=e.target;
-    console.log(e.target);
     const correctAnswer=currentQuestion.correct
     if(selectedAnswer.innerText[0] === correctAnswer){
       selectedAnswer.classList.add("correct");
-      incrementScore(SCORE_POINTS);//i don't know which global variable is defined,i could change it after merging
+      quizData.finalScore++;
+      currentQuestion["selected"]=selectedAnswer.innerText[0];
+      console.log(currentQuestion["selected"]);
+      console.log(quizData.finalScore)
+      
     }else{
-      selectedAnswer.classList.add("wrong");
-      console.log("wrong");    
+      selectedAnswer.classList.add("wrong"); 
+      currentQuestion["selected"]=selectedAnswer.innerText[0];
+      console.log(currentQuestion["selected"]);
     }
   }
   answersListElement.addEventListener("click", correctAnswer);
