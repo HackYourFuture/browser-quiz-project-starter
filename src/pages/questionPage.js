@@ -26,10 +26,26 @@ export const initQuestionPage = () => {
     answersListElement.appendChild(answerElement);
   }
 
+  const correctAnswer=(e)=>{
+    const selectedAnswer=e.target;
+    console.log(e.target);
+    const correctAnswer=currentQuestion.correct
+    if(selectedAnswer.innerText[0] === correctAnswer){
+      selectedAnswer.classList.add("correct");
+      incrementScore(SCORE_POINTS);//i don't know which global variable is defined,i could change it after merging
+    }else{
+      selectedAnswer.classList.add("wrong");
+      console.log("wrong");    
+    }
+  }
+  answersListElement.addEventListener("click", correctAnswer);
+
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
     .addEventListener('click', nextQuestion);
 };
+
+
 
 const nextQuestion = () => {
   quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
