@@ -13,6 +13,8 @@
 
 export const quizData = {
   currentQuestionIndex: 0,
+  //- y - added score property for realtime score
+  score: 0,
   // the questions in the quiz
   questions: [
     {
