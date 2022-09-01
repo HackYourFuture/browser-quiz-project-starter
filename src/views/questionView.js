@@ -6,7 +6,7 @@ import { findElementsWithIds } from '../helpers/findElementsWithIds.js';
  * @returns {{Element}}
  */
 export const createQuestionView = (props) => {
-  const { currentQuestion, onNextClick, handleAnswer } = props;
+  const { currentQuestion, onNextClick, handleAnswer, data } = props;
   const element = document.createElement('div');
 
   // I use String.raw just to get fancy colors for the HTML in VS Code.
@@ -15,20 +15,17 @@ export const createQuestionView = (props) => {
 
     <ul id="answerList">
     </ul>
-
+    <h1 id="scoreDisplay">${data.score}</h1> 
     <button id="btnNext">
       Next question
     </button>
   `;
 
-  const { answerList, btnNext } = findElementsWithIds(element);
+  const { answerList, btnNext, scoreDisplay } = findElementsWithIds(element);
 
   for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
     const { element: answerElement } = createAnswerElement({ key, answerText });
     answerList.appendChild(answerElement);
-    //y - added addEventListener to each answer element and sended key, answerText, correctAnswer and selectedAnswer parameters to answerHandle function
-    //y - used arrow function in addEventListener to send parameters. If we don't use arrow function, the function will invoked when the page is loaded,
-    //not when user clicks
     answerElement.addEventListener('click', () => {
       handleAnswer(currentQuestion, key);
     });
@@ -36,12 +33,29 @@ export const createQuestionView = (props) => {
 
   btnNext.addEventListener('click', onNextClick);
 
-  const showAnswer = (currentQuestion) => {
-    console.log({ currentQuestion });
+  const showAnswer = (currentQuestion, score) => {
+    console.log({ currentQuestion }, score);
+    //-y- if the answer is true, scoreDisplay is updated
+    scoreDisplay.innerHTML = score;
 
     const answers = element.querySelectorAll('.answer-item');
     for (let i = 0; i < answers.length; i++) {
       answers[i].classList.add('disabled');
+      if (answers[i].id === currentQuestion.selected) {
+        if (currentQuestion.correct === currentQuestion.selected) {
+          //-y- if answer is correct, option's background set to green
+          answers[i].classList.add('correct');
+        } else {
+          //-y- if answer is wrong, option's background set to red
+          answers[i].classList.add('wrong');
+          for (let j = 0; j < answers.length; j++) {
+            //-y- and correct option's background set to green
+            if (answers[j].id === currentQuestion.correct) {
+              answers[j].classList.add('correct');
+            }
+          }
+        }
+      }
     }
   };
 

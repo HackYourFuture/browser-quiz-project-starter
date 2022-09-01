@@ -8,7 +8,6 @@ export const createResultView = (props) => {
   const { data, onRestartClick } = props;
   const element = document.createElement('div');
   let resultText = '';
-  let score = 0;
   data.questions.forEach((question) => {
     const className =
       question.correct === question.selected ? 'right' : 'wrong';
@@ -22,7 +21,6 @@ export const createResultView = (props) => {
       </p>
     `;
     if (question.correct === question.selected) {
-      score++;
       resultText += String.raw`
       <p>
         Correct answer was: ${question.answers[question.selected]}
@@ -31,8 +29,9 @@ export const createResultView = (props) => {
   });
   element.innerHTML = String.raw`
     <h1>Okay you've done</h1>
+    <h3> Your score is ${data.score}</h3>
     ${resultText}
-    <h3> Your score is ${score}</h3>
+    
     <button id="btnRestart">restart the quiz</button>
   `;
 
