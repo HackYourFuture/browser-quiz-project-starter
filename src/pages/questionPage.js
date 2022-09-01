@@ -7,13 +7,19 @@ import {
 } from '../constants.js';
 import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
+import {createTimerElement} from '../views/timerviews.js'
 import { quizData } from '../data.js';
+
 
 export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
 
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
+
+  const timerElement = createTimerElement();
+
+  userInterface.appendChild(timerElement);
 
   const questionElement = createQuestionElement(currentQuestion.text);
 
@@ -75,3 +81,33 @@ const nextQuestion = () => {
 
   initQuestionPage();
 };
+
+
+
+let totalSeconds = 0;
+let timerIntervalId = 0;
+
+export function setTime(start) {
+    if (start) {
+      timerIntervalId = setInterval(increaseTimer, 1000);
+    } else if (timerIntervalId) {
+      clearInterval(timerIntervalId);
+      timerIntervalId = 0;
+    }
+  }
+  function increaseTimer() {
+    ++totalSeconds;
+    let minutes = document.getElementById('minutes')
+    minutes.innerHTML = pad(totalSeconds % 60);
+    let seconds = document.getElementById('seconds')
+    seconds.innerHTML = pad(parseInt(totalSeconds / 60));
+  }
+  function pad(val) {
+    let valString = val + '';
+    if (valString.length < 2) {
+      return '0' + valString;
+    } else {
+      return valString;
+    }
+  }
+  
