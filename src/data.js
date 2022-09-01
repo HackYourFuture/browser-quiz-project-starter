@@ -20,14 +20,15 @@ export const quizData = {
     {
       text: 'Which of the following tag is used for inserting the largest heading in HTML?',
       answers: {
-        a: "head",
-        b: "&lth1&gt",
-        c: "&lth6&gt",
-        d: "heading",
+        a: 'head',
+        b: '&lth1&gt',
+        c: '&lth6&gt',
+        d: 'heading',
       },
       correct: 'b',
       selected: null,
-      explanation:'Headings in HTML starts from &lth1&gt to &lth6&gt in which &lth1&gt heading is the largest one and &lth6&gt is smallest one among those. The heading tags are &lth1&gt &lth2&gt &lth3&gt &lth4&gt &lth5&gt and &lth6&gt that are used for the creations of headings.',
+      explanation:
+        'Headings in HTML starts from &lth1&gt to &lth6&gt in which &lth1&gt heading is the largest one and &lth6&gt is smallest one among those. The heading tags are &lth1&gt &lth2&gt &lth3&gt &lth4&gt &lth5&gt and &lth6&gt that are used for the creations of headings.',
 
       links: [
         {
@@ -46,7 +47,8 @@ export const quizData = {
       },
       correct: 'a',
       selected: null,
-      explanation:'For styling HTML5, CSS i.e Cascading Style Sheet is used. It is style sheet language and designed to describe presentation of its content including layouts, colors and fonts. CSS can control the layout of multiple webpages.',
+      explanation:
+        'For styling HTML5, CSS i.e Cascading Style Sheet is used. It is style sheet language and designed to describe presentation of its content including layouts, colors and fonts. CSS can control the layout of multiple webpages.',
 
       links: [
         {
@@ -65,7 +67,7 @@ export const quizData = {
       },
       correct: 'a',
       selected: null,
-      explanation:'&ltp&gt tag is used for paragraph in HTML.',
+      explanation: '&ltp&gt tag is used for paragraph in HTML.',
 
       links: [
         {
@@ -75,41 +77,45 @@ export const quizData = {
       ],
     },
     {
-      text: 'Which of the following HTML tag is used to create an unordered list?',
+      text: 'Which of the following is not an error in JavaScript?',
+
       answers: {
-        a: '&ltol&gt',
-        b: '&ltul&gt',
-        c: '&ltli&gt',
-        d: '&ltll&gt',
+        a: 'Missing of Bracket',
+        b: 'Division by zero',
+        c: 'Syntax error',
+        d: 'Missing of semicolons',
       },
       correct: 'b',
       selected: null,
-      explanation:'&ltul&gt tag is used to create the unordered list items in an HTML document. By default, unordered list items will display in a bulleted format.',
+
+      explanation:
+        'In JavaScript, division by zero does not result in an error; it just returns infinity or negative infinity. However, because zero divided by zero has no well-defined value, the result of this operation is the unusual not-a-number value, which is written as NaN.',
 
       links: [
         {
-          text: 'HTML',
-          href: 'https://www.sanfoundry.com/1000-html-questions-answers/',
+          text: 'Javascript',
+          href: 'https://www.sanfoundry.com/1000-javascript-questions-answers/',
         },
       ],
     },
-    
+
     {
-      text: 'Which of the following tag is used to embed css in html page?',
+      text: 'Why JavaScript Engine is needed?',
       answers: {
-        a: '&ltcss&gt',
-        b: '&lt!DOCTYPE html&gt',
-        c: '&ltscript&gt',
-        d: '&ltstyle&gt',
+        a: 'Both Compiling & Interpreting the JavaScript',
+        b: 'Parsing the javascript',
+        c: 'Interpreting the JavaScript',
+        d: 'Compiling the JavaScript',
       },
-      correct: 'd',
+      correct: 'c',
       selected: null,
-      explanation:'&ltstyle&gt &lt/style&gt tag is used to embed CSS in HTML page, while &ltscript&gt &lt/script&gt is used to embed JS in HTML. &lt!DOCTYPE html&gt is HTML5 declaration.',
+      explanation:
+        'For the most part, the JS Engine is used to interpret JavaScript. It’s used to parse javascript and run it on a web page.',
 
       links: [
         {
-          text: 'CSS',
-          href: 'https://www.sanfoundry.com/1000-css-questions-answers/',
+          text: 'Javascript',
+          href: 'https://www.sanfoundry.com/1000-javascript-questions-answers/',
         },
       ],
     },
@@ -123,7 +129,8 @@ export const quizData = {
       },
       correct: 'c',
       selected: null,
-      explanation:'Class selectors are used to specify a group of elements. Id selector specifies a particular unique element.',
+      explanation:
+        'Class selectors are used to specify a group of elements. Id selector specifies a particular unique element.',
 
       links: [
         {
@@ -142,7 +149,8 @@ export const quizData = {
       },
       correct: 'b',
       selected: null,
-      explanation:'For binding a particular unique element, id selectors are used. While for a group of elements, class selector can be used.',
+      explanation:
+        'For binding a particular unique element, id selectors are used. While for a group of elements, class selector can be used.',
 
       links: [
         {
@@ -161,7 +169,8 @@ export const quizData = {
       },
       correct: 'b',
       selected: null,
-      explanation:'The border-width property sets the width of an element`s four borders. This property can have from one to four values.',
+      explanation:
+        'The border-width property sets the width of an element`s four borders. This property can have from one to four values.',
 
       links: [
         {
@@ -180,7 +189,7 @@ export const quizData = {
       },
       correct: 'b',
       selected: null,
-      explanation:'box-shadow property sets the shadow for a box element.',
+      explanation: 'box-shadow property sets the shadow for a box element.',
 
       links: [
         {
@@ -199,7 +208,8 @@ export const quizData = {
       },
       correct: 'b',
       selected: null,
-      explanation:'Position property controls how an element is positioned. When set to absolute or fixed, the element is removed completely from the normal flow of the document. When set to relative, the element is moved relative to its position in the normal flow, but a space is left where it would normally have been. The default value, static, means the element remains in the normal flow and is not positioned.',
+      explanation:
+        'Position property controls how an element is positioned. When set to absolute or fixed, the element is removed completely from the normal flow of the document. When set to relative, the element is moved relative to its position in the normal flow, but a space is left where it would normally have been. The default value, static, means the element remains in the normal flow and is not positioned.',
 
       links: [
         {
