@@ -26,11 +26,31 @@ export const initQuestionPage = () => {
     answersListElement.appendChild(answerElement);
   }
 
+
   answersListElement.addEventListener('click', () => {
     setTimeout(() => {
       document.getElementById(NEXT_QUESTION_BUTTON_ID).classList.remove('hide');
     }, 2000);
   });
+
+  const correctAnswer = (e) => {
+    if (!(currentQuestion['selected'] === null)) return;
+    const selectedAnswer = e.target;
+
+    const correctAnswer = currentQuestion.correct;
+
+    if (selectedAnswer.innerText[0] === correctAnswer) {
+      selectedAnswer.classList.add('correct');
+
+      quizData.finalScore++;
+    } else {
+      selectedAnswer.classList.add('wrong');
+    }
+    currentQuestion['selected'] = selectedAnswer.innerText[0];
+  };
+
+  answersListElement.addEventListener('click', correctAnswer);
+
 
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
