@@ -10,7 +10,6 @@
     not by your logic
     not by your listeners
 */
-
 export const quizData = {
   currentQuestionIndex: 0,
   rightAnswers: 0,
@@ -18,217 +17,203 @@ export const quizData = {
   // the questions in the quiz
   questions: [
     {
-      text: 'What are the different ways to declare a JS variable?',
+      text: 'Which of the following tag is used for inserting the largest heading in HTML?',
       answers: {
-        a: 'constant, let, variable',
-        b: 'var, const, let, function',
-        c: 'var, let, const',
-        d: 'var, object, loop',
-      },
-      correct: 'c',
-      selected: null,
-      links: [
-        {
-          text: 'javascript.info',
-          href: 'https://javascript.info/variables',
-        },
-        {
-          text: 'Tyler McGinnis',
-          href: 'https://ui.dev/var-let-const/',
-        },
-      ],
-    },
-    {
-      text: 'What does `typeof` do?',
-      answers: {
-        a: 'changes the type of a primitive value',
-        b: 'returns a string describing the type of a value',
-        c: 'determines if a value is primitive',
-        d: 'can tell the difference between arrays and objects',
+        a: 'head',
+        b: '&lth1&gt',
+        c: '&lth6&gt',
+        d: 'heading',
       },
       correct: 'b',
       selected: null,
+      explanation:
+        'Headings in HTML starts from &lth1&gt to &lth6&gt in which &lth1&gt heading is the largest one and &lth6&gt is smallest one among those. The heading tags are &lth1&gt &lth2&gt &lth3&gt &lth4&gt &lth5&gt and &lth6&gt that are used for the creations of headings.',
+
       links: [
         {
-          text: 'javascript.info',
-          href: 'https://javascript.info/types#type-typeof',
-        },
-        {
-          text: 'MDN',
-          href:
-            'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof',
+          text: 'HTML',
+          href: 'https://www.sanfoundry.com/1000-html-questions-answers/',
         },
       ],
     },
     {
-      text: 'What are the different ways to declare a JS variable?',
+      text: 'Which element is used for styling HTML5 layout?',
       answers: {
-        a: 'constant, let, variable',
-        b: 'var, const, let, function',
-        c: 'var, let, const',
-        d: 'var, object, loop',
+        a: 'CSS',
+        b: 'jQuery',
+        c: 'JavaScript',
+        d: 'PHP',
       },
-      correct: 'c',
+      correct: 'a',
       selected: null,
+      explanation:
+        'For styling HTML5, CSS i.e Cascading Style Sheet is used. It is style sheet language and designed to describe presentation of its content including layouts, colors and fonts. CSS can control the layout of multiple webpages.',
+
       links: [
         {
-          text: 'javascript.info',
-          href: 'https://javascript.info/variables',
-        },
-        {
-          text: 'Tyler McGinnis',
-          href: 'https://ui.dev/var-let-const/',
+          text: 'HTML',
+          href: 'https://www.sanfoundry.com/1000-html-questions-answers/',
         },
       ],
     },
     {
-      text: 'What does `typeof` do?',
+      text: 'Which is the HTML paragraph tag?',
       answers: {
-        a: 'changes the type of a primitive value',
-        b: 'returns a string describing the type of a value',
-        c: 'determines if a value is primitive',
-        d: 'can tell the difference between arrays and objects',
+        a: '&ltp&gt',
+        b: '&ltpre&gt',
+        c: '&lthr&gt',
+        d: '&lta&gt',
       },
-      correct: 'b',
+      correct: 'a',
       selected: null,
+      explanation: '&ltp&gt tag is used for paragraph in HTML.',
+
       links: [
         {
-          text: 'javascript.info',
-          href: 'https://javascript.info/types#type-typeof',
-        },
-        {
-          text: 'MDN',
-          href:
-            'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof',
+          text: 'HTML',
+          href: 'https://www.sanfoundry.com/1000-html-questions-answers/',
         },
       ],
     },
     {
-      text: 'What are the different ways to declare a JS variable?',
+      text: 'Which of the following is not an error in JavaScript?',
+
       answers: {
-        a: 'constant, let, variable',
-        b: 'var, const, let, function',
-        c: 'var, let, const',
-        d: 'var, object, loop',
-      },
-      correct: 'c',
-      selected: null,
-      links: [
-        {
-          text: 'javascript.info',
-          href: 'https://javascript.info/variables',
-        },
-        {
-          text: 'Tyler McGinnis',
-          href: 'https://ui.dev/var-let-const/',
-        },
-      ],
-    },
-    {
-      text: 'What does `typeof` do?',
-      answers: {
-        a: 'changes the type of a primitive value',
-        b: 'returns a string describing the type of a value',
-        c: 'determines if a value is primitive',
-        d: 'can tell the difference between arrays and objects',
+        a: 'Missing of Bracket',
+        b: 'Division by zero',
+        c: 'Syntax error',
+        d: 'Missing of semicolons',
       },
       correct: 'b',
       selected: null,
+
+      explanation:
+        'In JavaScript, division by zero does not result in an error; it just returns infinity or negative infinity. However, because zero divided by zero has no well-defined value, the result of this operation is the unusual not-a-number value, which is written as NaN.',
+
       links: [
         {
-          text: 'javascript.info',
-          href: 'https://javascript.info/types#type-typeof',
-        },
-        {
-          text: 'MDN',
-          href:
-            'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof',
+          text: 'Javascript',
+          href: 'https://www.sanfoundry.com/1000-javascript-questions-answers/',
         },
       ],
     },
+
     {
-      text: 'What are the different ways to declare a JS variable?',
+      text: 'Why JavaScript Engine is needed?',
       answers: {
-        a: 'constant, let, variable',
-        b: 'var, const, let, function',
-        c: 'var, let, const',
-        d: 'var, object, loop',
+        a: 'Both Compiling & Interpreting the JavaScript',
+        b: 'Parsing the javascript',
+        c: 'Interpreting the JavaScript',
+        d: 'Compiling the JavaScript',
       },
       correct: 'c',
       selected: null,
+      explanation:
+        'For the most part, the JS Engine is used to interpret JavaScript. It’s used to parse javascript and run it on a web page.',
+
       links: [
         {
-          text: 'javascript.info',
-          href: 'https://javascript.info/variables',
-        },
-        {
-          text: 'Tyler McGinnis',
-          href: 'https://ui.dev/var-let-const/',
+          text: 'Javascript',
+          href: 'https://www.sanfoundry.com/1000-javascript-questions-answers/',
         },
       ],
     },
     {
-      text: 'What does `typeof` do?',
+      text: 'Which of the following CSS selectors are used to specify a group of elements?',
       answers: {
-        a: 'changes the type of a primitive value',
-        b: 'returns a string describing the type of a value',
-        c: 'determines if a value is primitive',
-        d: 'can tell the difference between arrays and objects',
-      },
-      correct: 'b',
-      selected: null,
-      links: [
-        {
-          text: 'javascript.info',
-          href: 'https://javascript.info/types#type-typeof',
-        },
-        {
-          text: 'MDN',
-          href:
-            'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof',
-        },
-      ],
-    },
-    {
-      text: 'What are the different ways to declare a JS variable?',
-      answers: {
-        a: 'constant, let, variable',
-        b: 'var, const, let, function',
-        c: 'var, let, const',
-        d: 'var, object, loop',
+        a: 'tag',
+        b: 'id',
+        c: 'class',
+        d: 'both class and tag',
       },
       correct: 'c',
       selected: null,
+      explanation:
+        'Class selectors are used to specify a group of elements. Id selector specifies a particular unique element.',
+
       links: [
         {
-          text: 'javascript.info',
-          href: 'https://javascript.info/variables',
-        },
-        {
-          text: 'Tyler McGinnis',
-          href: 'https://ui.dev/var-let-const/',
+          text: 'CSS',
+          href: 'https://www.sanfoundry.com/1000-css-questions-answers/',
         },
       ],
     },
     {
-      text: 'What does `typeof` do?',
+      text: 'Which of the following CSS selector is used to specify a rule to bind a particular unique element?',
       answers: {
-        a: 'changes the type of a primitive value',
-        b: 'returns a string describing the type of a value',
-        c: 'determines if a value is primitive',
-        d: 'can tell the difference between arrays and objects',
+        a: 'tag',
+        b: 'id',
+        c: 'class',
+        d: 'both class and tag',
       },
       correct: 'b',
       selected: null,
+      explanation:
+        'For binding a particular unique element, id selectors are used. While for a group of elements, class selector can be used.',
+
       links: [
         {
-          text: 'javascript.info',
-          href: 'https://javascript.info/types#type-typeof',
+          text: 'CSS',
+          href: 'https://www.sanfoundry.com/1000-css-questions-answers/',
         },
+      ],
+    },
+    {
+      text: 'Which of the following CSS property defines the different properties of all four sides of an element’s border in a single declaration?',
+      answers: {
+        a: 'border-collapse',
+        b: 'border-width',
+        c: 'padding',
+        d: 'border',
+      },
+      correct: 'b',
+      selected: null,
+      explanation:
+        'The border-width property sets the width of an element`s four borders. This property can have from one to four values.',
+
+      links: [
         {
-          text: 'MDN',
-          href:
-            'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof',
+          text: 'CSS',
+          href: 'https://www.sanfoundry.com/1000-css-questions-answers/',
+        },
+      ],
+    },
+    {
+      text: 'Which of the following CSS property sets the shadow for a box element?',
+      answers: {
+        a: 'set-shadow',
+        b: 'box-shadow',
+        c: 'shadow',
+        d: 'canvas-shadow',
+      },
+      correct: 'b',
+      selected: null,
+      explanation: 'box-shadow property sets the shadow for a box element.',
+
+      links: [
+        {
+          text: 'CSS',
+          href: 'https://www.sanfoundry.com/1000-css-questions-answers/',
+        },
+      ],
+    },
+    {
+      text: 'Which of the following CSS Property controls how an element is positioned?',
+      answers: {
+        a: 'static',
+        b: 'position',
+        c: 'fix',
+        d: 'set',
+      },
+      correct: 'b',
+      selected: null,
+      explanation:
+        'Position property controls how an element is positioned. When set to absolute or fixed, the element is removed completely from the normal flow of the document. When set to relative, the element is moved relative to its position in the normal flow, but a space is left where it would normally have been. The default value, static, means the element remains in the normal flow and is not positioned.',
+
+      links: [
+        {
+          text: 'CSS',
+          href: 'https://www.sanfoundry.com/1000-css-questions-answers/',
         },
       ],
     },
