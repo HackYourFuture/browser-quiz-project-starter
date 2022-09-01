@@ -10,6 +10,7 @@ export const createResultView = (props) => {
   let resultText = '';
   let score = 0;
   data.questions.forEach((question) => {
+    score += question.correct === question.selected ? 1 : 0;
     const className =
       question.correct === question.selected ? 'right' : 'wrong';
     resultText += String.raw`
@@ -21,11 +22,10 @@ export const createResultView = (props) => {
     }</answer>
       </p>
     `;
-    if (question.correct === question.selected) {
-      score++;
+    if (question.correct !== question.selected) {
       resultText += String.raw`
       <p>
-        Correct answer was: ${question.answers[question.selected]}
+        Correct answer was: ${question.answers[question.correct]}
       </p>`;
     }
   });
