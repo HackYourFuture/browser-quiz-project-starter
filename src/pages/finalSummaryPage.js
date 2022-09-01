@@ -7,4 +7,4 @@ export const finalSummaryPage = () => {
 
   const finalSummaryElement = createFinalSummaryElement();
   userInterface.appendChild(finalSummaryElement);
-}
+};

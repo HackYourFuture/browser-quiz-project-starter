@@ -11,7 +11,6 @@ const loadApp = () => {
 
   initWelcomePage();
 
-
 };
 
 window.addEventListener('load', loadApp);
