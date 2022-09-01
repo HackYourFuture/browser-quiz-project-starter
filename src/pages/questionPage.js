@@ -60,6 +60,13 @@ const correctAnswer = (e) => {
 
 };
 answersListElement.addEventListener('click', correctAnswer);
+  
+  answersListElement.addEventListener('click', () => {
+    setTimeout(() => {
+      document.getElementById(NEXT_QUESTION_BUTTON_ID).classList.remove('hide');
+    }, 2000);
+  });
+
 
 
   document
