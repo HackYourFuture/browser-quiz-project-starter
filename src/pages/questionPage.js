@@ -31,14 +31,14 @@ export const initQuestionPage = () => {
     const correctAnswer = currentQuestion.correct;
     if (selectedAnswer.innerText[0] === correctAnswer) {
       selectedAnswer.classList.add('correct');
-      if (currentQuestion['selected'] === null) {
-        quizData.finalScore++;
-      }
+      if (!(currentQuestion['selected'] === null)) return;
+      quizData.finalScore++;
     } else {
       selectedAnswer.classList.add('wrong');
     }
     currentQuestion['selected'] = selectedAnswer.innerText[0];
   };
+
   answersListElement.addEventListener('click', correctAnswer);
 
   document
