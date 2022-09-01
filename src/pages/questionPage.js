@@ -8,7 +8,8 @@ import {
 import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
-import { detectEndOfQuiz } from './detectEndOfQuiz'
+import { finalSummaryPage } from './finalSummaryPage.js'
+
 
 
 export const initQuestionPage = () => {
@@ -36,7 +37,15 @@ export const initQuestionPage = () => {
 };
 
 const nextQuestion = () => {
-  quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
+  const { currentQuestionIndex, questions } = quizData
+  const totalQuestions = questions.length
 
-  initQuestionPage();
+  if (currentQuestionIndex === totalQuestions - 1) {
+    finalSummaryPage()
+  } else {
+    quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
+    initQuestionPage();
+  }
+
+
 };
