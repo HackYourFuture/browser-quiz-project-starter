@@ -39,6 +39,19 @@ export const initQuestionPage = () => {
     const correctAnswer = currentQuestion.correct;
     if (selectedAnswer.innerText[0] === correctAnswer) {
       selectedAnswer.classList.add('correct');
+      quizData.finalScore++;
+    } else {
+      selectedAnswer.classList.add('wrong');
+    }
+    currentQuestion['selected'] = selectedAnswer.innerText[0];
+  };
+  answersListElement.addEventListener('click', correctAnswer);
+
+  const correctAnswer = (e) => {
+    const selectedAnswer = e.target;
+    const correctAnswer = currentQuestion.correct;
+    if (selectedAnswer.innerText[0] === correctAnswer) {
+      selectedAnswer.classList.add('correct');
 
       if (currentQuestion['selected'] === null) {
         quizData.finalScore++;
@@ -53,6 +66,12 @@ export const initQuestionPage = () => {
     currentScoreElement.innerHTML = currentScore;
   };
   answersListElement.addEventListener('click', correctAnswer);
+
+  answersListElement.addEventListener('click', () => {
+    setTimeout(() => {
+      document.getElementById(NEXT_QUESTION_BUTTON_ID).classList.remove('hide');
+    }, 2000);
+  });
 
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
