@@ -54,7 +54,8 @@ export const quizData = {
         },
         {
           text: 'F1Mix',
-          href: 'https://f1mix.com/results/2015-formula-1-world-championship/',
+          href:
+            'https://f1mix.com/results/2015-formula-1-world-championship/',
         },
       ],
     },
@@ -71,8 +72,7 @@ export const quizData = {
       links: [
         {
           text: 'Spanish Good-bye',
-          href:
-            'https://www.fluentu.com/blog/spanish/how-to-say-goodbye-spanish/#toc_10',
+          href: 'https://www.fluentu.com/blog/spanish/how-to-say-goodbye-spanish/#toc_10',
         },
         {
           text: 'Dictionary',
@@ -95,8 +95,7 @@ export const quizData = {
       links: [
         {
           text: 'Suicide day in history',
-          href:
-            'https://www.history.com/this-day-in-history/marilyn-monroe-is-found-dead',
+          href: 'https://www.history.com/this-day-in-history/marilyn-monroe-is-found-dead',
         },
         {
           text: 'From the Archives',
@@ -123,7 +122,8 @@ export const quizData = {
         },
         {
           text: 'History of Dodgers',
-          href: 'https://sportsteamhistory.com/los-angeles-dodgers/',
+          href:
+            'https://sportsteamhistory.com/los-angeles-dodgers/',
         },
       ],
     },
@@ -166,13 +166,13 @@ export const quizData = {
         },
         {
           text: 'Gabriel Asirvatham',
-          href: 'https://qr.ae/pvbdj6',
+          href:
+            'https://qr.ae/pvbdj6',
         },
       ],
     },
     {
-      text:
-        'What collaborative album was released by Kanye West and Jay-Z in 2011?',
+      text: 'What collaborative album was released by Kanye West and Jay-Z in 2011?',
       answers: {
         a: 'Distant Relatives',
         b: 'What a Time to be Alive',
@@ -184,19 +184,18 @@ export const quizData = {
       links: [
         {
           text: 'theguardian.com',
-          href:
-            'https://www.theguardian.com/music/2011/jul/26/jay-z-kanye-west-throne',
+          href: 'https://www.theguardian.com/music/2011/jul/26/jay-z-kanye-west-throne',
         },
         {
           text: 'Fandom',
-          href: 'https://kanyewest.fandom.com/wiki/Watch_The_Throne',
+          href:
+            'https://kanyewest.fandom.com/wiki/Watch_The_Throne',
         },
       ],
     },
 
     {
-      text:
-        'What was the name commonly given to the ancient trade routes that connected the East and West of Eurasia?',
+      text: 'What was the name commonly given to the ancient trade routes that connected the East and West of Eurasia?',
       answers: {
         a: 'Silk Road',
         b: 'Spice Road',
@@ -208,19 +207,18 @@ export const quizData = {
       links: [
         {
           text: 'Khan Academy',
-          href:
-            'https://www.khanacademy.org/humanities/world-history/ancient-medieval/silk-road/a/the-silk-road#:~:text=The%20Silk%20Road%20was%20a,transported%20along%20these%20trade%20networks.',
+          href: 'https://www.khanacademy.org/humanities/world-history/ancient-medieval/silk-road/a/the-silk-road#:~:text=The%20Silk%20Road%20was%20a,transported%20along%20these%20trade%20networks.',
         },
         {
           text: 'Britannica',
-          href: 'https://www.britannica.com/topic/Silk-Road-trade-route',
+          href:
+            'https://www.britannica.com/topic/Silk-Road-trade-route',
         },
       ],
     },
 
     {
-      text:
-        'When Gmail first launched, how much storage did it provide for your email?',
+      text: 'When Gmail first launched, how much storage did it provide for your email?',
       answers: {
         a: '512MB',
         b: '1GB',
@@ -232,14 +230,15 @@ export const quizData = {
       links: [
         {
           text: 'Wikipedia',
-          href:
-            'https://en.wikipedia.org/wiki/Gmail#:~:text=On%20April%201%2C%202004%2C%20Gmail,to%20two%20gigabytes%20of%20storage.',
+          href: 'https://en.wikipedia.org/wiki/Gmail#:~:text=On%20April%201%2C%202004%2C%20Gmail,to%20two%20gigabytes%20of%20storage.',
         },
         {
           text: 'Balaji Viswanathan',
-          href: 'https://qr.ae/pvbddL',
+          href:
+            'https://qr.ae/pvbddL',
         },
       ],
     },
+
   ],
 };

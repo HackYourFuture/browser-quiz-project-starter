@@ -34,6 +34,26 @@ export const initQuestionPage = () => {
     answersListElement.appendChild(answerElement);
   }
 
+  const correctAnswer = (e) => {
+    const selectedAnswer = e.target;
+    const correctAnswer = currentQuestion.correct;
+    if (selectedAnswer.innerText[0] === correctAnswer) {
+      selectedAnswer.classList.add('correct');
+
+      if (currentQuestion['selected'] === null) {
+        quizData.finalScore++;
+      }
+    } else {
+      selectedAnswer.classList.add('wrong');
+    }
+    currentQuestion['selected'] = selectedAnswer.innerText[0];
+    console.log(currentQuestion['selected']);
+    const currentScore = updateScore(quizData.questions);
+    const currentScoreElement = document.getElementById(CURRENT_SCORE_ID);
+    currentScoreElement.innerHTML = currentScore;
+  };
+  answersListElement.addEventListener('click', correctAnswer);
+
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
     .addEventListener('click', nextQuestion);
