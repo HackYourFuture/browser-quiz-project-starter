@@ -18,6 +18,4 @@ export const createTimerElement = () => {
     minutes.textContent = '00';
 
     return timer;
-
-
 }
