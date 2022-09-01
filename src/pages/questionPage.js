@@ -38,7 +38,6 @@ export const initQuestionPage = () => {
       selectedAnswer.classList.add('wrong');
     }
     currentQuestion['selected'] = selectedAnswer.innerText[0];
-
   };
   answersListElement.addEventListener('click', correctAnswer);
 
