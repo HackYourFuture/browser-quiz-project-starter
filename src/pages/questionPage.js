@@ -26,6 +26,13 @@ export const initQuestionPage = () => {
     answersListElement.appendChild(answerElement);
   }
 
+
+  answersListElement.addEventListener('click', () => {
+    setTimeout(() => {
+      document.getElementById(NEXT_QUESTION_BUTTON_ID).classList.remove('hide');
+    }, 2000);
+  });
+
   const correctAnswer = (e) => {
     if (!(currentQuestion['selected'] === null)) return;
     const selectedAnswer = e.target;
@@ -43,6 +50,7 @@ export const initQuestionPage = () => {
   };
 
   answersListElement.addEventListener('click', correctAnswer);
+
 
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
