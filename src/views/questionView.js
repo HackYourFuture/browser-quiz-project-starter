@@ -41,6 +41,21 @@ export const createQuestionView = (props) => {
     const answers = element.querySelectorAll('.answer-item');
     for (let i = 0; i < answers.length; i++) {
       answers[i].classList.add('disabled');
+      if (answers[i].id === currentQuestion.selected) {
+        if (currentQuestion.correct === currentQuestion.selected) {
+          //-y- if answer is correct, option's background set to green
+          answers[i].classList.add('correct');
+        } else {
+          //-y- if answer is wrong, option's background set to red
+          answers[i].classList.add('wrong');
+          for (let j = 0; j < answers.length; j++) {
+            //-y- and correct option's background set to green
+            if (answers[j].id === currentQuestion.correct) {
+              answers[j].classList.add('correct');
+            }
+          }
+        }
+      }
     }
   };
 

@@ -10,5 +10,7 @@ export const createAnswerElement = (props) => {
   element.innerHTML = String.raw`
     ${key}: ${answerText};
   `;
+  //-y- added id for matching key with correct and selected
+  element.setAttribute('id', `${key}`);
   return { element };
 };

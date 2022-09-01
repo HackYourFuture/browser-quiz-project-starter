@@ -16,7 +16,15 @@ ul {
   list-style: none;
 }
 
-/*to prevent change answer*/
+/*-y- to prevent change answer*/
 .disabled {
   pointer-events: none;
+}
+/*-y- for correct answers. We can add some nice animations*/
+.correct {
+  background-color: green;
+}
+/*-y- for wrong answers. We can add some nice animations*/
+.wrong {
+  background-color: red;
 }
