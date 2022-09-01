@@ -26,6 +26,19 @@ export const initQuestionPage = () => {
     answersListElement.appendChild(answerElement);
   }
 
+  const correctAnswer = (e) => {
+    const selectedAnswer = e.target;
+    const correctAnswer = currentQuestion.correct;
+    if (selectedAnswer.innerText[0] === correctAnswer) {
+      selectedAnswer.classList.add('correct');
+      quizData.finalScore++;
+    } else {
+      selectedAnswer.classList.add('wrong');
+    }
+    currentQuestion['selected'] = selectedAnswer.innerText[0];
+  };
+  answersListElement.addEventListener('click', correctAnswer);
+
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
     .addEventListener('click', nextQuestion);
