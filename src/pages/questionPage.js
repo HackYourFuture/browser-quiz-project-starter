@@ -27,11 +27,14 @@ export const initQuestionPage = () => {
   }
 
   const correctAnswer = (e) => {
+    if (!(currentQuestion['selected'] === null)) return;
     const selectedAnswer = e.target;
+
     const correctAnswer = currentQuestion.correct;
+
     if (selectedAnswer.innerText[0] === correctAnswer) {
       selectedAnswer.classList.add('correct');
-      if (!(currentQuestion['selected'] === null)) return;
+
       quizData.finalScore++;
     } else {
       selectedAnswer.classList.add('wrong');
