@@ -24,7 +24,7 @@ export const quizData = {
         d: 'The first avenger',
       },
       correct: 'c',
-      selected: 'null',
+      selected: null,
       links: [
         {
           text: 'About Thor',
@@ -59,7 +59,7 @@ export const quizData = {
     },
     {
       text:
-        'Which country did Natasha Romanoff went to to recruit Bruce Banner??',
+        'Which country did Natasha Romanoff went to to recruit Bruce Banner?',
       answers: {
         a: 'Nepal',
         b: 'India',
@@ -205,28 +205,6 @@ export const quizData = {
         {
           text: 'Marvel Cinematic Universe',
           href: 'https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe',
-        },
-      ],
-    },
-    {
-      text:
-        'How many years have passed since Thanos flicked the glove and when the Hulk flicked it again?',
-      answers: {
-        a: '10',
-        b: '4',
-        c: '20',
-        d: '5',
-      },
-      correct: 'd',
-      selected: null,
-      links: [
-        {
-          text: 'About Thanos',
-          href: 'https://en.wikipedia.org/wiki/Thanos',
-        },
-        {
-          text: 'About Hulk',
-          href: 'https://en.wikipedia.org/wiki/Hulk',
         },
       ],
     },
