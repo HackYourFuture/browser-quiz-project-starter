@@ -21,6 +21,13 @@ export const createQuestionView = (props) => {
       ? 'Next question'
       : 'View my results';
   // I use String.raw just to get fancy colors for the HTML in VS Code.
+  const getQuestionLinks = (links) => {
+    return links
+      .map((link) => {
+        return `<a href="${link.href}" target="_blank"> ${link.text}</a>`;
+      })
+      .join(' & ');
+  };
   element.innerHTML = String.raw`
     <h1 class="questionCount">${
       currentQuestionIndex + 1
@@ -29,6 +36,9 @@ export const createQuestionView = (props) => {
 
     <ul id="answerList">
     </ul>
+    <div id="hint"> 
+      ${getQuestionLinks(currentQuestion.links)}
+    </div>
     <h1 id="scoreDisplay">Your score: ${score}</h1>
     <h1 id="counterDisplay">${count}</h1> 
     <button id="btnNext">
@@ -36,12 +46,8 @@ export const createQuestionView = (props) => {
     </button>
   `;
 
-  const {
-    answerList,
-    btnNext,
-    scoreDisplay,
-    counterDisplay,
-  } = findElementsWithIds(element);
+  const { answerList, btnNext, scoreDisplay, counterDisplay } =
+    findElementsWithIds(element);
 
   for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
     const { element: answerElement } = createAnswerElement({ key, answerText });
