@@ -13,6 +13,6 @@ export const createScoreElement = (currentScore) => {
   return element;
 };
 
-export const updateScore = (finalScore) => {
+export const updateScore = () => {
   document.getElementById(CURRENT_SCORE_ID).innerText = quizData.finalScore;
 };

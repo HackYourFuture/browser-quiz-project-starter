@@ -16,14 +16,11 @@ export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
 
-  const scoreElement = createScoreElement(quizData.finalScore);
-  scoreElement.classList.add('score');
-  userInterface.appendChild(scoreElement);
+  userInterface.appendChild(createScoreElement(quizData.finalScore));
 
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
 
   const questionElement = createQuestionElement(currentQuestion.text);
-
   userInterface.appendChild(questionElement);
 
   const answersListElement = document.getElementById(ANSWERS_LIST_ID);
@@ -46,7 +43,6 @@ export const initQuestionPage = () => {
       selectedAnswer.classList.add('wrong');
     }
     currentQuestion['selected'] = selectedAnswer.innerText[0];
-    console.log(currentQuestion['selected']);
 
     updateScore();
   };
