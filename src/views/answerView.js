@@ -7,7 +7,7 @@
 export const createAnswerElement = (key, answerText) => {
   const element = document.createElement('li');
   element.innerHTML = String.raw`
-    ${key}: ${answerText};
+    ${key}: ${answerText}
   `;
   element.style.border = "1px solid black";
   element.style.margin = "20px";

@@ -1,14 +1,18 @@
 'use strict';
 
-import { quizData } from './data.js';
 import { initWelcomePage } from './pages/welcomePage.js';
+import { createTimerElement } from './views/timerViews.js'
 
-import{setTime} from './pages/questionPage.js'
+const body = document.body;
+export const time = createTimerElement();
+time.style.position = 'absolute';
+time.style.top = '6%';
+time.style.left = '49.3%';
+time.hidden = true;
+body.appendChild(time);
 
 const loadApp = () => {
-  quizData.currentQuestionIndex = 0;
   initWelcomePage();
-
 };
 
 window.addEventListener('load', loadApp);

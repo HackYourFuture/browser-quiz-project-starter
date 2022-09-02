@@ -7,9 +7,11 @@ import {
 } from '../constants.js';
 import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
-import {createTimerElement} from '../views/timerviews.js'
 import { quizData } from '../data.js';
-
+import { SKIP_QUESTION_BUTTON_ID } from '../constants.js';
+import { FINISH_QUIZ_BUTTON_ID } from '../constants.js';
+import { timerIntervalId } from '../views/timerViews.js';
+import { initFinishPage } from './finishPage.js';
 
 export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
@@ -17,97 +19,94 @@ export const initQuestionPage = () => {
 
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
 
-  const timerElement = createTimerElement();
+  const amount = quizData.questions.length;
+  const questionNumber = `Question [ ${quizData.currentQuestionIndex + 1} / ${amount} ]`;
+  const score = `Score &nbsp&nbsp [ ${quizData.rightAnswers} / ${amount} ]`;
+  const wrongAnswer = `&nbspWrong &nbsp [ ${quizData.wrongAnswers} / ${amount} ]`;
+  const skipped = `Skipped [ ${quizData.skippedQuestions} / ${amount} ]`;
 
-  userInterface.appendChild(timerElement);
-
-  const questionElement = createQuestionElement(currentQuestion.text);
-
+  const questionElement = createQuestionElement(currentQuestion.text, questionNumber, score, wrongAnswer, skipped);
   userInterface.appendChild(questionElement);
 
   const answersListElement = document.getElementById(ANSWERS_LIST_ID);
 
-  //in this loop we will have :
-  // this part key, answerText      //this part will have the data ex:["a",'constant, let, variable'...]
   for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
     const answerElement = createAnswerElement(key, answerText);
 
-    // assign a variable to the right answer ex: correctAnswer ="a"
     const correctAnswer = currentQuestion.correct;
     answersListElement.appendChild(answerElement);
-    //key has value from the loop & give li.id the key
-    answerElement.id = key;  
-    
-    // condition : if correctAnswer which is in the data.js(correct) === key (come from the loop)
+
     if (correctAnswer === key) {
-      answerElement.className = 'right-answer'; //give li class   
+      answerElement.id = 'right-answer';
     } else {
       answerElement.className = 'wrong-answer';
     }
   }
 
-  const right = document.getElementsByClassName('right-answer')[0];
-  right.addEventListener('click', (e) => {
-
-    // if user didnt click on answer that means the currentQuestion.selected will still be empty
+  const right = document.getElementById('right-answer');
+  right.addEventListener('click', () => {
     if (currentQuestion.selected === null) {
-      
-      // now i got answer so now  currentQuestion.selected has value(so we cant click in other button)
-      currentQuestion.selected = e.target.id;
+      currentQuestion.selected = right;
       right.style.background = 'green';
-      quizData.rightAnswers++; // add one right answer
+      quizData.rightAnswers++;
+      quizData.result.right++;
     }
   });
 
   const wrong = document.getElementsByClassName('wrong-answer');
-  for (let i = 0; i < wrong.length; i++) { 
-    wrong[i].addEventListener('click', (e) => {
+  for (let i = 0; i < wrong.length; i++) {
+    wrong[i].addEventListener('click', () => {
       if (currentQuestion.selected === null) {
-        currentQuestion.selected = e.target.id;
+        currentQuestion.selected = wrong[i];
         wrong[i].style.background = 'red';
-   // in this line while I have wrong answer will give me the right one at the same time
-        right.style.background = 'green';
+        setTimeout(() => { right.style.background = 'green'; }, 500);
+        quizData.wrongAnswers++;
+        quizData.result.wrong++;
       }
     });
   }
 
-  document
-    .getElementById(NEXT_QUESTION_BUTTON_ID)
-    .addEventListener('click', nextQuestion);
-};
+  const toNextQuestion = document.getElementById(NEXT_QUESTION_BUTTON_ID);
+  toNextQuestion.addEventListener('click', () => {
+    if (currentQuestion.selected === null) {
+      currentQuestion.selected = wrong[0];
+      right.style.background = 'green';
+      quizData.wrongAnswers++;
+      quizData.result.wrong++;
+      setTimeout(() => { nextQuestion() }, 1000);
+    } else {
+      nextQuestion();
+    }
+  });
+
+  const skipQuestion = document.getElementById(SKIP_QUESTION_BUTTON_ID);
+  skipQuestion.addEventListener('click', () => {
+    if (currentQuestion.selected === null) {
+      currentQuestion.selected = right;
+      setTimeout(() => { right.style.background = 'green'; }, 100);
+      setTimeout(() => { nextQuestion(); }, 1000);
+      quizData.skippedQuestions++;
+      quizData.result.skipped++;
+    }
+  });
+
+  const finish = document.getElementById(FINISH_QUIZ_BUTTON_ID);
+  if (quizData.currentQuestionIndex < 9) {
+    finish.hidden = true;
+  } else {
+    toNextQuestion.hidden = true;
+    finish.style.left = '26.7%';
+  }
+  finish.addEventListener('click', () => {
+    clearInterval(timerIntervalId);
+    setTimeout(() => {
+      initFinishPage();
+    }, 1500);
+  });
+}
 
 const nextQuestion = () => {
-  quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
+  quizData.currentQuestionIndex++;
 
   initQuestionPage();
 };
-
-
-
-let totalSeconds = 0;
-let timerIntervalId = 0;
-
-export function setTime(start) {
-    if (start) {
-      timerIntervalId = setInterval(increaseTimer, 1000);
-    } else if (timerIntervalId) {
-      clearInterval(timerIntervalId);
-      timerIntervalId = 0;
-    }
-  }
-  function increaseTimer() {
-    ++totalSeconds;
-    let minutes = document.getElementById('minutes')
-    minutes.innerHTML = pad(totalSeconds % 60);
-    let seconds = document.getElementById('seconds')
-    seconds.innerHTML = pad(parseInt(totalSeconds / 60));
-  }
-  function pad(val) {
-    let valString = val + '';
-    if (valString.length < 2) {
-      return '0' + valString;
-    } else {
-      return valString;
-    }
-  }
-  
