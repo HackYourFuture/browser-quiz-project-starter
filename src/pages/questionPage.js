@@ -8,6 +8,7 @@ import {
 import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
+import { finalSummaryPage } from './finalSummaryPage.js';
 
 export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
@@ -26,11 +27,13 @@ export const initQuestionPage = () => {
     answersListElement.appendChild(answerElement);
   }
 
-
   answersListElement.addEventListener('click', () => {
     setTimeout(() => {
-      document.getElementById(NEXT_QUESTION_BUTTON_ID).classList.remove('hide');
-    }, 2000);
+      document.getElementById(NEXT_QUESTION_BUTTON_ID) &&
+        document
+          .getElementById(NEXT_QUESTION_BUTTON_ID)
+          .classList.remove('hide');
+    }, 300);
   });
 
   const correctAnswer = (e) => {
@@ -46,11 +49,15 @@ export const initQuestionPage = () => {
     } else {
       selectedAnswer.classList.add('wrong');
     }
+
     currentQuestion['selected'] = selectedAnswer.innerText[0];
+
+    if (quizData.currentQuestionIndex === quizData.questions.length - 1) {
+      finalSummaryPage();
+    }
   };
 
   answersListElement.addEventListener('click', correctAnswer);
-
 
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
