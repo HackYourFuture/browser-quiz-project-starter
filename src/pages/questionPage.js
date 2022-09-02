@@ -14,7 +14,7 @@ export const initQuestionPage = (data) => {
 
   const handleAnswer = (currentQuestion, selected) => {
     currentQuestion.selected = selected;
-    if (currentQuestion.correct === currentQuestion.selected) {
+    if (currentQuestion.correct === selected) {
       data.score++; //-y- if the user choose right option score increases
     }
     view.showAnswer(currentQuestion, data.score); //-y- data.score sended to showAnswer function
@@ -22,7 +22,15 @@ export const initQuestionPage = (data) => {
 
   const currentQuestion = data.questions[data.currentQuestionIndex];
 
-  const props = { currentQuestion, onNextClick, handleAnswer, data }; //-y- data added to questionView. Because we want to reach data.score in questionView
+  const { score, currentQuestionIndex, questions } = data;
+  const props = {
+    currentQuestion,
+    onNextClick,
+    handleAnswer,
+    score,
+    currentQuestionIndex,
+    questionsLength: questions.length,
+  };
   const view = createQuestionView(props);
 
   return view;

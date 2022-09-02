@@ -6,18 +6,27 @@ import { findElementsWithIds } from '../helpers/findElementsWithIds.js';
  * @returns {{Element}}
  */
 export const createQuestionView = (props) => {
-  const { currentQuestion, onNextClick, handleAnswer, data } = props;
+  const {
+    currentQuestion,
+    onNextClick,
+    handleAnswer,
+    score,
+    currentQuestionIndex,
+    questionLength,
+  } = props;
   const element = document.createElement('div');
-
+  const btnText =
+    currentQuestionIndex < questionLength - 1 ? 'Next Question' : 'Finish';
   // I use String.raw just to get fancy colors for the HTML in VS Code.
   element.innerHTML = String.raw`
+    <h1>Question: ${currentQuestionIndex + 1} / ${questionLength}</h1>
     <h1>${currentQuestion.text}</h1>
 
     <ul id="answerList">
     </ul>
-    <h1 id="scoreDisplay">${data.score}</h1> 
+    <h1 id="scoreDisplay">Score: ${score}</h1> 
     <button id="btnNext">
-      Next question
+      ${btnText}
     </button>
   `;
 
@@ -36,10 +45,12 @@ export const createQuestionView = (props) => {
   const showAnswer = (currentQuestion, score) => {
     console.log({ currentQuestion }, score);
     //-y- if the answer is true, scoreDisplay is updated
-    scoreDisplay.innerHTML = score;
+    scoreDisplay.textContent= 'Score: ' + score;
 
     const answers = element.querySelectorAll('.answer-item');
-    for (let i = 0; i < answers.length; i++) {
+    answers.forEach((answer) => {
+      ...
+    }
       answers[i].classList.add('disabled');
       if (answers[i].id === currentQuestion.selected) {
         if (currentQuestion.correct === currentQuestion.selected) {
