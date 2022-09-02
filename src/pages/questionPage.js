@@ -15,7 +15,7 @@ export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
 
-  // Update Score, Create Score Element
+  //Update Score, Create Score Element
   const currentScore = updateScore(quizData.questions);
   const scoreElement = createScoreElement(currentScore);
   scoreElement.classList.add('score');
@@ -33,19 +33,6 @@ export const initQuestionPage = () => {
     const answerElement = createAnswerElement(key, answerText);
     answersListElement.appendChild(answerElement);
   }
-
-  const correctAnswer = (e) => {
-    const selectedAnswer = e.target;
-    const correctAnswer = currentQuestion.correct;
-    if (selectedAnswer.innerText[0] === correctAnswer) {
-      selectedAnswer.classList.add('correct');
-      quizData.finalScore++;
-    } else {
-      selectedAnswer.classList.add('wrong');
-    }
-    currentQuestion['selected'] = selectedAnswer.innerText[0];
-  };
-  answersListElement.addEventListener('click', correctAnswer);
 
   const correctAnswer = (e) => {
     const selectedAnswer = e.target;
