@@ -43,7 +43,6 @@ export const initQuestionPage = () => {
   const correctAnswer = (e) => {
     if (!(currentQuestion['selected'] === null)) return;
     const selectedAnswer = e.target;
-
     const correctAnswer = currentQuestion.correct;
 
     if (selectedAnswer.dataset.key === correctAnswer) {
@@ -58,7 +57,9 @@ export const initQuestionPage = () => {
     if (quizData.currentQuestionIndex === quizData.questions.length - 1) {
       finalSummaryPage();
     }
+
     updateScore();
+
   };
 
   answersListElement.addEventListener('click', correctAnswer);
