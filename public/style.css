@@ -1,3 +1,171 @@
+body {
+  background-image: url('./assets/background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.whitecover {
+  position: absolute;
+  z-index: 1;
+  right: 1vw;
+  top: 2vh;
+  height: 96vh;
+  width: 40vw;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.header {
+  z-index: 3;
+  position: absolute;
+  right: 0vw;
+  top: 0vh;
+  height: 4vh;
+  width: 40vw;
+  background-color: rgba(51, 56, 233, 0.7);
+}
+
+#root {
+  z-index: 2;
+  position: absolute;
+  right: 0.5vw;
+  top: 1vh;
+  height: 94vh;
+  width: 39vw;
+  content: '';
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+#root * {
+  font-family: Tahoma, Geneva, Verdana, sans-serif;
+}
+#h1Start {
+  position: absolute;
+  top: 17vh;
+  width: 40vw;
+  font-size: 35px;
+  text-align: center;
+}
+#h1Start span {
+  display: block;
+  font-size: 20px;
+  font-weight: normal;
+  text-align: center;
+}
+#btnStart {
+  background-color: black;
+  border: 2px solid white;
+  display: inline-block;
+  color: white;
+  border-radius: 150px;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  left: 15vw;
+  bottom: 15vh;
+  font-weight: bold;
+  font-size: 20px;
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+#counterDisplay,
+.questionCount {
+  background-color: black;
+  border: 2px solid white;
+  display: inline-block;
+  color: white;
+  border-radius: 60px;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 1vh;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  line-height: 60px;
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+}
+.questionCount {
+  left: 1vw;
+}
+#counterDisplay {
+  right: 1vw;
+}
+.score span {
+  font-weight: normal !important;
+}
+#scoreDisplay {
+  position: absolute;
+  bottom: 12vh;
+  left: 16.5vw;
+  font-size: 15px;
+  font-weight: normal;
+  border-bottom: 1px dotted rgba(51, 56, 233, 0.7);
+}
+.question {
+  font-weight: bold;
+  font-size: 15px;
+  position: absolute;
+  top: 12vh;
+  left: 10vh;
+}
+#answerList {
+  font-size: 13px;
+  font-weight: normal;
+  position: absolute;
+  top: 17vh;
+  left: 10vh;
+  padding: 0;
+  margin: 0;
+}
+
+#answerList li {
+  line-height: 30px;
+  margin: 15px 0;
+  cursor: pointer;
+}
+.answer-item span {
+  display: inline-block;
+  border-radius: 50px;
+  width: 20px;
+  height: 20px;
+  line-height: 18px;
+  text-align: center;
+  border: 1px solid rgb(51, 56, 233);
+  background-color: rgba(51, 56, 233, 0.7);
+  color: white;
+  margin-right: 10px;
+}
+.correct {
+  font-weight: bold;
+  color: green;
+}
+.correct span {
+  background-color: rgba(0, 128, 0, 0.7);
+  border-color: rgb(0, 128, 0);
+  font-weight: normal;
+}
+.wrong {
+  color: red;
+}
+.wrong span {
+  border-color: red;
+  background-color: rgba(255, 0, 0, 0.7);
+}
+
+#btnNext {
+  position: absolute;
+  bottom: 6vh;
+  left: 15vw;
+  color: white;
+  display: inline-block;
+  cursor: pointer;
+  padding: 5px 20px;
+  background-color: black;
+  border: 2px solid white;
+  border-radius: 7px;
+}
+/*
 .centered {
   position: fixed;
   top: 50%;
@@ -5,7 +173,7 @@
   transform: translate(-50%, -50%);
   text-align: center;
 }
-
+*/
 .scrollable {
   height: auto;
   max-height: 80vh;
@@ -21,10 +189,4 @@ ul {
   pointer-events: none;
 }
 /*-y- for correct answers. We can add some nice animations*/
-.correct {
-  background-color: green;
-}
 /*-y- for wrong answers. We can add some nice animations*/
-.wrong {
-  background-color: red;
-}
