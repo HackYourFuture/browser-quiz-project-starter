@@ -10,15 +10,15 @@ import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
 import { createScoreElement } from '../views/scoreView.js';
-import { updateScore } from '../views/finalSummaryView.js';
+import { updateScore } from '../views/scoreView.js';
 
 export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
 
-  const updatedScore = document.createElement('h3');
-  updatedScore.textContent = `Score : ${quizData.finalScore}`;
-  userInterface.appendChild(updatedScore);
+  const scoreElement = createScoreElement(quizData.finalScore);
+  scoreElement.classList.add('score');
+  userInterface.appendChild(scoreElement);
 
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
 

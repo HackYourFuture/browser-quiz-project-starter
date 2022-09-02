@@ -9,9 +9,3 @@ export const createFinalSummaryElement = () => {
   `;
   return element;
 };
-
-export const updateScore = () => {
-  quizData.finalScore = +score;
-  document.getElementById(CURRENT_SCORE_ID).innerText =
-    'Score:' + quizData.finalScore;
-};
