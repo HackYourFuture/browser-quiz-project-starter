@@ -26,14 +26,14 @@ export const initQuestionPage = () => {
     const answerElement = createAnswerElement(key, answerText);
     answersListElement.appendChild(answerElement);
   }
-  document.getElementById(NEXT_QUESTION_BUTTON_ID).classList.remove('hide');
+
   answersListElement.addEventListener('click', () => {
     setTimeout(() => {
       document.getElementById(NEXT_QUESTION_BUTTON_ID) &&
         document
           .getElementById(NEXT_QUESTION_BUTTON_ID)
           .classList.remove('hide');
-    }, 2000);
+    }, 300);
   });
 
   const correctAnswer = (e) => {
@@ -50,10 +50,11 @@ export const initQuestionPage = () => {
       selectedAnswer.classList.add('wrong');
     }
 
+    currentQuestion['selected'] = selectedAnswer.innerText[0];
+
     if (quizData.currentQuestionIndex === quizData.questions.length - 1) {
       finalSummaryPage();
     }
-    currentQuestion['selected'] = selectedAnswer.innerText[0];
   };
 
   answersListElement.addEventListener('click', correctAnswer);
