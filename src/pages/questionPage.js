@@ -39,18 +39,15 @@ export const initQuestionPage = () => {
   const correctAnswer = (e) => {
     if (!(currentQuestion['selected'] === null)) return;
     const selectedAnswer = e.target;
-
     const correctAnswer = currentQuestion.correct;
-
-    if (selectedAnswer.innerText[0] === correctAnswer) {
+    if (selectedAnswer.dataset.key === correctAnswer) {
       selectedAnswer.classList.add('correct');
-
       quizData.finalScore++;
     } else {
       selectedAnswer.classList.add('wrong');
     }
 
-    currentQuestion['selected'] = selectedAnswer.innerText[0];
+    currentQuestion['selected'] = selectedAnswer.dataset.key;
 
     if (quizData.currentQuestionIndex === quizData.questions.length - 1) {
       finalSummaryPage();
