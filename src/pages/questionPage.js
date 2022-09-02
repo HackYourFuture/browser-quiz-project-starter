@@ -10,16 +10,15 @@ import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
 import { createScoreElement } from '../views/scoreView.js';
+import { updateScore } from '../views/finalSummaryView.js';
 
 export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
 
-  //Update Score, Create Score Element
-  const currentScore = updateScore(quizData.questions);
-  const scoreElement = createScoreElement(currentScore);
-  scoreElement.classList.add('score');
-  userInterface.appendChild(scoreElement);
+  const updatedScore = document.createElement('h3');
+  updatedScore.textContent = `Score : ${quizData.finalScore}`;
+  userInterface.appendChild(updatedScore);
 
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
 
@@ -48,9 +47,8 @@ export const initQuestionPage = () => {
     }
     currentQuestion['selected'] = selectedAnswer.innerText[0];
     console.log(currentQuestion['selected']);
-    const currentScore = updateScore(quizData.questions);
-    const currentScoreElement = document.getElementById(CURRENT_SCORE_ID);
-    currentScoreElement.innerHTML = currentScore;
+
+    updateScore();
   };
   answersListElement.addEventListener('click', correctAnswer);
 
@@ -68,12 +66,4 @@ export const initQuestionPage = () => {
 const nextQuestion = () => {
   quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
   initQuestionPage();
-};
-
-export const updateScore = (quizDataQuestions) => {
-  const correctAnswers = quizDataQuestions.filter(
-    (question) => question.correct === question.selected
-  );
-
-  return correctAnswers.length;
 };
