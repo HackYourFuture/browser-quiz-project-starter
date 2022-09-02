@@ -8,17 +8,13 @@ import {
 import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
-import { finalSummaryPage } from './finalSummaryPage.js'
-
-
+import { finalSummaryPage } from './finalSummaryPage.js';
 
 export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
 
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
-
-
 
   const questionElement = createQuestionElement(currentQuestion.text);
 
@@ -30,6 +26,37 @@ export const initQuestionPage = () => {
     const answerElement = createAnswerElement(key, answerText);
     answersListElement.appendChild(answerElement);
   }
+  document.getElementById(NEXT_QUESTION_BUTTON_ID).classList.remove('hide');
+  answersListElement.addEventListener('click', () => {
+    setTimeout(() => {
+      document.getElementById(NEXT_QUESTION_BUTTON_ID) &&
+        document
+          .getElementById(NEXT_QUESTION_BUTTON_ID)
+          .classList.remove('hide');
+    }, 2000);
+  });
+
+  const correctAnswer = (e) => {
+    if (!(currentQuestion['selected'] === null)) return;
+    const selectedAnswer = e.target;
+
+    const correctAnswer = currentQuestion.correct;
+
+    if (selectedAnswer.innerText[0] === correctAnswer) {
+      selectedAnswer.classList.add('correct');
+
+      quizData.finalScore++;
+    } else {
+      selectedAnswer.classList.add('wrong');
+    }
+
+    if (quizData.currentQuestionIndex === quizData.questions.length - 1) {
+      finalSummaryPage();
+    }
+    currentQuestion['selected'] = selectedAnswer.innerText[0];
+  };
+
+  answersListElement.addEventListener('click', correctAnswer);
 
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
@@ -37,15 +64,7 @@ export const initQuestionPage = () => {
 };
 
 const nextQuestion = () => {
-  const { currentQuestionIndex, questions } = quizData
-  const totalQuestions = questions.length
+  quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
 
-  if (currentQuestionIndex === totalQuestions - 1) {
-    finalSummaryPage()
-  } else {
-    quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
-    initQuestionPage();
-  }
-
-
+  initQuestionPage();
 };
