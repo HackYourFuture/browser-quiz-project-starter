@@ -48,7 +48,9 @@ export const createQuestionView = (props) => {
     scoreDisplay.textContent= 'Score: ' + score;
 
     const answers = element.querySelectorAll('.answer-item');
-    for (let i = 0; i < answers.length; i++) {
+    answers.forEach((answer) => {
+      ...
+    }
       answers[i].classList.add('disabled');
       if (answers[i].id === currentQuestion.selected) {
         if (currentQuestion.correct === currentQuestion.selected) {
