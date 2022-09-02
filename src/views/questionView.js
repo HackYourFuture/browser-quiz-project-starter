@@ -13,6 +13,7 @@ export const createQuestionView = (props) => {
     score,
     currentQuestionIndex,
     questionLength,
+    count,
   } = props;
   const element = document.createElement('div');
   const btnText =
@@ -24,13 +25,19 @@ export const createQuestionView = (props) => {
 
     <ul id="answerList">
     </ul>
-    <h1 id="scoreDisplay">Score: ${score}</h1> 
+    <h1 id="scoreDisplay">Score: ${score}</h1>
+    <h1 id="counterDisplay">${count}</h1> 
     <button id="btnNext">
       ${btnText}
     </button>
   `;
 
-  const { answerList, btnNext, scoreDisplay } = findElementsWithIds(element);
+  const {
+    answerList,
+    btnNext,
+    scoreDisplay,
+    counterDisplay,
+  } = findElementsWithIds(element);
 
   for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
     const { element: answerElement } = createAnswerElement({ key, answerText });
@@ -42,33 +49,38 @@ export const createQuestionView = (props) => {
 
   btnNext.addEventListener('click', onNextClick);
 
+  const showCount = (count) => {
+    counterDisplay.textContent = count;
+  };
+
   const showAnswer = (currentQuestion, score) => {
     console.log({ currentQuestion }, score);
-    //-y- if the answer is true, scoreDisplay is updated
-    scoreDisplay.textContent= 'Score: ' + score;
+    scoreDisplay.textContent = 'Score: ' + score;
 
     const answers = element.querySelectorAll('.answer-item');
     answers.forEach((answer) => {
-      ...
-    }
-      answers[i].classList.add('disabled');
-      if (answers[i].id === currentQuestion.selected) {
+      answer.classList.add('disabled');
+      if (answer.id === currentQuestion.selected) {
         if (currentQuestion.correct === currentQuestion.selected) {
-          //-y- if answer is correct, option's background set to green
-          answers[i].classList.add('correct');
+          answer.classList.add('correct');
         } else {
-          //-y- if answer is wrong, option's background set to red
-          answers[i].classList.add('wrong');
-          for (let j = 0; j < answers.length; j++) {
-            //-y- and correct option's background set to green
-            if (answers[j].id === currentQuestion.correct) {
-              answers[j].classList.add('correct');
+          answer.classList.add('wrong');
+          answers.forEach((answerSecond) => {
+            if (answerSecond.id === currentQuestion.correct) {
+              answerSecond.classList.add('correct');
             }
-          }
+          });
         }
       }
-    }
+
+      if (
+        currentQuestion.selected === 'no answer' &&
+        answer.id === currentQuestion.correct
+      ) {
+        answer.classList.add('correct');
+      }
+    });
   };
 
-  return { element, showAnswer };
+  return { element, showAnswer, showCount };
 };
