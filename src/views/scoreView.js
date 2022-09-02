@@ -3,11 +3,11 @@
 import { CURRENT_SCORE_ID } from '../constants.js';
 import { quizData } from '../data.js';
 
-export const createScoreElement = (currentScore) => {
+export const createScoreElement = () => {
   const element = document.createElement('div');
 
   element.innerHTML = String.raw`
- <p> Score : <span class='score' id='${CURRENT_SCORE_ID}'>${currentScore}</span></p>
+ <p> Score : <span class='score' id='${CURRENT_SCORE_ID}'>${quizData.finalScore}</span></p>
 `;
 
   return element;

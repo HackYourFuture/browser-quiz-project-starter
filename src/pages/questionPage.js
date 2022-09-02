@@ -11,6 +11,7 @@ import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
 import { createScoreElement } from '../views/scoreView.js';
 import { updateScore } from '../views/scoreView.js';
+import { finalSummaryPage } from './finalSummaryPage.js';
 
 export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
@@ -30,29 +31,39 @@ export const initQuestionPage = () => {
     answersListElement.appendChild(answerElement);
   }
 
-  const correctAnswer = (e) => {
-    const selectedAnswer = e.target;
-    const correctAnswer = currentQuestion.correct;
-    if (selectedAnswer.innerText[0] === correctAnswer) {
-      selectedAnswer.classList.add('correct');
+  answersListElement.addEventListener('click', () => {
+    setTimeout(() => {
+      document.getElementById(NEXT_QUESTION_BUTTON_ID) &&
+        document
+          .getElementById(NEXT_QUESTION_BUTTON_ID)
+          .classList.remove('hide');
+    }, 300);
+  });
 
-      if (currentQuestion['selected'] === null) {
-        quizData.finalScore++;
-      }
+  const correctAnswer = (e) => {
+    if (!(currentQuestion['selected'] === null)) return;
+    const selectedAnswer = e.target;
+
+    const correctAnswer = currentQuestion.correct;
+    console.log(selectedAnswer.dataset.key);
+    console.log('correct answer', correctAnswer);
+    if (selectedAnswer.dataset.key === correctAnswer) {
+      console.log('right answer');
+      selectedAnswer.classList.add('correct');
+      quizData.finalScore++;
     } else {
       selectedAnswer.classList.add('wrong');
     }
-    currentQuestion['selected'] = selectedAnswer.innerText[0];
 
+    currentQuestion['selected'] = selectedAnswer.dataset.key;
+
+    if (quizData.currentQuestionIndex === quizData.questions.length - 1) {
+      finalSummaryPage();
+    }
     updateScore();
   };
-  answersListElement.addEventListener('click', correctAnswer);
 
-  answersListElement.addEventListener('click', () => {
-    setTimeout(() => {
-      document.getElementById(NEXT_QUESTION_BUTTON_ID).classList.remove('hide');
-    }, 2000);
-  });
+  answersListElement.addEventListener('click', correctAnswer);
 
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
