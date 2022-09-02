@@ -45,7 +45,7 @@ export const createQuestionView = (props) => {
   const showAnswer = (currentQuestion, score) => {
     console.log({ currentQuestion }, score);
     //-y- if the answer is true, scoreDisplay is updated
-    scoreDisplay.innerHTML = 'Score: ' + score;
+    scoreDisplay.textContent= 'Score: ' + score;
 
     const answers = element.querySelectorAll('.answer-item');
     for (let i = 0; i < answers.length; i++) {
