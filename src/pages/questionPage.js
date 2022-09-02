@@ -45,10 +45,8 @@ export const initQuestionPage = () => {
     const selectedAnswer = e.target;
 
     const correctAnswer = currentQuestion.correct;
-    console.log(selectedAnswer.dataset.key);
-    console.log('correct answer', correctAnswer);
+
     if (selectedAnswer.dataset.key === correctAnswer) {
-      console.log('right answer');
       selectedAnswer.classList.add('correct');
       quizData.finalScore++;
     } else {
