@@ -17,15 +17,19 @@ export const createQuestionView = (props) => {
   } = props;
   const element = document.createElement('div');
   const btnText =
-    currentQuestionIndex < questionLength - 1 ? 'Next Question' : 'Finish';
+    currentQuestionIndex < questionLength - 1
+      ? 'Next question'
+      : 'View my results';
   // I use String.raw just to get fancy colors for the HTML in VS Code.
   element.innerHTML = String.raw`
-    <h1>Question: ${currentQuestionIndex + 1} / ${questionLength}</h1>
-    <h1>${currentQuestion.text}</h1>
+    <h1 class="questionCount">${
+      currentQuestionIndex + 1
+    } / ${questionLength}</h1>
+    <h1 class="question">${currentQuestion.text}</h1>
 
     <ul id="answerList">
     </ul>
-    <h1 id="scoreDisplay">Score: ${score}</h1>
+    <h1 id="scoreDisplay">Your score: ${score}</h1>
     <h1 id="counterDisplay">${count}</h1> 
     <button id="btnNext">
       ${btnText}
@@ -55,7 +59,7 @@ export const createQuestionView = (props) => {
 
   const showAnswer = (currentQuestion, score) => {
     console.log({ currentQuestion }, score);
-    scoreDisplay.textContent = 'Score: ' + score;
+    scoreDisplay.textContent = 'Your score: ' + score;
 
     const answers = element.querySelectorAll('.answer-item');
     answers.forEach((answer) => {

@@ -8,7 +8,7 @@ export const createAnswerElement = (props) => {
   //y - added classname to each li element (answer-item)
   element.classList.add('answer-item');
   element.innerHTML = String.raw`
-    ${key}: ${answerText};
+    <span>${key}</span> ${answerText}
   `;
   //-y- added id for matching key with correct and selected
   element.setAttribute('id', `${key}`);
