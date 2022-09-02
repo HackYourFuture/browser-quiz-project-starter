@@ -22,14 +22,15 @@ export const initQuestionPage = (data) => {
 
   const currentQuestion = data.questions[data.currentQuestionIndex];
 
+  const { score, currentQuestionIndex, questions } = data;
   const props = {
     currentQuestion,
     onNextClick,
     handleAnswer,
-    score: data.score,
-    currentQuestionIndex: data.currentQuestionIndex,
-    questionLength: data.questions.length,
-  }; //-y- data added to questionView. Because we want to reach data.score in questionView
+    score,
+    currentQuestionIndex,
+    questionsLength: questions.length,
+  };
   const view = createQuestionView(props);
 
   return view;
