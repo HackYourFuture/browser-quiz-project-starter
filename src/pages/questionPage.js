@@ -8,7 +8,7 @@ import {
 import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
-import {progressDiv} from '../views/progressQuestion.js';
+import { progressDiv } from '../views/progressQuestion.js';
 
 
 export const initQuestionPage = () => {
@@ -20,7 +20,7 @@ export const initQuestionPage = () => {
 
   const questionElement = createQuestionElement(currentQuestion.text);
   userInterface.appendChild(questionElement);
-  
+
   const progressBlock = progressDiv();
   userInterface.appendChild(progressBlock);
 
