@@ -12,6 +12,10 @@
   overflow: auto;
 }
 
+.title {
+    color: red;
+}
+
 ul {
   list-style: none;
 }
