@@ -1,8 +1,3 @@
-'use strict';
-
-
-
-
 export const quizData = {
   currentQuestionIndex: 0,
   // the questions in the quiz
