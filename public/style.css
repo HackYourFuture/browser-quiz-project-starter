@@ -15,3 +15,15 @@
 ul {
   list-style: none;
 }
+
+#answers-list li {
+  cursor: pointer;
+}
+
+.true {
+  color: green;
+}
+
+.false {
+  color: red;
+}
