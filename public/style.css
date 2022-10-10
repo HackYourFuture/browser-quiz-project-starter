@@ -1,3 +1,16 @@
+html {
+  height: 100%;
+}
+
+body {
+  background-image: url(./images/solar_system_wallpaper_046_-_2000x1334.jpeg);
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+
 .centered {
   position: fixed;
   top: 50%;
