@@ -7,7 +7,9 @@ import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
 import { createProgressElement } from '../views/progressView.js';
+import { selectAnswerVariant } from '../views/selectedAnswerView.js';
 
+export let answerElements = {};
 
 export const initQuestionPage = () => {
 
@@ -24,9 +26,15 @@ export const initQuestionPage = () => {
 
   const answersListElement = document.getElementById(ANSWERS_LIST_ID);
 
+  answerElements = {};
+
   for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
     const answerElement = createAnswerElement(key, answerText);
+    answerElement.setAttribute('id', key);
     answersListElement.appendChild(answerElement);
+
+    answerElement.addEventListener('click', selectedAnswer);
+    answerElements[key] = answerElement;
   }
 
   document
@@ -38,3 +46,7 @@ const nextQuestion = () => {
   quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
   initQuestionPage();
 };
+
+ export const selectedAnswer = (e) => {
+  selectAnswerVariant(e.target);
+ }
