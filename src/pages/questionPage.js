@@ -12,7 +12,6 @@ import { selectAnswerVariant } from '../views/selectedAnswerView.js';
 let rightAnswer;
 
 export const initQuestionPage = () => {
-
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
 
@@ -47,6 +46,6 @@ const nextQuestion = () => {
   initQuestionPage();
 };
 
- export const selectedAnswer = (e) => {
+export const selectedAnswer = (e) => {
   selectAnswerVariant(e.target, rightAnswer);
- }
+};
