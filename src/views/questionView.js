@@ -9,17 +9,19 @@ import { NEXT_QUESTION_BUTTON_ID } from '../constants.js';
  */
 export const createQuestionElement = (question) => {
   const element = document.createElement('div');
-
+  element.classList.add("context")
   // I use String.raw just to get fancy colors for the HTML in VS Code.
   element.innerHTML = String.raw`
     <h1>${question}</h1>
 
     <ul id="${ANSWERS_LIST_ID}">
     </ul>
-
-    <button id="${NEXT_QUESTION_BUTTON_ID}">
-      Next question
-    </button>
+    <div class='nextButtonDiv'>
+      <button class="btn btn-success" id="${NEXT_QUESTION_BUTTON_ID}">
+        Next question
+      </button>
+    </div>
+   
   `;
 
   return element;

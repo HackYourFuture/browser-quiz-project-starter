@@ -13,7 +13,9 @@ export const initWelcomePage = () => {
 
   document
     .getElementById(START_QUIZ_BUTTON_ID)
-    .addEventListener('click', startQuiz);
+    .addEventListener('click', startQuiz)
+    ;
+  // START_QUIZ_BUTTON_ID.classList.add("btn btn-success");
 };
 
 const startQuiz = () => {

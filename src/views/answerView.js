@@ -12,7 +12,7 @@ export const createAnswerElement = (key, answerText) => {
     console.log(selectedOption)
   };
   element.innerHTML = String.raw`
-    ${key}: ${answerText};
+    ${key}: ${answerText}
   `;
   return element;
 };
