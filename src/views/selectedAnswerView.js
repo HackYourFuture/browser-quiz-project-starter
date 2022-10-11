@@ -1,12 +1,13 @@
 
 
 export const selectAnswerVariant = (selectedElement, rightAnswer) => {
+    selectedElement.setAttribute('class','selected element');
+    rightAnswer.setAttribute('class', 'answer');
     if(selectedElement === rightAnswer) {
-        console.log("Correct answer!");
-        selectedElement.style.color = 'green';
+        selectedElement.classList.add('selected-green');
     } else {
-        selectedElement.style.color = 'red';
-        rightAnswer.style.border = '1px solid green';
+        selectedElement.classList.add('selected-red');
+        rightAnswer.classList.add('border');
     }
 
 }
