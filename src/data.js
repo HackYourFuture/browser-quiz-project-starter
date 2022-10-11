@@ -8,13 +8,14 @@ export const quizData = {
         a: 'Saul Goodman',
         b: 'Jesse Pinkman',
         c: 'Walter White',
-        d: 'Skyler White'
+        d: 'Skyler White',
       },
       correct: 'c',
       selected: null,
     },
     {
-      text: 'Which Italian automobile manufacturer gained majority control of U.S. automobile manufacturer Chrysler in 2011?',
+      text:
+        'Which Italian automobile manufacturer gained majority control of U.S. automobile manufacturer Chrysler in 2011?',
       answers: {
         a: 'Maserati',
         b: 'Fiat',
@@ -36,7 +37,8 @@ export const quizData = {
       selected: null,
     },
     {
-      text: 'How many countries does the United States share a land border with?',
+      text:
+        'How many countries does the United States share a land border with?',
       answers: {
         a: '1',
         b: '2',
@@ -80,7 +82,8 @@ export const quizData = {
       selected: null,
     },
     {
-      text: 'The emblem on the flag of the Republic of Tajikistan features a sunrise over mountains below what symbol?',
+      text:
+        'The emblem on the flag of the Republic of Tajikistan features a sunrise over mountains below what symbol?',
       answers: {
         a: 'Bird',
         b: 'Crown',
@@ -112,6 +115,5 @@ export const quizData = {
       correct: 'a',
       selected: null,
     },
-    
   ],
 };
