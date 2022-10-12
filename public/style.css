@@ -41,8 +41,6 @@ body {
   transform: translate(-50%, -50%);
 }
 
-#next-question-button:hover {}
-
 .nextButtonDiv {
   position: absolute;
   width: 100%;
