@@ -2,6 +2,7 @@
 
 import { ANSWERS_LIST_ID } from '../constants.js';
 import { NEXT_QUESTION_BUTTON_ID } from '../constants.js';
+import { quizData } from '../data.js';
 
 /**
  * Create a full question element
@@ -12,6 +13,7 @@ export const createQuestionElement = (question) => {
   element.classList.add("context")
   // I use String.raw just to get fancy colors for the HTML in VS Code.
   element.innerHTML = String.raw`
+
     <h1>${question}</h1>
 
     <ul id="${ANSWERS_LIST_ID}">
@@ -21,6 +23,10 @@ export const createQuestionElement = (question) => {
         Next question
       </button>
     </div>
+    <div class="progress">
+    <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: ${(quizData.currentQuestionIndex + 1) * 10}%;" aria-valuenow="10" aria-valuemin="0"
+      aria-valuemax="100">${quizData.currentQuestionIndex + 1}/10</div>
+  </div>
    
   `;
 

@@ -15,22 +15,50 @@ export const initQuestionPage = () => {
   userInterface.innerHTML = '';
 
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
+  console.log(currentQuestion);
+  localStorage.setItem('currentQuestionIndex', quizData.currentQuestionIndex)
 
   const questionElement = createQuestionElement(currentQuestion.text);
-
   userInterface.appendChild(questionElement);
+  // const answer = localStorage.getItem('selectedAnswer');
+  // console.log(answer);
+  // if (answer[quizData.currentQuestionIndex]) {
+  //   currentQuestion.selected = answer[quizData.currentQuestionIndex];
+  //   // TODO show the button later
+  // }
+  const correctAnswer = (event) => {
+    if (currentQuestion.selected != null) {
+      return;
+    }
+
+    const selectedAnswer = event.target.innerText[0];
+    console.log(selectedAnswer);
+    console.log('test');
+    const correctAnswer = currentQuestion.correct;
+
+    if (selectedAnswer === correctAnswer) {
+      console.log(true);
+
+    } else {
+      console.log(false);
+    }
+  }
+
 
   const answersListElement = document.getElementById(ANSWERS_LIST_ID);
 
   for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
     const answerElement = createAnswerElement(key, answerText);
     answersListElement.appendChild(answerElement);
+    answerElement.addEventListener('click', correctAnswer);
   }
 
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
     .addEventListener('click', nextQuestion);
 };
+
+
 
 const nextQuestion = () => {
   if (quizData.currentQuestionIndex < 9) {

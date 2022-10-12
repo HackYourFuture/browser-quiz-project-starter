@@ -9,7 +9,8 @@ html {
 }
 
 body {
-  background-image: url(https://assets.objkt.media/file/assets-003/QmUsMpgL2h8kYMdedVcY62YVWC3gDxovZ3ymiGtYE6qWZm/artifact);
+  background-image: url(./images/space.gif);
+  /* https://assets.objkt.media/file/assets-003/QmUsMpgL2h8kYMdedVcY62YVWC3gDxovZ3ymiGtYE6qWZm/artifact */
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -18,7 +19,7 @@ body {
 }
 
 .centered {
-  height: 400px;
+  height: 450px;
   width: 700px;
   position: relative;
   top: 50%;
@@ -35,13 +36,15 @@ body {
   height: 100%;
 }
 
+.context h1 {
+  color: #ffb200;
+}
+
 #next-question-button {
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
 }
-
-#next-question-button:hover {}
 
 .nextButtonDiv {
   position: absolute;
@@ -57,10 +60,20 @@ body {
   transform: translate(-50%, -50%);
 }
 
+.startDiv {
+  color: #000000;
+}
+
 .scrollable {
   height: auto;
   max-height: 80vh;
   overflow: auto;
+}
+
+.progress {
+  bottom: -15px;
+  position: absolute;
+  width: 100%;
 }
 
 ul {
@@ -86,7 +99,7 @@ ul {
 }
 
 #answers-list li:hover {
-  background-color: rgb(62, 90, 54);
+  background-color: #ffb200;
   color: white;
 }
 
