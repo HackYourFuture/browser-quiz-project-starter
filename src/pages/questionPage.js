@@ -37,11 +37,24 @@ export const initQuestionPage = () => {
     const correctAnswer = currentQuestion.correct;
 
     if (selectedAnswer === correctAnswer) {
-      console.log(true);
+
 
     } else {
       console.log(false);
     }
+  }
+
+  const showCorrectAnswer = () => {
+    if (currentQuestion.selected != null) {
+      return;
+    }
+
+    const correctAnswerElement = document.getElementById(currentQuestion.correct);
+    setInterval(() => {
+      correctAnswerElement.style.backgroundColor = 'green';
+      correctAnswerElement.style.color = 'white';
+    }, 1000);
+
   }
 
 
@@ -51,7 +64,10 @@ export const initQuestionPage = () => {
     const answerElement = createAnswerElement(key, answerText);
     answersListElement.appendChild(answerElement);
     answerElement.addEventListener('click', correctAnswer);
+    answerElement.addEventListener('click', showCorrectAnswer);
   }
+
+
 
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)

@@ -14,5 +14,6 @@ export const createAnswerElement = (key, answerText) => {
   element.innerHTML = String.raw`
     ${key}: ${answerText}
   `;
+  element.setAttribute('id', key);
   return element;
 };
