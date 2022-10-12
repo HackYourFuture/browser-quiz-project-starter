@@ -19,5 +19,6 @@ export const initWelcomePage = () => {
 };
 
 const startQuiz = () => {
+  const element = document.createElement('div');
   initQuestionPage();
 };

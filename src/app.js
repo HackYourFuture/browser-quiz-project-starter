@@ -15,8 +15,9 @@ const loadApp = () => {
   }
   if (storedIndex) {
     initQuestionPage();
-  } else {
-    initWelcomePage();
+  }
+  else {
+    initQuestionPage();
   }
 
 };

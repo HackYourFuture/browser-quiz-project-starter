@@ -10,6 +10,7 @@ html {
 
 body {
   background-image: url(./images/space.gif);
+  /* https://assets.objkt.media/file/assets-003/QmUsMpgL2h8kYMdedVcY62YVWC3gDxovZ3ymiGtYE6qWZm/artifact */
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -18,7 +19,7 @@ body {
 }
 
 .centered {
-  height: 400px;
+  height: 450px;
   width: 700px;
   position: relative;
   top: 50%;
@@ -33,6 +34,10 @@ body {
 .context {
   position: relative;
   height: 100%;
+}
+
+.context h1 {
+  color: #ffb200;
 }
 
 #next-question-button {
@@ -53,6 +58,10 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.startDiv {
+  color: #000000;
 }
 
 .scrollable {
@@ -90,7 +99,7 @@ ul {
 }
 
 #answers-list li:hover {
-  background-color: rgb(62, 90, 54);
+  background-color: #ffb200;
   color: white;
 }
 

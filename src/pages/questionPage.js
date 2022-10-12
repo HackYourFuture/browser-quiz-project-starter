@@ -31,12 +31,17 @@ export const initQuestionPage = () => {
       return;
     }
 
-    const selectedAnswer = event.target;
-    console.log(selectedAnswer.dataset.key);
+    const selectedAnswer = event.target.innerText[0];
+    console.log(selectedAnswer);
     console.log('test');
     const correctAnswer = currentQuestion.correct;
 
-    // if (selectedAnswer.data)
+    if (selectedAnswer === correctAnswer) {
+      console.log(true);
+
+    } else {
+      console.log(false);
+    }
   }
 
 
@@ -52,6 +57,8 @@ export const initQuestionPage = () => {
     .getElementById(NEXT_QUESTION_BUTTON_ID)
     .addEventListener('click', nextQuestion);
 };
+
+
 
 const nextQuestion = () => {
   if (quizData.currentQuestionIndex < 9) {

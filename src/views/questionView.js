@@ -25,7 +25,7 @@ export const createQuestionElement = (question) => {
     </div>
     <div class="progress">
     <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: ${(quizData.currentQuestionIndex + 1) * 10}%;" aria-valuenow="10" aria-valuemin="0"
-      aria-valuemax="100">${quizData.currentQuestionIndex + 1}</div>
+      aria-valuemax="100">${quizData.currentQuestionIndex + 1}/10</div>
   </div>
    
   `;
