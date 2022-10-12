@@ -9,7 +9,7 @@ html {
 }
 
 body {
-  background-image: url(https://assets.objkt.media/file/assets-003/QmUsMpgL2h8kYMdedVcY62YVWC3gDxovZ3ymiGtYE6qWZm/artifact);
+  background-image: url(./images/space.gif);
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -61,6 +61,12 @@ body {
   height: auto;
   max-height: 80vh;
   overflow: auto;
+}
+
+.progress {
+  bottom: -15px;
+  position: absolute;
+  width: 100%;
 }
 
 ul {
