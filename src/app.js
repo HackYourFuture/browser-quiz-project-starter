@@ -10,14 +10,11 @@ const loadApp = () => {
   const storedFinalScore = localStorage.getItem('finalScore');
   quizData.finalScore = storedFinalScore ? parseInt(storedFinalScore) : 0;
   const answers = localStorage.getItem('selectedAnswer');
-  if (!answers) {
-    localStorage.setItem('selectedAnswers', JSON.stringify([]));
-  }
+
   if (storedIndex) {
     initQuestionPage();
-  }
-  else {
-    initQuestionPage();
+  } else {
+    initWelcomePage();
   }
 
 };
