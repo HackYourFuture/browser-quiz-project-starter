@@ -2,7 +2,6 @@
 
 import { USER_INTERFACE_ID } from '../constants.js';
 import { createFinishElement } from '../views/finishView.js';
-import { initWelcomePage } from './welcomePage.js';
 
 
 export const initFinishPage = () => {
@@ -10,10 +9,11 @@ export const initFinishPage = () => {
   userInterface.innerHTML = '';
   const finishElement = createFinishElement();
   userInterface.appendChild(finishElement);
-  // document.getElementById("tryAgain").addEventListener('click', tryAgain);
+  document.getElementById("tryAgain").addEventListener('click', tryAgain);
 };
-// const tryAgain = () => {
-//   localStorage.clear();
-//   initWelcomePage();
-// }
+
+const tryAgain = () => {
+  localStorage.clear();
+  location.reload();
+}
 
