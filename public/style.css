@@ -50,7 +50,7 @@ body {
   position: absolute;
   width: 100%;
   height: 60px;
-  bottom: 10px;
+  bottom: 50px;
 }
 
 .startDiv {
@@ -71,7 +71,7 @@ body {
 }
 
 .progress {
-  bottom: -15px;
+  bottom: 30px;
   position: absolute;
   width: 100%;
 }
