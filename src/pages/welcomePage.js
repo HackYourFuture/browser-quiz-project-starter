@@ -13,12 +13,9 @@ export const initWelcomePage = () => {
 
   document
     .getElementById(START_QUIZ_BUTTON_ID)
-    .addEventListener('click', startQuiz)
-    ;
-  // START_QUIZ_BUTTON_ID.classList.add("btn btn-success");
+    .addEventListener('click', startQuiz);
 };
 
 const startQuiz = () => {
-  const element = document.createElement('div');
   initQuestionPage();
 };
