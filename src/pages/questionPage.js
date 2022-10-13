@@ -56,7 +56,7 @@ export const initQuestionPage = () => {
         selectedAnswerElement.style.backgroundColor = 'red';
         selectedAnswerElement.style.color = 'white';
       }
-      for (let liTag of liTags) {
+      for (let liTag of liTags) {  // after selected question, disabled the others.
         liTag.style.pointerEvents = 'none'
       }
       localStorage.setItem('finalScore', quizData.finalScore);
