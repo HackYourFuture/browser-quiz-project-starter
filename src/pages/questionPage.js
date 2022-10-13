@@ -44,12 +44,8 @@ export const initQuestionPage = (storedIndex) => {
       event.target.innerText[0]
     );
 
-    const liTags = document.getElementsByTagName('li');
+    disableOptions();
 
-    for (let liTag of liTags) {
-      // after selected question, disabled the others.
-      liTag.style.pointerEvents = 'none';
-    }
     setTimeout(() => {
       const isCorrectAnswer = event.target.innerText[0] === currentQuestion.correct;
       if (isCorrectAnswer) {
@@ -87,9 +83,12 @@ export const initQuestionPage = (storedIndex) => {
       setElementStyle(correctAnswerElement, selectedAnswerElement, true);
     } else {
       setElementStyle(correctAnswerElement, selectedAnswerElement, false);
-    }
+    };
+    disableOptions();
   }
+
 };
+
 
 /**
  * 
@@ -121,3 +120,11 @@ const nextQuestion = () => {
     initFinishPage();
   }
 };
+
+const disableOptions = () => {
+  const liTags = document.getElementsByTagName('li');
+  for (let liTag of liTags) {
+    // after selected question, disabled the others.
+    liTag.style.pointerEvents = 'none';
+  }
+}
