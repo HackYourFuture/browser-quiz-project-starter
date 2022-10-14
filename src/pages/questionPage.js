@@ -11,7 +11,7 @@ import { quizData } from '../data.js';
 import { initFinishPage } from './finishPage.js';
 import { createScoreElement, updateScore } from '../views/scoreView.js';
 import { createTimerElement } from '../views/timerView.js';
-import { startTimer } from './timerPage.js';
+import { startTimer, stopTimer } from './timerPage.js';
 
 
 
@@ -30,7 +30,8 @@ export const initQuestionPage = (storedIndex) => {
   const timerElement = createTimerElement();
 
   userInterface.insertBefore(timerElement, userInterface.firstChild);
-  startTimer(10);
+  stopTimer();
+  startTimer(10)
 
   const selectedAnswer = localStorage.getItem('selectedAnswer');
   const liTags = document.getElementsByTagName("li");
