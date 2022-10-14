@@ -18,12 +18,6 @@ const loadApp = () => {
     initFinishPage();
   } else if (storedIndex) {
     initQuestionPage(storedIndex);
-    if (selectedAnswer != 'null') {
-      for (let liTag of liTags) {
-        // after selected question, disabled the others.
-        liTag.style.pointerEvents = 'none';
-      }
-    }
   }
   else {
     initWelcomePage();

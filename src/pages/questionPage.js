@@ -23,9 +23,10 @@ export const initQuestionPage = (storedIndex) => {
   const scoreElement = createScoreElement();
   userInterface.insertBefore(scoreElement, userInterface.firstChild);
 
-  const nextBtn = document.getElementById(NEXT_QUESTION_BUTTON_ID);
   const selectedAnswer = localStorage.getItem('selectedAnswer');
   const liTags = document.getElementsByTagName("li");
+
+  const nextBtn = document.getElementById(NEXT_QUESTION_BUTTON_ID);
   nextBtn.classList.add('disabled');
 
   if (selectedAnswer != 'null' && quizData.currentQuestionIndex > 0) {  // after selecting an option -> refresh page -> button available
@@ -49,6 +50,7 @@ export const initQuestionPage = (storedIndex) => {
 
 
     for (let liTag of liTags) {
+      console.log('test')
       // after selected question, disabled the others.
       liTag.style.pointerEvents = 'none';
     }
