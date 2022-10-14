@@ -17,11 +17,11 @@ export const initWelcomePage = () => {
 };
 
 const startQuiz = () => {
-  const second = `<img src="./public/images/rocket.gif" width="500" frameBorder="0" class="startGif" allowFullScreen></img>`
+  const rocketGif = `<img src="./public/images/rocket.gif" width="100%" frameBorder="0" class="startGif" allowFullScreen></img>`
 
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = "";
-  userInterface.innerHTML = second;
+  userInterface.innerHTML = rocketGif;
   setTimeout(() => {
     initQuestionPage();
   }, 5000);
