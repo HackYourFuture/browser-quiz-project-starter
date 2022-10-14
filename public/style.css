@@ -2,6 +2,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: 'Graduate', cursive;
 }
 
 html {
@@ -38,7 +39,6 @@ body {
 
 .context h1 {
   color: #ffb200;
-  font-family: 'Graduate', cursive;
   background-color: rgba(0, 0, 0, 0.4);
 }
 
@@ -46,7 +46,6 @@ body {
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
-  font-family: 'Graduate', cursive;
 
 }
 
@@ -62,7 +61,6 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-family: 'Graduate', cursive;
 
 }
 
@@ -108,7 +106,6 @@ ul {
 
 .score-box {
   color: white;
-  font-family: 'Graduate', cursive;
 }
 
 .finishScore {

@@ -7,12 +7,9 @@ import { initWelcomePage } from './pages/welcomePage.js';
 
 const loadApp = () => {
   const storedIndex = localStorage.getItem('currentQuestionIndex');
-  console.log(storedIndex);
   quizData.currentQuestionIndex = storedIndex ? parseInt(storedIndex) : 0;
   const storedFinalScore = localStorage.getItem('finalScore');
   quizData.finalScore = storedFinalScore ? parseInt(storedFinalScore) : 0;
-  const selectedAnswer = localStorage.getItem('selectedAnswer');
-  const liTags = document.getElementsByTagName('li');
 
   if (parseInt(storedIndex) == 9) { // storedIndex==9 -> refresh page -> it goes finish page 
     initFinishPage();
