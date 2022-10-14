@@ -11,10 +11,11 @@ import { quizData } from '../data.js';
 export const createQuestionElement = (currentQuestion) => {
   const element = document.createElement('div');
   element.classList.add("context")
+  console.log(currentQuestion)
   // I use String.raw just to get fancy colors for the HTML in VS Code.
   element.innerHTML = String.raw`
 
-    <h1>${currentQuestion}</h1>
+    <h1>${currentQuestion.text}</h1>
 
     <ul id="${ANSWERS_LIST_ID}">
     </ul>
@@ -23,8 +24,9 @@ export const createQuestionElement = (currentQuestion) => {
         Next question
       </button>
     </div>
-    <div>
-    <a href=" ${currentQuestion.links[0].href}" target="_blank">${currentQuestion.links[0].text} </a></div>
+    <div class ="link">
+    <a href=" ${currentQuestion.links[0].href}" target="_blank">${currentQuestion.links[0].text} </a>
+    </div>
     <div class="progress">
     <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: ${(quizData.currentQuestionIndex + 1) * 10}%;" aria-valuenow="10" aria-valuemin="0"
       aria-valuemax="100"> ${quizData.currentQuestionIndex + 1} /10</div>
