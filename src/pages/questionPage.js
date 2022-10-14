@@ -23,12 +23,20 @@ export const initQuestionPage = (storedIndex) => {
   const scoreElement = createScoreElement();
   userInterface.insertBefore(scoreElement, userInterface.firstChild);
 
+  const nextBtn = document.getElementById(NEXT_QUESTION_BUTTON_ID);
+  const selectedAnswer = localStorage.getItem('selectedAnswer');
+  const liTags = document.getElementsByTagName("li");
+  nextBtn.classList.add('disabled');
+
+  if (selectedAnswer != 'null' && quizData.currentQuestionIndex > 0) {  // after selecting an option -> refresh page -> button available
+    nextBtn.classList.remove('disabled');
+  }
 
   const showCorrectAnswer = (event) => {
     if (currentQuestion.selected != null) {
       return;
     }
-
+    nextBtn.classList.remove('disabled');
     const selectedAnswer = event.target.innerText[0];
     localStorage.setItem('selectedAnswer', selectedAnswer);
 
@@ -39,7 +47,7 @@ export const initQuestionPage = (storedIndex) => {
       event.target.innerText[0]
     );
 
-    const liTags = document.getElementsByTagName("li");
+
     for (let liTag of liTags) {
       // after selected question, disabled the others.
       liTag.style.pointerEvents = 'none';
@@ -55,7 +63,7 @@ export const initQuestionPage = (storedIndex) => {
         setElementStyle(correctAnswerElement, selectedAnswerElement, false);
       }
       localStorage.setItem('finalScore', quizData.finalScore);
-    }, 1000);
+    }, 300);
   };
 
   const answersListElement = document.getElementById(ANSWERS_LIST_ID);
@@ -65,6 +73,8 @@ export const initQuestionPage = (storedIndex) => {
     answersListElement.appendChild(answerElement);
     answerElement.addEventListener('click', showCorrectAnswer);
   }
+
+
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
     .addEventListener('click', nextQuestion);
@@ -115,7 +125,8 @@ const nextQuestion = () => {
     quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
     localStorage.setItem('selectedAnswer', null);
     initQuestionPage();
-  } else {
+  }
+  else {
     initFinishPage();
   }
 };

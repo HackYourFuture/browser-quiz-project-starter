@@ -9,7 +9,7 @@ export const initWelcomePage = () => {
   userInterface.innerHTML = '';
 
   const welcomeElement = createWelcomeElement();
-  userInterface.appendChild(welcomeElement);
+  userInterface.append(welcomeElement);
 
   document
     .getElementById(START_QUIZ_BUTTON_ID)
@@ -17,5 +17,13 @@ export const initWelcomePage = () => {
 };
 
 const startQuiz = () => {
-  initQuestionPage();
+  const second = `<img src="./public/images/rocket.gif" width="500" frameBorder="0" class="startGif" allowFullScreen></img>`
+
+  const userInterface = document.getElementById(USER_INTERFACE_ID);
+  userInterface.innerHTML = "";
+  userInterface.innerHTML = second;
+  setTimeout(() => {
+    initQuestionPage();
+  }, 5000);
+
 };
