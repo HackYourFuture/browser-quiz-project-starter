@@ -17,7 +17,7 @@ export const initWelcomePage = () => {
 };
 
 const startQuiz = () => {
-  const rocketGif = `<img src="./public/images/rocket.gif" width="100%" frameBorder="0" class="startGif" allowFullScreen></img>`
+  const rocketGif = `<img src="./public/images/rocket.gif" width="100%" height='100%' border-radius= '10px;' frameBorder="0" class="startGif" allowFullScreen></img>`
 
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = "";
