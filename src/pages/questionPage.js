@@ -23,19 +23,14 @@ export const initQuestionPage = (storedIndex) => {
   const scoreElement = createScoreElement();
   userInterface.insertBefore(scoreElement, userInterface.firstChild);
 
-  const correctAnswer = (event) => {
+
+  const showCorrectAnswer = (event) => {
     if (currentQuestion.selected != null) {
       return;
     }
 
     const selectedAnswer = event.target.innerText[0];
     localStorage.setItem('selectedAnswer', selectedAnswer);
-  };
-
-  const showCorrectAnswer = (event) => {
-    if (currentQuestion.selected != null) {
-      return;
-    }
 
     const correctAnswerElement = document.getElementById(
       currentQuestion.correct
@@ -44,7 +39,11 @@ export const initQuestionPage = (storedIndex) => {
       event.target.innerText[0]
     );
 
-    disableOptions();
+    const liTags = document.getElementsByTagName("li");
+    for (let liTag of liTags) {
+      // after selected question, disabled the others.
+      liTag.style.pointerEvents = 'none';
+    }
 
     setTimeout(() => {
       const isCorrectAnswer = event.target.innerText[0] === currentQuestion.correct;
@@ -64,7 +63,6 @@ export const initQuestionPage = (storedIndex) => {
   for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
     const answerElement = createAnswerElement(key, answerText);
     answersListElement.appendChild(answerElement);
-    answerElement.addEventListener('click', correctAnswer);
     answerElement.addEventListener('click', showCorrectAnswer);
   }
   document
@@ -78,13 +76,12 @@ export const initQuestionPage = (storedIndex) => {
       currentQuestion.correct
     );
     const selectedAnswerElement = document.getElementById(selectedAnswer);
-    const isCorrectAnswer = selectedAnswer === currentQuestion.correct
+    const isCorrectAnswer = selectedAnswer === currentQuestion.correct;
     if (isCorrectAnswer) {
       setElementStyle(correctAnswerElement, selectedAnswerElement, true);
     } else {
       setElementStyle(correctAnswerElement, selectedAnswerElement, false);
     };
-    disableOptions();
   }
 
 };
@@ -94,13 +91,14 @@ export const initQuestionPage = (storedIndex) => {
  * 
  * @param {*} correctAnswerElement 
  * @param {*} selectedAnswerElement 
- * @param {Boolen} isCorrectAnswer 
+ * @param {Boolean} isCorrectAnswer 
  */
 const setElementStyle = (
   correctAnswerElement,
   selectedAnswerElement,
   isCorrectAnswer
 ) => {
+  if (!selectedAnswerElement) return;
   if (isCorrectAnswer) {
     correctAnswerElement.style.backgroundColor = 'green';
     correctAnswerElement.style.color = 'white';
@@ -115,16 +113,10 @@ const setElementStyle = (
 const nextQuestion = () => {
   if (quizData.currentQuestionIndex < 9) {
     quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
+    localStorage.setItem('selectedAnswer', null);
     initQuestionPage();
   } else {
     initFinishPage();
   }
 };
 
-const disableOptions = () => {
-  const liTags = document.getElementsByTagName('li');
-  for (let liTag of liTags) {
-    // after selected question, disabled the others.
-    liTag.style.pointerEvents = 'none';
-  }
-}

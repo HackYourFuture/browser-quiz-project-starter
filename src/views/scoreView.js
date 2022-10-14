@@ -6,7 +6,7 @@ import { quizData } from '../data.js';
 export const createScoreElement = () => {
   const element = document.createElement('div');
   element.innerHTML = String.raw`
-  <p class="score-box"> Score: <span class="score" id="${CURRENT_SCORE_ID}"> ${quizData.finalScore} </span> </p>
+  <p class="score-box"> SCORE: <span class="score" id="${CURRENT_SCORE_ID}"> ${quizData.finalScore} </span> </p>
   `;
 
   return element;
