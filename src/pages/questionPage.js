@@ -18,7 +18,7 @@ export const initQuestionPage = (storedIndex) => {
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
   localStorage.setItem('currentQuestionIndex', quizData.currentQuestionIndex);
 
-  const questionElement = createQuestionElement(currentQuestion.text);
+  const questionElement = createQuestionElement(currentQuestion);
   userInterface.appendChild(questionElement);
   const scoreElement = createScoreElement();
   userInterface.insertBefore(scoreElement, userInterface.firstChild);
