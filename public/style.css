@@ -38,12 +38,16 @@ body {
 
 .context h1 {
   color: #ffb200;
+  font-family: 'Graduate', cursive;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 #next-question-button {
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
+  font-family: 'Graduate', cursive;
+
 }
 
 .nextButtonDiv {
@@ -58,11 +62,10 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  font-family: 'Graduate', cursive;
+
 }
 
-.startDiv {
-  color: #000000;
-}
 
 .scrollable {
   height: auto;
@@ -85,7 +88,7 @@ ul {
   grid-template-columns: repeat(2, 1fr);
   padding-left: 0;
   position: relative;
-  bottom: -50px;
+  bottom: -30px;
 }
 
 #answers-list li {
@@ -103,10 +106,28 @@ ul {
   color: white;
 }
 
-.true {
-  color: green;
+.score-box {
+  color: white;
+  font-family: 'Graduate', cursive;
 }
 
-.false {
+.finishScore {
   color: red;
+  font-family: 'Graduate', cursive;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.disabled {
+  pointer-events: none;
+}
+
+#tryAgain {
+  margin-top: 15px;
+}
+
+.startGif {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
