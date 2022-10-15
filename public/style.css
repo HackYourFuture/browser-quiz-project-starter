@@ -42,6 +42,12 @@ body {
   background-color: rgba(0, 0, 0, 0.4);
 }
 
+.progress-number {
+  position: absolute;
+  width: 100%;
+  color: #ffb200;
+}
+
 #next-question-button {
   position: absolute;
   top: 50%;
