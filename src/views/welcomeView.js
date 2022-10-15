@@ -6,7 +6,7 @@ import { START_QUIZ_BUTTON_ID } from '../constants.js';
  * Create the welcome screen
  * @returns {Element}
  */
-export const createWelcomeElement = () => {
+export const createWelcomeElement = () => { //create welcome page content
   const element = document.createElement('div');
   element.innerHTML = String.raw`
     <h1>Welcome to Space Dive! </h1>

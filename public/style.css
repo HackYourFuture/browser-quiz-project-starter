@@ -11,7 +11,6 @@ html {
 
 body {
   background-image: url(./images/space.gif);
-  /* https://assets.objkt.media/file/assets-003/QmUsMpgL2h8kYMdedVcY62YVWC3gDxovZ3ymiGtYE6qWZm/artifact */
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -85,7 +84,6 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
 }
 
 
@@ -96,7 +94,7 @@ body {
 }
 
 .progress {
-  bottom: 30px;
+  bottom: 35px;
   position: absolute;
   width: 100%;
 }
@@ -110,7 +108,7 @@ ul {
   grid-template-columns: repeat(2, 1fr);
   padding-left: 0;
   position: relative;
-  bottom: -30px;
+  bottom: -25px;
 }
 
 #answers-list li {
@@ -130,6 +128,7 @@ ul {
 
 .score-box {
   color: white;
+  font-size: 20px;
   width: 100%;
 }
 
