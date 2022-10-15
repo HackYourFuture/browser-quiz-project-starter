@@ -21,12 +21,11 @@ export const initQuestionPage = (storedIndex) => {
   const scoreElement = createScoreElement();
   userInterface.insertBefore(scoreElement, userInterface.firstChild);
   const selectedAnswer = localStorage.getItem('selectedAnswer'); // after refresh for show the selection again store the selected answer
-  const liTags = document.getElementsByTagName("li");
 
   const nextBtn = document.getElementById(NEXT_QUESTION_BUTTON_ID);
   nextBtn.classList.add('disabled'); // without selection next btn has to be disable. add style for this
 
-  if (selectedAnswer != 'null') {  // if is there a selected option, after refresh page, button should be available
+  if (!selectedAnswer) {  // if is there a selected option, after refresh page, button should be available
     nextBtn.classList.remove('disabled');
   }
 
@@ -34,6 +33,7 @@ export const initQuestionPage = (storedIndex) => {
     const selectedAnswer = event.target.innerText[0]; // keep the selected answer's first letter
     localStorage.setItem('selectedAnswer', selectedAnswer); // store selected answer in the local storage and show it again after refresh the page
 
+    console.log(selectedAnswer)
     const correctAnswerElement = document.getElementById( // assign correct value from data to a new variable
       currentQuestion.correct
     );
@@ -41,6 +41,10 @@ export const initQuestionPage = (storedIndex) => {
       event.target.innerText[0]
     );
 
+    if(selectedAnswer) {
+      nextBtn.classList.remove('disabled');
+      disableAnswersList('none');
+    }
 
     setTimeout(() => {
       const isCorrectAnswer = event.target.innerText[0] === currentQuestion.correct; // check the answer
@@ -65,18 +69,13 @@ export const initQuestionPage = (storedIndex) => {
     answerElement.addEventListener('click', showCorrectAnswer); // with click call the func and check correction
   }
 
-  if (!selectedAnswer || selectedAnswer === 'null') { // with refresh page, check options and next button's situation. it should same before the refresh
-    for (let liTag of liTags) {
-      // after selected question, disabled the others.
-      liTag.style.pointerEvents = 'all';
-    }
+  if (selectedAnswer == 0) { // with refresh page, check options and next button's situation. it should same before the refresh
+    // after selected question, disabled the others.
+    disableAnswersList('all');
     nextBtn.classList.add('disabled');
   } else {
     nextBtn.classList.remove('disabled');
-    for (let liTag of liTags) {
-      // after selected question, disabled the others.
-      liTag.style.pointerEvents = 'none';
-    }
+    disableAnswersList('none');
   }
 
   document
@@ -124,18 +123,19 @@ const setElementStyle = ( // coloring process for options
   }
 };
 
-export const disableAnswersList = () => {
+export const disableAnswersList = (status) => {
+  console.log(status)
   const liTags = document.getElementsByTagName('li');
   for (let liTag of liTags) {
     // after selected question, disabled the others.
-    liTag.style.pointerEvents = 'none';
+    liTag.style.pointerEvents = status;
   }
 };
 
 const nextQuestion = () => {
   if (quizData.currentQuestionIndex < 9) { //each click increase index and show next question
     quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
-    localStorage.setItem('selectedAnswer', null); // for new selection set null of selected answer. before selection should delete.
+    localStorage.setItem('selectedAnswer', 0); // for new selection set null of selected answer. before selection should delete.
     initQuestionPage();
   }
   else { //after last question show the finish page
