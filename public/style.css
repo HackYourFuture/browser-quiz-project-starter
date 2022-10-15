@@ -133,9 +133,16 @@ ul {
 }
 
 .finishScore {
-  color: #ff0000bd;
   font-family: 'Graduate', cursive;
   background-color: rgba(0, 0, 0, 0.4);
+}
+
+.faillColor {
+  color: #ff0000bd;
+}
+
+.successColor {
+  color: #01924ff2;
 }
 
 .disabled {
