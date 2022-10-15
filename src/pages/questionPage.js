@@ -9,8 +9,8 @@ import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
 import { initFinishPage } from './finishPage.js';
-import { createScoreElement, updateScore } from '../views/scoreView.js';
-import { startTimer, resetTimer } from './timerPage.js';
+import { createScoreElement, updateScore } from '../views/headerView.js';
+import { startTimer, resetTimer } from './headerPage.js';
 
 
 
