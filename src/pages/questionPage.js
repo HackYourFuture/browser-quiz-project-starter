@@ -22,6 +22,7 @@ export const initQuestionPage = (storedIndex) => {
   userInterface.insertBefore(scoreElement, userInterface.firstChild);
   const selectedAnswer = localStorage.getItem('selectedAnswer'); // after refresh for show the selection again store the selected answer
   const liTags = document.getElementsByTagName("li");
+
   const nextBtn = document.getElementById(NEXT_QUESTION_BUTTON_ID);
   nextBtn.classList.add('disabled'); // without selection next btn has to be disable. add style for this
 
@@ -39,6 +40,7 @@ export const initQuestionPage = (storedIndex) => {
     const selectedAnswerElement = document.getElementById(
       event.target.innerText[0]
     );
+
 
     setTimeout(() => {
       const isCorrectAnswer = event.target.innerText[0] === currentQuestion.correct; // check the answer
@@ -77,7 +79,6 @@ export const initQuestionPage = (storedIndex) => {
     }
   }
 
-
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
     .addEventListener('click', () => {
@@ -96,16 +97,15 @@ export const initQuestionPage = (storedIndex) => {
       setElementStyle(correctAnswerElement, selectedAnswerElement, true);
     } else {
       setElementStyle(correctAnswerElement, selectedAnswerElement, false);
-    };
+    }
   }
 };
 
-
 /**
- * 
- * @param {*} correctAnswerElement 
- * @param {*} selectedAnswerElement 
- * @param {Boolean} isCorrectAnswer 
+ *
+ * @param {*} correctAnswerElement
+ * @param {*} selectedAnswerElement
+ * @param {Boolean} isCorrectAnswer
  */
 const setElementStyle = ( // coloring process for options
   correctAnswerElement,
@@ -114,13 +114,21 @@ const setElementStyle = ( // coloring process for options
 ) => {
   if (!selectedAnswerElement) return;
   if (isCorrectAnswer) {
-    correctAnswerElement.style.backgroundColor = 'green';
+    correctAnswerElement.style.backgroundColor = '#06b906bf';
     correctAnswerElement.style.color = 'white';
   } else {
-    correctAnswerElement.style.backgroundColor = 'green';
+    correctAnswerElement.style.backgroundColor = '#06b906bf';
     correctAnswerElement.style.color = 'white';
-    selectedAnswerElement.style.backgroundColor = 'red';
+    selectedAnswerElement.style.backgroundColor = '#ff0000bd';
     selectedAnswerElement.style.color = 'white';
+  }
+};
+
+export const disableAnswersList = () => {
+  const liTags = document.getElementsByTagName('li');
+  for (let liTag of liTags) {
+    // after selected question, disabled the others.
+    liTag.style.pointerEvents = 'none';
   }
 };
 
@@ -134,4 +142,3 @@ const nextQuestion = () => {
     initFinishPage();
   }
 };
-

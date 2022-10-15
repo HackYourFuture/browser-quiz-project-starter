@@ -18,8 +18,16 @@ body {
   color: rgb(238, 42, 7);
 }
 
+.header {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 10px;
+}
+
 .centered {
-  height: 450px;
+  height: 550px;
   width: 700px;
   position: relative;
   top: 50%;
@@ -33,7 +41,7 @@ body {
 
 .context {
   position: relative;
-  height: 100%;
+  height: 95%;
 }
 
 .context h1 {
@@ -41,18 +49,34 @@ body {
   background-color: rgba(0, 0, 0, 0.4);
 }
 
+.progress-number {
+  position: absolute;
+  width: 100%;
+  color: #fff;
+}
+
+.context .progress {
+  background-color: #898a8b;
+}
+
+
 #next-question-button {
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
+}
 
+#next-question-button.btn-success {
+  background-color: #01924ff2;
+  border-color: #01924ff2;
+    
 }
 
 .nextButtonDiv {
   position: absolute;
   width: 100%;
   height: 60px;
-  bottom: 55px;
+  bottom: 20%;
 }
 
 .startDiv {
@@ -92,7 +116,7 @@ ul {
   margin: 10px;
   cursor: pointer;
   border: 1px solid black;
-  background-color: rgb(129, 112, 94);
+  background-color: #8f7f6ded;
   border-radius: 10px;
 
 }
@@ -105,10 +129,11 @@ ul {
 .score-box {
   color: white;
   font-size: 20px;
+  width: 100%;
 }
 
 .finishScore {
-  color: red;
+  color: #ff0000bd;
   font-family: 'Graduate', cursive;
   background-color: rgba(0, 0, 0, 0.4);
 }

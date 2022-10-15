@@ -5,10 +5,11 @@ import { quizData } from '../data.js';
 
 export const createScoreElement = () => {
   const element = document.createElement('div');
+  element.classList.add('header')
   element.innerHTML = String.raw`
-  <p class="score-box"> SCORE: <span class="score" id="${CURRENT_SCORE_ID}"> ${quizData.finalScore} </span> </p>
+  <span class="score-box"> SCORE: <span class="score" id="${CURRENT_SCORE_ID}"> ${quizData.finalScore} </span> </span>
   `;
-
+  element.style.pointerEvents = 'none';
   return element;
 };
 
