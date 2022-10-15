@@ -19,8 +19,16 @@ body {
   color: rgb(238, 42, 7);
 }
 
+.header {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 10px;
+}
+
 .centered {
-  height: 450px;
+  height: 500px;
   width: 700px;
   position: relative;
   top: 50%;
@@ -34,7 +42,7 @@ body {
 
 .context {
   position: relative;
-  height: 100%;
+  height: 95%;
 }
 
 .context h1 {
@@ -45,7 +53,15 @@ body {
 .progress-number {
   position: absolute;
   width: 100%;
-  color: #ffb200;
+  color: #fff;
+}
+
+.context .progress {
+  background-color: #898a8b;
+}
+
+.time-text {
+  color: #fff;
 }
 
 #next-question-button {
@@ -59,7 +75,7 @@ body {
   position: absolute;
   width: 100%;
   height: 60px;
-  bottom: 50px;
+  bottom: 20%;
 }
 
 .startDiv {
