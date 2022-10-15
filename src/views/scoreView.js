@@ -8,7 +8,6 @@ export const createScoreElement = () => {
   element.classList.add('header')
   element.innerHTML = String.raw`
   <span class="score-box"> SCORE: <span class="score" id="${CURRENT_SCORE_ID}"> ${quizData.finalScore} </span> </span>
-  <span class="time-text"> Time Left <span id="timerId" class="btn btn-secondary timer-sec">10</span> </span>
   `;
   element.style.pointerEvents = 'none';
   return element;

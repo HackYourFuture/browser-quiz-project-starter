@@ -9,10 +9,7 @@ import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
 import { initFinishPage } from './finishPage.js';
-import { createScoreElement, updateScore } from '../views/headerView.js';
-import { startTimer, resetTimer } from './headerPage.js';
-
-
+import { createScoreElement, updateScore } from '../views/scoreView.js';
 
 export const initQuestionPage = (storedIndex) => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
@@ -25,17 +22,18 @@ export const initQuestionPage = (storedIndex) => {
   userInterface.appendChild(questionElement);
   const scoreElement = createScoreElement();
   userInterface.insertBefore(scoreElement, userInterface.firstChild);
-  //ini Timer
-  resetTimer();
-  startTimer(10)
 
   const selectedAnswer = localStorage.getItem('selectedAnswer');
-  const liTags = document.getElementsByTagName("li");
+
+  // if (selectedAnswer != null) {
+  //   setTimeout(disableAnswersList, 5);
+  // }
 
   const nextBtn = document.getElementById(NEXT_QUESTION_BUTTON_ID);
   nextBtn.classList.add('disabled');
 
-  if (selectedAnswer != 'null' && quizData.currentQuestionIndex > 0) {  // after selecting an option -> refresh page -> button available
+  if (selectedAnswer != null && quizData.currentQuestionIndex > 0) {
+    // after selecting an option -> refresh page -> button available
     nextBtn.classList.remove('disabled');
   }
 
@@ -54,16 +52,17 @@ export const initQuestionPage = (storedIndex) => {
       event.target.innerText[0]
     );
 
-
-    for (let liTag of liTags) {
-      // after selected question, disabled the others.
-      liTag.style.pointerEvents = 'none';
-    }
+    disableAnswersList();
 
     setTimeout(() => {
-      const isCorrectAnswer = event.target.innerText[0] === currentQuestion.correct;
+      const isCorrectAnswer =
+        event.target.innerText[0] === currentQuestion.correct;
       if (isCorrectAnswer) {
-        setElementStyle(correctAnswerElement, selectedAnswerElement, isCorrectAnswer);
+        setElementStyle(
+          correctAnswerElement,
+          selectedAnswerElement,
+          isCorrectAnswer
+        );
         quizData.finalScore++;
         updateScore();
       } else {
@@ -81,14 +80,11 @@ export const initQuestionPage = (storedIndex) => {
     answerElement.addEventListener('click', showCorrectAnswer);
   }
 
-
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
     .addEventListener('click', () => {
       nextQuestion();
-      resetTimer();
-      startTimer(10);
-    })
+    });
 
   if (storedIndex) {
     const selectedAnswer = localStorage.getItem('selectedAnswer');
@@ -102,17 +98,15 @@ export const initQuestionPage = (storedIndex) => {
       setElementStyle(correctAnswerElement, selectedAnswerElement, true);
     } else {
       setElementStyle(correctAnswerElement, selectedAnswerElement, false);
-    };
+    }
   }
-
 };
 
-
 /**
- * 
- * @param {*} correctAnswerElement 
- * @param {*} selectedAnswerElement 
- * @param {Boolean} isCorrectAnswer 
+ *
+ * @param {*} correctAnswerElement
+ * @param {*} selectedAnswerElement
+ * @param {Boolean} isCorrectAnswer
  */
 const setElementStyle = (
   correctAnswerElement,
@@ -121,13 +115,21 @@ const setElementStyle = (
 ) => {
   if (!selectedAnswerElement) return;
   if (isCorrectAnswer) {
-    correctAnswerElement.style.backgroundColor = 'green';
+    correctAnswerElement.style.backgroundColor = '#06b906bf';
     correctAnswerElement.style.color = 'white';
   } else {
-    correctAnswerElement.style.backgroundColor = 'green';
+    correctAnswerElement.style.backgroundColor = '#06b906bf';
     correctAnswerElement.style.color = 'white';
-    selectedAnswerElement.style.backgroundColor = 'red';
+    selectedAnswerElement.style.backgroundColor = '#ff0000bd';
     selectedAnswerElement.style.color = 'white';
+  }
+};
+
+export const disableAnswersList = () => {
+  const liTags = document.getElementsByTagName('li');
+  for (let liTag of liTags) {
+    // after selected question, disabled the others.
+    liTag.style.pointerEvents = 'none';
   }
 };
 
@@ -136,9 +138,7 @@ const nextQuestion = () => {
     quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
     localStorage.setItem('selectedAnswer', null);
     initQuestionPage();
-  }
-  else {
+  } else {
     initFinishPage();
   }
 };
-
