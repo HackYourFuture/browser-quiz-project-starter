@@ -28,7 +28,7 @@ body {
 }
 
 .centered {
-  height: 500px;
+  height: 550px;
   width: 700px;
   position: relative;
   top: 50%;
@@ -68,7 +68,12 @@ body {
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
+}
 
+#next-question-button.btn-success {
+  background-color: #01924ff2;
+  border-color: #01924ff2;
+    
 }
 
 .nextButtonDiv {
@@ -116,7 +121,7 @@ ul {
   margin: 10px;
   cursor: pointer;
   border: 1px solid black;
-  background-color: rgb(129, 112, 94);
+  background-color: #8f7f6ded;
   border-radius: 10px;
 
 }
@@ -131,7 +136,7 @@ ul {
 }
 
 .finishScore {
-  color: red;
+  color: #ff0000bd;
   font-family: 'Graduate', cursive;
   background-color: rgba(0, 0, 0, 0.4);
 }
