@@ -9,9 +9,8 @@ import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
 import { initFinishPage } from './finishPage.js';
-import { createScoreElement, updateScore } from '../views/scoreView.js';
-import { createTimerElement } from '../views/timerView.js';
-import { startTimer, resetTimer } from './timerPage.js';
+import { createScoreElement, updateScore } from '../views/headerView.js';
+import { startTimer, resetTimer } from './headerPage.js';
 
 
 
@@ -26,10 +25,7 @@ export const initQuestionPage = (storedIndex) => {
   userInterface.appendChild(questionElement);
   const scoreElement = createScoreElement();
   userInterface.insertBefore(scoreElement, userInterface.firstChild);
-
-  const timerElement = createTimerElement();
-
-  userInterface.insertBefore(timerElement, userInterface.firstChild);
+  //ini Timer
   resetTimer();
   startTimer(10)
 
