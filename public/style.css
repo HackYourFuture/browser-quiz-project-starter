@@ -60,9 +60,6 @@ body {
   background-color: #898a8b;
 }
 
-.time-text {
-  color: #fff;
-}
 
 #next-question-button {
   position: absolute;
@@ -133,6 +130,7 @@ ul {
 
 .score-box {
   color: white;
+  width: 100%;
 }
 
 .finishScore {
