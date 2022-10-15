@@ -11,7 +11,7 @@ import { quizData } from '../data.js';
 import { initFinishPage } from './finishPage.js';
 import { createScoreElement, updateScore } from '../views/scoreView.js';
 import { createTimerElement } from '../views/timerView.js';
-import { startTimer, stopTimer } from './timerPage.js';
+import { startTimer, resetTimer } from './timerPage.js';
 
 
 
@@ -30,7 +30,7 @@ export const initQuestionPage = (storedIndex) => {
   const timerElement = createTimerElement();
 
   userInterface.insertBefore(timerElement, userInterface.firstChild);
-  stopTimer();
+  resetTimer();
   startTimer(10)
 
   const selectedAnswer = localStorage.getItem('selectedAnswer');
@@ -90,6 +90,7 @@ export const initQuestionPage = (storedIndex) => {
     .getElementById(NEXT_QUESTION_BUTTON_ID)
     .addEventListener('click', () => {
       nextQuestion();
+      resetTimer();
       startTimer(10);
     })
 
