@@ -33,7 +33,6 @@ export const initQuestionPage = (storedIndex) => {
     const selectedAnswer = event.target.innerText[0]; // keep the selected answer's first letter
     localStorage.setItem('selectedAnswer', selectedAnswer); // store selected answer in the local storage and show it again after refresh the page
 
-    console.log(selectedAnswer)
     const correctAnswerElement = document.getElementById( // assign correct value from data to a new variable
       currentQuestion.correct
     );
