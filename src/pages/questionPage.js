@@ -69,7 +69,7 @@ export const initQuestionPage = (storedIndex) => {
     answerElement.addEventListener('click', showCorrectAnswer); // with click call the func and check correction
   }
 
-  if (selectedAnswer == 0) { // with refresh page, check options and next button's situation. it should same before the refresh
+  if (selectedAnswer == 0 || selectedAnswer == null) { // with refresh page, check options and next button's situation. it should same before the refresh
     // after selected question, disabled the others.
     disableAnswersList('all');
     nextBtn.classList.add('disabled');
