@@ -124,7 +124,6 @@ const setElementStyle = ( // coloring process for options
 };
 
 export const disableAnswersList = (status) => {
-  console.log(status)
   const liTags = document.getElementsByTagName('li');
   for (let liTag of liTags) {
     // after selected question, disabled the others.
