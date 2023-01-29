@@ -16,5 +16,5 @@ export const initWelcomePage = () => {
 
 const startQuiz = () => {
   initQuestionPage();
-  console.log("here we go");
+  console.log('here we go');
 };
