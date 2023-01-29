@@ -1,8 +1,9 @@
-
 # Hobbits quiz app
+
 a quick description
 
 # App Demo
+
 you need to put some link here
 
 # Structure
@@ -31,6 +32,7 @@ index.html
 # Goal and Backlog
 
 ## must have features
+
 - [x] (must have) A user can see one question at a time, stepping through the quiz
 - [ ] (must have) A user can select an answer for each question
 - [ ] (must have) Change the <title>
@@ -40,6 +42,7 @@ index.html
 - [ ] (should have) A user can refresh the page and still have his/her given answers available
 
 ## must have features
+
 - [ ] (could have) A user can "skip" the question and learn the correct answer, this forfeits the question
 - [ ] (could have) Transition between pages or question look fancy like TypeForm for example
 
