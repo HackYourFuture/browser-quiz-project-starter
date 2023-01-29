@@ -34,3 +34,5 @@ const nextQuestion = () => {
 
   initQuestionPage();
 };
+
+console.log ('hi');
