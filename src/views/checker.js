@@ -9,6 +9,8 @@ export const checker = function (){
   const clickChecker = function () {
     answers.forEach(answer => answer.addEventListener('click', (e)=> {
       const clickedAnswer = e.target.dataset.key;
+      quizData.questions[quizData.currentQuestionIndex].selected = clickedAnswer
+      
       if (correctAnswer  === clickedAnswer) {
         document.body.style.background = 'green'
       }
@@ -20,6 +22,7 @@ export const checker = function (){
   const keydownChecker = function (){
     window.addEventListener('keydown', (e) => {
       if (e.key === 'a' || e.key === 'b' || e.key === 'c' || e.key === 'd') {
+        quizData.questions[quizData.currentQuestionIndex].selected = e.key;
         if(e.key === correctAnswer) {
           document.body.style.background = 'green'
         }

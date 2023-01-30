@@ -34,8 +34,6 @@ export const initQuestionPage = () => {
 
 const nextQuestion = () => {
   quizData.currentQuestionIndex++;
-  console.log('the current index is', quizData.currentQuestionIndex);
-
   initQuestionPage();
 };
 
