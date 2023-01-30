@@ -19,7 +19,7 @@ export const quizData = {
         a: '10',
         b: '8',
         c: '7',
-        d: '9'
+        d: '9',
       },
       correct: 'b',
       selected: null,
@@ -36,7 +36,8 @@ export const quizData = {
       selected: null,
     },
     {
-      text: 'What is the order of Earth between the planets, starting from the sun?',
+      text:
+        'What is the order of Earth between the planets, starting from the sun?',
       answers: {
         a: 'Second planet',
         b: 'Fifth planet',
@@ -69,7 +70,8 @@ export const quizData = {
       selected: null,
     },
     {
-      text: 'At which of the following, the laws of physics, as we know them, break down?',
+      text:
+        'At which of the following, the laws of physics, as we know them, break down?',
       answers: {
         a: 'Sun surface',
         b: 'Singularity',
@@ -102,7 +104,8 @@ export const quizData = {
       selected: null,
     },
     {
-      text: 'According to Einsteins general theory of relativity, energy is proportional to mass. What is the equation that demonstrate this relation?',
+      text:
+        'According to Einsteins general theory of relativity, energy is proportional to mass. What is the equation that demonstrate this relation?',
       answers: {
         a: 'E = dc^2',
         b: 'E = mc^2',
