@@ -1,9 +1,15 @@
 // I continue to work on this file
+import { USER_INTERFACE_ID } from '../constants.js';
 
-import { quizData } from '../data.js';
+import { createResultsElement } from '../views/resultsView.js';
 
-const sumOfRightAnswers = quizData.questions.reduce((rightAnswers,question) => {
 
-  return question.selected === question.correct ? rightAnswers += 1 : rightAnswers;
-
-  },0)
+export const initResultsPage = function () {
+  
+    const userInterface = document.getElementById(USER_INTERFACE_ID);
+    userInterface.innerHTML = '';
+  
+    const resultElement = createResultsElement();
+    userInterface.appendChild(resultElement);
+  
+}
