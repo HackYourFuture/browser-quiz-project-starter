@@ -3,7 +3,6 @@
 This repository functions as the basis of the quiz project in the [Browsers module](https://github.com/HackYourFuture/Browsers). [TODO] Add description about our project idea.
 Created by @A-Ghoujal, @drappidrap and @YunusEmreBEYAZ
 
-
 ## Development
 
 To run this project locally you will need to open `index.html` in your browser using a local server. LiveServer, `http-server`, `study-lenses`, or any other local static server will work.
