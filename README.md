@@ -1,8 +1,7 @@
 # Getting Started
 
-This repository functions as the basis of the quiz project in the [Browsers module](https://github.com/HackYourFuture/Browsers). Before the first group meeting, have a look through this code and try to understand how it works and how it is organised. We will explain the idea behind the structure below as well as the Backlog (which will identify what is needed to be implemented).
-
-We have already implemented a very basic UI that can go through the questions to show you how this kind of code is split and how you can use the structure to your advantage. Have a look through it before your first group meeting as it can take a little while to get your head around it!
+This repository functions as the basis of the quiz project in the [Browsers module](https://github.com/HackYourFuture/Browsers). [TODO] Add description about our project idea.
+Created by @A-Ghoujal, @drappidrap and @YunusEmreBEYAZ
 
 ## Development
 
@@ -16,7 +15,7 @@ There are no dependencies needed to run the website, everything is prepared to w
 
 # Structure
 
-Instead of writing all code in a single JavaScript file, we want you to split your code over several files.
+Instead of writing all code in a single JavaScript file, we splitted our code over several files.
 The structure of this project is explained in the next video
 
 [![Project Structure YouTube Video](https://i.imgur.com/hDcLYFt.png)](https://youtu.be/bysBqtSKBpQ)
@@ -58,17 +57,16 @@ Some examples of online quizes that you might like:
 - https://www.lenstore.co.uk/vc/colour-is-in-the-eye-of-the-beholder/#/game
 - https://heywise.com/quiz/lets-find-out-if-you-follow-gordon-ramsay/1/
 
-When you have chosen your goal, you can create tasks as issues on Github and assign them to team members.
-Tasks could look like this, using the [MoSCoW](https://en.wikipedia.org/wiki/MoSCoW_method) labels for prioritization
+Our goals and acceptance criteria:
 
-- [x] (must have) A user can see one question at a time, stepping through the quiz
-- [ ] (must have) A user can select an answer for each question
+- [x] (must have) A user can see one question at a time, stepping through the quiz.
+- [ ] (must have) A user can select an answer for each question.
 - [ ] (must have) Change the <title>
-- [ ] (must have) add a favicon
+- [ ] (must have) add a favicon.
 - [ ] (should have) A user can see what the correct answer is after they selected their answer.
-- [ ] (should have) A user can see their score update in real-time as they select answers
-- [ ] (should have) A user can refresh the page and still have his/her given answers available
-- [ ] (could have) A user can "skip" the question and learn the correct answer, this forfeits the question
-- [ ] (could have) Transition between pages or question look fancy like TypeForm for example
+- [ ] (should have) A user can see their score update in real-time as they select answers.
+- [ ] (should have) A user can refresh the page and still have his/her given answers available.
+- [ ] (could have) A user can "skip" the question and learn the correct answer, this forfeits the question.
+- [ ] (could have) Transition between pages or question look fancy like TypeForm for example.
 
 You should create tasks that fit with your goal, these tasks serve just as an example.

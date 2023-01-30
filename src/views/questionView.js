@@ -5,6 +5,8 @@ import { NEXT_QUESTION_BUTTON_ID } from '../constants.js';
  * Create a full question element
  * @returns {Element}
  */
+
+// We can use the same idea here.
 export const createQuestionElement = (question) => {
   const element = document.createElement('div');
 
