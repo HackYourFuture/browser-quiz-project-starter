@@ -6,6 +6,7 @@ import {
 import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
+import { checker } from '../views/checker.js';
 
 export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
@@ -24,6 +25,8 @@ export const initQuestionPage = () => {
     answersListElement.appendChild(answerElement);
   }
 
+  checker();
+
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
     .addEventListener('click', nextQuestion);
@@ -35,4 +38,4 @@ const nextQuestion = () => {
   initQuestionPage();
 };
 
-console.log ('hi');
+
