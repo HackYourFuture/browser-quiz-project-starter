@@ -23,18 +23,18 @@ body {
   }
 }
 
-/* .rocket-background {
+.rocket-background {
   position: absolute;
   display: grid;
   place-items: center;
   height: 100vh;
-  z-index: 1;
-  margin-top: 5rem;
+  z-index: -1;
+  margin-top: -20rem;
 }
 
 .rocket-background img {
   width: 40%;
-} */
+}
 
 .quiz-container {
   background-color: aliceblue;
@@ -43,7 +43,6 @@ body {
   width: 900px;
   overflow: hidden;
   opacity: 0.8;
-  /* margin-bottom: 55rem; */
 }
 
 .quiz-header {
