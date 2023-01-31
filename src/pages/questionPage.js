@@ -8,10 +8,15 @@ import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
 import { timerSecond } from '../timer.js';
 import { counterQuestion } from '../questionRow.js';
+import { removeElement } from '../timer.js';
+
 
 export const initQuestionPage = () => {
+
   timerSecond()
+
   counterQuestion()
+
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
 
@@ -27,15 +32,16 @@ export const initQuestionPage = () => {
     const answerElement = createAnswerElement(key, answerText);
     answersListElement.appendChild(answerElement);
   }
-
+  
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
-    .addEventListener('click',nextQuestion)
+    .addEventListener('click',()=> {
+      nextQuestion(); removeElement()
+    })
 };
 
 
 const nextQuestion = () => {
   quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
-  
   initQuestionPage();
 };
