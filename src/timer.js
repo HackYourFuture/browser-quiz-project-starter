@@ -1,6 +1,8 @@
 export function timerSecond() {
-  var seconds = 90;
-  var el = document.getElementById('seconds-counter');
+  var seconds = 91;
+  var el = document.createElement('div');
+  el.className = 'seconds-counter';
+  document.body.append(el);
 
   function decreaseSeconds() {
     seconds -= 1;
@@ -13,13 +15,7 @@ export function timerSecond() {
   var intervalId = setInterval(decreaseSeconds, 1000);
 }
 
-// let time = 60;
-// export const timer = setInterval(() => {
-//     if (time > 0) {
-//       time--;
-//       console.log(time);
-//     } else {
-//       console.log("Time's up!");
-//       clearInterval(timer);
-//     }
-//   }, 1000);
+export function removeElement() {
+  var el = document.querySelector('.seconds-counter');
+  el.remove();
+}

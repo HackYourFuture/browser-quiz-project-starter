@@ -10,6 +10,7 @@ import { checker } from '../views/checker.js';
 import { initResultsPage } from './resultsPage.js';
 import { timerSecond } from '../timer.js';
 import { counterQuestion } from '../questionRow.js';
+import { removeElement } from '../timer.js';
 
 export const initQuestionPage = () => {
   timerSecond();
@@ -34,7 +35,10 @@ export const initQuestionPage = () => {
 
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
-    .addEventListener('click', nextQuestion);
+    .addEventListener('click', () => {
+      nextQuestion();
+      removeElement();
+    });
 };
 
 const nextQuestion = () => {
