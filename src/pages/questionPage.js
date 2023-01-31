@@ -8,8 +8,12 @@ import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
 import { checker } from '../views/checker.js';
 import { initResultsPage } from './resultsPage.js';
+import { timerSecond } from '../timer.js';
+import { counterQuestion } from '../questionRow.js';
 
 export const initQuestionPage = () => {
+  timerSecond();
+  counterQuestion();
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
 
