@@ -6,15 +6,15 @@ import {
 import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
+import { checker } from '../views/checker.js';
+import { initResultsPage } from './resultsPage.js';
 import { timerSecond } from '../timer.js';
 import { counterQuestion } from '../questionRow.js';
 import { removeElement } from '../timer.js';
 
 export const initQuestionPage = () => {
   timerSecond();
-
   counterQuestion();
-
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
 
@@ -31,6 +31,8 @@ export const initQuestionPage = () => {
     answersListElement.appendChild(answerElement);
   }
 
+  checker();
+
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
     .addEventListener('click', () => {
@@ -40,6 +42,10 @@ export const initQuestionPage = () => {
 };
 
 const nextQuestion = () => {
-  quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
-  initQuestionPage();
+  if (quizData.currentQuestionIndex === quizData.questions.length - 1)
+    initResultsPage();
+  else {
+    quizData.currentQuestionIndex++;
+    initQuestionPage();
+  }
 };
