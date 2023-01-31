@@ -6,6 +6,10 @@ export const checker = function () {
   const correctAnswer =
     quizData.questions[quizData.currentQuestionIndex].correct;
 
+  const correctAnswerListItem = [...answers].filter(
+    (answer) => answer.dataset.key === correctAnswer
+  )[0];
+
   const clickChecker = function () {
     answers.forEach((answer) =>
       answer.addEventListener('click', (e) => {
@@ -16,8 +20,11 @@ export const checker = function () {
           ].selected = clickedAnswer;
 
           if (correctAnswer === clickedAnswer) {
-            document.body.style.background = 'green';
-          } else document.body.style.background = 'red';
+            e.target.style.background = 'var(--color7)';
+          } else {
+            e.target.style.background = 'var(--color6)';
+            correctAnswerListItem.style.background = 'var(--color7)';
+          }
           playSound();
         }
       })

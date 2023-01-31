@@ -1,3 +1,13 @@
+:root {
+  --color1: rgb(162, 162, 144, 0.7);
+  --color2: rgb(220, 219, 217);
+  --color3: rgb(55, 89, 52);
+  --color4: rgb(215, 201, 133);
+  --color5: rgb(246, 237, 240);
+  --color6: rgb(229, 54, 6);
+  --color7: rgb(153, 176, 81);
+}
+
 * {
   margin: 0;
   /* padding: 0; */
@@ -17,7 +27,9 @@ body {
   transform: translate(-50%, -50%);
   text-align: center;
   width: 50%;
-  border: 3px red solid;
+  background-color: var(--color1);
+  border-radius: 10px;
+  padding: 10px;
 }
 
 .scrollable {
@@ -27,17 +39,38 @@ body {
 }
 
 ul {
+  width: 60%;
+  height: 200px;
   margin: auto;
-  border: 3px red solid;
+  padding: 25px;
   list-style: none;
   display: flex;
   flex-direction: column;
+  row-gap: 20px;
   align-items: center;
   justify-content: center;
-  width: 60%;
 }
 
 li {
-  text-align: left;
   width: 90%;
+  padding: 5px;
+  background-color: var(--color4);
+  text-align: center;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease-in;
+}
+/* .wrong-answer{
+  border: 2px solid var(--color6)
+} */
+
+button {
+  width: 30%;
+  margin: 10px;
+  padding: 10px;
+  background-color: var(--color3);
+  color: var(--color2);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
