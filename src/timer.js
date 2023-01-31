@@ -1,20 +1,17 @@
-export function timerSecond () {
-    var seconds = 90;
-    var el = document.getElementById('seconds-counter');
+export function timerSecond() {
+  var seconds = 90;
+  var el = document.getElementById('seconds-counter');
 
-    function decreaseSeconds() {
-    
-        seconds -= 1;
-        el.innerText =  seconds ;
+  function decreaseSeconds() {
+    seconds -= 1;
+    el.innerText = seconds;
 
-        if (seconds === 0) {
-            clearInterval(intervalId);
-        }
+    if (seconds === 0) {
+      clearInterval(intervalId);
     }
-    var intervalId = setInterval(decreaseSeconds, 1000);
+  }
+  var intervalId = setInterval(decreaseSeconds, 1000);
 }
-
-
 
 // let time = 60;
 // export const timer = setInterval(() => {
@@ -26,4 +23,3 @@ export function timerSecond () {
 //       clearInterval(timer);
 //     }
 //   }, 1000);
-
