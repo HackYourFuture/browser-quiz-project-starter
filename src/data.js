@@ -147,9 +147,5 @@ export const quizData = {
       d: ' 4 ',
       correct: '1',
     },
-  ]
+  ],
 };
-
-
-
-

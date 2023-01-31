@@ -1,5 +1,4 @@
-
-// import data 
+// import data
 
 const quiz = document.getElementById('quiz');
 const answerEls = document.querySelectorAll('.answer');

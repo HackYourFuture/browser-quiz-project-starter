@@ -1,4 +1,3 @@
-
 submitBtn.addEventListener('click', () => {
   const answer = getSelected();
   if (answer) {
