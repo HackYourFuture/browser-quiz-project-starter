@@ -10,7 +10,7 @@
 */
 
 export const quizData = {
-  currentQuestionIndex: 1,
+  currentQuestionIndex: 0,
   // the questions in the quiz
   questions: [
     {
