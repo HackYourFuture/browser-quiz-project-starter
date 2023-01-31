@@ -1,3 +1,14 @@
+*{
+  margin: 0;
+  /* padding: 0; */
+  box-sizing: border-box;
+}
+
+body {
+  background: url(../images/background-img/00-shire.jpg) no-repeat center center/cover;
+  height: 100vh;
+}
+
 .centered {
   position: fixed;
   top: 50%;
