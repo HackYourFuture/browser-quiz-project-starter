@@ -21,9 +21,6 @@ export const createResultsElement = () => {
   element.innerHTML = String.raw`
     <h1>Results</h1>
 
-    <ul id="">
-    </ul>
-
     <button id="${CELEBRATE_YOURSELF_BUTTON_ID}">
       Celebrate Yourself
     </button>
