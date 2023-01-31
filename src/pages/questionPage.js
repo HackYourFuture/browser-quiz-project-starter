@@ -30,7 +30,8 @@ export const initQuestionPage = () => {
 };
 
 const nextQuestion = () => {
-  quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
+  quizData.currentQuestionIndex++;
+  console.log('the current index is', quizData.currentQuestionIndex);
 
   initQuestionPage();
 };
