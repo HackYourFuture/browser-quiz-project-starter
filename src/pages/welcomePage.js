@@ -12,11 +12,10 @@ export const initWelcomePage = () => {
 
   document
     .getElementById(START_QUIZ_BUTTON_ID)
-    .addEventListener('click', startQuiz)
+    .addEventListener('click', startQuiz);
 };
 
 const startQuiz = () => {
-  
   initQuestionPage();
   console.log('here we go');
 };
