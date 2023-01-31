@@ -77,7 +77,8 @@ export const quizData = {
       links: [
         {
           text: 'HTML.info',
-          href: 'https://www.cs.kent.ac.uk/teaching/10/modules/CO/3/32/FIT_Chapters/Chapter04/BasicHTMLTags.html',
+          href:
+            'https://www.cs.kent.ac.uk/teaching/10/modules/CO/3/32/FIT_Chapters/Chapter04/BasicHTMLTags.html',
         },
       ],
     },
@@ -116,7 +117,8 @@ export const quizData = {
       ],
     },
     {
-      text: 'What is the correct format for aligning written content to the center of the page in CSS?',
+      text:
+        'What is the correct format for aligning written content to the center of the page in CSS?',
       answers: {
         a: 'Text-align:center',
         b: 'Font-align:center',
@@ -133,7 +135,8 @@ export const quizData = {
       ],
     },
     {
-      text: 'What is the correct format for changing the background colour of a div in CSS?',
+      text:
+        'What is the correct format for changing the background colour of a div in CSS?',
       answers: {
         a: 'Bg-color:red',
         b: 'Background-colour:red',

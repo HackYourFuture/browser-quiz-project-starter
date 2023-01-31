@@ -34,12 +34,10 @@ export const initQuestionPage = () => {
 };
 
 const nextQuestion = () => {
-  if (quizData.currentQuestionIndex === quizData.questions.length -1) 
+  if (quizData.currentQuestionIndex === quizData.questions.length - 1)
     initResultsPage();
   else {
     quizData.currentQuestionIndex++;
     initQuestionPage();
   }
 };
-
-
