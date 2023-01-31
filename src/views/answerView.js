@@ -3,11 +3,17 @@
  * @returns {Element}
  */
 
-// We can also use same idea here and change the HTML elements if needed.
 export const createAnswerElement = (key, answerText) => {
-  const element = document.createElement('li');
-  element.innerHTML = String.raw`
-    ${key}: ${answerText};
-  `;
-  return element;
+  const listItem = document.createElement('li');
+  const answerInput = document.createElement('input');
+  const label = document.createElement('label');
+  listItem.appendChild(answerInput);
+  answerInput.setAttribute('type', 'radio');
+  answerInput.setAttribute('id', key);
+  answerInput.setAttribute('name', 'answer');
+  answerInput.appendChild(label);
+  label.setAttribute('for', key);
+  label.innerText = answerText;
+
+  return listItem;
 };
