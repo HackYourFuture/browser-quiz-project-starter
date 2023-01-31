@@ -66,7 +66,8 @@ export const quizData = {
   currentQuestionIndex: 0,
   questions: [
     {
-      text: 'What was the name of the first man-made satellite launched by the Soviet Union in 1957?',
+      text:
+        'What was the name of the first man-made satellite launched by the Soviet Union in 1957?',
       answers: {
         a: 'Sputnik 1',
         b: 'Soyuz',
@@ -136,7 +137,8 @@ export const quizData = {
       correct: 'b',
     },
     {
-      text: 'What is the name of the black hole at the Galactic Center of Milky Way? ',
+      text:
+        'What is the name of the black hole at the Galactic Center of Milky Way? ',
       answers: {
         a: 'Libra A*',
         b: 'Sagittarius A*',
