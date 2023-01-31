@@ -15,6 +15,8 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+  width: 50%;
+  border: 3px red solid;
 }
 
 .scrollable {
@@ -24,5 +26,17 @@ body {
 }
 
 ul {
+  margin: auto;
+  border: 3px red solid;
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+}
+
+li {
+  text-align: left;
+  width: 90%;
 }
