@@ -10,3 +10,12 @@ export const START_QUIZ_BUTTON_ID = 'start-quiz-button';
 export const ANSWERS_LIST_ID = 'answers-list';
 export const NEXT_QUESTION_BUTTON_ID = 'next-question-button';
 export const BACK_TO_WELCOME_PAGE_BUTTON_ID = 'back-to-start';
+export const WELLCOME_OUTER_DİV = 'wellcome-outer-div';
+export const WELLCOME_H1 = 'wellcome-h1';
+export const QUIZ_RULES_LIST = 'quiz-rules-list';
+export const INPUT_NAME = 'input-name';
+export const BOTTOM_DIV = 'bottom-div';
+
+
+
+
