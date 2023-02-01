@@ -1,5 +1,10 @@
 import { COUNT_DOWN } from '../constants.js';
 import { nextQuestion } from '../pages/questionPage.js';
+
+const paragraphElement = document.createElement('p');
+paragraphElement.setAttribute('id', COUNT_DOWN);
+document.body.appendChild(paragraphElement);
+
 /*countdown start */
 let time = 60;
 const countdownEl = document.getElementById(COUNT_DOWN);
