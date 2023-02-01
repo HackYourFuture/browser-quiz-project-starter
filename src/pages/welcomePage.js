@@ -21,4 +21,5 @@ const startQuiz = () => {
   document
     .getElementById(START_QUIZ_BUTTON_ID)
     .addEventListener('click', startQuiz);
+
 };
