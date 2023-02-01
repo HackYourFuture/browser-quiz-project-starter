@@ -9,6 +9,9 @@ export const checker = function () {
     (answer) => answer.dataset.key === correctAnswer
   );
 
+  const willPower = document.querySelector('.level');
+  const borderWillPower = document.querySelector('.level-bar');
+
   const clickChecker = function () {
     answers.forEach((answer) =>
       answer.addEventListener('click', (e) => {
@@ -20,6 +23,9 @@ export const checker = function () {
 
           if (correctAnswer === clickedAnswer) {
             e.target.style.background = 'var(--color7)';
+            let currentWidth = willPower.offsetWidth;
+            let newWidth = currentWidth + borderWillPower.clientWidth / 10;
+            willPower.style.width = `${newWidth}px`;
           } else {
             e.target.style.background = 'var(--color6)';
             correctAnswerListItem.style.background = 'var(--color7)';

@@ -18,4 +18,6 @@ export const initWelcomePage = () => {
 const startQuiz = () => {
   initQuestionPage();
   loadBackgrounds();
+  const bar = document.querySelector('.level-bar');
+  bar.classList.add('display');
 };

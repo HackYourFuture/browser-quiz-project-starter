@@ -74,3 +74,27 @@ button {
   border-radius: 5px;
   cursor: pointer;
 }
+
+.level-bar {
+  width: 30%;
+  height: 30px;
+  border-radius: 15px;
+  margin: 20px auto;
+  border: brown solid 3px;
+  display: none;
+}
+
+.level {
+  width: 0px;
+  height: 100%;
+  background-color: yellow;
+  border-radius: 15px;
+  transition: width 0.9s ease-in-out;
+  font-size: 20px;
+  font-weight: 400;
+  background-image: linear-gradient(to bottom, #ccc, #fff);
+}
+
+.level-bar.display {
+  display: block;
+}
