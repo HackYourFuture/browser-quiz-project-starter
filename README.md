@@ -43,20 +43,6 @@ index.html
 
 # Goal and Backlog
 
-So what should be built? Below is a collection of user stories you can choose from. Stories inside of each priority level are not necessarily in order, it's up to your group to decide how they fit into your strategy. These are also just suggestion, feel free to change them or create your own! Feel free to get creative.
-
-Choose a desired end result at the start of the project.
-By choosing an existing example, the goal of the project will be clear to everyone in the team.
-Another benefit is that it will be easier to come up with the necessary tasks to create your quiz.
-
-Some examples of online quizes that you might like:
-
-- https://wwbm.com/
-- https://www.typeform.com/templates/t/trivia/
-- https://lovattspuzzles.com/online-puzzles-competitions/ultimate-online-trivia-quiz/
-- https://www.lenstore.co.uk/vc/colour-is-in-the-eye-of-the-beholder/#/game
-- https://heywise.com/quiz/lets-find-out-if-you-follow-gordon-ramsay/1/
-
 Our goals and acceptance criteria:
 
 - [x] (must have) A user can see one question at a time, stepping through the quiz.
