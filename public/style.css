@@ -5,7 +5,7 @@
 }
 
 body {
-  background: url(../img/stars.jpg) repeat 0 0;
+  background: url(../public/img/stars.jpg) repeat 0 0;
   animation: animate 3s infinite;
   animation-timing-function: linear;
   /* font-family: ; */
