@@ -1,39 +1,34 @@
-// import data
+import { quizData } from '../data.js';
+import { createQuestionElement } from '../views/questionView.js';
+import { createAnswerElement } from '../views/answerView.js';
 
-const quiz = document.getElementById('quiz');
-const answerEls = document.querySelectorAll('.answer');
-const questionEl = document.getElementById('question');
-const answersList = document.getElementById('answers-list');
-const submitBtn = document.getElementById('submit');
+export const initQuestionPage = () => {
+  const userInterface = document.getElementById(USER_INTERFACE_ID);
+  userInterface.innerHTML = '';
 
-let currentQuiz = 0;
-let score = 0;
+  const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
 
-loadQuiz();
+  const questionElement = createQuestionElement(currentQuestion.text);
 
-function loadQuiz() {
-  deselectAnswer();
+  userInterface.appendChild(questionElement);
 
-  const currentQuizData = quizData[currentQuiz];
+  const answersListElement = document.getElementById(ANSWERS_LIST_ID);
 
-  questionEl.innerText = currentQuizData.question;
-  // add a loop and append to answersList
-  // a_text.innerText = currentQuizData.a;
-  // b_text.innerText = currentQuizData.b;
-  // c_text.innerText = currentQuizData.c;
-  // d_text.innerText = currentQuizData.d;
-}
+  for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
+    const answerElement = createAnswerElement(key, answerText);
+    answersListElement.appendChild(answerElement);
+  }
 
-function deselectAnswer() {
-  answerEls.forEach((answerEl) => (answerEl.checked = false));
-}
+  document
+    .getElementById(NEXT_QUESTION_BUTTON_ID)
+    .addEventListener('click', nextQuestion);
+};
 
-function getSelected() {
-  let answer;
-  answerEls.forEach((answerEl) => {
-    if (answerEl.checked) {
-      answer = answerEl.id;
-    }
-  });
-  return answer;
-}
+const nextQuestion = () => {
+  quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
+
+  initQuestionPage();
+};
+
+// when should "view results button" and initResultsPage appear?
+// Find a way to move to the results page after all questions are answered
