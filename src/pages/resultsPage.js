@@ -1,6 +1,5 @@
 // I continue to work on this file
 import { USER_INTERFACE_ID } from '../constants.js';
-
 import { createResultsElement } from '../views/resultsView.js';
 
 export const initResultsPage = function () {
