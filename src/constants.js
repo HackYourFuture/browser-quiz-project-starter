@@ -9,3 +9,4 @@ export const USER_INTERFACE_ID = 'quiz';
 export const START_QUIZ_BUTTON_ID = 'start-quiz-button';
 export const ANSWERS_LIST_ID = 'answers-list';
 export const NEXT_QUESTION_BUTTON_ID = 'next-question-button';
+export const BACK_TO_WELCOME_PAGE_BUTTON_ID = 'back-to-start';
