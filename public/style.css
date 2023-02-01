@@ -39,7 +39,6 @@ body {
 } */
 
 .quiz-container {
-
   border-radius: 10px;
   box-shadow: 0 0 10px 2px black;
   width: 900px;
@@ -94,8 +93,7 @@ button:focus {
 }
 /*WELLCOME PAGE STYLES*/
 
-#wellcome-outer-div{
-
+#wellcome-outer-div {
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -103,24 +101,22 @@ button:focus {
   height: 50vh;
   font-family: 'Teko', sans-serif;
   backdrop-filter: blur(15px);
-  
 }
 
-
-#quiz-rules-list{
+#quiz-rules-list {
   white-space: pre;
 }
-#bottom-div{
+#bottom-div {
   display: flex;
   text-align: center;
   justify-content: space-around;
 }
-#input-name{
+#input-name {
   width: 25%;
   height: 6vh;
 }
 
-#start-quiz-button{
+#start-quiz-button {
   width: 25%;
   height: 6vh;
 }

@@ -15,7 +15,3 @@ export const WELLCOME_H1 = 'wellcome-h1';
 export const QUIZ_RULES_LIST = 'quiz-rules-list';
 export const INPUT_NAME = 'input-name';
 export const BOTTOM_DIV = 'bottom-div';
-
-
-
-

@@ -3,7 +3,7 @@ import { createWelcomeElement } from '../views/welcomeView.js';
 import { quizData } from '../data.js';
 
 // THİS SHOULD BE EXPORTED QUESTİON PAGE.
-import { initQuestionPage } from '../pages/questionPage.js'; 
+import { initQuestionPage } from '../pages/questionPage.js';
 
 export const initWelcomePage = () => {
   // we can use the same logic here.
@@ -20,6 +20,6 @@ export const initWelcomePage = () => {
 };
 
 const startQuiz = () => {
-//ıt will initialize the question page.
-initQuestionPage();
+  //ıt will initialize the question page.
+  initQuestionPage();
 };
