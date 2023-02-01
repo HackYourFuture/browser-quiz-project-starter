@@ -11,6 +11,7 @@ import { initResultsPage } from './resultsPage.js';
 import { timerSecond } from '../timer.js';
 import { counterQuestion } from '../questionRow.js';
 import { removeElement } from '../timer.js';
+import { loadBackgrounds } from '../views/loadBackgrounds.js';
 
 export const initQuestionPage = () => {
   timerSecond();
@@ -38,6 +39,7 @@ export const initQuestionPage = () => {
     .addEventListener('click', () => {
       nextQuestion();
       removeElement();
+      loadBackgrounds();
     });
 };
 
