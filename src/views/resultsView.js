@@ -4,7 +4,6 @@
  */
 
 import { quizData } from '../data.js';
-import { CELEBRATE_YOURSELF_BUTTON_ID } from '../constants.js';
 
 export const createResultsElement = () => {
   const element = document.createElement('div');
@@ -20,10 +19,7 @@ export const createResultsElement = () => {
   // I use String.raw just to get fancy colors for the HTML in VS Code.
   element.innerHTML = String.raw`
     <h1>Results</h1>
-
-    <button id="${CELEBRATE_YOURSELF_BUTTON_ID}">
-      Celebrate Yourself
-    </button>
+    <p>Your rating is ${sumOfRightAnswers} out of 10 </p>
   `;
 
   return element;

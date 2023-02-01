@@ -2,9 +2,12 @@ import { quizData } from '../data.js';
 import { playSound } from './playSound.js';
 
 export const checker = function () {
-  const answers = document.querySelectorAll('li');
-  const correctAnswer =
-    quizData.questions[quizData.currentQuestionIndex].correct;
+  let answers = document.querySelectorAll('li');
+  let correctAnswer = quizData.questions[quizData.currentQuestionIndex].correct;
+
+  let [correctAnswerListItem] = [...answers].filter(
+    (answer) => answer.dataset.key === correctAnswer
+  );
 
   const clickChecker = function () {
     answers.forEach((answer) =>
@@ -16,8 +19,11 @@ export const checker = function () {
           ].selected = clickedAnswer;
 
           if (correctAnswer === clickedAnswer) {
-            document.body.style.background = 'green';
-          } else document.body.style.background = 'red';
+            e.target.style.background = 'var(--color7)';
+          } else {
+            e.target.style.background = 'var(--color6)';
+            correctAnswerListItem.style.background = 'var(--color7)';
+          }
           playSound();
         }
       })
@@ -29,10 +35,28 @@ export const checker = function () {
       if (!quizData.questions[quizData.currentQuestionIndex].selected) {
         if (e.key === 'a' || e.key === 'b' || e.key === 'c' || e.key === 'd') {
           quizData.questions[quizData.currentQuestionIndex].selected = e.key;
+
+          // update information function changes the old closure information.
+          function updateInformation() {
+            answers = document.querySelectorAll('li');
+            correctAnswer =
+              quizData.questions[quizData.currentQuestionIndex].correct;
+            [correctAnswerListItem] = [...answers].filter(
+              (answer) => answer.dataset.key === correctAnswer
+            );
+          }
+
+          updateInformation();
+
           if (e.key === correctAnswer) {
-            document.body.style.background = 'green';
-          } else {
-            document.body.style.background = 'red';
+            correctAnswerListItem.style.background = 'var(--color7)';
+          } else if (e.key !== correctAnswer) {
+            const wrongAnswerListItem = document.querySelector(
+              `li[data-key="${e.key}"]`
+            );
+
+            wrongAnswerListItem.style.background = 'var(--color6)';
+            correctAnswerListItem.style.background = 'var(--color7)';
           }
           playSound();
         }

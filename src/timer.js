@@ -1,6 +1,6 @@
 export function timerSecond() {
-  var seconds = 91;
-  var el = document.createElement('div');
+  let seconds = 91;
+  let el = document.createElement('div');
   el.className = 'seconds-counter';
   document.body.append(el);
 
@@ -12,10 +12,10 @@ export function timerSecond() {
       clearInterval(intervalId);
     }
   }
-  var intervalId = setInterval(decreaseSeconds, 1000);
+  let intervalId = setInterval(decreaseSeconds, 1000);
 }
 
 export function removeElement() {
-  var el = document.querySelector('.seconds-counter');
+  let el = document.querySelector('.seconds-counter');
   el.remove();
 }
