@@ -32,7 +32,7 @@ export const initQuestionPage = () => {
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
     .addEventListener('click', () => {
-      time = 60;
+  
       setInterval(startCountdown, 1000);
     });
 };
