@@ -3,9 +3,10 @@
  * @returns {Element}
  */
 export const createAnswerElement = (key, answerText) => {
-  const element = document.createElement('li');
-  element.innerHTML = String.raw`
-    ${key}: ${answerText}
+  const button = document.createElement('button');
+  button.classList.add(`answer-btn`);
+  button.innerHTML = String.raw`
+    <div class="choice"><p>${key.toUpperCase()}.</p></div><div class="answer">${answerText}</div>
   `;
-  return element;
+  return button;
 };

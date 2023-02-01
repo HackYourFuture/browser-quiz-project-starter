@@ -1,5 +1,8 @@
-import { ANSWERS_LIST_ID } from '../constants.js';
-import { NEXT_QUESTION_BUTTON_ID } from '../constants.js';
+import {
+  ANSWERS_LIST_ID,
+  NEXT_QUESTION_BUTTON_ID,
+  SUBMIT_ANSWER_BUTTON_ID,
+} from '../constants.js';
 
 /**
  * Create a full question element
@@ -14,6 +17,10 @@ export const createQuestionElement = (question) => {
 
     <ul id="${ANSWERS_LIST_ID}">
     </ul>
+
+    <button id="${SUBMIT_ANSWER_BUTTON_ID}">
+      Submit
+    </button>
 
     <button id="${NEXT_QUESTION_BUTTON_ID}">
       Next question

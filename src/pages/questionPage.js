@@ -2,6 +2,7 @@ import {
   ANSWERS_LIST_ID,
   NEXT_QUESTION_BUTTON_ID,
   USER_INTERFACE_ID,
+  SUBMIT_ANSWER_BUTTON_ID,
 } from '../constants.js';
 import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
@@ -26,6 +27,10 @@ export const initQuestionPage = () => {
   }
 
   document
+    .getElementById(SUBMIT_ANSWER_BUTTON_ID)
+    .addEventListener('click', submitAnswer(currentQuestion));
+
+  document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
     .addEventListener('click', nextQuestion);
 
@@ -41,4 +46,23 @@ export const nextQuestion = () => {
   quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
 
   initQuestionPage();
+};
+
+const answer = (currentQuestion, answerElement, key) => {
+  if (currentQuestion.submitted === false) {
+    if (
+      Object.keys(currentQuestion.answers).includes(currentQuestion.selected)
+    ) {
+      const previousAnswer = document.querySelector('.selected');
+      previousAnswer.classList.remove('selected');
+    }
+    currentQuestion.selected = key;
+    answerElement.classList.add('selected');
+  }
+};
+
+const submitAnswer = (currentQuestion) => {
+  if (Object.keys(currentQuestion.answers).includes(currentQuestion.selected)) {
+    currentQuestion.submitted = true;
+  }
 };
