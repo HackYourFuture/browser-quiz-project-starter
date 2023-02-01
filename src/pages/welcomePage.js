@@ -16,4 +16,7 @@ export const initWelcomePage = () => {
 
 const startQuiz = () => {
   // Quiz starting function can be called here.
+  document
+    .getElementById(START_QUIZ_BUTTON_ID)
+    .addEventListener('click', startQuiz);
 };
