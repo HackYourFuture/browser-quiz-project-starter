@@ -1,9 +1,7 @@
-import { quizData } from './data.js';
+import { initQuestionPage } from './pages/questionPage.js';
 import { initWelcomePage } from './pages/welcomePage.js';
 
 const loadApp = () => {
-  quizData.currentQuestionIndex = 0;
-
   initWelcomePage();
 };
 
