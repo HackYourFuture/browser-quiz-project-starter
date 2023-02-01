@@ -7,6 +7,7 @@ import {
 import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
+import { startCountdown } from '../views/countdown.js';
 
 export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
@@ -32,9 +33,16 @@ export const initQuestionPage = () => {
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
     .addEventListener('click', nextQuestion);
+
+  document
+    .getElementById(NEXT_QUESTION_BUTTON_ID)
+    .addEventListener('click', () => {
+      time = 60;
+      setInterval(startCountdown, 1000);
+    });
 };
 
-const nextQuestion = () => {
+export const nextQuestion = () => {
   quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
 
   initQuestionPage();
