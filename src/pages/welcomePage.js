@@ -17,5 +17,5 @@ export const initWelcomePage = () => {
 };
 
 const startQuiz = () => {
-  // Quiz starting function can be called here.
+  initQuestionPage();
 };
