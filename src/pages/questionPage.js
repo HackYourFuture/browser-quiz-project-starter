@@ -2,6 +2,7 @@ import { quizData } from '../data.js';
 import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
 import { USER_INTERFACE_ID } from '../constants.js';
+import { initResultsPage } from '../pages/resultsPage.js';
 
 export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
