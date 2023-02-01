@@ -100,7 +100,8 @@ export const quizData = {
       correct: 'd',
     },
     {
-      question: ' How many days does it take for the Earth to rotate around the Sun? ',
+      question:
+        ' How many days does it take for the Earth to rotate around the Sun? ',
       a: ' 365.24 days ',
       b: ' 235.41 days ',
       c: ' 65.24 days ',
@@ -108,7 +109,8 @@ export const quizData = {
       correct: 'a',
     },
     {
-      question: ' What is the name of the space telescope launched by the European Space Agency? ',
+      question:
+        ' What is the name of the space telescope launched by the European Space Agency? ',
       a: ' Space Telescope ',
       b: ' Hubble Space Telescope ',
       c: ' Night Telescope ',
@@ -124,7 +126,8 @@ export const quizData = {
       correct: 'd',
     },
     {
-      question: ' How much of the Earths atmosphere is located in outer space? ',
+      question:
+        ' How much of the Earths atmosphere is located in outer space? ',
       a: ' None ',
       b: ' 2 ',
       c: ' 6 ',
