@@ -11,6 +11,7 @@ export const createAnswerElement = (key, answerText) => {
   answerInput.setAttribute('type', 'radio');
   answerInput.setAttribute('id', key);
   answerInput.setAttribute('name', 'answer');
+  answerInput.setAttribute('value', answerText);
   answerInput.appendChild(label);
   label.setAttribute('for', key);
   label.innerText = answerText;

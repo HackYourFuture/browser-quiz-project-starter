@@ -3,12 +3,9 @@
 * {
   box-sizing: border-box;
 }
-html {
-  background-color: rgb(78, 75, 75);
-}
-/* add the img folder with this img 'stars.jpg'  */
+
 body {
-  background: url('img/stars.jpg') repeat 0 0;
+  background: url('../public/img/stars.jpg') repeat 0 0;
   animation: animate 3s infinite;
   animation-timing-function: linear;
   /* font-family: ; */
@@ -25,27 +22,28 @@ body {
   }
 }
 
-/* .rocket-background {
+.rocket-background {
   position: absolute;
   display: grid;
   place-items: center;
   height: 100vh;
-  z-index: 1;
-  margin-top: 5rem;
+  z-index: -1;
+  margin-top: -20rem;
 }
 
 .rocket-background img {
   width: 40%;
-} */
+}
 
 .quiz-container {
+  background-color: aliceblue;
   border-radius: 10px;
   box-shadow: 0 0 10px 2px black;
   width: 900px;
   overflow: hidden;
-
   backdrop-filter: blur(15px);
   /* margin-bottom: 55rem; */
+  opacity: 0.8;
 }
 
 .quiz-header {
