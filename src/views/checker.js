@@ -1,5 +1,6 @@
 import { quizData } from '../data.js';
 import { playSound } from './playSound.js';
+import { willBar } from '../willBar.js';
 
 export const checker = function () {
   let answers = document.querySelectorAll('li');
@@ -8,9 +9,6 @@ export const checker = function () {
   let [correctAnswerListItem] = [...answers].filter(
     (answer) => answer.dataset.key === correctAnswer
   );
-
-  const willPower = document.querySelector('.level');
-  const borderWillPower = document.querySelector('.level-bar');
 
   const clickChecker = function () {
     answers.forEach((answer) =>
@@ -23,9 +21,7 @@ export const checker = function () {
 
           if (correctAnswer === clickedAnswer) {
             e.target.style.background = 'var(--color7)';
-            let currentWidth = willPower.offsetWidth;
-            let newWidth = currentWidth + borderWillPower.clientWidth / 10;
-            willPower.style.width = `${newWidth}px`;
+            willBar();
           } else {
             e.target.style.background = 'var(--color6)';
             correctAnswerListItem.style.background = 'var(--color7)';
@@ -56,6 +52,7 @@ export const checker = function () {
 
           if (e.key === correctAnswer) {
             correctAnswerListItem.style.background = 'var(--color7)';
+            willBar();
           } else if (e.key !== correctAnswer) {
             const wrongAnswerListItem = document.querySelector(
               `li[data-key="${e.key}"]`
