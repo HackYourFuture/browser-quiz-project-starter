@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 # Hobbits Quiz App
 
 This application provides an interface of a Quiz-App.
@@ -75,4 +73,3 @@ This app is made by a group of Hobbit's team. The group of Hobbit consists of:
 - Ozgur
 - Doga
 - Badar
->>>>>>> master

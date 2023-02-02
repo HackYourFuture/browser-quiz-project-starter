@@ -10,10 +10,10 @@ export const loadBackgrounds = function () {
   }
 
   const body = document.querySelector('body');
-  body.style.background = `url(../images/background-img/${backgroundImages[currentIndex]}) no-repeat center center/cover`;
+  body.style.background = `url(${backgroundImages[currentIndex]}) no-repeat center center/cover`;
 
   const backgroundAudio = document.querySelector('#background-music');
-  backgroundAudio.src = `../sounds/background-sounds/${backgroundMusics[currentIndex]}`;
+  backgroundAudio.src = `${backgroundMusics[currentIndex]}`;
   backgroundAudio.play();
 
   currentIndex++;
