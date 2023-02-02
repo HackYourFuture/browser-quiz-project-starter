@@ -1,7 +1,7 @@
 import {
   START_QUIZ_BUTTON_ID,
-  WELLCOME_OUTER_DİV,
-  WELLCOME_H1,
+  WELCOME_OUTER_DİV,
+  WELCOME_H1,
   QUIZ_RULES_LIST,
   INPUT_NAME,
   BOTTOM_DIV,
@@ -15,10 +15,10 @@ import {
 // We can use the same idea.
 export const createWelcomeElement = () => {
   const outerDiv = document.createElement('div');
-  outerDiv.setAttribute('id', WELLCOME_OUTER_DİV);
+  outerDiv.setAttribute('id', WELCOME_OUTER_DİV);
 
   const h1 = document.createElement('h1');
-  h1.setAttribute('id', WELLCOME_H1);
+  h1.setAttribute('id', WELCOME_H1);
   outerDiv.appendChild(h1);
   h1.textContent = 'Hello';
   const h4 = document.createElement('h4');

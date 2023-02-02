@@ -89,9 +89,9 @@ button:focus {
   outline: none;
   background-color: rgb(30, 166, 0);
 }
-/*WELLCOME PAGE STYLES*/
+/*WELCOME PAGE STYLES*/
 
-#wellcome-outer-div {
+#welcome-outer-div {
   display: flex;
   flex-direction: column;
   text-align: center;
