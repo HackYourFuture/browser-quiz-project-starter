@@ -1,30 +1,30 @@
 # Hobbits Quiz App
 
-This application provides an interface of a Quiz-App. 
+This application provides an interface of a Quiz-App.
 
-* In this, user is shown ten questions with four multiple answers for each question. The user has to select correct answer (It directly shows whether the answer is correct or wrong (red/green color-code) and proceed with Next button.
+- In this, user is shown ten questions with four multiple answers for each question. The user has to select correct answer (It directly shows whether the answer is correct or wrong (red/green color-code) and proceed with Next button.
 
-* Also during whole process, there is a timer running, after that time lapse, all response has been recorded and according to user performance, its Result has been shown on final screen.
+- Also during whole process, there is a timer running, after that time lapse, all response has been recorded and according to user performance, its Result has been shown on final screen.
 
-* For winning the Quiz, user have to fulfill below condition:
-The accuracy should be greater than 60%.
+- For winning the Quiz, user have to fulfill below condition:
+  The accuracy should be greater than 60%.
 
 # App Demo
 
-* Our web application live on:  
+- Our web application live on:
 
 # Development
 
-* To run this web application locally, you will need to open index.html in your browser using a local server. LiveServer, http-server or any other local static server will work.
+- To run this web application locally, you will need to open index.html in your browser using a local server. LiveServer, http-server or any other local static server will work.
 
 # Installing Dependencies
 
-* There are no dependencies needed to run the website, everything is prepared to work with vanilla JavaScript. However, if you want to install prettier for this project then run (generally you always want to do this if you see a package.json file):
-•	npm install
+- There are no dependencies needed to run the website, everything is prepared to work with vanilla JavaScript. However, if you want to install prettier for this project then run (generally you always want to do this if you see a package.json file):
+  • npm install
 
 # Structure
 
-* Let's run through the folders:
+- Let's run through the folders:
 
 ```
 public
@@ -47,7 +47,6 @@ index.html
 
 # Goal and Backlog
 
-
 ## must have features
 
 - [x] A user can see one question at a time, stepping through the quiz
@@ -67,11 +66,10 @@ index.html
 - [ ] (could have) Transition between pages or question look fancy like TypeForm for example
 
 # Hobbit's Team
+
 This app is made by a group of Hobbit's team. The group of Hobbit consists of:
 
-* Obada
-* Ozgur
-* Doga 
-* Badar
-
-
+- Obada
+- Ozgur
+- Doga
+- Badar
