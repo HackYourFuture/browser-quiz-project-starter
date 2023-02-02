@@ -1,5 +1,5 @@
-// I continue to work on this file
 import { USER_INTERFACE_ID } from '../constants.js';
+import { RESTART_QUIZ_BUTTON_ID } from '../constants.js';
 import { createResultsElement } from '../views/resultsView.js';
 
 export const initResultsPage = function () {
@@ -8,4 +8,9 @@ export const initResultsPage = function () {
 
   const resultElement = createResultsElement();
   userInterface.appendChild(resultElement);
+
+  const restartButton = document.getElementById(RESTART_QUIZ_BUTTON_ID);
+  restartButton.addEventListener('click', () => {
+    location.reload();
+  });
 };

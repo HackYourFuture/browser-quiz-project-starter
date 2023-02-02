@@ -98,3 +98,16 @@ button {
 .level-bar.display {
   display: block;
 }
+
+
+@media screen and (max-width:1150px){
+  ul{
+    width:100%;
+  }
+
+  li {
+    width: 100%;
+    background-color: red;
+  }
+}
+
