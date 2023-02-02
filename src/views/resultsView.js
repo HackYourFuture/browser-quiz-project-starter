@@ -2,7 +2,7 @@
  * Create a full result element
  * @returns {Element}
  */
-
+import { RESTART_QUIZ_BUTTON_ID } from '../constants.js';
 import { quizData } from '../data.js';
 
 export const sumOfRightAnswers = function () {
@@ -20,6 +20,7 @@ export const createResultsElement = () => {
   element.innerHTML = String.raw`
     <h1>Results</h1>
     <p>Your rating is ${sumOfRightAnswers()} out of 10 </p>
+    <button id="${RESTART_QUIZ_BUTTON_ID}">restart quiz</button>
   `;
 
   return element;

@@ -15,8 +15,8 @@
 }
 
 body {
-  background: url(../images/background-img/00-shire.jpg) no-repeat center
-    center/cover;
+  background: url(https://ozgur2096.github.io/quiz-project-sounds-and-images/background-img/00-shire.jpg)
+    no-repeat center center/cover;
   height: 100vh;
 }
 
@@ -97,4 +97,15 @@ button {
 
 .level-bar.display {
   display: block;
+}
+
+@media screen and (max-width: 1150px) {
+  ul {
+    width: 100%;
+  }
+
+  li {
+    width: 100%;
+    background-color: red;
+  }
 }
