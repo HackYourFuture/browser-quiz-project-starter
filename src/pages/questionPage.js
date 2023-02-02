@@ -33,13 +33,6 @@ export const initQuestionPage = () => {
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
     .addEventListener('click', nextQuestion);
-
-  document
-    .getElementById(NEXT_QUESTION_BUTTON_ID)
-    .addEventListener('click', () => {
-  
-      setInterval(startCountdown, 1000);
-    });
 };
 
 export const nextQuestion = () => {
