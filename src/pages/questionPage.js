@@ -43,7 +43,7 @@ export const initQuestionPage = () => {
     });
 };
 
-const nextQuestion = () => {
+export const nextQuestion = () => {
   if (quizData.currentQuestionIndex === quizData.questions.length - 1)
     initResultsPage();
   else {

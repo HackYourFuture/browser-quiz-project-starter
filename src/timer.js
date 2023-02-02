@@ -1,3 +1,7 @@
+import { quizData } from './data.js';
+import { initQuestionPage, nextQuestion } from './pages/questionPage.js';
+import { loadBackgrounds } from './views/loadBackgrounds.js';
+
 export function timerSecond() {
   let seconds = 91;
   let el = document.createElement('div');
@@ -7,6 +11,7 @@ export function timerSecond() {
   function decreaseSeconds() {
     seconds -= 1;
     el.innerText = seconds;
+    el.innerText;
 
     if (seconds === 0) {
       clearInterval(intervalId);
@@ -19,3 +24,12 @@ export function removeElement() {
   let el = document.querySelector('.seconds-counter');
   el.remove();
 }
+
+// export function noTimeToAnswer() {
+//   let el = document.querySelector('.seconds-counter');
+//   if (el.innerText === '0') {
+//     nextQuestion();
+//     removeElement();
+//     loadBackgrounds();
+//   }
+// }

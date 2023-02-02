@@ -6,11 +6,12 @@
   --color5: rgb(246, 237, 240);
   --color6: rgb(229, 54, 6);
   --color7: hwb(121 20% 40%);
+  --centeredClassWidth: 50%;
 }
 
 * {
   margin: 0;
-  /* padding: 0; */
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -19,6 +20,10 @@ body {
     no-repeat center center/cover;
   height: 100vh;
 }
+.container {
+  height: 100%;
+  
+}
 
 .centered {
   position: fixed;
@@ -26,7 +31,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  width: 50%;
+  width: var(--centeredClassWidth);
   background-color: var(--color1);
   border-radius: 10px;
   padding: 10px;
@@ -79,7 +84,7 @@ button {
   width: 30%;
   height: 30px;
   border-radius: 15px;
-  margin: 20px auto;
+  margin: 0 auto;
   border: brown solid 3px;
   display: none;
 }
@@ -99,13 +104,6 @@ button {
   display: block;
 }
 
-@media screen and (max-width: 1150px) {
-  ul {
-    width: 100%;
-  }
-
-  li {
-    width: 100%;
-    background-color: red;
-  }
+.story {
+  width: var(--centeredClassWidth)
 }
