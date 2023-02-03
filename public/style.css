@@ -6,7 +6,7 @@
   --color5: rgb(246, 237, 240);
   --color6: rgb(229, 54, 6);
   --color7: hwb(121 20% 40%);
-  --color8: rgb(55, 89, 52,0.8);
+  --color8: rgb(55, 89, 52, 0.8);
   --centeredClassWidth: 50%;
 }
 
@@ -28,7 +28,6 @@ body {
 }
 .container {
   height: 100%;
-  
 }
 
 .centered {
@@ -130,7 +129,7 @@ button {
   background-image: linear-gradient(to bottom, #ccc, #fff);
 }
 
-.sound-on-off{
+.sound-on-off {
   display: none;
   margin-left: 0;
   border-radius: 15px;
@@ -143,7 +142,6 @@ button {
   display: none;
 }
 
-
 .story {
   margin-top: 10px;
   padding: 20px;
@@ -154,7 +152,7 @@ button {
   left: 50%;
   transform: translate(-50%, -50%); */
   background: var(--color8);
-  color:var(--color4);
+  color: var(--color4);
   border-radius: 10px;
   line-height: 20px;
 }
