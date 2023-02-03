@@ -5,6 +5,7 @@ import {
 } from '../constants.js';
 import { createQuizRulesElement } from '../views/welcomeView.js';
 import { initQuestionPage } from './questionPage.js';
+import { initWelcomePage } from './welcomePage.js';
 
 export const initQuizRulesPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
