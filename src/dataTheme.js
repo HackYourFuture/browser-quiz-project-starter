@@ -32,51 +32,71 @@ export const dataStory = {
   stories: [
     {
       id: 'welcome-page',
-      text: '',
+      text: `Do you have the will to drop the ring into Mount Doom?
+      “Even the smallest person can change the course of the future.”
+      - Galadriel
+      `,
     },
     {
       id: 'question-page-1',
-      text: '',
+      text: `You are in Hobbiton
+             You have the ring, the one! 
+             Be ready to leave home because you have to take the ring to Bree and meet Gandalf there.`,
     },
     {
       id: 'question-page-2',
-      text: '',
+      text: 'Oh no! Gandalf is not here',
     },
     {
       id: 'question-page-3',
-      text: '',
+      text: `You are in the house of Elrond.`,
     },
     {
       id: 'question-page-4',
-      text: '',
+      text: `"The Doors of Durin, Lord of Moria. Speak, friend, and enter."`,
     },
     {
       id: 'question-page-5',
-      text: '',
+      text: `"A Balrog. A demon of the ancient world. This for is beyond any of you.
+      Fly, you fools!"
+      - Gandalf`,
     },
     {
       id: 'question-page-6',
-      text: '',
+      text: ` "Stay close, young hobbits! They say that a great sorceress lives in these woods. An elf witch of terrible power. All who look upon her fall under her spell. And are never seen again."
+        - Gimli`,
     },
     {
       id: 'question-page-7',
-      text: '',
+      text: `"The Argonath. Long have I desired to look upon the kings of old. My kin." 
+        - Aragorn`,
     },
     {
       id: 'question-page-8',
-      text: '',
+      text: ` "Come, master. We will take you on safe paths through the mist. Come Hobbits! Come! We go quickly. I found it. I did. The way through the marshes. Orcs don't use it. Orcs don't know it. They go around for miles and miles. Come quickly! Soft and quick as shadows we must be." 
+      - Gollum`,
     },
     {
       id: 'question-page-9',
-      text: '',
+      text: `"Naughty little fly 
+      Why does he cry?
+      Caught in a web 
+      Soon you'll be eaten"
+      - Gollum`,
     },
     {
       id: 'question-page-10',
-      text: '',
+      text: ` "Go on! Now! Throw it in the fire! What are you waiting for? Just let it go!" 
+      - Sam`,
     },
     {
-      id: 'result-page',
-      text: '',
+      id: 'result-page-victory',
+      text: `Congratulations my little hobbit friend!
+      You saved Middle-Earth`,
+    },
+    {
+      id: 'result-page-fail',
+      text: `End of the journey, little hobbit! You could not save Middle-Earth`,
     },
   ],
 };

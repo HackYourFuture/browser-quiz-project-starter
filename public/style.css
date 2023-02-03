@@ -6,11 +6,13 @@
   --color5: rgb(246, 237, 240);
   --color6: rgb(229, 54, 6);
   --color7: hwb(121 20% 40%);
+  --color8: rgb(55, 89, 52, 0.8);
+  --centeredClassWidth: 50%;
 }
 
 * {
   margin: 0;
-  /* padding: 0; */
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -18,18 +20,33 @@ body {
   background: url(https://ozgur2096.github.io/quiz-project-sounds-and-images/background-img/00-shire.jpg)
     no-repeat center center/cover;
   height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.container {
+  height: 100%;
 }
 
 .centered {
-  position: fixed;
+  /* position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
   text-align: center;
-  width: 50%;
+  width: var(--centeredClassWidth);
+  /* height: 300px; */
   background-color: var(--color1);
   border-radius: 10px;
   padding: 10px;
+}
+.centered > div {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  align-items: center;
 }
 
 .scrollable {
@@ -75,13 +92,30 @@ button {
   cursor: pointer;
 }
 
+.soundOnOff-and-will-container {
+  width: var(--centeredClassWidth);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .level-bar {
-  width: 300px;
+  position: relative;
   height: 30px;
   border-radius: 15px;
-  margin: 20px auto;
+  /* margin: 0 auto; */
   border: brown solid 3px;
   display: none;
+  background-color: var(--color1);
+  flex: 0 0 306px;
+}
+
+#will-power-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--color3);
 }
 
 .level {
@@ -95,17 +129,85 @@ button {
   background-image: linear-gradient(to bottom, #ccc, #fff);
 }
 
-.level-bar.display {
-  display: block;
+.sound-on-off {
+  display: none;
+  margin-left: 0;
+  border-radius: 15px;
 }
 
-@media screen and (max-width: 1150px) {
-  ul {
-    width: 100%;
-  }
+.display {
+  display: block;
+}
+.do-not-display {
+  display: none;
+}
 
+.story {
+  margin-top: 10px;
+  padding: 20px;
+  text-align: center;
+  width: var(--centeredClassWidth);
+  /* position: fixed;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+  background: var(--color8);
+  color: var(--color4);
+  border-radius: 10px;
+  line-height: 20px;
+}
+
+@media (max-width: 1210px) {
+  .centered {
+    width: 70%;
+  }
+  ul {
+    width: 90%;
+  }
+  li {
+    width: 90%;
+  }
+  button {
+    width: 50%;
+  }
+  .level-bar {
+    width: 50%;
+  }
+}
+@media (max-width: 600px) {
+  .centered {
+    width: 80%;
+  }
+  ul {
+    width: 90%;
+  }
   li {
     width: 100%;
-    background-color: red;
+  }
+  button {
+    width: 40%;
+    margin: 5px;
+    padding: 5px;
+    font-size: 14px;
+  }
+  .level-bar {
+    width: 40%;
+  }
+}
+@media (max-width: 400px) {
+  .centered {
+    width: 90%;
+  }
+  ul {
+    width: 95%;
+  }
+  button {
+    width: 50%;
+    margin: 5px;
+    padding: 5px;
+    font-size: 12px;
+  }
+  .level-bar {
+    width: 50%;
   }
 }
