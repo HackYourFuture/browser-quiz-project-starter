@@ -7,6 +7,7 @@
   --color6: rgb(229, 54, 6);
   --color7: hwb(121 20% 40%);
   --color8: rgb(55, 89, 52, 0.8);
+  --color9: rgb(246, 237, 240, 0.7);
   --centeredClassWidth: 50%;
 }
 
@@ -20,7 +21,7 @@ body {
   background: url(https://ozgur2096.github.io/quiz-project-sounds-and-images/background-img/00-shire.jpg)
     no-repeat center center/cover;
   height: 100vh;
-
+  font-size: 1.2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,13 +32,8 @@ body {
 }
 
 .centered {
-  /* position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); */
   text-align: center;
   width: var(--centeredClassWidth);
-  /* height: 300px; */
   background-color: var(--color1);
   border-radius: 10px;
   padding: 10px;
@@ -77,9 +73,6 @@ li {
   border-radius: 5px;
   transition: all 0.3s ease-in;
 }
-/* .wrong-answer{
-  border: 2px solid var(--color6)
-} */
 
 button {
   width: 30%;
@@ -90,6 +83,35 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.seconds-counter {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  position: fixed;
+  top: 30px;
+  left: 30px;
+  border: solid var(--color4) 2px;
+  border-radius: 50%;
+  color: var(--color5);
+  background-color: var(--color8);
+  font-size: 30px;
+}
+
+#question-counter {
+  padding: 5px;
+  height: 35px;
+  text-align: center;
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  border: solid var(--color7) 2px;
+  border-radius: 15px;
+  color: var(--color3);
+  background-color: var(--color9);
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .soundOnOff-and-will-container {
@@ -103,7 +125,6 @@ button {
   position: relative;
   height: 30px;
   border-radius: 15px;
-  /* margin: 0 auto; */
   border: brown solid 3px;
   display: none;
   background-color: var(--color1);
@@ -133,6 +154,7 @@ button {
   display: none;
   margin-left: 0;
   border-radius: 15px;
+  flex: 0 0 120px;
 }
 
 .display {
@@ -147,10 +169,6 @@ button {
   padding: 20px;
   text-align: center;
   width: var(--centeredClassWidth);
-  /* position: fixed;
-  top: 80%;
-  left: 50%;
-  transform: translate(-50%, -50%); */
   background: var(--color8);
   color: var(--color4);
   border-radius: 10px;
