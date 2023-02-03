@@ -12,6 +12,8 @@ import { timerSecond } from '../timer.js';
 import { counterQuestion } from '../questionRow.js';
 import { removeElement } from '../timer.js';
 import { loadBackgrounds } from '../views/loadBackgrounds.js';
+import { interactionWithSound } from '../views/soundOnOff.js';
+import { changeStoryText } from '../views/writeStory.js';
 
 export const initQuestionPage = () => {
   timerSecond();
@@ -32,7 +34,13 @@ export const initQuestionPage = () => {
     answersListElement.appendChild(answerElement);
   }
 
+  changeStoryText();
   checker();
+
+  // let ozgur = document.getElementById('ozgur');
+  // if (ozgur) ozgur.addEventListener('click', nextQuestion);
+
+  interactionWithSound();
 
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)

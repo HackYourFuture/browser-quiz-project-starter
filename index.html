@@ -11,12 +11,18 @@
 
   <body>
     <!-- Put your HTML here -->
+    <div class="soundOnOff-and-will-container">
+      <button class="sound-on-off">sound on / off</button>
 
-    <div class="level-bar">
-      <div class="level"></div>
+      <div class="level-bar">
+        <p id="will-power-text">will power</p>
+        <div class="level"></div>
+      </div>
     </div>
+
     <div id="question-counter"></div>
     <div id="user-interface" class="centered"></div>
+    <div class="story" id="story-div"></div>
 
     <!-- your data -->
 
@@ -31,5 +37,6 @@
 
     <audio id="background-music" src=""></audio>
     <script type="module" src="src/app.js"></script>
+    <!-- <script src="src/views/soundOnOff.js"></script> -->
   </body>
 </html>

@@ -18,9 +18,9 @@ export const createResultsElement = () => {
 
   // I use String.raw just to get fancy colors for the HTML in VS Code.
   element.innerHTML = String.raw`
-    <h1>Results</h1>
+    <h1>Result</h1>
     <p>Your rating is ${sumOfRightAnswers()} out of 10 </p>
-    <button id="${RESTART_QUIZ_BUTTON_ID}">restart quiz</button>
+    <button id="${RESTART_QUIZ_BUTTON_ID}">Restart Journey</button>
   `;
 
   return element;

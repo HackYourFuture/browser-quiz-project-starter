@@ -1,9 +1,10 @@
+import { NEXT_QUESTION_BUTTON_ID } from './constants.js';
 import { quizData } from './data.js';
 import { initQuestionPage, nextQuestion } from './pages/questionPage.js';
 import { loadBackgrounds } from './views/loadBackgrounds.js';
 
 export function timerSecond() {
-  let seconds = 91;
+  let seconds = 10;
   let el = document.createElement('div');
   el.className = 'seconds-counter';
   document.body.append(el);
@@ -15,6 +16,7 @@ export function timerSecond() {
 
     if (seconds === 0) {
       clearInterval(intervalId);
+      // noTimeToAnswer(seconds);
     }
   }
   let intervalId = setInterval(decreaseSeconds, 1000);
@@ -23,13 +25,21 @@ export function timerSecond() {
 export function removeElement() {
   let el = document.querySelector('.seconds-counter');
   el.remove();
+  // let noTime = document.querySelector('.no-time');
+  // if (noTime) noTime.remove();
 }
 
-// export function noTimeToAnswer() {
-//   let el = document.querySelector('.seconds-counter');
-//   if (el.innerText === '0') {
-//     nextQuestion();
-//     removeElement();
-//     loadBackgrounds();
+// function noTimeToAnswer(seconds) {
+//   if (seconds === 0) {
+//     const noTime = document.createElement('div');
+//     noTime.className = '.no-time';
+//     document.body.append(noTime);
+//     noTime.innerHTML = String.raw`
+//     <h1>You have no time</h1>
+
+//     <button id="ozgur">
+//       Next
+//     </button>
+//   `;
 //   }
 // }

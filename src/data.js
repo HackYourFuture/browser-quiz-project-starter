@@ -140,7 +140,7 @@ export const quizData = {
       answers: {
         a: 'Bg-color:red',
         b: 'Background-colour:red',
-        c: 'Background:red',
+        c: 'Background = red',
         d: 'Background-color:red',
       },
       correct: 'd',
