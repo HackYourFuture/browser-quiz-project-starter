@@ -39,13 +39,13 @@ export const dataStory = {
     },
     {
       id: 'question-page-1',
-      text: `You are in Hobbiton
+      text: `You are in Hobbiton.
              You have the ring, the one! 
              Be ready to leave home because you have to take the ring to Bree and meet Gandalf there.`,
     },
     {
       id: 'question-page-2',
-      text: 'Oh no! Gandalf is not here',
+      text: 'Oh no! Gandalf is not here.',
     },
     {
       id: 'question-page-3',

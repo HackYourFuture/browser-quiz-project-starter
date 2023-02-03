@@ -1,6 +1,6 @@
 import { quizData } from '../data.js';
 import { playSound } from './playSound.js';
-import { willBar } from '../willBar.js';
+import { willBar } from './willBar.js';
 
 export const checker = function () {
   let answers = document.querySelectorAll('li');

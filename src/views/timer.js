@@ -1,10 +1,10 @@
-import { NEXT_QUESTION_BUTTON_ID } from './constants.js';
-import { quizData } from './data.js';
-import { initQuestionPage, nextQuestion } from './pages/questionPage.js';
-import { loadBackgrounds } from './views/loadBackgrounds.js';
+import { NEXT_QUESTION_BUTTON_ID } from '../constants.js';
+import { quizData } from '../data.js';
+import { initQuestionPage, nextQuestion } from '../pages/questionPage.js';
+import { loadBackgrounds } from './loadBackgrounds.js';
 
 export function timerSecond() {
-  let seconds = 10;
+  let seconds = 90;
   let el = document.createElement('div');
   el.className = 'seconds-counter';
   document.body.append(el);

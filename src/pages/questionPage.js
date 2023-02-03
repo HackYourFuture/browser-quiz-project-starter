@@ -8,9 +8,11 @@ import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
 import { checker } from '../views/checker.js';
 import { initResultsPage } from './resultsPage.js';
-import { timerSecond } from '../timer.js';
-import { counterQuestion } from '../questionRow.js';
-import { removeElement } from '../timer.js';
+import { timerSecond, removeElement } from '../views/timer.js';
+import {
+  counterQuestion,
+  removeQuestionCounter,
+} from '../views/questionCounterView.js';
 import { loadBackgrounds } from '../views/loadBackgrounds.js';
 import { interactionWithSound } from '../views/soundOnOff.js';
 import { changeStoryText } from '../views/writeStory.js';
@@ -34,11 +36,9 @@ export const initQuestionPage = () => {
     answersListElement.appendChild(answerElement);
   }
 
+  // counterQuestion();
   changeStoryText();
   checker();
-
-  // let ozgur = document.getElementById('ozgur');
-  // if (ozgur) ozgur.addEventListener('click', nextQuestion);
 
   interactionWithSound();
 
@@ -52,9 +52,10 @@ export const initQuestionPage = () => {
 };
 
 export const nextQuestion = () => {
-  if (quizData.currentQuestionIndex === quizData.questions.length - 1)
+  if (quizData.currentQuestionIndex === quizData.questions.length - 1) {
     initResultsPage();
-  else {
+    removeQuestionCounter();
+  } else {
     quizData.currentQuestionIndex++;
     initQuestionPage();
   }
