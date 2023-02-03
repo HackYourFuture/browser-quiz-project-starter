@@ -45,10 +45,11 @@ export const initQuestionPage = () => {
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
     .addEventListener('click', nextQuestion);
-};
-document
+    document
   .getElementById(ANSWERS_LIST_ID)
   .addEventListener('click', answerSelection);
+};
+
 
 const nextQuestion = () => {
   quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
