@@ -24,10 +24,31 @@ export const initQuestionPage = () => {
     answersListElement.appendChild(answerElement);
   }
 
+  function answerSelection(answer) {
+    let theAnswer = [];
+    if (answer.target.tagName === 'LI') {
+      const userAnswer = answer.target.id;
+
+      theAnswer[quizData.currentQuestionIndex] =
+        currentQuestion.answers[userAnswer];
+      if (userAnswer === currentQuestion.correct) {
+        console.log('true');
+        answer.target.style.backgroundColor = 'green';
+      } else {
+        console.log(false);
+
+        answer.target.style.backgroundColor = 'red';
+      }
+    }
+  }
+
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
     .addEventListener('click', nextQuestion);
 };
+document
+  .getElementById(ANSWERS_LIST_ID)
+  .addEventListener('click', answerSelection);
 
 const nextQuestion = () => {
   quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
