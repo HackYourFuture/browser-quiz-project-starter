@@ -11,7 +11,7 @@ This application provides an interface of a Quiz-App.
 
 # App Demo
 
-- Our web application live on:
+- Our web application live on: https://ozgur2096.github.io/hobbits-quiz-project/
 
 # Development
 
