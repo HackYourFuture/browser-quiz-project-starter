@@ -8,7 +8,7 @@ import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
 import { checker } from '../views/checker.js';
 import { initResultsPage } from './resultsPage.js';
-import { timerSecond, removeElement } from '../views/timer.js';
+import { timerSecond, removeElement, intervalId } from '../views/timer.js';
 import {
   counterQuestion,
   removeQuestionCounter,
@@ -45,6 +45,7 @@ export const initQuestionPage = () => {
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
     .addEventListener('click', () => {
+      clearInterval(intervalId);
       nextQuestion();
       removeElement();
       loadBackgrounds();
