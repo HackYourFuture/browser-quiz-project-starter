@@ -3,7 +3,7 @@ import { loadBackgrounds } from './loadBackgrounds.js';
 export let intervalId;
 
 export function timerSecond() {
-  let seconds = 40;
+  let seconds = 10;
   let el = document.createElement('div');
   el.className = 'seconds-counter';
   document.body.append(el);
