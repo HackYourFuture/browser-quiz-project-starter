@@ -7,7 +7,6 @@
 }
 body {
   font-family: 'Ubuntu', sans-serif;
-  /* background-image: url('https://static01.nyt.com/images/2022/07/12/multimedia/-12vid-nasa-highlights-video-cover/-12vid-nasa-highlights-video-cover-videoSixteenByNine3000.jpg'); */
   background-color:#C0E1E6;
   background-repeat:no-repeat;
   background-size: cover;
@@ -18,7 +17,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  background-image: url('/public/images/pngegg.png'); 
+  background-image: url('/public/images/Background.png'); 
   /* background-color: rgb(244, 211, 94); */
   padding: 13em;
   border-radius: 500px;
