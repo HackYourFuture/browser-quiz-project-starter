@@ -50,8 +50,8 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: 200;
   line-height: 1.8rem;
-  margin-top:1rem ;
-  margin-bottom:1rem ;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .scrollable {
@@ -181,8 +181,6 @@ button {
   border-radius: 10px;
 }
 
-
-
 @media (max-width: 1210px) {
   .centered {
     width: 80%;
@@ -199,7 +197,7 @@ button {
   .level-bar {
     width: 50%;
   }
-  .story{
+  .story {
     width: 80%;
   }
 }
