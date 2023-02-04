@@ -57,10 +57,10 @@ index.html
 ## should have features
 
 - [x] (should have) A user can see what the correct answer is after they selected their answer.
-- [ ] (should have) A user can see their score update in real-time as they select answers
+- [x] (should have) A user can see their score update in real-time as they select answers
 - [ ] (should have) A user can refresh the page and still have his/her given answers available
 
-## must have features
+## could have features
 
 - [ ] (could have) A user can "skip" the question and learn the correct answer, this forfeits the question
 - [ ] (could have) Transition between pages or question look fancy like TypeForm for example
