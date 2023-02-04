@@ -18,7 +18,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  background-image: url('./images/pngegg.png'); 
+  background-image: url('images/pngegg.png'); 
   /* background-color: rgb(244, 211, 94); */
   padding: 13em;
   border-radius: 500px;
