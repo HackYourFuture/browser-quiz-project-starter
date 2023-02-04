@@ -23,12 +23,6 @@ export const quizData = {
       },
       correct: 'b',
       selected: null,
-      links: [
-        {
-          text: 'HTML.info',
-          href: 'https://developer.mozilla.org/en-US/docs/Web/HTML',
-        },
-      ],
     },
     {
       text: 'What symbol indicates a tag?',
@@ -40,12 +34,6 @@ export const quizData = {
       },
       correct: 'c',
       selected: null,
-      links: [
-        {
-          text: 'HTML.info',
-          href: 'http://mason.gmu.edu/~montecin/htmltags.htm',
-        },
-      ],
     },
     {
       text: 'What is the correct tag for a line break?',
@@ -57,12 +45,6 @@ export const quizData = {
       },
       correct: 'd',
       selected: null,
-      links: [
-        {
-          text: 'HTML.info',
-          href: 'http://mason.gmu.edu/~montecin/htmltags.htm',
-        },
-      ],
     },
     {
       text: 'Which of these is a genuine tag keyword?',
@@ -74,13 +56,6 @@ export const quizData = {
       },
       correct: 'a',
       selected: null,
-      links: [
-        {
-          text: 'HTML.info',
-          href:
-            'https://www.cs.kent.ac.uk/teaching/10/modules/CO/3/32/FIT_Chapters/Chapter04/BasicHTMLTags.html',
-        },
-      ],
     },
     {
       text: 'What does CSS stand for?',
@@ -92,12 +67,6 @@ export const quizData = {
       },
       correct: 'c',
       selected: null,
-      links: [
-        {
-          text: 'CSS.info',
-          href: 'https://www.w3schools.com/css/css_intro.asp',
-        },
-      ],
     },
     {
       text: 'Where should a CSS file be referenced in a HTML file?',
@@ -109,12 +78,6 @@ export const quizData = {
       },
       correct: 'c',
       selected: null,
-      links: [
-        {
-          text: 'CSS.info',
-          href: 'https://www.w3schools.com/CSS/css_howto.asp',
-        },
-      ],
     },
     {
       text:
@@ -127,12 +90,6 @@ export const quizData = {
       },
       correct: 'a',
       selected: null,
-      links: [
-        {
-          text: 'CSS.info',
-          href: 'https://developer.mozilla.org/en-US/docs/Web/CSS/text-align',
-        },
-      ],
     },
     {
       text:
@@ -145,12 +102,6 @@ export const quizData = {
       },
       correct: 'd',
       selected: null,
-      links: [
-        {
-          text: 'CSS.info',
-          href: 'https://www.w3schools.com/css/css_background.asp',
-        },
-      ],
     },
     {
       text: 'What is the correct format for a div?',
@@ -162,12 +113,6 @@ export const quizData = {
       },
       correct: 'b',
       selected: null,
-      links: [
-        {
-          text: 'HTML.info',
-          href: 'https://www.w3schools.com/Tags/tag_div.asp',
-        },
-      ],
     },
     {
       text: 'What are variables used in JavaScript programs?',
@@ -179,12 +124,6 @@ export const quizData = {
       },
       correct: 'b',
       selected: null,
-      links: [
-        {
-          text: 'JavaScript.info',
-          href: 'https://javascript.info/variables',
-        },
-      ],
     },
   ],
 };

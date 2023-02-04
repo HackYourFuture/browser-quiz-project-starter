@@ -35,8 +35,6 @@ export const initQuestionPage = () => {
     const answerElement = createAnswerElement(key, answerText);
     answersListElement.appendChild(answerElement);
   }
-
-  // counterQuestion();
   changeStoryText();
   checker();
 
