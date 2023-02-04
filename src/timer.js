@@ -4,10 +4,10 @@ let interval;
 
 export function timer() {
   let timerEl = document.getElementById('timeLeft');
-  let sec = 10;
+  let sec = 30;
 
   function countdown() {
-    let timer = document.getElementById('timer');
+    //let timer = document.getElementById('timer');
     sec--;
     timerEl.innerHTML = `00: ${sec}`;
     if (sec < 10) {

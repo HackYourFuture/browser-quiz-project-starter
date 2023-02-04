@@ -26,8 +26,8 @@ export const createQuestionElement = (question) => {
     <h1 class="${QUESTION_H1_CLASS}">${question}</h1>    
     <ul id="${ANSWERS_LIST_ID}" class="answers-list">
     </ul> 
-    <ul id="${USEFUL_LINKS_ID}">Read more: 
-    </ul>   
+    <div class="useful-links-view" id="${USEFUL_LINKS_ID}"> 
+    </div>   
     <button id="${NEXT_QUESTION_BUTTON_ID}">
       Next question
     </button>

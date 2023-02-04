@@ -12,16 +12,21 @@ import { quizData } from '../data.js';
 //import { countdownInterval } from '../views/countdownView.js';
 import { resultPage } from '../pages/resultPage.js';
 import { initQuestionProgress } from '../views/progressView.js';
-import { createCorrectAnswerViewElement } from '../views/correctAnswerCountView.js';
+import { calculatorElement } from '../views/calculator.js';
 import { timer } from '../timer.js';
 import { createUsefulLinkElement } from '../views/usefulLink.js';
 
 let correctAnswerCount = 0;
 let isCurrentAnswerCorrect = false;
-let score = 0;
+export let score = 0;
 
-export const initQuestionPage = (correctAnswerCount) => {
-  //timer();
+export const initQuestionPage = (
+  correctAnswerCount,
+  isFiredFromQuestionPage = false
+) => {
+  let interval = document.getElementById('timer');
+  interval.style.display = 'block';
+  timer();
   isCurrentAnswerCorrect = false;
   correctAnswerCount = correctAnswerCount ?? 0;
   const userInterface = document.getElementById(USER_INTERFACE_ID);
@@ -44,14 +49,16 @@ export const initQuestionPage = (correctAnswerCount) => {
       }
     }
   }
-  console.log(quizData.currentQuestionIndex);
-  const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
+  console.log(quizData);
+  resetQuestionCountUnlessQuestionPage(isFiredFromQuestionPage);
 
+  const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
+  console.log(currentQuestion);
   const questionElement = createQuestionElement(currentQuestion.text);
 
   userInterface.appendChild(questionElement);
 
-  const correctAnswerElement = createCorrectAnswerViewElement();
+  const correctAnswerElement = calculatorElement();
   userInterface.appendChild(correctAnswerElement);
   const correctAnswerCountElement = document.getElementById(
     CORRECT_ANSWER_RATE_ID
@@ -79,9 +86,6 @@ export const initQuestionPage = (correctAnswerCount) => {
     .getElementById(ANSWERS_LIST_ID)
     .addEventListener('click', answerSelection);
 
-  let timer = document.getElementById('timer');
-  timer.style.display = 'none';
-
   // making answers clickable
 
   initQuestionProgress();
@@ -98,6 +102,11 @@ export const nextQuestion = () => {
     resultPage(correctAnswerCount);
     console.log('hey');
   } else {
-    initQuestionPage(correctAnswerCount);
+    initQuestionPage(correctAnswerCount, true);
   }
 };
+function resetQuestionCountUnlessQuestionPage(isFiredFromQuestionPage) {
+  if (!isFiredFromQuestionPage) {
+    quizData.currentQuestionIndex = 0;
+  }
+}

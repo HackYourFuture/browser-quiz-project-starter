@@ -28,5 +28,5 @@ const quitQuiz = () => {
 };
 
 const startQuiz = () => {
-  initQuestionPage();
+  initQuestionPage(0);
 };
