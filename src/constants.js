@@ -11,3 +11,5 @@ export const ANSWERS_LIST_ID = 'answers-list';
 export const NEXT_QUESTION_BUTTON_ID = 'next-question-button';
 export const COUNT_DOWN = 'count-down';
 export const SUBMIT_ANSWER_BUTTON_ID = 'submit-answer-button';
+export const SELECT_ANSWER_ID = 'select-answer';
+

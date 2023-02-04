@@ -20,6 +20,8 @@ export const initWelcomePage = () => {
     });
 };
 
+
+
 function setFavicons(favImg){
   const headTitle = document.querySelector('head');
   const setFavicon = document.createElement('link');
