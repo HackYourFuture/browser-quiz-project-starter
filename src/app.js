@@ -15,6 +15,6 @@ function setFavicons(favImg){
   setFavicon.setAttribute('href',favImg);
   headTitle.appendChild(setFavicon);
 }
-setFavicons('/public/images/3285297-andromeda-astronomy-cosmos-galaxy-space-spiral-universe_106791.png');
+setFavicons('/public/images/Favicone.png');
 
 window.addEventListener('load', loadApp);

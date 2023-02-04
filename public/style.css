@@ -20,8 +20,8 @@ body {
   text-align: center;
   background-image: url('/public/images/pngegg.png'); 
   /* background-color: rgb(244, 211, 94); */
-  padding: 14em;
-  border-radius: 300px;
+  padding: 13em;
+  border-radius: 500px;
 }
 
 .scrollable {
@@ -32,9 +32,10 @@ body {
 
 #welcome{
 /* background-color: coral; */
-color: #CC3812;
+color:#E45D03;
 font-size: xx-large;
 font-family: 'Courier New', Courier, monospace;
+font-weight: bolder;
 }
 
 ul {
@@ -66,8 +67,16 @@ flex-wrap: wrap;
   height: 70px;
   width: 250px;
   /* position: relative; */
-  color: #CC3812;
+  color: #E45D03;
   font-family: 'Courier New', Courier, monospace;
   margin: 50px;
 
+}
+
+.correct{
+  background-color:#40785F;
+}
+
+.wrong{
+  background-color:#E74922;
 }
