@@ -8,7 +8,7 @@
   --color7: hwb(121 20% 40%);
   --color8: rgb(55, 89, 52, 0.8);
   --color9: rgb(246, 237, 240, 0.7);
-  --centeredClassWidth: 50%;
+  --centeredClassWidth: 78%;
 }
 
 * {
@@ -26,6 +26,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  line-height: 1.6rem;
 }
 .container {
   height: 100%;
@@ -43,6 +44,14 @@ body {
   flex-direction: column;
   row-gap: 20px;
   align-items: center;
+}
+
+.centered > div > h2 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 200;
+  line-height: 1.8rem;
+  margin-top:1rem ;
+  margin-bottom:1rem ;
 }
 
 .scrollable {
@@ -96,7 +105,8 @@ button {
   border-radius: 50%;
   color: var(--color5);
   background-color: var(--color8);
-  font-size: 30px;
+  font-size: 20px;
+  line-height: 2.1rem;
 }
 
 #question-counter {
@@ -112,6 +122,7 @@ button {
   background-color: var(--color9);
   font-size: 20px;
   font-weight: bold;
+  line-height: 1.3rem;
 }
 
 .soundOnOff-and-will-container {
@@ -172,12 +183,13 @@ button {
   background: var(--color8);
   color: var(--color4);
   border-radius: 10px;
-  line-height: 20px;
 }
+
+
 
 @media (max-width: 1210px) {
   .centered {
-    width: 70%;
+    width: 80%;
   }
   ul {
     width: 90%;
@@ -190,6 +202,9 @@ button {
   }
   .level-bar {
     width: 50%;
+  }
+  .story{
+    width: 80%;
   }
 }
 @media (max-width: 600px) {

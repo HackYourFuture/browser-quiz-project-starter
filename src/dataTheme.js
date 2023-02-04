@@ -73,15 +73,14 @@ export const dataStory = {
     },
     {
       id: 'question-page-8',
-      text: ` "Come, master. We will take you on safe paths through the mist. Come Hobbits! Come! We go quickly. I found it. I did. The way through the marshes. Orcs don't use it. Orcs don't know it. They go around for miles and miles. Come quickly! Soft and quick as shadows we must be." 
+      text: ` "Come, master. We will take you on safe paths through the mist. Come Hobbits! Come! We go quickly. The way through the marshes. Come quickly! Soft and quick as shadows we must be." 
       - Gollum`,
     },
     {
       id: 'question-page-9',
       text: `"Naughty little fly 
       Why does he cry?
-      Caught in a web 
-      Soon you'll be eaten"
+      Caught in a web, soon you'll be eaten"
       - Gollum`,
     },
     {
