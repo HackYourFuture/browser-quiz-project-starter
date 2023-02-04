@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 * {
   margin: 0;
@@ -6,9 +5,9 @@
   box-sizing: border-box;
 }
 body {
-  font-family:'Courier New', Courier, monospace;
-  background-color:#C0E1E6;
-  background-repeat:no-repeat;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #c0e1e6;
+  background-repeat: no-repeat;
   background-size: cover;
 }
 .centered {
@@ -17,7 +16,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  background-image: url('/public/images/Background.png'); 
+  background-image: url('/public/images/Background.png');
   background-blend-mode: soft-light;
   background-repeat: no-repeat;
   background-size: cover;
@@ -31,33 +30,32 @@ body {
   overflow: auto;
 }
 
-#welcome{
-color:#E45D03;
-font-size: xx-large;
-font-family: 'Courier New', Courier, monospace;
-font-weight: bolder;
+#welcome {
+  color: #e45d03;
+  font-size: xx-large;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bolder;
 }
 
 ul {
   list-style: none;
   /* background-color:#867FB5; */
-  color:#E45D03 ;
+  color: #e45d03;
   font-family: 'Courier New', Courier, monospace;
 }
 
-
-#answers-list{
-display: flex;
-flex-direction: column;
-align-items: center;
-flex-wrap: wrap;
-font-family: 'Courier New', Courier, monospace;
+#answers-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 #start-quiz-button {
   padding: 1em;
   border-radius: 300px;
-  background-color:#C0E1E6;
+  background-color: #c0e1e6;
   font-family: 'Courier New', Courier, monospace;
   font-size: medium;
   font-weight: bold;
@@ -74,42 +72,41 @@ font-family: 'Courier New', Courier, monospace;
   font-size: 50px;
   height: 70px;
   width: 250px;
-  color: #E45D03;
+  color: #e45d03;
   font-family: 'Courier New', Courier, monospace;
   margin: 50px;
-
 }
 
-.correct{
-  background-color:#40785F;
+.correct {
+  background-color: #40785f;
 }
 
-.wrong{
-  background-color:#E74922;
+.wrong {
+  background-color: #e74922;
 }
 
-
-h1{
+h1 {
   font-family: 'Courier New', Courier, monospace;
   color: #15c486;
+  text-shadow: 2px 2px white;
   margin: 2rem;
 }
 
-.answer-btn{
+.answer-btn {
   width: 300px;
   padding: 1em;
   border-radius: 500px;
   font-family: 'Courier New', Courier, monospace;
-  font-size:small;
+  font-size: small;
   font-weight: bold;
 }
 
-#next-question-button{
+#next-question-button {
   padding: 1em;
   border-radius: 300px;
   margin: 2rem;
   font-family: 'Courier New', Courier, monospace;
   font-size: medium;
   font-weight: bold;
-  background-color:#C0E1E6;
+  background-color: #c0e1e6;
 }
