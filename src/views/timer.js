@@ -1,20 +1,21 @@
 import { loadBackgrounds } from './loadBackgrounds.js';
+import { nextQuestion } from '../pages/questionPage.js';
 
 export let intervalId;
 
 export function timerSecond() {
-  let seconds = 10;
+  let seconds = 40;
   let el = document.createElement('div');
   el.className = 'seconds-counter';
   document.body.append(el);
-  const rightAnswerSound = document.querySelector('#right-answer-audio');
+  const clockTickingSound = document.querySelector('#clock-ticking');
 
   function decreaseSeconds() {
-    el.innerText = seconds;
     seconds -= 1;
+    el.innerText = seconds;
 
-    if (seconds < 10) {
-      rightAnswerSound.play();
+    if (seconds < 11) {
+      clockTickingSound.play();
     }
 
     if (seconds === 0) {
@@ -23,7 +24,6 @@ export function timerSecond() {
       removeElement();
       loadBackgrounds();
     }
-    console.log(seconds);
   }
   intervalId = setInterval(decreaseSeconds, 1000);
 }
