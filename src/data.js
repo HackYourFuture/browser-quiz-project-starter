@@ -15,7 +15,7 @@ export const quizData = {
   // the questions in the quiz
   questions: [
     {
-      text: '1.	What is JavaScript used for?',
+      text: 'What is JavaScript used for?',
       answers: {
         a: 'Web development',
         b: 'Mobile app development',
@@ -38,7 +38,7 @@ export const quizData = {
       ],
     },
     {
-      text: '2.	Which of the following is NOT a data type in JavaScript? ',
+      text: 'Which of the following is NOT a data type in JavaScript? ',
       answers: {
         a: 'string',
         b: 'number',
@@ -61,7 +61,7 @@ export const quizData = {
       ],
     },
     {
-      text: '3.	What is the syntax for declaring a variable in JavaScript? ',
+      text: 'What is the syntax for declaring a variable in JavaScript? ',
       answers: {
         a: 'var x',
         b: 'x = 10',
@@ -83,7 +83,7 @@ export const quizData = {
       ],
     },
     {
-      text: '4.	What is the difference between == and === in JavaScript?',
+      text: 'What is the difference between == and === in JavaScript?',
       answers: {
         a: '== checks value equality and === checks value and type equality',
         b: '== checks type equality and === checks value equality',
@@ -106,7 +106,7 @@ export const quizData = {
       ],
     },
     {
-      text: '5.	How do you add an element to the end of an array in JavaScript?',
+      text: 'How do you add an element to the end of an array in JavaScript?',
       answers: {
         a: 'array.append(element)',
         b: 'array.push(element)',
@@ -128,14 +128,11 @@ export const quizData = {
       ],
     },
     {
-      text:
-        '6.	What is the difference between null and undefined in JavaScript?',
+      text: 'What is the difference between let and var in JavaScript?',
       answers: {
-        a:
-          'null is an assignment value, undefined means a variable has been declared but has not been assigned a value.',
-        b:
-          'undefined is an assignment value, null means a variable has been declared but has not been assigned a value',
-        c: 'both null and undefined are the same in JavaScript',
+        a: 'let is block-scoped and var is function-scoped',
+        b: 'var is block-scoped and let is function-scoped',
+        c: 'let and var are interchangeable in all cases',
       },
       correct: 'a',
       selected: null,
@@ -154,7 +151,7 @@ export const quizData = {
     },
     {
       text:
-        '7.	Which of the following is a way to declare a function in JavaScript?',
+        'Which of the following is a way to declare a function in JavaScript?',
       answers: {
         a: 'var myFunction = function() {}',
         b: 'function myFunction() {}',
@@ -175,7 +172,7 @@ export const quizData = {
       ],
     },
     {
-      text: '8. What is closure in JavaScript?',
+      text: 'What is closure in JavaScript?',
       answers: {
         a:
           'An inner function that has access to the outer (enclosing) functions variables',
@@ -198,7 +195,7 @@ export const quizData = {
     },
     {
       text:
-        '9. Which of the following is a way to loop through an array in JavaScript?',
+        'Which of the following is a way to loop through an array in JavaScript?',
       answers: {
         a: 'for(i = 0; i < myArray.length; i++)',
         b: 'while(myArray.length > 0)',
@@ -221,7 +218,7 @@ export const quizData = {
     },
     {
       text:
-        '10.	How would you add an element to the end of an array in JavaScript?',
+        'How would you add an element to the end of an array in JavaScript?',
       answers: {
         a: 'array.push(element)',
         b: 'array.pop(element)',

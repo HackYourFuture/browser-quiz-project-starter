@@ -5,9 +5,10 @@ import { CORRECT_ANSWER_RATE_ID } from '../constants.js';
  * @returns {Element}
  */
 export const createCorrectAnswerViewElement = () => {
-  const element = document.createElement('div');
-  element.innerHTML = String.raw`
+  const correctAnswerElement = document.createElement('div');
+  correctAnswerElement.id = 'calculator';
+  correctAnswerElement.innerHTML = String.raw`
   <p id="${CORRECT_ANSWER_RATE_ID}" class="correct-answer-count"></p>
   `;
-  return element;
+  return correctAnswerElement;
 };

@@ -13,3 +13,4 @@ export const PROGRESS_ID = 'progress';
 export const QUESTION_H1_CLASS = 'question-h1';
 export const CORRECT_ANSWER_RATE_ID = 'correct-answer-rate-id';
 export const QUIT_QUIZ_BUTTON_ID = 'quit-quiz-button';
+export const USEFUL_LINKS_ID = 'useful-links-id';

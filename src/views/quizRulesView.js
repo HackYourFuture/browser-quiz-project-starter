@@ -11,7 +11,11 @@ export const createQuizRulesElement = () => {
 
   // I use String.raw just to get fancy colors for the HTML in VS Code.
   element.innerHTML = String.raw`
-      <h1>Quiz Rules</h1>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+      <h2>Quiz Rules</h2>
   
       <ol>
         <li> You can select one answer for each question. </li>
