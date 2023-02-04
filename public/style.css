@@ -6,7 +6,7 @@
   box-sizing: border-box;
 }
 body {
-  font-family: 'Ubuntu', sans-serif;
+  font-family:'Courier New', Courier, monospace;
   background-color:#C0E1E6;
   background-repeat:no-repeat;
   background-size: cover;
@@ -18,8 +18,10 @@ body {
   transform: translate(-50%, -50%);
   text-align: center;
   background-image: url('/public/images/Background.png'); 
-  /* background-color: rgb(244, 211, 94); */
-  padding: 13em;
+  background-blend-mode: soft-light;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 11em;
   border-radius: 500px;
 }
 
@@ -30,7 +32,6 @@ body {
 }
 
 #welcome{
-/* background-color: coral; */
 color:#E45D03;
 font-size: xx-large;
 font-family: 'Courier New', Courier, monospace;
@@ -39,33 +40,40 @@ font-weight: bolder;
 
 ul {
   list-style: none;
-  background-color: rgb(173, 122, 153);
+  /* background-color:#867FB5; */
+  color:#E45D03 ;
+  font-family: 'Courier New', Courier, monospace;
 }
+
+
 #answers-list{
 display: flex;
 flex-direction: column;
+align-items: center;
 flex-wrap: wrap;
-
+font-family: 'Courier New', Courier, monospace;
 }
 
 #start-quiz-button {
-  background-color: azure;
   padding: 1em;
   border-radius: 300px;
   background-color:#C0E1E6;
   font-family: 'Courier New', Courier, monospace;
+  font-size: medium;
+  font-weight: bold;
 }
 
 /*Countdown Timer*/
 #count-down {
-  /* background-color: aquamarine; */
+  position: fixed;
+  top: 5%;
+  left: 48%;
+  transform: translate(-50%, -50%);
   display: inline-flex;
-  align-items: center;
   justify-content: center;
   font-size: 50px;
   height: 70px;
   width: 250px;
-  /* position: relative; */
   color: #E45D03;
   font-family: 'Courier New', Courier, monospace;
   margin: 50px;
@@ -78,4 +86,29 @@ flex-wrap: wrap;
 
 .wrong{
   background-color:#E74922;
+}
+
+h1{
+  font-family: 'Courier New', Courier, monospace;
+  color: #15c486;
+  margin: 2rem;
+}
+
+.answer-btn{
+  width: 300px;
+  padding: 1em;
+  border-radius: 500px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size:small;
+  font-weight: bold;
+}
+
+#next-question-button{
+  padding: 1em;
+  border-radius: 300px;
+  margin: 2rem;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: medium;
+  font-weight: bold;
+  background-color:#C0E1E6;
 }
