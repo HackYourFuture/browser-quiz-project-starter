@@ -1,6 +1,7 @@
 import { quizData } from '../data.js';
 import { playSound } from './playSound.js';
 import { willBar } from './willBar.js';
+import { intervalId } from './timer.js';
 
 export const checker = function () {
   let answers = document.querySelectorAll('li');
@@ -22,9 +23,11 @@ export const checker = function () {
           if (correctAnswer === clickedAnswer) {
             e.target.style.background = 'var(--color7)';
             willBar();
+            clearInterval(intervalId);
           } else {
             e.target.style.background = 'var(--color6)';
             correctAnswerListItem.style.background = 'var(--color7)';
+            clearInterval(intervalId);
           }
           playSound();
         }
@@ -53,6 +56,7 @@ export const checker = function () {
           if (e.key === correctAnswer) {
             correctAnswerListItem.style.background = 'var(--color7)';
             willBar();
+            clearInterval(intervalId);
           } else if (e.key !== correctAnswer) {
             const wrongAnswerListItem = document.querySelector(
               `li[data-key="${e.key}"]`
@@ -60,6 +64,7 @@ export const checker = function () {
 
             wrongAnswerListItem.style.background = 'var(--color6)';
             correctAnswerListItem.style.background = 'var(--color7)';
+            clearInterval(intervalId);
           }
           playSound();
         }
