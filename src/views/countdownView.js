@@ -7,7 +7,7 @@ paragraphEl.setAttribute('id', COUNT_DOWN);
 document.body.appendChild(paragraphEl);
 
 /*countdown start */
-let countdownTime = 299;
+let countdownTime = 300;
 
 const countdownEl = document.getElementById(COUNT_DOWN);
 export const startCountdown = () => {
