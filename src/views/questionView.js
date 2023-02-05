@@ -1,14 +1,10 @@
-import {
-  ANSWERS_LIST_ID,
-  NEXT_QUESTION_BUTTON_ID,
-  SUBMIT_ANSWER_BUTTON_ID,
-} from '../constants.js';
+import { ANSWERS_LIST_ID, NEXT_QUESTION_BUTTON_ID } from '../constants.js';
 
 /**
  * Create a full question element
  * @returns {Element}
  */
-export const createQuestionElement = (question) => {
+export const createQuestionEl = (question) => {
   const element = document.createElement('div');
 
   // I use String.raw just to get fancy colors for the HTML in VS Code.
@@ -24,4 +20,4 @@ export const createQuestionElement = (question) => {
   `;
 
   return element;
-}; 
+};
