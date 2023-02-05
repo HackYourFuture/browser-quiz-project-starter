@@ -6,12 +6,12 @@ This application provides an interface of a Quiz-App.
 
 - Also during whole process, there is a timer running, after that time lapse, all response has been recorded and according to user performance, its Result has been shown on final screen.
 
-- For winning the Quiz, user have to fulfill below condition:
+- To be successful in the Quiz, user have to fulfill below condition:
   The accuracy should be greater than 60%.
 
 # App Demo
 
-- Our web application live on: https://ozgur2096.github.io/hobbits-quiz-project/
+- Our web application is live on: https://ozgur2096.github.io/hobbits-quiz-project/
 
 # Development
 
@@ -19,8 +19,7 @@ This application provides an interface of a Quiz-App.
 
 # Installing Dependencies
 
-- There are no dependencies needed to run the website, everything is prepared to work with vanilla JavaScript. However, if you want to install prettier for this project then run (generally you always want to do this if you see a package.json file):
-  • npm install
+- There are no dependencies needed to run the website, everything is prepared to work with vanilla JavaScript.
 
 # Structure
 
@@ -30,10 +29,26 @@ This application provides an interface of a Quiz-App.
 public
 src
 └── pages
+  |__welcomePage.js
+  |__questionPage.js
+  |__resultsPage.js
 └── views
+  |__welcomeView.js
+  |__questionVew.js
+  |__answerView.js
+  |__resultsView.js
+  |__questionCounterView.js
+  |__checker.js
+  |__playSound.js
+  |__timer.js
+  |__willBar.js
+  |__writeStory.js
+  |__loadBackgrounds.js
+  |__soundOnOff.js
 └── app.js
 └── constants.js
 └── data.js
+|__dataTheme.js
 index.html
 ```
 
@@ -41,7 +56,7 @@ index.html
 - `src` this contains all of our JavaScript code
   - `pages` this folder contains our functions that handle user interactions. You can also see it as the code that processes and updates the data or DOM
     it also contains our code that links up our handler code to the DOM.
-  - `views` this contains code to define what the DOM will look like. They will create the DOM element and give it back. They should never read from/write to the dom, that is what the pages do.
+  - `views` this contains code to define what the DOM will look like.
   - `app.js` this file our initialisation code. Generally this code should only run once and starts the application
   - `data.js` this is our data model. Anything we need to store in the browser we place inside the data file
 

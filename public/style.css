@@ -28,9 +28,6 @@ body {
   justify-content: center;
   line-height: 1.6rem;
 }
-.container {
-  height: 100%;
-}
 
 .centered {
   text-align: center;
@@ -52,12 +49,6 @@ body {
   line-height: 1.8rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
-}
-
-.scrollable {
-  height: auto;
-  max-height: 80vh;
-  overflow: auto;
 }
 
 ul {
@@ -149,7 +140,6 @@ button {
 .level {
   width: 0px;
   height: 100%;
-  background-color: yellow;
   border-radius: 15px;
   transition: width 0.9s ease-in-out;
   font-size: 20px;
@@ -166,9 +156,6 @@ button {
 
 .display {
   display: block;
-}
-.do-not-display {
-  display: none;
 }
 
 .story {
