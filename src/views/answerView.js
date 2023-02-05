@@ -2,7 +2,7 @@
  * Create an Answer element
  * @returns {Element}
  */
-export const createAnswerElement = (key, answerText) => {
+export const createAnswerEl = (key, answerText) => {
   const button = document.createElement('button');
   button.classList.add(`answer-btn`);
   button.innerHTML = String.raw`

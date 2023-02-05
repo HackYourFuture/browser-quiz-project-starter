@@ -3,8 +3,8 @@ import {
   NEXT_QUESTION_BUTTON_ID,
   USER_INTERFACE_ID,
 } from '../constants.js';
-import { createQuestionElement } from '../views/questionView.js';
-import { createAnswerElement } from '../views/answerView.js';
+import { createQuestionEl } from '../views/questionView.js';
+import { createAnswerEl } from '../views/answerView.js';
 import { quizData } from '../data.js';
 
 export const initQuestionPage = () => {
@@ -12,12 +12,12 @@ export const initQuestionPage = () => {
   userInterface.innerHTML = '';
 
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
-  const questionElement = createQuestionElement(currentQuestion.text);
-  userInterface.appendChild(questionElement);
+  const questionEl = createQuestionEl(currentQuestion.text);
+  userInterface.appendChild(questionEl);
 
-  const answersListElement = document.getElementById(ANSWERS_LIST_ID);
+  const answersListEl = document.getElementById(ANSWERS_LIST_ID);
   for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
-    const answerElement = createAnswerElement(key, answerText);
+    const answerElement = createAnswerEl(key, answerText);
     answerElement.addEventListener('click', () => {
       currentQuestion.selected = key;
       if (currentQuestion.selected === currentQuestion.correct) {
@@ -26,7 +26,7 @@ export const initQuestionPage = () => {
         answerElement.classList.add('wrong');
       }
     });
-    answersListElement.appendChild(answerElement);
+    answersListEl.appendChild(answerElement);
   }
 
   document
@@ -38,4 +38,4 @@ export const nextQuestion = () => {
   quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
 
   initQuestionPage();
-}; 
+};
