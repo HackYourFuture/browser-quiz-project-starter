@@ -18,8 +18,6 @@ export const initWelcomePage = () => {
     });
 };
 
-document.title = 'Singularity';
-
 const startQuiz = () => {
   initQuestionPage();
 };
