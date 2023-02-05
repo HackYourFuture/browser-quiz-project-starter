@@ -1,10 +1,10 @@
 import { COUNT_DOWN } from '../constants.js';
 import { nextQuestion } from '../pages/questionPage.js';
 
-const paragraphElement = document.createElement('p');
-paragraphElement.textContent = '05 : 00'
-paragraphElement.setAttribute('id', COUNT_DOWN);
-document.body.appendChild(paragraphElement);
+const paragraphEl = document.createElement('p');
+paragraphEl.textContent = '05 : 00';
+paragraphEl.setAttribute('id', COUNT_DOWN);
+document.body.appendChild(paragraphEl);
 
 /*countdown start */
 let countdownTime = 299;
