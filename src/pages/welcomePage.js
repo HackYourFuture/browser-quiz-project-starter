@@ -18,17 +18,6 @@ export const initWelcomePage = () => {
     });
 };
 
-function setFavicons(favImg) {
-  const headTitle = document.querySelector('head');
-  const setFavicon = document.createElement('link');
-  setFavicon.setAttribute('rel', 'shortcut icon');
-  setFavicon.setAttribute('href', favImg);
-  headTitle.appendChild(setFavicon);
-}
-setFavicons(
-  '/public/images/3285297-andromeda-astronomy-cosmos-galaxy-space-spiral-universe_106791.png'
-);
-
 document.title = 'Singularity';
 
 const startQuiz = () => {
