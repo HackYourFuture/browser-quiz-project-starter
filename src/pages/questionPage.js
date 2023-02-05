@@ -17,16 +17,16 @@ export const initQuestionPage = () => {
 
   const answersListEl = document.getElementById(ANSWERS_LIST_ID);
   for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
-    const answerElement = createAnswerEl(key, answerText);
-    answerElement.addEventListener('click', () => {
+    const answerEl = createAnswerEl(key, answerText);
+    answerEl.addEventListener('click', () => {
       currentQuestion.selected = key;
       if (currentQuestion.selected === currentQuestion.correct) {
-        answerElement.classList.add('correct');
+        answerEl.classList.add('correct');
       } else {
-        answerElement.classList.add('wrong');
+        answerEl.classList.add('wrong');
       }
     });
-    answersListEl.appendChild(answerElement);
+    answersListEl.appendChild(answerEl);
   }
 
   document
