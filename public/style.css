@@ -16,7 +16,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  background-image: url('/public/images/Background.png');
+  background-image: url('images/Background.png');
   background-blend-mode: soft-light;
   background-repeat: no-repeat;
   background-size: cover;
