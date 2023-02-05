@@ -20,6 +20,9 @@ export const resultPage = (correctAnswerCount) => {
   document
     .getElementById(QUIT_QUIZ_BUTTON_ID)
     .addEventListener('click', quitQuiz);
+
+  let timer = document.getElementById('timer');
+  timer.style.display = 'none';
 };
 
 const quitQuiz = () => {

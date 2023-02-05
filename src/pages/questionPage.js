@@ -8,8 +8,6 @@ import {
 import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
-//import { initCounter } from '../views/countdownView.js';
-//import { countdownInterval } from '../views/countdownView.js';
 import { resultPage } from '../pages/resultPage.js';
 import { initQuestionProgress } from '../views/progressView.js';
 import { calculatorElement } from '../views/calculator.js';
@@ -49,11 +47,11 @@ export const initQuestionPage = (
       }
     }
   }
-  console.log(quizData);
+
   resetQuestionCountUnlessQuestionPage(isFiredFromQuestionPage);
 
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
-  console.log(currentQuestion);
+
   const questionElement = createQuestionElement(currentQuestion.text);
 
   userInterface.appendChild(questionElement);
@@ -95,16 +93,17 @@ export const initQuestionPage = (
 };
 
 export const nextQuestion = () => {
-  console.log('dag');
   quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
 
   if (quizData.currentQuestionIndex >= quizData.questions.length) {
     resultPage(correctAnswerCount);
-    console.log('hey');
   } else {
     initQuestionPage(correctAnswerCount, true);
   }
 };
+
+// ensure that the result page start over the quiz
+
 function resetQuestionCountUnlessQuestionPage(isFiredFromQuestionPage) {
   if (!isFiredFromQuestionPage) {
     quizData.currentQuestionIndex = 0;

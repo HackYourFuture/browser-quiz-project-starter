@@ -9,7 +9,6 @@ export const createQuizRulesElement = () => {
   const element = document.createElement('div');
   element.id = 'rules';
 
-  // I use String.raw just to get fancy colors for the HTML in VS Code.
   element.innerHTML = String.raw`
   <span></span>
   <span></span>

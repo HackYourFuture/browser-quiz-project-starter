@@ -14,7 +14,6 @@ import {
 export const createQuestionElement = (question) => {
   const element = document.createElement('div');
 
-  // I use String.raw just to get fancy colors for the HTML in VS Code.
   element.innerHTML = String.raw`
     
     <div id="question">
@@ -36,5 +35,3 @@ export const createQuestionElement = (question) => {
 
   return element;
 };
-
-// <p id="${COUNTER_ID}"></p>     from line 20

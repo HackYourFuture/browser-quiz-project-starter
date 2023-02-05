@@ -85,10 +85,10 @@ export const quizData = {
     {
       text: 'What is the difference between == and === in JavaScript?',
       answers: {
-        a: '== checks value equality and === checks value and type equality',
-        b: '== checks type equality and === checks value equality',
-        c: 'They both check value equality only',
-        d: 'They both check type equality only',
+        a: '== value equality, === value and type',
+        b: '== type equality, === value',
+        c: 'Both check value equality',
+        d: 'Both check type equality',
       },
       correct: 'a',
       selected: null,
@@ -130,9 +130,10 @@ export const quizData = {
     {
       text: 'What is the difference between let and var in JavaScript?',
       answers: {
-        a: 'let is block-scoped and var is function-scoped',
-        b: 'var is block-scoped and let is function-scoped',
-        c: 'let and var are interchangeable in all cases',
+        a: 'let block scoped, var function scoped',
+        b: 'var block scoped, let function scoped',
+        c: 'Both are block scoped',
+        d: 'Both are function scoped',
       },
       correct: 'a',
       selected: null,
@@ -156,6 +157,7 @@ export const quizData = {
         a: 'var myFunction = function() {}',
         b: 'function myFunction() {}',
         c: 'both A and B',
+        d: 'let myFunction = () => {}',
       },
       correct: 'c',
       selected: null,
@@ -174,10 +176,10 @@ export const quizData = {
     {
       text: 'What is closure in JavaScript?',
       answers: {
-        a:
-          'An inner function that has access to the outer (enclosing) functions variables',
-        b: 'A way to prevent the value of a variable from being changed',
-        c: 'A special syntax for declaring a function',
+        a: 'Inner func with access to outer vars',
+        b: 'Prevents change of variable value',
+        c: 'Syntax for declaring a function',
+        d: 'None of the above',
       },
       correct: 'a',
       selected: null,
@@ -200,6 +202,7 @@ export const quizData = {
         a: 'for(i = 0; i < myArray.length; i++)',
         b: 'while(myArray.length > 0)',
         c: 'do while(myArray.length > 0)',
+        d: 'for each(var element in myArray)',
       },
       correct: 'a',
       selected: null,
@@ -223,6 +226,7 @@ export const quizData = {
         a: 'array.push(element)',
         b: 'array.pop(element)',
         c: 'array.add(element)',
+        d: 'array[array.length] = element',
       },
       correct: 'a',
       selected: null,
