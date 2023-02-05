@@ -12,11 +12,9 @@ export const initWelcomePage = () => {
 
   document
     .getElementById(START_QUIZ_BUTTON_ID)
-    .addEventListener('click', startQuiz);
-  document
-    .getElementById(START_QUIZ_BUTTON_ID)
     .addEventListener('click', () => {
       setInterval(startCountdown, 1000);
+      startQuiz();
     });
 };
 
