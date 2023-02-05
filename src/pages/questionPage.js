@@ -15,7 +15,6 @@ import { timer } from '../timer.js';
 import { createUsefulLinkElement } from '../views/usefulLink.js';
 
 let correctAnswerCount = 0;
-let isCurrentAnswerCorrect = false;
 export let score = 0;
 
 export const initQuestionPage = (
@@ -25,8 +24,6 @@ export const initQuestionPage = (
   let interval = document.getElementById('timer');
   interval.style.display = 'block';
   timer();
-  isCurrentAnswerCorrect = false;
-  correctAnswerCount = correctAnswerCount ?? 0;
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
 
