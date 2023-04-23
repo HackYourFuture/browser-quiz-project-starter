@@ -55,6 +55,22 @@ export const quizData = {
         },
       ],
     },
-    // Add more questions here
+    {
+      text: 'what does the abbreviation DOM stand for?',
+      answers: {
+        a: 'The Document Object Model',
+        b: 'The Determiner of Methods',
+        c: 'The Dominant Object Method',
+        d: 'The Document of Model',
+      },
+      correct: 'a',
+      selected: null,
+      links: [
+        {
+          text: 'MDN',
+          href: 'https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction',
+        },
+      ],
+    }
   ],
 };
