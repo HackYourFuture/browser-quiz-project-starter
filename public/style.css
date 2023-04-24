@@ -14,5 +14,28 @@
 
 ul {
   list-style: none;
-  margin: 10px;
+}
+
+/* basic styles for Input name */
+
+.name-label {
+  display: block;
+  margin-bottom: 1rem;
+  font-size: 1em;
+}
+
+.name-input {
+  display: block;
+  margin-top: 2em;
+  padding: 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 1em;
+}
+
+.button-style {
+  width: 10em;
+  height: auto;
+  display: block;
+  margin-top: 2em;
+  margin-left: 2em;
 }
