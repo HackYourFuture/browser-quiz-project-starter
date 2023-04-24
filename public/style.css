@@ -15,3 +15,18 @@
 ul {
   list-style: none;
 }
+
+li:hover {
+  color: rgb(32, 32, 238);
+  cursor: pointer;
+  
+}
+
+.yes {
+  background-color: rgb(58, 111, 58);
+}
+
+.no {
+  background-color: rgb(228, 56, 56)
+}
+
