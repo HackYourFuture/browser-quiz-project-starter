@@ -44,8 +44,24 @@ const nextQuestion = () => {
     const finalMessage = document.createElement('div');
     finalMessage.innerText = `Well done, ${userName}! You earned ${quizData.score} points.`;
 
+    // New Game button
+
+     const newGameButton = document.createElement('button');
+    newGameButton.innerText = 'New Game';
+    newGameButton.addEventListener('click', startNewGame);
+    newGameButton.classList.add("button-style")
+    finalMessage.appendChild(newGameButton);
+
+
     userInterface.appendChild(finalMessage);
   } else {
     initQuestionPage();
   }
+};
+
+const startNewGame = () => {
+  // Reset the quiz data and start a new game
+  quizData.currentQuestionIndex = 0;
+  quizData.score = 0;
+  initQuestionPage();
 };

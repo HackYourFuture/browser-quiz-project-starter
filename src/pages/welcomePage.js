@@ -26,3 +26,4 @@ const startQuiz = () => {
 export const getUserName = () => {
   return userName;
 }
+
