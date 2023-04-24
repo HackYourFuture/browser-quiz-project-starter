@@ -15,7 +15,11 @@ export const initQuestionPage = () => {
 
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
 
+
   const questionElement = createQuestionElement(currentQuestion.text, quizData.currentQuestionIndex + 1);
+
+  correctAnswerKey = currentQuestion.correct;
+  
 
   userInterface.appendChild(questionElement);
 
@@ -24,6 +28,8 @@ export const initQuestionPage = () => {
     const answerElement = createAnswerElement(key, answerText);
     answersListElement.appendChild(answerElement);
 
+    answerElement.setAttribute('data-key', key);
+    answerElement.addEventListener('click', selectAnswer)
   }
 
 // this code disabled and active button
@@ -33,6 +39,7 @@ export const initQuestionPage = () => {
 
   // Add event listener to the button
   document
+
   .getElementById(NEXT_QUESTION_BUTTON_ID)
   .removeAttribute('disabled')
 
@@ -41,6 +48,46 @@ export const initQuestionPage = () => {
   .addEventListener('click', nextQuestion);
 
   const currentBar = changeProgress((quizData.currentQuestionIndex * 10)+10); // Progressbar line
+
+    .getElementById(NEXT_QUESTION_BUTTON_ID)
+    .addEventListener('click', nextQuestion);
+  
+  // Flag for not selecting two items
+  quizData.answerSelected = false;
+};
+
+let correctAnswerKey;
+
+const selectAnswer = (event) => {
+  if (quizData.answerSelected) {
+    return;
+  }
+  
+    const selectedListItem = event.target;
+    const userAnswer = selectedListItem.dataset.key;
+
+    quizData.answerSelected = true;
+
+    if (userAnswer === correctAnswerKey) {
+     selectedListItem.classList.add('yes')
+    } else {
+     selectedListItem.classList.add('no')
+     showCorrectAnswer()
+    }
+};
+
+const showCorrectAnswer = () => {
+  const answersListElement = document.getElementById(ANSWERS_LIST_ID);
+  const answerElements = answersListElement.querySelectorAll('li');
+
+  answerElements.forEach((answerElement) => {
+    const answerKey = answerElement.dataset.key;
+
+    if (answerKey === correctAnswerKey) {
+      answerElement.classList.add('yes');
+    }
+  });
+
 };
 
 const nextQuestion = () => {
