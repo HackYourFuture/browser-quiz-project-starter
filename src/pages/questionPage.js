@@ -48,7 +48,7 @@ export const initQuestionPage = () => {
   .addEventListener('click', nextQuestion);
 
   const currentBar = changeProgress((quizData.currentQuestionIndex * 10)+10); // Progressbar line
-
+  document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
     .addEventListener('click', nextQuestion);
   
