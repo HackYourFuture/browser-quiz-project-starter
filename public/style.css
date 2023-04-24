@@ -1,7 +1,7 @@
 .centered {
   position: fixed;
   top: 50%;
-  left: 70%;
+  left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
 }
@@ -15,3 +15,18 @@
 ul {
   list-style: none;
 }
+
+li:hover {
+  color: rgb(32, 32, 238);
+  cursor: pointer;
+  
+}
+
+.yes {
+  background-color: rgb(58, 111, 58);
+}
+
+.no {
+  background-color: rgb(228, 56, 56)
+}
+
