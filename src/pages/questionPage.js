@@ -12,7 +12,7 @@ export const initQuestionPage = () => {
   userInterface.innerHTML = '';
 
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
-
+  correctAnswerKey = currentQuestion.correct;
   const questionElement = createQuestionElement(currentQuestion.text);
 
   userInterface.appendChild(questionElement);
@@ -29,17 +29,14 @@ export const initQuestionPage = () => {
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
     .addEventListener('click', nextQuestion);
+  
+  // Flag for not selecting two items
+  quizData.answerSelected = false;
 };
 
- //Code repeat 
-const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
-const correctAnswerKey = currentQuestion.correct;
-
-// Flag for not selecting two items
-quizData.answerSelected = false;
+let correctAnswerKey;
 
 const selectAnswer = (event) => {
- 
   if (quizData.answerSelected) {
     return;
   }
@@ -49,7 +46,7 @@ const selectAnswer = (event) => {
 
     quizData.answerSelected = true;
 
-    if (userAnswer == currentQuestion.correct) {
+    if (userAnswer === correctAnswerKey) {
      selectedListItem.classList.add('yes')
     } else {
      selectedListItem.classList.add('no')
@@ -58,14 +55,13 @@ const selectAnswer = (event) => {
 };
 
 const showCorrectAnswer = () => {
-  // Code repeat
   const answersListElement = document.getElementById(ANSWERS_LIST_ID);
   const answerElements = answersListElement.querySelectorAll('li');
 
   answerElements.forEach((answerElement) => {
     const answerKey = answerElement.dataset.key;
 
-    if (answerKey == correctAnswerKey) {
+    if (answerKey === correctAnswerKey) {
       answerElement.classList.add('yes');
     }
   });
@@ -73,7 +69,6 @@ const showCorrectAnswer = () => {
 
 const nextQuestion = () => {
   quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
-  quizData.answerSelected = false;
 
   initQuestionPage();
 };
