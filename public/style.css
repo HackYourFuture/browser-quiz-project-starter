@@ -16,6 +16,31 @@ ul {
   list-style: none;
 }
 
+
+/* basic styles for Input name */
+
+.name-label {
+  display: block;
+  margin-bottom: 1rem;
+  font-size: 1em;
+}
+
+.name-input {
+  display: block;
+  margin-top: 2em;
+  padding: 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 1em;
+}
+
+.button-style {
+  width: 10em;
+  height: auto;
+  display: block;
+  margin-top: 2em;
+  margin-left: 2em;
+}
+
 * {
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
@@ -31,6 +56,7 @@ body {
   align-items: center;
   justify-content: center;
 }
+
 
 .progress-container {
   height: 0.8rem;
@@ -60,4 +86,5 @@ li:hover {
 .no {
   background-color: rgb(228, 56, 56)
 }
+
 

@@ -11,14 +11,15 @@
 
 export const quizData = {
   currentQuestionIndex: 0,
+  score: 0,
   // the questions in the quiz
   questions: [
     {
-      text: 'What are the different ways to declare a JS variable?',
+      text: 'What country does this flag belong to?' ,
       answers: {
-        a: 'constant, let, variable',
-        b: 'var, const, let, function',
-        c: 'var, let, const',
+        a: 'Luxembourg',
+        b: 'France',
+        c: 'Netherlands',
       },
       correct: 'c',
       selected: null,
@@ -34,12 +35,12 @@ export const quizData = {
       ],
     },
     {
-      text: 'What does `typeof` do?',
+      text: 'What country does this flag belong to?',
       answers: {
-        a: 'changes the type of a primitive value',
-        b: 'returns a string describing the type of a value',
-        c: 'determines if a value is primitive',
-        d: 'can tell the difference between arrays and objects',
+        a: 'Georgia',
+        b: 'Azerbaijan',
+        c: 'Kazakhstan',
+        d: 'Armenia',
       },
       correct: 'b',
       selected: null,
@@ -56,7 +57,7 @@ export const quizData = {
       ],
     },
     {
-      text: 'what does the abbreviation DOM stand for?',
+      text: 'What country does this flag belong to?',
       answers: {
         a: 'The Document Object Model',
         b: 'The Determiner of Methods',
