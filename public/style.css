@@ -1,5 +1,5 @@
 .centered {
-  position: fixed;
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -15,6 +15,7 @@
 ul {
   list-style: none;
 }
+
 
 /* basic styles for Input name */
 
@@ -39,3 +40,51 @@ ul {
   margin-top: 2em;
   margin-left: 2em;
 }
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.progress-container {
+  height: 0.8rem;
+  width: 32rem;
+  border-radius: 0.4rem;
+  background: #000;
+}
+
+.progress-container #progress {
+  height: 100%;
+  width: 0;
+  border-radius: 0.4rem;
+  background: #ff4754;
+  transition: width 0.4s ease;
+}
+
+li:hover {
+  color: rgb(32, 32, 238);
+  cursor: pointer;
+  
+}
+
+.yes {
+  background-color: rgb(58, 111, 58);
+}
+
+.no {
+  background-color: rgb(228, 56, 56)
+}
+
+
