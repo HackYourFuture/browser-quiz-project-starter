@@ -9,6 +9,7 @@ import { quizData } from '../data.js';
 import { getUserName } from './welcomePage.js';
 import { changeProgress } from '../views/progressBar.js';
 
+
 export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
@@ -37,16 +38,7 @@ export const initQuestionPage = () => {
   .getElementById(NEXT_QUESTION_BUTTON_ID)
   .setAttribute('disabled', true)
 
-  // Add event listener to the button
-  document
-
-  .getElementById(NEXT_QUESTION_BUTTON_ID)
-  .removeAttribute('disabled')
-
-  document
-  .getElementById(NEXT_QUESTION_BUTTON_ID)
-  .addEventListener('click', nextQuestion);
-
+  
   const currentBar = changeProgress((quizData.currentQuestionIndex * 10)+10); // Progressbar line
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
@@ -74,6 +66,11 @@ const selectAnswer = (event) => {
      selectedListItem.classList.add('no')
      showCorrectAnswer()
     }
+    
+    document
+    .getElementById(NEXT_QUESTION_BUTTON_ID)
+    .removeAttribute('disabled')
+  
 };
 
 const showCorrectAnswer = () => {
@@ -87,7 +84,6 @@ const showCorrectAnswer = () => {
       answerElement.classList.add('yes');
     }
   });
-
 };
 
 const nextQuestion = () => {
