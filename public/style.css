@@ -162,6 +162,7 @@ li {
 }
 
 .progress-container {
+  margin: 135px;
   height: 1.4rem;
   width: 50vw;
   border-radius: 0.4rem;
@@ -188,7 +189,7 @@ li {
   position: absolute;
   top: -28px;
   right: -45px;
-  background-image: url("/browser-quiz-project-starter/public/pngimg.com\ -\ mario_PNG72.png");
+  background-image: url("../public/QGo5isT.gif");
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -206,7 +207,7 @@ li {
 }
 
 .image-container {
-  background-image: url('/browser-quiz-project-starter/public/image\ \(1\).png');
+  background-image: url('./image\ \(1\).png');
   background-size: cover;
   width: 100px;
   height: 100px;

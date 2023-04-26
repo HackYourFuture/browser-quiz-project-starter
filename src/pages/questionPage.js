@@ -2,6 +2,7 @@ import {
   ANSWERS_LIST_ID,
   NEXT_QUESTION_BUTTON_ID,
   USER_INTERFACE_ID,
+  PROGRESS_BAR_ID
 } from '../constants.js';
 import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
@@ -10,7 +11,24 @@ import { getUserName } from './welcomePage.js';
 import { changeProgress } from '../views/progressBar.js';
 import { showInformation } from '../views/informationViev.js';
 
+const createProgressBarElement = () => {
+  const existingProgressBar = document.getElementById(PROGRESS_BAR_ID);
+  if (existingProgressBar) {
+    // Progress bar already exists, do nothing
+    return;
+  }
+  // create a new div element
+  const divBar = document.createElement('div');
+  divBar.className = "progress-container";
+  divBar.innerHTML = String.raw`<div id="${PROGRESS_BAR_ID}"></div>`;
+
+  // append the div element to the body
+  document.body.appendChild(divBar);
+};
+
 export const initQuestionPage = () => {
+  createProgressBarElement();
+
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
 
@@ -38,7 +56,6 @@ export const initQuestionPage = () => {
   .getElementById(NEXT_QUESTION_BUTTON_ID)
   .setAttribute('disabled', true)
 
-  
   const currentBar = changeProgress((quizData.currentQuestionIndex * 10)+10); // Progressbar line
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
