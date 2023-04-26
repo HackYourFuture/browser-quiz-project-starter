@@ -175,6 +175,7 @@ li {
   border-radius: 0.4rem;
   background: var(--beige);
   transition: width 0.4s ease;
+  transition-duration: 2s;
   position: relative;
 }
 
