@@ -11,13 +11,22 @@ export const createQuestionElement = (question, questionCounter) => {
 
   // I use String.raw just to get fancy colors for the HTML in VS Code.
   element.innerHTML = String.raw`
-    <h3>Q:${questionCounter}/10</h3>  
+    <div class="status-bar">
+    <h3>${questionCounter}/10</h3>  
     <div class="progress-container">
     <div id="${PROGRESS_BAR_ID}"></div>
     </div>
-    <h1>${question}</h1>
+    <div class="points-container">
+      <div class="image-container"></div>
+      <div class="points">${100}</div>
+    </div>
+    </div>
+    <div class="main-container">
+     <h1 class="question">${question}</h1>
     <ul id="${ANSWERS_LIST_ID}">
     </ul>
+    </div>
+   
     <button id="${NEXT_QUESTION_BUTTON_ID}">
       Next question
     </button>
