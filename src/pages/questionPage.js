@@ -64,16 +64,29 @@ const selectAnswer = (event) => {
      selectedListItem.classList.add('yes')
     } else {
      selectedListItem.classList.add('no')
-     showCorrectAnswer()
+     showCorrectAnswer();
+     showInformation();
     }
     
     document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
-    .removeAttribute('disabled')
-  
+    .removeAttribute('disabled') 
 };
 
+// show correct answer and show information
+const showInformation = () => {
+  const answersListElement = document.getElementById(ANSWERS_LIST_ID);
+
+  const questionTexts = quizData.questions.map(question => question.text).join(' ');
+
+  const informationView = document.createElement('div');
+
+     informationView.innerText = `${questionTexts}`;
+     answersListElement.appendChild(informationView);
+}
+
 const showCorrectAnswer = () => {
+
   const answersListElement = document.getElementById(ANSWERS_LIST_ID);
   const answerElements = answersListElement.querySelectorAll('li');
 
