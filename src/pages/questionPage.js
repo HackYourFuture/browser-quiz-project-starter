@@ -8,7 +8,7 @@ import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
 import { getUserName } from './welcomePage.js';
 import { changeProgress } from '../views/progressBar.js';
-
+import { showInformation } from '../views/informationViev.js';
 
 export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
@@ -65,6 +65,7 @@ const selectAnswer = (event) => {
     } else {
      selectedListItem.classList.add('no')
      showCorrectAnswer()
+     showInformation()
     }
     
     document
