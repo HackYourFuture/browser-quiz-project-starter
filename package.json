@@ -17,5 +17,8 @@
   "homepage": "https://github.com/HackYourFuture/browser-quiz-project-starter",
   "devDependencies": {
     "prettier": "^2.2.1"
+  },
+  "dependencies": {
+    "Prettier": "npm:prettier@^2.8.8"
   }
 }
