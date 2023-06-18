@@ -14,23 +14,93 @@ export const quizData = {
   // the questions in the quiz
   questions: [
     {
-      text: 'What are the different ways to declare a JS variable?',
+      text: 'What is the capital of France?',
       answers: {
-        a: 'constant, let, variable',
-        b: 'var, const, let, function',
-        c: 'var, let, const',
+        a: 'Paris',
+        b: 'Rome',
+        c: 'Madrid',
+        d: 'London',
+      },
+      correct: 'a',
+      selected: null,
+      links: [
+        {
+          text: 'paris.wikipedia',
+          href: 'https://www.worlddata.info/capital-cities.php',
+        },
+        
+      ],
+    },
+    {
+      text: 'What is the capital of Australia?',
+      answers: {
+        a: 'Sydney',
+        b: 'Melbourne',
+        c: 'Canberra',
+        d: 'Perth',
       },
       correct: 'c',
       selected: null,
       links: [
         {
-          text: 'javascript.info',
-          href: 'https://javascript.info/variables',
+          text: 'canberra.wikipedia',
+          href: 'https://www.worlddata.info/capital-cities.php',
         },
+        
+      ],
+    },
+    {
+      text: 'What is the capital of Japan?',
+      answers: {
+        a: 'Bangkok',
+        b: 'Beijing',
+        c: 'Seoul',
+        d: 'Tokyo',
+      },
+      correct: 'd',
+      selected: null,
+      links: [
         {
-          text: 'Tyler McGinnis',
-          href: 'https://ui.dev/var-let-const/',
+          text: 'tokyo.wikipedia',
+          href: 'https://www.worlddata.info/capital-cities.php',
         },
+        
+      ],
+    },
+    {
+      text: 'What is the capital of Brazil?',
+      answers: {
+        a: 'Brasília',
+        b: 'São Paulo',
+        c: 'Rio de Janeiro',
+        d: 'Buenos Aires',
+      },
+      correct: 'a',
+      selected: null,
+      links: [
+        {
+          text: 'brasília.wikipedia',
+          href: 'https://www.worlddata.info/capital-cities.php',
+        },
+        
+      ],
+    },
+    {
+      text: 'What is the capital of Canada?',
+      answers: {
+        a: 'Toronto',
+        b: 'Montreal',
+        c: 'Ottawa',
+        d: 'Vancouver',
+      },
+      correct: 'c',
+      selected: null,
+      links: [
+        {
+          text: 'ottawa.wikipedia',
+          href: 'https://www.worlddata.info/capital-cities.php',
+        },
+        
       ],
     },
     {
