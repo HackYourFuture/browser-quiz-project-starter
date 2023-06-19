@@ -3,6 +3,7 @@ import {
   NEXT_QUESTION_BUTTON_ID,
   USER_INTERFACE_ID,
 } from '../constants.js';
+
 import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
@@ -27,6 +28,14 @@ export const initQuestionPage = () => {
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
     .addEventListener('click', nextQuestion);
+
+const Hint_Button = document.getElementById('hint-button');
+const Hint_Text = document.getElementById('hint-text');
+Hint_Text.style.display = 'none'
+Hint_Button.addEventListener('click', function () {
+  Hint_Text.style.display = 'block';
+});
+
 };
 
 const nextQuestion = () => {
@@ -34,3 +43,4 @@ const nextQuestion = () => {
 
   initQuestionPage();
 };
+
