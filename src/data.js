@@ -32,6 +32,7 @@ export const quizData = {
           href: 'https://ui.dev/var-let-const/',
         },
       ],
+      hint:"look down"
     },
     {
       text: 'What does `typeof` do?',
@@ -54,6 +55,7 @@ export const quizData = {
             'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof',
         },
       ],
+      hint:"look up"
     },
     // Add more questions here
   ],
