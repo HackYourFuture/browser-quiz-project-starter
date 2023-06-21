@@ -184,7 +184,7 @@ html{
   height: 100%;
   width: 100%;
   background: #eafaf1;
-  -webkit-border-radius: 100%;
+  border-radius: 100%;
   clip: rect(0px, 100px, 100px, 50px);
   z-index:9;
 
@@ -295,7 +295,8 @@ html{
 }
 
 .incorrect{
-  background: #c11111;
+  background: #c11111;}
+  
 #hint-button {
   background: #5E5DF0;
   border-radius: 999px;
