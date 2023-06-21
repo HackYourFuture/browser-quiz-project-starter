@@ -14,3 +14,5 @@ export const ANSWER_BUTTONS = "answer-buttons";
 export const SCORE_ELEMENT = "score";
 export const SCORE_BUTTON = "score-btn";
 export const SCORE_MESSAGE = "score-message";
+export const Hint_Button = 'hint-button';
+export const Hint_Text = 'hint-text';
