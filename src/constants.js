@@ -9,7 +9,10 @@ export const USER_INTERFACE_ID = 'user-interface';
 export const START_QUIZ_BUTTON_ID = 'start-quiz-button';
 export const ANSWERS_LIST_ID = 'answers-list';
 export const NEXT_QUESTION_BUTTON_ID = 'next-question-button';
-export const WELCOME_H1_ID = 'welcome-heading'; 
-// store the ID in a const
-export const HINT_TEXT_ID ='hint-text';
-export const HINT_BUTTON_ID ='hint-button';
+
+export const ANSWER_BUTTONS = "answer-buttons";
+export const SCORE_ELEMENT = "score";
+export const SCORE_BUTTON = "score-btn";
+export const SCORE_MESSAGE = "score-message";
+export const Hint_Button = 'hint-button';
+export const Hint_Text = 'hint-text';

@@ -1,5 +1,7 @@
-import { HINT_TEXT_ID ,HINT_BUTTON_ID,NEXT_QUESTION_BUTTON_ID,ANSWERS_LIST_ID } from "../constants.js";
-
+import { ANSWERS_LIST_ID } from '../constants.js';
+import { NEXT_QUESTION_BUTTON_ID } from '../constants.js';
+import { Hint_Button } from '../constants.js';
+import { Hint_Text} from '../constants.js';
 /**
  * Create a full question element
  * @returns {Element}
@@ -17,9 +19,8 @@ export const createQuestionElement = (question,hint) => {
     <button id="${NEXT_QUESTION_BUTTON_ID}">
       Next question
     </button>
-    <p id=${HINT_TEXT_ID}>${hint}</p>
-    <button id=${HINT_BUTTON_ID}>show hint</button>
   `;
-
+  
   return element;
 };
+
