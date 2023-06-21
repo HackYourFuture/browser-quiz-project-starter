@@ -17,10 +17,7 @@ ul {
 }
 
 /* Score element style */
-html{
-  height: 100%;
-  animation:bgcolor 1.2s ease forwards;
-}
+
 @keyframes bgcolor{
   0% {background: #fcd7d7;}
   50% {background: #fcefd2;}
@@ -184,7 +181,7 @@ html{
   height: 100%;
   width: 100%;
   background: #eafaf1;
-  -webkit-border-radius: 100%;
+  border-radius: 100%;
   clip: rect(0px, 100px, 100px, 50px);
   z-index:9;
 
@@ -295,7 +292,8 @@ html{
 }
 
 .incorrect{
-  background: #c11111;
+  background: #c11111;}
+
 #hint-button {
   background: #5E5DF0;
   border-radius: 999px;
@@ -316,8 +314,8 @@ html{
   width: fit-content;
   word-break: break-word;
   border: 0;
-  margin-left: 7px;
-}
+  margin-left: 7px;}
+
 #hint-text {
 padding-top: 20px;
 font-family: Georgia, 'Times New Roman', Times, serif;
