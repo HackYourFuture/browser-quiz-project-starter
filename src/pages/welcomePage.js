@@ -3,17 +3,18 @@ import { createWelcomeElement } from '../views/welcomeView.js';
 import { initQuestionPage } from './questionPage.js';
 
 export const initWelcomePage = () => {
-  const userInterface = document.getElementById(USER_INTERFACE_ID);
-  userInterface.innerHTML = '';
 
-  const welcomeElement = createWelcomeElement();
+  const userInterface = document.getElementById(USER_INTERFACE_ID);
+  userInterface.innerHTML = ''; 
+
+  const welcomeElement = createWelcomeElement(); // creat element
   userInterface.appendChild(welcomeElement);
 
   document
     .getElementById(START_QUIZ_BUTTON_ID)
-    .addEventListener('click', startQuiz);
+    .addEventListener('click', startQuiz); // make the button start quiz
 };
 
-const startQuiz = () => {
+const startQuiz = () => { // when you click start quiz   the function start working
   initQuestionPage();
 };
