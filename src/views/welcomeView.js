@@ -1,9 +1,5 @@
 import { START_QUIZ_BUTTON_ID } from '../constants.js';
 
-import { ANSWER_BUTTONS } from '../constants.js';
-import { SCORE_ELEMENT } from '../constants.js';
-import { SCORE_BUTTON } from '../constants.js';
-import { SCORE_MESSAGE } from '../constants.js';
 
 /**
  * Create the welcome screen
@@ -12,10 +8,16 @@ import { SCORE_MESSAGE } from '../constants.js';
 export const createWelcomeElement = () => {
   const element = document.createElement('div');
   element.innerHTML = String.raw`
-    <h1>Welcome</h1>
-    <button id="${START_QUIZ_BUTTON_ID}">start quiz</button>
-
-
+  <div class="welcome-container">
+  <div class="welcome-text" data-msg="Welcome&nbsp;to our game!">
+    <div class="text--content">
+      <div class="text--data">Welcome&nbsp;to our game!</div>
+    </div>
+  </div>
+  <button id="${START_QUIZ_BUTTON_ID}">start quiz</button>
+  <br>
+</div>
+    
   `;
   return element;
 };
