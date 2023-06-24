@@ -11,3 +11,4 @@ export const NEXT_QUESTION_BUTTON_ID = 'next-question-button';
 export const SCORE_ID ='score'
 export const ANSWER_BUTTONS = "answer-buttons";
 export const IMG_CONTAINER = "img-container";
+

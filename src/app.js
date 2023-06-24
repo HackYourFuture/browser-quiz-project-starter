@@ -7,4 +7,4 @@ window.addEventListener('load', () => {
   quizData.currentQuestionIndex = 0;
 
   initWelcomePage();
-}); //run the loadApp function when the html and script loads into the browser
+
