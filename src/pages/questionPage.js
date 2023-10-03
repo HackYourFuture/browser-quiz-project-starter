@@ -2,17 +2,21 @@ import {
   ANSWERS_LIST_ID,
   NEXT_QUESTION_BUTTON_ID,
   USER_INTERFACE_ID,
+  ANSWER_OPTION_BUTTON_ID,
+  SKIP_QUESTION_BUTTON_ID,
+  SCORE_ID,
 } from '../constants.js';
 import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
+import { skipQuestion } from './skip.js';
+import { startTimer, resetTimer } from './timer.js';
 
 export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
 
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
-
   const questionElement = createQuestionElement(currentQuestion.text);
 
   userInterface.appendChild(questionElement);
@@ -22,15 +26,98 @@ export const initQuestionPage = () => {
   for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
     const answerElement = createAnswerElement(key, answerText);
     answersListElement.appendChild(answerElement);
+
+    // Generate a unique ID for each answer button
+    const optionalAnswer = `${ANSWER_OPTION_BUTTON_ID}-${key}`;
+
+    // Attach event listener to the dynamically created button
+    document.getElementById(optionalAnswer).addEventListener('click', () => {
+      optionalAnswerClicked(key);
+    });
   }
+
+  document
+    .getElementById(SKIP_QUESTION_BUTTON_ID)
+    .addEventListener('click', skipQuestion);
 
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
     .addEventListener('click', nextQuestion);
+
+  // document.getElementById(SCORE_ID).innerText = scoreRealTime();
+
+  startTimer(() => timeUP(currentQuestion));
 };
 
-const nextQuestion = () => {
+const moveToNextQuestion = () => {
   quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
-
+};
+export const nextQuestion = () => {
+  resetTimer();
+  moveToNextQuestion();
   initQuestionPage();
+};
+// Disable all answer buttons function apart
+const disableAnswerButtons = (currentQuestion) => {
+  for (const [key] of Object.entries(currentQuestion.answers)) {
+    const restButtons = document.getElementById(
+      `${ANSWER_OPTION_BUTTON_ID}-${key}` //   `${ANSWER_OPTION_BUTTON_ID}-${anOtherKey}` when inside optionalAnswerClicked
+    );
+    restButtons.disabled = true;
+  }
+};
+
+// Function to highlight the correct answer
+const highlightCorrectAnswer = (currentQuestion) => {
+  const correctAnswerButton = document.getElementById(
+    `${ANSWER_OPTION_BUTTON_ID}-${currentQuestion.correct}`
+  );
+  correctAnswerButton.style.backgroundColor = 'green';
+};
+
+const optionalAnswerClicked = (key) => {
+  const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
+
+  disableAnswerButtons(currentQuestion);
+  resetTimer();
+  //  if the selected answer is correct
+  const isCorrect = key === currentQuestion.correct;
+
+  const selectedAnswerButton = document.getElementById(
+    `${ANSWER_OPTION_BUTTON_ID}-${key}`
+  );
+
+  if (isCorrect) {
+    //  * Or: CSS approach commented:
+    // selectedAnswerButton.classList.add('correct-answer');
+    selectedAnswerButton.style.backgroundColor = 'green';
+    // Increment the score
+    quizData.score += 1;
+    // Update the score display
+    scoreRealTime();
+  } else {
+    // selectedAnswerButton.classList.add('wrong-answer');
+    selectedAnswerButton.style.backgroundColor = 'red';
+    const correctAnswerButton = document.getElementById(
+      `${ANSWER_OPTION_BUTTON_ID}-${currentQuestion.correct}`
+    );
+    //correctAnswerButton.classList.add('correct-answer');
+    correctAnswerButton.style.backgroundColor = 'green';
+  }
+
+  currentQuestion.selected = key;
+
+  // Log for debugging purposes
+  console.log(`Answer ${key} selected for question ${currentQuestion.text}`);
+};
+
+export const scoreRealTime = () => {
+  let scored = document.getElementById(SCORE_ID);
+  scored.innerText = `SCORE: ${quizData.score}`;
+};
+
+const timeUP = (currentQuestion) => {
+  disableAnswerButtons(currentQuestion);
+  alert("⏳ Time's up! ⌛️");
+  highlightCorrectAnswer(currentQuestion);
 };

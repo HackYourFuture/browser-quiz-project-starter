@@ -10,6 +10,7 @@
 */
 
 export const quizData = {
+  score: 0,
   currentQuestionIndex: 0,
   // the questions in the quiz
   questions: [
@@ -58,3 +59,20 @@ export const quizData = {
     // Add more questions here
   ],
 };
+
+/**
+
+As for your question about `key`, it gets its value from this block of code:
+
+Let's break it down:
+
+- `Object.entries(currentQuestion.answers)` returns an array of key-value pairs for the `answers` object in the current question.
+  
+  For example, if `currentQuestion.answers` is `{ a: "Answer 1", b: "Answer 2" }`, `Object.entries(currentQuestion.answers)` would return `[["a", "Answer 1"], ["b", "Answer 2"]]`.
+
+- The `for` loop iterates through this array of key-value pairs. In each iteration, `key` gets the first element of a pair (like `"a"` or `"b"`), and `answerText` gets the second element (like `"Answer 1"` or `"Answer 2"`).
+
+- Inside the loop, an event listener is attached to each button with an ID formed by `${ANSWER_OPTION_BUTTON_ID}-${key}` (e.g., if `ANSWER_OPTION_BUTTON_ID` is `"answerButton"`, then IDs would be `"answerButton-a"`, `"answerButton-b"`, etc.).
+
+- When one of these buttons is clicked, the function `optionalAnswerClicked(key)` is called, and the current `key` ("a", "b", etc.) is passed in as an argument. This is how `key` gets its value in the `optionalAnswerClicked` function.
+ */
