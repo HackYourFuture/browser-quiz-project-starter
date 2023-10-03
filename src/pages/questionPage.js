@@ -10,7 +10,15 @@ import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
 import { skipQuestion } from './skip.js';
-import { startTimer, resetTimer } from './timer.js';
+import { startTimer, resetTimer, timeUP } from './timer.js';
+
+import { shuffle } from '../shuffling.js';
+export const initQuiz = () => {
+  // Shuffle the questions
+  quizData.questions = shuffle(quizData.questions);
+
+  initQuestionPage();
+};
 
 export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
@@ -27,10 +35,8 @@ export const initQuestionPage = () => {
     const answerElement = createAnswerElement(key, answerText);
     answersListElement.appendChild(answerElement);
 
-    // Generate a unique ID for each answer button
+    //   ID generate forEach answer button
     const optionalAnswer = `${ANSWER_OPTION_BUTTON_ID}-${key}`;
-
-    // Attach event listener to the dynamically created button
     document.getElementById(optionalAnswer).addEventListener('click', () => {
       optionalAnswerClicked(key);
     });
@@ -44,8 +50,6 @@ export const initQuestionPage = () => {
     .getElementById(NEXT_QUESTION_BUTTON_ID)
     .addEventListener('click', nextQuestion);
 
-  // document.getElementById(SCORE_ID).innerText = scoreRealTime();
-
   startTimer(() => timeUP(currentQuestion));
 };
 
@@ -57,8 +61,8 @@ export const nextQuestion = () => {
   moveToNextQuestion();
   initQuestionPage();
 };
-// Disable all answer buttons function apart
-const disableAnswerButtons = (currentQuestion) => {
+// function-disable answer-buttons function apart
+export const disableAnswerButtons = (currentQuestion) => {
   for (const [key] of Object.entries(currentQuestion.answers)) {
     const restButtons = document.getElementById(
       `${ANSWER_OPTION_BUTTON_ID}-${key}` //   `${ANSWER_OPTION_BUTTON_ID}-${anOtherKey}` when inside optionalAnswerClicked
@@ -67,8 +71,8 @@ const disableAnswerButtons = (currentQuestion) => {
   }
 };
 
-// Function to highlight the correct answer
-const highlightCorrectAnswer = (currentQuestion) => {
+//  correct-answer highlight-function
+export const highlightCorrectAnswer = (currentQuestion) => {
   const correctAnswerButton = document.getElementById(
     `${ANSWER_OPTION_BUTTON_ID}-${currentQuestion.correct}`
   );
@@ -80,7 +84,7 @@ const optionalAnswerClicked = (key) => {
 
   disableAnswerButtons(currentQuestion);
   resetTimer();
-  //  if the selected answer is correct
+  //  selected answer is correct
   const isCorrect = key === currentQuestion.correct;
 
   const selectedAnswerButton = document.getElementById(
@@ -104,9 +108,7 @@ const optionalAnswerClicked = (key) => {
     //correctAnswerButton.classList.add('correct-answer');
     correctAnswerButton.style.backgroundColor = 'green';
   }
-
   currentQuestion.selected = key;
-
   // Log for debugging purposes
   console.log(`Answer ${key} selected for question ${currentQuestion.text}`);
 };
@@ -114,10 +116,4 @@ const optionalAnswerClicked = (key) => {
 export const scoreRealTime = () => {
   let scored = document.getElementById(SCORE_ID);
   scored.innerText = `SCORE: ${quizData.score}`;
-};
-
-const timeUP = (currentQuestion) => {
-  disableAnswerButtons(currentQuestion);
-  alert("⏳ Time's up! ⌛️");
-  highlightCorrectAnswer(currentQuestion);
 };

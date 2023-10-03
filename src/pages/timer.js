@@ -1,4 +1,9 @@
 import { TIMER_ID } from '../constants.js';
+import {
+  disableAnswerButtons,
+  highlightCorrectAnswer,
+} from './questionPage.js';
+
 let timer;
 let timeLeft = 10;
 
@@ -24,4 +29,10 @@ export const resetTimer = () => {
   if (timeElement) {
     timeElement.innerText = timeLeft;
   }
+};
+
+export const timeUP = (currentQuestion) => {
+  disableAnswerButtons(currentQuestion);
+  alert("⏳ Time's up! ⌛️");
+  highlightCorrectAnswer(currentQuestion);
 };

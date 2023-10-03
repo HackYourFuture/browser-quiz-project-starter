@@ -14,11 +14,10 @@ export const skipQuestion = () => {
       quizData.currentQuestionIndex + 1
     } is: ${currentQuestion.correct}. `;
 
-    skipBox.style.cssText = `
-    
-    `;
+    // skipBox.style.cssText = ` `;
 
     // if (quizData.currentQuestionIndex >= quizData.questions.length - 1) {}
+
     // to remove after 2.5 seconds
     setTimeout(() => {
       document.body.removeChild(skipBox);
