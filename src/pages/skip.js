@@ -1,6 +1,6 @@
 import { nextQuestion } from './questionPage.js';
 import { quizData } from '../data.js';
-
+import { NEXT_QUESTION_BUTTON_ID } from '../constants.js';
 export const skipQuestion = () => {
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
 
@@ -18,6 +18,8 @@ export const skipQuestion = () => {
 
     // if (quizData.currentQuestionIndex >= quizData.questions.length - 1) {}
 
+    // Disable the "Next Question" button
+    document.getElementById(NEXT_QUESTION_BUTTON_ID).disabled = true;
     // to remove after 2.5 seconds
     setTimeout(() => {
       document.body.removeChild(skipBox);

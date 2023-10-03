@@ -57,6 +57,8 @@ const moveToNextQuestion = () => {
   quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
 };
 export const nextQuestion = () => {
+  // Re-enable the "Next Question" button
+  document.getElementById(NEXT_QUESTION_BUTTON_ID).disabled = false;
   resetTimer();
   moveToNextQuestion();
   initQuestionPage();
