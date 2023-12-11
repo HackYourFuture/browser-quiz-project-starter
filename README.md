@@ -4,7 +4,7 @@
 
 - npm install
 - npm run dev
-  -host: localhost:3000
+  - host: localhost:3000
 
 # Getting Started
 
