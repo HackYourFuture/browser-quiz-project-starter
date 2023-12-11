@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "scripts": {
     "prettier:write": "prettier --write .",
-    "prettier:check": "prettier --check ."
+    "prettier:check": "prettier --check .",
+    "dev": "vite --port 3000",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "repository": {
     "type": "git",
@@ -17,5 +20,8 @@
   "homepage": "https://github.com/HackYourFuture/browser-quiz-project-starter",
   "devDependencies": {
     "prettier": "^2.2.1"
+  },
+  "dependencies": {
+    "vite": "^5.0.7"
   }
 }
