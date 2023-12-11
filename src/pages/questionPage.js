@@ -29,6 +29,20 @@ export const initQuestionPage = () => {
     .addEventListener('click', nextQuestion);
 };
 
+const showCorrectAnswer = () => {
+  const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
+  const correctAnswer = currentQuestion.correct;
+  const selectedAnswer = currentQuestion.selected;
+
+  const p = document.createElement('p');
+  p.innerText = `Correct answer is: ${correctAnswer}`;
+  const answerList = document.getElementById(ANSWERS_LIST_ID);
+
+  if(selectedAnswer != null && selectedAnswer.length > 0) {
+    answerList.appendChild(p);
+  };
+};
+
 const nextQuestion = () => {
   quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
 
