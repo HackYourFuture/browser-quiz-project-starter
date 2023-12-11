@@ -61,14 +61,15 @@ Some examples of online quizes that you might like:
 When you have chosen your goal, you can create tasks as issues on Github and assign them to team members.
 Tasks could look like this, using the [MoSCoW](https://en.wikipedia.org/wiki/MoSCoW_method) labels for prioritization
 
-- [x] (must have) A user can see one question at a time, stepping through the quiz
-- [ ] (must have) A user can select an answer for each question
-- [ ] (must have) Change the <title>
-- [ ] (must have) add a favicon
-- [ ] (should have) A user can see what the correct answer is after they selected their answer.
-- [ ] (should have) A user can see their score update in real-time as they select answers
+- [ ] (must have) Answer is clickable
+- [ ] (must have) Next question button takes you to the next question
+- [ ] (must have) If you click on an answer, it shows red for incorrect, green for correct
+- [ ] (must have) Results page
+- [ ] (should have) Timer for completing quiz
+- [ ] (should have) Progress bar through the 10 questions
 - [ ] (should have) A user can refresh the page and still have his/her given answers available
-- [ ] (could have) A user can "skip" the question and learn the correct answer, this forfeits the question
-- [ ] (could have) Transition between pages or question look fancy like TypeForm for example
+- [ ] (shold have) Restart quiz button, on the results page
+- [ ] (could have) Animate transition between welcome page and start of questions
+
 
 You should create tasks that fit with your goal, these tasks serve just as an example.
