@@ -3,8 +3,8 @@ import {
   NEXT_QUESTION_BUTTON_ID,
   USER_INTERFACE_ID,
 } from '../constants.js';
-import { createQuestionElement } from '../views/questionView.js';
-import { createAnswerElement } from '../views/answerView.js';
+import { createQuestionElement } from '../components/questionView.js';
+import { createAnswerElement } from '../components/answerView.js';
 import { quizData } from '../data.js';
 import { initResultPage } from './resultPage.js';
 
