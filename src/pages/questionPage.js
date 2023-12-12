@@ -8,7 +8,7 @@ import { createAnswerComponent } from '../components/answerComponent.js';
 import { questionNumberTracker } from '../components/questionNumTracker.js';
 import { quizData } from '../data.js';
 import { initResultPage } from './resultPage.js';
-import { createTimerElement } from '../views/timerComponent.js';
+import { createTimerComponent } from '../components/timerComponent.js';
 
 export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
@@ -27,7 +27,7 @@ export const initQuestionPage = () => {
     .getElementById(NEXT_QUESTION_BUTTON_ID)
     .addEventListener('click', nextQuestion);
 
-  let timerElement = createTimerElement(nextQuestion);
+  let timerElement = createTimerComponent(nextQuestion);
   questionElement.appendChild(timerElement);
 
   const timerInterval = setInterval(() => {
