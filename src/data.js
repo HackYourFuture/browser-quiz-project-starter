@@ -19,6 +19,7 @@ export const quizData = {
         a: 'constant, let, variable',
         b: 'var, const, let, function',
         c: 'var, let, const',
+        d: 'const, let, variable',
       },
       correct: 'c',
       selected: null,
@@ -58,3 +59,5 @@ export const quizData = {
     // Add more questions here
   ],
 };
+
+globalThis.quizData = quizData;
