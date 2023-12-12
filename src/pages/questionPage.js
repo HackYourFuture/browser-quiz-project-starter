@@ -44,6 +44,21 @@ export const initQuestionPage = () => {
       nextQuestion();
     }
   }, 1000);
+  let timerElement = createTimerElement(second);
+  questionElement.appendChild(timerElement);
+
+  const timerInterval = setInterval(() => {
+    if (second !== 1) {
+      second -= 1;
+      questionElement.removeChild(timerElement);
+      timerElement = createTimerElement(second);
+      questionElement.appendChild(timerElement);
+    } else {
+      clearInterval(timerInterval);
+      second = 20;
+      nextQuestion();
+    }
+  }, 1000);
 
   /**************************Question number tracker ************************************* */
   const questionNumberTrackerComponent = questionNumberTracker(
