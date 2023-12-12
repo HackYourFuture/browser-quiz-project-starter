@@ -2,7 +2,18 @@
 body {
     margin: 0;
     overflow: hidden;
+    background-image: url(https://steamuserimages-a.akamaihd.net/ugc/1769332879207296766/98747F04B20194A89A3E59780734E32E2E7A2516/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+
+img{
+    width: 300px;
+    height: 100px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
 
 video {
     position: fixed;
@@ -66,4 +77,31 @@ li:hover {
     transform: scale(1.1);
 }
 
+h1{
+    color:#ff44cc;
+}
+
+#start-quiz-button{
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: black;
+    border: 1px solid rgb(52, 51, 51);
+    border-radius: 20px;
+    margin: 15px;
+    padding: 10px 25px;
+    box-shadow: 0px 3px 10px #00cff4;
+    color: #ff44cc;
+    transition: transform 0.2;
+}
+
+#next-question-button{
+    border-style: none;
+    text-transform: uppercase;
+    background-color: black;
+    color: wheat;
+    font-size: 20px;
+    margin-left: 40px;
+    cursor: pointer;
+}
 /*======*/
