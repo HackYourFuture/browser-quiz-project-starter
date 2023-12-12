@@ -1,6 +1,5 @@
 import { ANSWERS_LIST_ID } from '../constants.js';
 import { NEXT_QUESTION_BUTTON_ID } from '../constants.js';
-import { QUESTION_NUMBER_TRACKER_ID } from '../constants.js';
 
 /**
  * Create a full question element
@@ -19,7 +18,6 @@ export const createQuestionComponent = (question) => {
     <button id="${NEXT_QUESTION_BUTTON_ID}">
       Next question
     </button>
-<div id="${QUESTION_NUMBER_TRACKER_ID}">question number</div>
   `;
 
   return element;

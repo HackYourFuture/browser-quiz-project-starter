@@ -6,6 +6,7 @@ import {
 } from '../constants.js';
 import { createQuestionComponent } from '../components/questionView.js';
 import { createAnswerComponent } from '../components/answerView.js';
+import { questionNumberTracker } from '../components/questionNumTracker.js';
 import { quizData } from '../data.js';
 import { initResultPage } from './resultPage.js';
 
@@ -15,15 +16,15 @@ export const initQuestionPage = () => {
   const currentQuestionNumber = quizData.currentQuestionIndex + 1;
   const currentQuestion = quizData.questions[currentQuestionNumber - 1];
 
-  const questionElement = createQuestionComponent(currentQuestion.text);
+  const questionComponent = createQuestionComponent(currentQuestion.text);
 
-  userInterface.appendChild(questionElement);
+  userInterface.appendChild(questionComponent);
 
-  const answersListElement = document.getElementById(ANSWERS_LIST_ID);
+  const answerComponent = document.getElementById(ANSWERS_LIST_ID);
 
   for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
     const answerElement = createAnswerComponent(key, answerText);
-    answersListElement.appendChild(answerElement);
+    answerComponent.appendChild(answerElement);
   }
 
   document
@@ -31,10 +32,11 @@ export const initQuestionPage = () => {
     .addEventListener('click', nextQuestion);
 
   /**************************Question number tracker ************************************* */
-  const questionNumberTracker = document.getElementById(
-    QUESTION_NUMBER_TRACKER_ID
+  const questionNumberTrackerComponent = questionNumberTracker(
+    currentQuestionNumber,
+    quizData.questions.length
   );
-  questionNumberTracker.innerHTML = `Question ${currentQuestionNumber} of ${quizData.questions.length}`;
+  userInterface.appendChild(questionNumberTrackerComponent);
 };
 
 const nextQuestion = () => {
