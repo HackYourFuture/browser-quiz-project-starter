@@ -13,8 +13,6 @@ import { createTimerElement } from '../views/timerComponent.js';
 export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
-  let second = 20;
-
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
   const questionComponent = createQuestionComponent(currentQuestion.text);
   userInterface.appendChild(questionComponent);
@@ -29,7 +27,7 @@ export const initQuestionPage = () => {
     .getElementById(NEXT_QUESTION_BUTTON_ID)
     .addEventListener('click', nextQuestion);
 
-  let timerElement = createTimerElement(second);
+  let timerElement = createTimerElement(nextQuestion);
   questionElement.appendChild(timerElement);
 
   const timerInterval = setInterval(() => {
