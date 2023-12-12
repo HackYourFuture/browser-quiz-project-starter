@@ -3,8 +3,8 @@ import {
   NEXT_QUESTION_BUTTON_ID,
   USER_INTERFACE_ID,
 } from '../constants.js';
-import { createQuestionElement } from '../views/questionView.js';
-import { createAnswerElement } from '../views/answerView.js';
+import { createQuestionComponent } from '../components/questionComponent.js';
+import { createAnswerComponent } from '../components/answerComponent.js';
 import { quizData } from '../data.js';
 import { initResultPage } from './resultPage.js';
 
@@ -14,14 +14,14 @@ export const initQuestionPage = () => {
 
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
 
-  const questionElement = createQuestionElement(currentQuestion.text);
+  const questionElement = createQuestionComponent(currentQuestion.text);
 
   userInterface.appendChild(questionElement);
 
   const answersListElement = document.getElementById(ANSWERS_LIST_ID);
 
   for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
-    const answerElement = createAnswerElement(key, answerText);
+    const answerElement = createAnswerComponent(key, answerText);
     answersListElement.appendChild(answerElement);
   }
 
