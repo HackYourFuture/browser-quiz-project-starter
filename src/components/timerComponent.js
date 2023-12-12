@@ -1,6 +1,6 @@
 import { TIMER_COMPONENT_ID, TIMER_SECONDS } from '../constants';
 
-export const createTimerElement = (onFinish) => {
+export const createTimerComponent = (onFinish) => {
   const element = document.createElement('div');
   element.id = TIMER_COMPONENT_ID;
   element.className = 'timer-component';
