@@ -31,23 +31,21 @@ export const initQuestionPage = () => {
     .getElementById(NEXT_QUESTION_BUTTON_ID)
     .addEventListener('click', nextQuestion);
 
-    let timerElement = createTimerElement(second);
-    questionElement.appendChild(timerElement);
-  
-    const timerInterval = setInterval(()=>{
-      if(second !== 1){
-        second -= 1;
-    questionElement.removeChild(timerElement);
-    timerElement = createTimerElement(second);
-    questionElement.appendChild(timerElement);
-      } else {
-        clearInterval(timerInterval);
-        second = 20;
-        nextQuestion();
-      }
-  },1000)
-  
- 
+  let timerElement = createTimerElement(second);
+  questionElement.appendChild(timerElement);
+
+  const timerInterval = setInterval(() => {
+    if (second !== 1) {
+      second -= 1;
+      questionElement.removeChild(timerElement);
+      timerElement = createTimerElement(second);
+      questionElement.appendChild(timerElement);
+    } else {
+      clearInterval(timerInterval);
+      second = 20;
+      nextQuestion();
+    }
+  }, 1000);
 };
 
 const nextQuestion = () => {
@@ -55,7 +53,7 @@ const nextQuestion = () => {
 
   if (quizData.currentQuestionIndex >= quizData.questions.length) {
     initResultPage();
-    
+
     return;
   }
   initQuestionPage();
