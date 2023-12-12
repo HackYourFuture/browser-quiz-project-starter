@@ -2,13 +2,13 @@ import {
   ANSWERS_LIST_ID,
   NEXT_QUESTION_BUTTON_ID,
   USER_INTERFACE_ID,
-  QUESTION_NUMBER_TRACKER_ID,
 } from '../constants.js';
 import { createQuestionComponent } from '../components/questionView.js';
 import { createAnswerComponent } from '../components/answerView.js';
 import { questionNumberTracker } from '../components/questionNumTracker.js';
 import { quizData } from '../data.js';
 import { initResultPage } from './resultPage.js';
+import { setLocalStorage } from '../components/setLocalStorage.js';
 
 export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
@@ -37,6 +37,9 @@ export const initQuestionPage = () => {
     quizData.questions.length
   );
   userInterface.appendChild(questionNumberTrackerComponent);
+
+  /**************************Local storage ************************************* */
+  setLocalStorage(currentQuestionNumber);
 };
 
 const nextQuestion = () => {

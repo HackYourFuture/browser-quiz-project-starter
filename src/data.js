@@ -14,6 +14,7 @@ export const quizData = {
   // the questions in the quiz
   questions: [
     {
+      id: 1,
       text: 'What are the different ways to declare a JS variable?',
       answers: {
         a: 'constant, let, variable',
@@ -34,6 +35,7 @@ export const quizData = {
       ],
     },
     {
+      id: 2,
       text: 'What does `typeof` do?',
       answers: {
         a: 'changes the type of a primitive value',
@@ -50,8 +52,7 @@ export const quizData = {
         },
         {
           text: 'MDN',
-          href:
-            'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof',
+          href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof',
         },
       ],
     },
