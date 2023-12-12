@@ -13,3 +13,4 @@ export const QUESTION_NUMBER_TRACKER_ID = 'question-number-tracker';
 export const QUESTION = 'question';
 export const ANSWERS_LIST = 'answersList';
 export const ANSWER_LIST_ITEM = 'answerList_item';
+export const TIMER_COMPONENT_ID = 'timer-component';

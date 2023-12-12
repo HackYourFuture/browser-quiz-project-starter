@@ -8,10 +8,13 @@ import { createAnswerComponent } from '../components/answerComponent.js';
 import { questionNumberTracker } from '../components/questionNumTracker.js';
 import { quizData } from '../data.js';
 import { initResultPage } from './resultPage.js';
+import { createTimerElement } from '../views/timerComponent.js';
 
 export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
+  let second = 20;
+
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
   const questionComponent = createQuestionComponent(currentQuestion.text);
   userInterface.appendChild(questionComponent);
@@ -26,6 +29,22 @@ export const initQuestionPage = () => {
     .getElementById(NEXT_QUESTION_BUTTON_ID)
     .addEventListener('click', nextQuestion);
 
+  let timerElement = createTimerElement(second);
+  questionElement.appendChild(timerElement);
+
+  const timerInterval = setInterval(() => {
+    if (second !== 1) {
+      second -= 1;
+      questionElement.removeChild(timerElement);
+      timerElement = createTimerElement(second);
+      questionElement.appendChild(timerElement);
+    } else {
+      clearInterval(timerInterval);
+      second = 20;
+      nextQuestion();
+    }
+  }, 1000);
+
   /**************************Question number tracker ************************************* */
   const questionNumberTrackerComponent = questionNumberTracker(
     currentQuestion.id,
@@ -38,6 +57,7 @@ const nextQuestion = () => {
   quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
   if (quizData.currentQuestionIndex >= quizData.questions.length) {
     initResultPage();
+
     return;
   }
   initQuestionPage();
