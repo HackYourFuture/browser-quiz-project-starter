@@ -40,11 +40,13 @@ export const initQuestionPage = () => {
 
   /**************************Local storage ************************************* */
   setLocalStorage(currentQuestionNumber);
+
+  /************************** Answer checker ************************************* */
+  // get the answer from local storage and check if it is correct or not with the correct answer in data.js
 };
 
 const nextQuestion = () => {
   quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
-
   if (quizData.currentQuestionIndex >= quizData.questions.length) {
     initResultPage();
     return;
