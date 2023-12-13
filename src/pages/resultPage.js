@@ -1,12 +1,12 @@
 import { RETRY_BUTTON_ID, USER_INTERFACE_ID } from '../constants.js';
-import { createResultElement } from '../views/resultView.js';
+import { createResultComponent } from '../components/resultComponent.js';
 import { quizData } from '../data.js';
 import { initQuestionPage } from './questionPage.js';
 
 export const initResultPage = () => {
   const element = document.getElementById(USER_INTERFACE_ID);
   element.innerHTML = ``;
-  const resultElement = createResultElement();
+  const resultElement = createResultComponent();
   element.appendChild(resultElement);
 
   document
