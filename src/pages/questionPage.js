@@ -39,10 +39,7 @@ export const initQuestionPage = () => {
   userInterface.appendChild(questionNumberTrackerComponent);
 
   /**************************Local storage ************************************* */
-  setLocalStorage(currentQuestionNumber);
-
-  /************************** Answer checker ************************************* */
-  // get the answer from local storage and check if it is correct or not with the correct answer in data.js
+  setLocalStorage(currentQuestionNumber, currentQuestion.correct);
 };
 
 const nextQuestion = () => {
