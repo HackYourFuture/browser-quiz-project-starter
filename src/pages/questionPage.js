@@ -12,7 +12,7 @@ export const initQuestionPage = () => {
     const userInterface = document.getElementById(USER_INTERFACE_ID);
     userInterface.innerHTML = '';
 
-    const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
+    const currentQuestion = quizData.questions[quizData.currentQuestionIndex]; //need current question
 
     const questionElement = createQuestionElement(currentQuestion.text);
 
@@ -21,7 +21,33 @@ export const initQuestionPage = () => {
     const answersListElement = document.getElementById(ANSWERS_LIST_ID);
 
     for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
-        const answerElement = createAnswerElement(key, answerText);
+        const answerElement = createAnswerElement(key, answerText); //need this also
+
+        //=========================
+        //add attr to answerElement (ul-li)
+        answerElement.setAttribute('data-answer', key);
+
+        //Add an eventListener here for checking the answers
+        answersListElement.addEventListener('click', (e) => {
+
+            const clickedAnswer = e.target.getAttribute('data-answer');
+            const index = Array.from(answersListElement.children).indexOf(e.target);
+
+            if (clickedAnswer === currentQuestion.correct) {
+
+                answersListElement.children[index].style.boxShadow = '0 0 10px 10px #00FF00';
+                answersListElement.children[index].style.transition = 'none';
+            } else {
+
+                answersListElement.children[index].style.boxShadow = '0 0 10px 10px #FF0000';
+
+                const correctAnswer = document.querySelector(`[data-answer="${currentQuestion.correct}"]`);
+                correctAnswer.style.boxShadow = '0 0 10px 10px #00FF00';
+            }
+
+            disableClick(); //define it Don't forget
+        });
+        //========================
         answersListElement.appendChild(answerElement);
     }
 
@@ -32,6 +58,16 @@ export const initQuestionPage = () => {
     vidBackground();
 };
 
+
+
+//==============
+const disableClick = () => {
+    const liElements = document.querySelectorAll(`#${ANSWERS_LIST_ID}`);//answersListElement
+    for (let el of liElements) {
+        el.style.pointerEvents = 'none';
+    }
+};
+//=============
 
 const nextQuestion = () => {
   quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1; // moving to the next question
