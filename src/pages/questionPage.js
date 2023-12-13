@@ -3,8 +3,8 @@ import {
   NEXT_QUESTION_BUTTON_ID,
   USER_INTERFACE_ID,
 } from '../constants.js';
-import { createQuestionComponent } from '../components/questionView.js';
-import { createAnswerComponent } from '../components/answerView.js';
+import { createQuestionComponent } from '../components/questionComponent.js';
+import { createAnswerComponent } from '../components/answerComponent.js';
 import { questionNumberTracker } from '../components/questionNumTracker.js';
 import { quizData } from '../data.js';
 import { initResultPage } from './resultPage.js';
