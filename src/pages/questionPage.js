@@ -7,11 +7,11 @@ import { createQuestionComponent } from '../components/questionComponent.js';
 import { createAnswerComponent } from '../components/answerComponent.js';
 import { quizData } from '../data.js';
 import { initResultPage } from './resultPage.js';
+import { createTimerComponent } from '../components/timerComponent.js';
 
 export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
-
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
 
   const questionElement = createQuestionComponent(currentQuestion.text);
@@ -28,6 +28,9 @@ export const initQuestionPage = () => {
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
     .addEventListener('click', nextQuestion);
+
+  const timerElement = createTimerComponent(nextQuestion);
+  questionElement.appendChild(timerElement);
 };
 
 const nextQuestion = () => {
@@ -35,6 +38,7 @@ const nextQuestion = () => {
 
   if (quizData.currentQuestionIndex >= quizData.questions.length) {
     initResultPage();
+
     return;
   }
   initQuestionPage();
