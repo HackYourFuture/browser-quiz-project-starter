@@ -83,6 +83,7 @@ h1{
 
 #start-quiz-button{
     text-transform: uppercase;
+    cursor: pointer;
     font-size: 20px;
     font-weight: bold;
     background-color: black;
