@@ -1,4 +1,4 @@
-import { RETRY_BUTTON_ID } from "../constants";
+import { RETRY_BUTTON_ID } from '../constants';
 
 export const createResultElement = () => {
   const element = document.createElement('div');
