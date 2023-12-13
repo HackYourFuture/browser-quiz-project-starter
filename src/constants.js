@@ -16,3 +16,6 @@ export const ANSWER_LIST_ITEM = 'answerList_item';
 export const TIMER_COMPONENT_ID = 'timer-component';
 
 export const TIMER_SECONDS = 20;
+export const QUESTION = 'question';
+export const ANSWERS_LIST = 'answersList';
+export const ANSWER_LIST_ITEM = 'answerList_item';
