@@ -31,12 +31,12 @@
 }
 
 .correct {
-  border: 2px solid green;
+  border: 2px solid green !important;
   box-shadow: 0 0 2px 1px rgb(154, 255, 154);
 }
 
 .wrong {
-  border: 2px solid red;
+  border: 2px solid red !important;
   box-shadow: 0 0 2px 1px rgb(254, 123, 123);
 }
 
