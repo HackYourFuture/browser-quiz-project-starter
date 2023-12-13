@@ -1,9 +1,5 @@
 /************************* Variables *************************/
 // all the global variables are defined here
-$correct: green;
-$green-shadow: rgb(156, 245, 156);
-$wrong: red;
-$red-shadow: rgb(253, 154, 154);
 /************************* Variables *************************/
 
 /************************* Global *************************/
@@ -28,34 +24,34 @@ $red-shadow: rgb(253, 154, 154);
   max-height: 80vh;
   overflow: auto;
 }
-h1 {
+
+.question {
   font-size: 2rem;
   margin: 1rem;
 }
 
 .correct {
-  border: 2px solid $correct;
-  box-shadow: 0 0 2px 1px $green-shadow;
+  border: 2px solid green;
+  box-shadow: 0 0 2px 1px rgb(154, 255, 154);
 }
 
 .wrong {
-  border: 2px solid $wrong;
-  box-shadow: 0 0 2px 1px $red-shadow;
+  border: 2px solid red;
+  box-shadow: 0 0 2px 1px rgb(254, 123, 123);
 }
 
 /************************* Desktop View *************************/
-ul {
+.answersList {
   list-style: none;
   display: grid;
   gap: 0.5rem;
-  // grid with max 2 columns and min 1 column with equal width
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  li {
+  .answerList_item {
     padding: 1rem;
-    border: 1px solid black;
+    border: 1px solid rgb(28, 28, 28);
     border-radius: 5px;
   }
-  li:hover {
+  .answerList_item:hover {
     cursor: pointer;
     opacity: 0.5;
   }
@@ -78,8 +74,8 @@ button {
   .centered {
     width: 90%;
   }
-  ul {
-    li {
+  .answersList {
+    .answerList_item {
       padding: 0.5rem;
     }
   }
