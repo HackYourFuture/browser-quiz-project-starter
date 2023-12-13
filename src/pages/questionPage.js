@@ -56,6 +56,9 @@ export const initQuestionPage = () => {
 
     vidBackground();
 };
+
+
+
 //==============
 const disableClick = () => {
     const liElements = document.querySelectorAll(`#${ANSWERS_LIST_ID}`);//answersListElement
@@ -64,6 +67,7 @@ const disableClick = () => {
     }
 };
 //=============
+
 const nextQuestion = () => {
     quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
 
