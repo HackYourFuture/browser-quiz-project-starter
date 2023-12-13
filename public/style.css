@@ -105,3 +105,25 @@ h1{
     cursor: pointer;
 }
 /*======*/
+
+.quiz-timer{
+    display: none;
+    position:relative;
+    left: 84%;
+    top: -50px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 0px 3px 10px #00cff4;
+}
+
+.time{
+    
+    position: relative;
+    left: 56%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 30px;
+    color: #ff44cc;
+    margin: auto;
+}

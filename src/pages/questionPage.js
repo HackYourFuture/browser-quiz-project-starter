@@ -56,6 +56,11 @@ export const initQuestionPage = () => {
         .addEventListener('click', nextQuestion);
 
     vidBackground();
+
+    clearInterval(countDown);
+
+    // Start the timer with a duration of 5 seconds
+    quizTimer(15,currentQuestion);
 };
 
 
@@ -72,13 +77,13 @@ const disableClick = () => {
 const nextQuestion = () => {
   quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1; // moving to the next question
 
-  if (quizData.currentQuestionIndex < quizData.questions.length) {
+    if (quizData.currentQuestionIndex < quizData.questions.length) {
     initQuestionPage();
-  } else {
+    } else {
     // If there are no more questions, quiz is completed, go to the end page
     quizData.quizCompleted = true;
     initEndPage(); // calls the initEndPage function and displaying a congratulations message
-  }
+    }
 };
 
 
@@ -99,3 +104,25 @@ const vidBackground = () => {
 };
 
 
+let myTimer = document.querySelector(".time");
+let countDown;
+
+function quizTimer(duration,count) {
+    let minutes;
+    let seconds;
+    countDown = setInterval(function () {
+    minutes = parseInt(duration / 60);
+    seconds = parseInt(duration % 60);
+
+    minutes = minutes < 10 ? `0${minutes}` : minutes;
+    seconds = seconds < 10 ? `0${seconds}` : seconds;
+
+    myTimer.innerHTML = `${minutes}:${seconds}`;
+    document.querySelector(".quiz-timer").style.display = "block"
+
+    if (--duration < 0) {
+        clearInterval(countDown);
+        nextQuestion();
+    }
+}, 1000);
+}
