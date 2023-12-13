@@ -4,11 +4,8 @@
  */
 export const createAnswerElement = (key, answerText) => {
   const element = document.createElement('li');
-  const input = document.createElement('input');
-  input.type = 'radio';
-  input.name = 'answer';
-  input.value = key;
-  element.appendChild(input);
-  element.innerHTML += `${key}: ${answerText}`;
+  element.innerHTML = String.raw`
+    ${key}: ${answerText};
+  `;
   return element;
 };

@@ -28,33 +28,58 @@ export const initQuestionPage = () => {
 
   const answersListElement = document.getElementById(ANSWERS_LIST_ID);
 
-  for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
-    const answerElement = createAnswerElement(key, answerText);
+  answersListElement.innerHTML = '';
+  const answers = currentQuestion.answers;
+
+  // Function to handle answer selection
+  const selectAnswer = (questionIndex, selectedOption, chosenItem) => {
+    // Update the selected answer in the quizData object
+    quizData.questions[questionIndex].selected = selectedOption;
+    let selectedValue = (quizData.questions[questionIndex].selected =
+      selectedOption);
+
+    let correctAnswer = quizData.questions[questionIndex].correct;
+
+    document.querySelectorAll(`.answer-list li`).forEach((item) => {
+      if (item.innerText.split(': ')[0] == correctAnswer) {
+        item.style.background = 'green';
+      } else {
+        item.style.background = 'red';
+      }
+    });
+  };
+
+  for (const [option, answer] of Object.entries(answers)) {
+    const answerElement = createAnswerElement(option, answer);
     answersListElement.appendChild(answerElement);
+    answerElement.addEventListener('click', (e) => {
+      const selectedOption = e.target.innerText.split(': ')[0];
+      const chosenItem = e.target;
+      selectAnswer(quizData.currentQuestionIndex, selectedOption, chosenItem);
+    });
   }
 
-  document
-    .getElementById(NEXT_QUESTION_BUTTON_ID)
-    .addEventListener('click', nextQuestion);
+  const quizBtn = document.getElementById(NEXT_QUESTION_BUTTON_ID);
+  quizBtn.addEventListener('click', nextQuiz);
     score();
 
 };
 
-const showCorrectAnswer = () => {
-  const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
-  const correctAnswer = currentQuestion.correct;
-  const selectedAnswer = currentQuestion.selected;
+// const showCorrectAnswer = () => {
+//   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
+//   const correctAnswer = currentQuestion.correct;
+//   const selectedAnswer = currentQuestion.selected;
 
-  const p = document.createElement('p');
-  p.innerText = `Correct answer is: ${correctAnswer}`;
-  const answerList = document.getElementById(ANSWERS_LIST_ID);
+//   const p = document.createElement('p');
+//   p.innerText = `Correct answer is: ${correctAnswer}`;
+//   const answerList = document.getElementById(ANSWERS_LIST_ID);
 
-  if(selectedAnswer != null && selectedAnswer.length > 0) {
-    answerList.appendChild(p);
-  };
-};
+//   if(selectedAnswer != null && selectedAnswer.length > 0) {
+//     answerList.appendChild(p);
+//   };
+// };
 
-const nextQuestion = () => {
+const nextQuiz = () => {
  
   if(quizData.currentQuestionIndex == quizData.questions.length - 1){
     quizData.currentQuestionIndex = 0
