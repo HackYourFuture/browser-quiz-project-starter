@@ -29,7 +29,7 @@ export const initQuestionPage = () => {
     .getElementById(NEXT_QUESTION_BUTTON_ID)
     .addEventListener('click', nextQuestion);
 
-  let timerElement = createTimerComponent(nextQuestion);
+  const timerElement = createTimerComponent(nextQuestion);
   questionElement.appendChild(timerElement);
 };
 
