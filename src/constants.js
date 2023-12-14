@@ -10,11 +10,7 @@ export const START_QUIZ_BUTTON_ID = 'start-quiz-button';
 export const ANSWERS_LIST_ID = 'answers-list';
 export const NEXT_QUESTION_BUTTON_ID = 'next-question-button';
 export const QUESTION_NUMBER_TRACKER_ID = 'question-number-tracker';
-export const QUESTION = 'question';
-export const ANSWERS_LIST = 'answersList';
-export const ANSWER_LIST_ITEM = 'answerList_item';
 export const TIMER_COMPONENT_ID = 'timer-component';
-
 export const TIMER_SECONDS = 20;
 export const QUESTION = 'question';
 export const ANSWERS_LIST = 'answersList';
