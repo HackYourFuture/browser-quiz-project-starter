@@ -3,7 +3,8 @@ export const createEndElement = (restartCallback) => {
   const element = document.createElement('div');
   element.innerHTML = `
   <h1>Congratulations! You've completed the quiz!</h1>
-  <p>Thank you for participating.</p>
+  <p class="score">Thank you for participating.</p>
+  <p class="score">Your score: ${quizData.userScore}</p>
   <button id="restart-quiz-button">Restart Quiz</button>
 `;
 

@@ -33,6 +33,10 @@ export const initQuestionPage = () => {
             const clickedAnswer = e.target.getAttribute('data-answer');
             const index = Array.from(answersListElement.children).indexOf(e.target);
 
+            // be sure that the selected property is correctly assigned
+            currentQuestion.selected = clickedAnswer;
+
+
             if (clickedAnswer === currentQuestion.correct) {
 
                 answersListElement.children[index].style.boxShadow = '0 0 10px 10px #00FF00';
@@ -70,7 +74,20 @@ const disableClick = () => {
 //=============
 
 const nextQuestion = () => {
-  quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1; // moving to the next question
+  const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
+  const selectedAnswer = currentQuestion.selected;
+
+  // Check if the selected answer is correct
+  if (selectedAnswer === currentQuestion.correct) {
+    quizData.userScore += currentQuestion.points; // Add points to the user's score
+  }
+
+  quizData.currentQuestionIndex += 1; // Move to the next question
+
+ // Debugging logs
+  console.log('userScore:', quizData.userScore);
+  console.log('currentQuestion:', currentQuestion);
+  console.log('selectedAnswer:', selectedAnswer);
 
   if (quizData.currentQuestionIndex < quizData.questions.length) {
     initQuestionPage();

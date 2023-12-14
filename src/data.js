@@ -11,7 +11,11 @@
 
 export const quizData = {
   currentQuestionIndex: 0,
-  quizCompleted: false, //quizCompleted property defined here. I put false, because if the application starts it should be false
+  quizCompleted: false, 
+  userScore: 0,
+  
+  //quizCompleted property defined here. I put false, because if the application starts it should be false
+  //to store and update the user's total score throughout the quiz
   
   // the questions in the quiz
   questions: [
@@ -25,6 +29,7 @@ export const quizData = {
       },
       correct: 'c',
       selected: null,
+      points: 10,
       links: [
         {
           text: 'javascript.info',
@@ -46,6 +51,7 @@ export const quizData = {
       },
       correct: 'b',
       selected: null,
+      points: 10,
       links: [
         {
           text: 'javascript.info',
@@ -68,6 +74,7 @@ export const quizData = {
       },
       correct: 'c',
       selected: null,
+      points: 10,
       links: [
         {
           text: 'javascript.info',
@@ -90,6 +97,7 @@ export const quizData = {
       },
       correct: 'd',
       selected: null,
+      points: 10,
       links: [
         {
           text: 'Css.info',
@@ -112,6 +120,7 @@ export const quizData = {
       },
       correct: 'a',
       selected: null,
+      points: 10,
       links: [
         {
           text: 'W3C.info',
@@ -134,6 +143,7 @@ export const quizData = {
       },
       correct: 'c',
       selected: null,
+      points: 10,
       links: [
         {
           text: 'JavaScript.info',
@@ -156,6 +166,7 @@ export const quizData = {
       },
       correct: 'c',
       selected: null,
+      points: 10,
       links: [
         {
           text: 'CSS.info',
@@ -178,6 +189,7 @@ export const quizData = {
       },
       correct: 'b',
       selected: null,
+      points: 10,
       links: [
         {
           text: 'CSS.info',
@@ -200,6 +212,7 @@ export const quizData = {
       },
       correct: 'a',
       selected: null,
+      points: 10,
       links: [
         {
           text: 'CSS.info',
@@ -222,6 +235,7 @@ export const quizData = {
       },
       correct: 'b',
       selected: null,
+      points: 10,
       links: [
         {
           text: 'CSS.info',
