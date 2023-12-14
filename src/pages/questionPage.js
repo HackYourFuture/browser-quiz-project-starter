@@ -8,7 +8,6 @@ import { createAnswerComponent } from '../components/answerComponent.js';
 import { questionNumberTracker } from '../components/questionNumTracker.js';
 import { quizData } from '../data.js';
 import { initResultPage } from './resultPage.js';
-import { createTimerComponent } from '../components/timerComponent.js';
 
 export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
