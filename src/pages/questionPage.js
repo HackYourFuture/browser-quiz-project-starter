@@ -8,18 +8,13 @@ import { createAnswerComponent } from '../components/answerComponent.js';
 import { questionNumberTracker } from '../components/questionNumTracker.js';
 import { quizData } from '../data.js';
 import { initResultPage } from './resultPage.js';
-import { setLocalStorage } from '../utils/setLocalStorage.js';
 
 export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
-  const currentQuestionNumber = quizData.currentQuestionIndex + 1;
-  const currentQuestion = quizData.questions[currentQuestionNumber - 1];
-
+  const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
   const questionComponent = createQuestionComponent(currentQuestion.text);
-
   userInterface.appendChild(questionComponent);
-
   const answerComponent = document.getElementById(ANSWERS_LIST_ID);
 
   for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
@@ -33,13 +28,10 @@ export const initQuestionPage = () => {
 
   /**************************Question number tracker ************************************* */
   const questionNumberTrackerComponent = questionNumberTracker(
-    currentQuestionNumber,
+    currentQuestion.id,
     quizData.questions.length
   );
   userInterface.appendChild(questionNumberTrackerComponent);
-
-  /**************************Local storage ************************************* */
-  setLocalStorage(currentQuestionNumber);
 };
 
 const nextQuestion = () => {
