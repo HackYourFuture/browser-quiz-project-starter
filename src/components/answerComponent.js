@@ -2,14 +2,7 @@
  * Create an Answer element
  * @returns {Element}
  */
-import { setLocalStorage } from '../utils/setLocalStorage';
-
-export const createAnswerComponent = (
-  key,
-  answerText,
-  currentQuestion,
-  quizData
-) => {
+export const createAnswerComponent = (key, answerText, onSelect) => {
   const element = document.createElement('li');
   element.innerHTML = String.raw`
     <label for="${key}">
