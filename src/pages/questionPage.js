@@ -6,6 +6,7 @@ import {
 import { createQuestionComponent } from '../components/questionComponent.js';
 import { createAnswerComponent } from '../components/answerComponent.js';
 import { questionNumberTracker } from '../components/questionNumTracker.js';
+import { createTimerComponent } from '../components/timerComponent.js';
 import { quizData } from '../data.js';
 import { initResultPage } from './resultPage.js';
 
@@ -22,6 +23,11 @@ export const initQuestionPage = () => {
     answerComponent.appendChild(answerElement);
   }
 
+  /************************** Timer ************************************* */
+  const timerElement = createTimerComponent(nextQuestion);
+  questionComponent.appendChild(timerElement);
+
+  /**************************Next Question ************************************* */
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
     .addEventListener('click', nextQuestion);
