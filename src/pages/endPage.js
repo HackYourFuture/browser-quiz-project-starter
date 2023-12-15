@@ -19,8 +19,10 @@ const restartQuiz = () => {
   // Resetting quiz data
   quizData.currentQuestionIndex = 0;
   quizData.quizCompleted = false;
-    quizData.userScore = 0; // Reset userScore to 0    
+    quizData.userScore = 0; // Reset userScore to 0   
 
   console.log('Restarting the quiz...');
   initWelcomePage(); // Go back to the welcome page
 };
+
+//just trying
