@@ -5,32 +5,33 @@ import {
 } from '../constants.js';
 import { createQuestionComponent } from '../components/questionComponent.js';
 import { createAnswerComponent } from '../components/answerComponent.js';
+import { questionNumberTracker } from '../components/questionNumTracker.js';
 import { quizData } from '../data.js';
 import { initResultPage } from './resultPage.js';
-import { createTimerComponent } from '../components/timerComponent.js';
 
 export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
-
-  const questionElement = createQuestionComponent(currentQuestion.text);
-
-  userInterface.appendChild(questionElement);
-
-  const answersListElement = document.getElementById(ANSWERS_LIST_ID);
+  const questionComponent = createQuestionComponent(currentQuestion.text);
+  userInterface.appendChild(questionComponent);
+  const answerComponent = document.getElementById(ANSWERS_LIST_ID);
 
   for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
     const answerElement = createAnswerComponent(key, answerText);
-    answersListElement.appendChild(answerElement);
+    answerComponent.appendChild(answerElement);
   }
 
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
     .addEventListener('click', nextQuestion);
 
-  const timerElement = createTimerComponent(nextQuestion);
-  questionElement.appendChild(timerElement);
+  /**************************Question number tracker ************************************* */
+  const questionNumberTrackerComponent = questionNumberTracker(
+    currentQuestion.id,
+    quizData.questions.length
+  );
+  userInterface.appendChild(questionNumberTrackerComponent);
 };
 
 const nextQuestion = () => {
