@@ -13,15 +13,14 @@ export const createAnswerComponent = (key, answerText) => {
   element.addEventListener('click', (e) => {
     e.stopPropagation();
     e.preventDefault();
-    disableClick()
+    disableClick();
   });
   return element;
 };
 const disableClick = () => {
   const answerList = document.querySelectorAll('li [name="answerItem"]');
-  answerList.forEach(element => {
+  answerList.forEach((element) => {
     element.disabled = true;
     element.parentElement.parentElement.style.cssText += 'opacity: 0.5';
-  })
+  });
 };
-
