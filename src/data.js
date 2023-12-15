@@ -56,6 +56,182 @@ export const quizData = {
         },
       ],
     },
+    {
+      id: 3,
+      text: 'What is a closure in JavaScript?',
+      answers: {
+        a: 'A function inside another function',
+        b: 'A variable that can be accessed outside its scope',
+        c: 'A function bundled with its lexical scope',
+        d: 'A type of loop',
+      },
+      correct: 'c',
+      selected: null,
+      links: [
+        {
+          text: 'MDN',
+          href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures',
+        },
+        {
+          text: 'javascript.info',
+          href: 'https://javascript.info/closure',
+        },
+      ],
+    },
+    {
+      id: 4,
+      text: 'What is the difference between == and === in JavaScript?',
+      answers: {
+        a: '== checks for value equality, === checks for value and type equality',
+        b: '== is a typo, === is the correct equality operator',
+        c: '== checks for value and type equality, === checks for value equality',
+        d: 'There is no difference',
+      },
+      correct: 'a',
+      selected: null,
+      links: [
+        {
+          text: 'MDN',
+          href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness',
+        },
+        {
+          text: 'javascript.info',
+          href: 'https://javascript.info/comparison',
+        },
+      ],
+    },
+    {
+      id: 5,
+      text: 'What is the purpose of JavaScript arrow functions?',
+      answers: {
+        a: 'To write shorter function syntax',
+        b: 'To create new scope',
+        c: 'To replace traditional function expressions',
+        d: 'None of the above',
+      },
+      correct: 'a',
+      selected: null,
+      links: [
+        {
+          text: 'MDN',
+          href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions',
+        },
+        {
+          text: 'javascript.info',
+          href: 'https://javascript.info/arrow-functions-basics',
+        },
+      ],
+    },
+    {
+      id: 6,
+      text: 'What is a Promise in JavaScript?',
+      answers: {
+        a: 'A data type that represents a future value',
+        b: 'A function that runs asynchronously',
+        c: 'An object that links producing code and consuming code',
+        d: 'A method that delays the execution of a function',
+      },
+      correct: 'c',
+      selected: null,
+      links: [
+        {
+          text: 'MDN',
+          href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise',
+        },
+        {
+          text: 'javascript.info',
+          href: 'https://javascript.info/promise-basics',
+        },
+      ],
+    },
+    {
+      id: 7,
+      text: 'What is the use of the map function in JavaScript?',
+      answers: {
+        a: 'To mutate the original array',
+        b: 'To loop through each item in an array',
+        c: 'To create a new array with the results of calling a function for every array element',
+        d: 'To reduce an array to a single value',
+      },
+      correct: 'c',
+      selected: null,
+      links: [
+        {
+          text: 'MDN',
+          href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map',
+        },
+        {
+          text: 'javascript.info',
+          href: 'https://javascript.info/array-methods#map',
+        },
+      ],
+    },
+    {
+      id: 8,
+      text: 'What is the purpose of the "this" keyword in JavaScript?',
+      answers: {
+        a: 'To refer to the current object',
+        b: 'To create a new object',
+        c: 'To refer to the global object',
+        d: 'To declare a variable',
+      },
+      correct: 'a',
+      selected: null,
+      links: [
+        {
+          text: 'MDN',
+          href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this',
+        },
+        {
+          text: 'javascript.info',
+          href: 'https://javascript.info/object-methods#object-method-this',
+        },
+      ],
+    },
+    {
+      id: 9,
+      text: 'What is a JavaScript callback function?',
+      answers: {
+        a: 'A function that is passed as an argument to another function',
+        b: 'A function that is called after a certain event has occurred',
+        c: 'Both a and b',
+        d: 'None of the above',
+      },
+      correct: 'c',
+      selected: null,
+      links: [
+        {
+          text: 'MDN',
+          href: 'https://developer.mozilla.org/en-US/docs/Glossary/Callback_function',
+        },
+        {
+          text: 'javascript.info',
+          href: 'https://javascript.info/callbacks',
+        },
+      ],
+    },
+    {
+      id: 10,
+      text: 'What is the difference between null and undefined in JavaScript?',
+      answers: {
+        a: 'Null is an object, undefined is a type',
+        b: 'Undefined means a variable has been declared but has not yet been assigned a value, null is an assignment value',
+        c: 'There is no difference',
+        d: 'Undefined is an object, null is a type',
+      },
+      correct: 'b',
+      selected: null,
+      links: [
+        {
+          text: 'MDN',
+          href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null',
+        },
+        {
+          text: 'javascript.info',
+          href: 'https://javascript.info/types#null-and-undefined',
+        },
+      ],
+    },
     // Add more questions here
   ],
 };
