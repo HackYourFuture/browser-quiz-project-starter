@@ -27,7 +27,6 @@ const setCounter = (element, onFinish) => {
     }
 
     element.innerHTML = appendTimer(--seconds);
-    console.log('seconds', seconds);
   }, 1000);
 };
 
