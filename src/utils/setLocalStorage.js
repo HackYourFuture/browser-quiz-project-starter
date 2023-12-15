@@ -8,7 +8,6 @@ export const setLocalStorage = (currentQuestionIndex, selectedAnswer) => {
       JSON.stringify(answeredQuestions)
     );
   } else {
-    // let answeredQuestions = [];
     answeredQuestions[currentQuestionIndex] = selectedAnswer;
     localStorage.setItem(
       'answeredQuestions',
