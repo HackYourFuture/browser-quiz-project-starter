@@ -1,7 +1,5 @@
-/**
- * Create an Answer element
- * @returns {Element}
- */
+let clickHandlerFunctions = new Map();
+
 export const createAnswerComponent = (key, answerText, onSelect) => {
   const element = document.createElement('li');
   element.innerHTML = String.raw`
@@ -10,18 +8,28 @@ export const createAnswerComponent = (key, answerText, onSelect) => {
     ${answerText}
     </label>
   `;
-  element.addEventListener('click', (e) => {
-    e.stopPropagation();
-    e.preventDefault();
-    disableClick();
-    onSelect();
-  });
+  const clickHandlerFunction = clickHandler(onSelect);
+  element.addEventListener('click', clickHandlerFunction);
+  clickHandlerFunctions.set(element, clickHandlerFunction);
   return element;
 };
+
+const clickHandler = function (onSelect) {
+  return (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    onSelect();
+    disableClick();
+  };
+};
+
 const disableClick = () => {
-  const answerList = document.querySelectorAll('li [name="answerItem"]');
+  const answerList = document.querySelectorAll('li');
   answerList.forEach((element) => {
-    element.disabled = true;
-    element.parentElement.parentElement.style.cssText += 'opacity: 0.5';
+    const clickHandlerFunction = clickHandlerFunctions.get(element);
+    if (clickHandlerFunction) {
+      element.removeEventListener('click', clickHandlerFunction);
+      element.style.cssText += 'opacity: 0.5';
+    }
   });
 };
