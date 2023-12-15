@@ -1,3 +1,4 @@
+import '../public/style.scss';
 import { quizData } from './data.js';
 import { initWelcomePage } from './pages/welcomePage.js';
 
