@@ -19,6 +19,10 @@ export const createQuestionElement = (question) => {
     <button id="${NEXT_QUESTION_BUTTON_ID}">
       Next question
     </button>
+    <div class = "img-div">
+    <img src="" class = "img-1">
+    <img src="" class = "img-2">
+    </div>
   `;
 
     return element;
