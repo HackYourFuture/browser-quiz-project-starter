@@ -6,9 +6,10 @@ import { START_QUIZ_BUTTON_ID } from '../constants.js';
  */
 export const createWelcomeComponent = () => {
   const element = document.createElement('div');
+  element.classList.add('container');
   element.innerHTML = String.raw`
-    <h1>Welcome</h1>
-    <button id="${START_QUIZ_BUTTON_ID}">start quiz</button>
+    <h1>Welcome to Quiz</h1>
+    <button id="${START_QUIZ_BUTTON_ID}">Start Quiz</button>
   `;
   return element;
 };
