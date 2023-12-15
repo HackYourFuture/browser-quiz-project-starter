@@ -14,7 +14,6 @@ export const createAnswerComponent = (key, answerText, onSelect) => {
     e.stopPropagation();
     e.preventDefault();
     disableClick();
-    setLocalStorage(currentQuestion, quizData, key);
     onSelect();
   });
   return element;

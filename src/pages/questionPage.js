@@ -9,7 +9,6 @@ import { questionNumberTracker } from '../components/questionNumTracker.js';
 import { createTimerComponent } from '../components/timerComponent.js';
 import { quizData } from '../data.js';
 import { initResultPage } from './resultPage.js';
-import { createTimerComponent } from '../components/timerComponent.js';
 import { setLocalStorage } from '../utils/setLocalStorage.js';
 
 export const initQuestionPage = () => {
@@ -25,7 +24,7 @@ export const initQuestionPage = () => {
       currentQuestion.selected = key;
       setLocalStorage(quizData.currentQuestionIndex, currentQuestion.selected);
     });
-    answersListElement.appendChild(answerElement);
+    answerComponent.appendChild(answerElement);
   }
 
   /************************** Timer ************************************* */
