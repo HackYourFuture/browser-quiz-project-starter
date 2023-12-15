@@ -19,8 +19,13 @@ export const initQuestionPage = () => {
   const answerComponent = document.getElementById(ANSWERS_LIST_ID);
 
   for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
-    const answerElement = createAnswerComponent(key, answerText);
-    answerComponent.appendChild(answerElement);
+    const answerElement = createAnswerComponent(
+      key,
+      answerText,
+      currentQuestion,
+      quizData
+    );
+    answersListElement.appendChild(answerElement);
   }
 
   /************************** Timer ************************************* */

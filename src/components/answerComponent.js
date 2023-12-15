@@ -2,7 +2,14 @@
  * Create an Answer element
  * @returns {Element}
  */
-export const createAnswerComponent = (key, answerText) => {
+import { setLocalStorage } from '../utils/setLocalStorage';
+
+export const createAnswerComponent = (
+  key,
+  answerText,
+  currentQuestion,
+  quizData
+) => {
   const element = document.createElement('li');
   element.innerHTML = String.raw`
     <label for="${key}">
@@ -14,6 +21,7 @@ export const createAnswerComponent = (key, answerText) => {
     e.stopPropagation();
     e.preventDefault();
     disableClick();
+    setLocalStorage(currentQuestion, quizData, key);
   });
   return element;
 };
