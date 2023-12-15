@@ -3,14 +3,14 @@ export const setLocalStorage = (currentQuestion, quizData, key) => {
   currentQuestion.selected = key;
   if (answeredQuestions) {
     answeredQuestions = JSON.parse(answeredQuestions);
-    answeredQuestions[quizData.currentQuestionIndex] = currentQuestion;
+    answeredQuestions[quizData.currentQuestionIndex] = currentQuestion.selected;
     localStorage.setItem(
       'answeredQuestions',
       JSON.stringify(answeredQuestions)
     );
   } else {
     let answeredQuestions = [];
-    answeredQuestions[quizData.currentQuestionIndex] = currentQuestion;
+    answeredQuestions[quizData.currentQuestionIndex] = currentQuestion.selected;
     localStorage.setItem(
       'answeredQuestions',
       JSON.stringify(answeredQuestions)
