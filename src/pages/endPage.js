@@ -25,4 +25,4 @@ const restartQuiz = () => {
   initWelcomePage(); // Go back to the welcome page
 };
 
-//just trying
+//just trying please
