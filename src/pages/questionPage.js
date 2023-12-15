@@ -12,7 +12,7 @@ export const initQuestionPage = () => {
     const userInterface = document.getElementById(USER_INTERFACE_ID);
     userInterface.innerHTML = '';
 
-    const currentQuestion = quizData.questions[quizData.currentQuestionIndex]; //need current question
+    const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
 
     const questionElement = createQuestionElement(currentQuestion.text);
 
@@ -21,7 +21,7 @@ export const initQuestionPage = () => {
     const answersListElement = document.getElementById(ANSWERS_LIST_ID);
 
     for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
-        const answerElement = createAnswerElement(key, answerText); //need this also
+        const answerElement = createAnswerElement(key, answerText);
 
         //=========================
         //add attr to answerElement (ul-li)
@@ -56,6 +56,7 @@ export const initQuestionPage = () => {
         .addEventListener('click', nextQuestion);
 
     vidBackground();
+    createProgressBar();
 };
 
 
@@ -70,15 +71,18 @@ const disableClick = () => {
 //=============
 
 const nextQuestion = () => {
-  quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1; // moving to the next question
+    quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1; // moving to the next question
 
-  if (quizData.currentQuestionIndex < quizData.questions.length) {
-    initQuestionPage();
-  } else {
-    // If there are no more questions, quiz is completed, go to the end page
-    quizData.quizCompleted = true;
-    initEndPage(); // calls the initEndPage function and displaying a congratulations message
-  }
+    if (quizData.currentQuestionIndex < quizData.questions.length) {
+        initQuestionPage();
+
+    } else {
+        // If there are no more questions, quiz is completed, go to the end page
+        quizData.quizCompleted = true;
+        initEndPage(); // calls the initEndPage function and displaying a congratulations message
+    }
+
+    incrementProgressBar();
 };
 
 
@@ -97,5 +101,31 @@ const vidBackground = () => {
     videoBG.appendChild(vidSource);
     document.body.appendChild(videoBG);
 };
+
+let progress;
+let currentWidth = 0;
+
+const createProgressBar = () => {
+    //<div id ='containerBar'><dive id='progress'></dive></div>
+    const container = document.createElement('div');
+    container.setAttribute('id', 'containerBar');
+
+    progress = document.createElement('div');
+    progress.setAttribute('id', 'progress');
+    progress.style.width = '0%';
+
+    document.body.appendChild(container);
+    container.appendChild(progress);
+};
+
+const incrementProgressBar = () => {
+    if (currentWidth <= 100) {
+        currentWidth += 10;
+        progress.style.width = `${currentWidth}%`;
+    }
+};
+
+
+
 
 

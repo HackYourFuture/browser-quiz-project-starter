@@ -3,11 +3,13 @@ body {
     margin: 0;
     overflow: hidden;
     background-image: url(https://steamuserimages-a.akamaihd.net/ugc/1769332879207296766/98747F04B20194A89A3E59780734E32E2E7A2516/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true);
+    height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
+
 }
 
-img{
+img {
     width: 300px;
     height: 100px;
     margin-left: 20px;
@@ -26,6 +28,33 @@ video {
 }
 
 /*========*/
+
+/*====Progress bar=====*/
+
+#containerBar {
+    position: fixed;
+    top: 15%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 50%;
+    height: 20px;
+    z-index: 5;
+    background-color: rgb(220, 220, 220);
+    border: 1px solid #00cff4;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgb(0, 191, 255);
+}
+
+#progress {
+    height: 100%;
+    /*width: 0%;*/
+    background-color: #ff7801;
+    z-index: 5;
+    border-radius: 22px;
+}
+
+/*=====================*/
 
 .centered {
     position: fixed;
@@ -77,11 +106,11 @@ li:hover {
     transform: scale(1.1);
 }
 
-h1{
-    color:#ff44cc;
+h1 {
+    color: #ff44cc;
 }
 
-#start-quiz-button{
+#start-quiz-button {
     text-transform: uppercase;
     font-size: 20px;
     font-weight: bold;
@@ -95,7 +124,7 @@ h1{
     transition: transform 0.2;
 }
 
-#next-question-button{
+#next-question-button {
     border-style: none;
     text-transform: uppercase;
     background-color: black;
@@ -104,4 +133,5 @@ h1{
     margin-left: 40px;
     cursor: pointer;
 }
+
 /*======*/
