@@ -11,6 +11,7 @@
 
 export const quizData = {
   currentQuestionIndex: 0,
+  correctAnswersCount: 0,
   quizCompleted: false, //quizCompleted property defined here. I put false, because if the application starts it should be false
   
   // the questions in the quiz

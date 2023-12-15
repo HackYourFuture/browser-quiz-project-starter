@@ -8,6 +8,8 @@ import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
 import { initEndPage } from './endPage.js'; //importing initEndPage 
 
+let videoLoaded = false;
+
 export const initQuestionPage = () => {
     const userInterface = document.getElementById(USER_INTERFACE_ID);
     userInterface.innerHTML = '';
@@ -20,6 +22,10 @@ export const initQuestionPage = () => {
 
     const answersListElement = document.getElementById(ANSWERS_LIST_ID);
 
+    let selectedAnswer = null; // Added variable to store the selected answer
+    let myImg1 = document.querySelector(".img-1");
+    let myImg2 = document.querySelector(".img-2");
+
     for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
         const answerElement = createAnswerElement(key, answerText);
 
@@ -29,23 +35,30 @@ export const initQuestionPage = () => {
 
         //Add an eventListener here for checking the answers
         answersListElement.addEventListener('click', (e) => {
+            if (selectedAnswer === null) {
 
-            const clickedAnswer = e.target.getAttribute('data-answer');
-            const index = Array.from(answersListElement.children).indexOf(e.target);
+                const clickedAnswer = e.target.getAttribute('data-answer');
+                const index = Array.from(answersListElement.children).indexOf(e.target);
 
-            if (clickedAnswer === currentQuestion.correct) {
+                if (clickedAnswer === currentQuestion.correct) {
+                    quizData.correctAnswersCount++
+                    myImg1.src = "https://cliply.co/wp-content/uploads/2021/09/CLIPLY_372109170_FREE_FIREWORKS_400.gif";
+                    myImg1.style.display = "block"
+                    myImg2.src = "https://cliply.co/wp-content/uploads/2021/09/CLIPLY_372109170_FREE_FIREWORKS_400.gif";
+                    myImg2.style.display = "block"
+                    answersListElement.children[index].style.boxShadow = '0 0 10px 10px #00FF00';
+                    answersListElement.children[index].style.transition = 'none';
+                } else {
 
-                answersListElement.children[index].style.boxShadow = '0 0 10px 10px #00FF00';
-                answersListElement.children[index].style.transition = 'none';
-            } else {
+                    answersListElement.children[index].style.boxShadow = '0 0 10px 10px #FF0000';
 
-                answersListElement.children[index].style.boxShadow = '0 0 10px 10px #FF0000';
+                    const correctAnswer = document.querySelector(`[data-answer="${currentQuestion.correct}"]`);
+                    correctAnswer.style.boxShadow = '0 0 10px 10px #00FF00';
+                }
 
-                const correctAnswer = document.querySelector(`[data-answer="${currentQuestion.correct}"]`);
-                correctAnswer.style.boxShadow = '0 0 10px 10px #00FF00';
+                disableClick(); //define it Don't forget
+                selectedAnswer = clickedAnswer
             }
-
-            disableClick(); //define it Don't forget
         });
         //========================
         answersListElement.appendChild(answerElement);
@@ -57,6 +70,11 @@ export const initQuestionPage = () => {
 
     vidBackground();
     createProgressBar();
+
+    clearInterval(countDown);
+
+    // Start the timer with a duration of 5 seconds
+    quizTimer(15, currentQuestion);
 };
 
 
@@ -88,18 +106,21 @@ const nextQuestion = () => {
 
 //Add a video background 
 const vidBackground = () => {
-    //<video autoplay loop> 
-    //<source src=.. type=..> </vid>
-    const videoBG = document.createElement('video'); //<video>
-    videoBG.setAttribute('autoplay', true);
-    videoBG.setAttribute('loop', true);
+    if (!videoLoaded) {
+        //<video autoplay loop> 
+        //<source src=.. type=..> </vid>
+        const videoBG = document.createElement('video'); //<video>
+        videoBG.setAttribute('autoplay', true);
+        videoBG.setAttribute('loop', true);
 
-    const vidSource = document.createElement('source');
-    vidSource.setAttribute('src', '/assets/neon-light.mp4');
-    vidSource.setAttribute('type', 'video/mp4');
+        const vidSource = document.createElement('source');
+        vidSource.setAttribute('src', '/assets/neon-light.mp4');
+        vidSource.setAttribute('type', 'video/mp4');
 
-    videoBG.appendChild(vidSource);
-    document.body.appendChild(videoBG);
+        videoBG.appendChild(vidSource);
+        document.body.appendChild(videoBG);
+        videoLoaded = true;
+    }
 };
 
 let progress;
@@ -129,3 +150,25 @@ const incrementProgressBar = () => {
 
 
 
+let myTimer = document.querySelector(".time");
+let countDown;
+
+function quizTimer(duration, count) {
+    let minutes;
+    let seconds;
+    countDown = setInterval(function () {
+        minutes = parseInt(duration / 60);
+        seconds = parseInt(duration % 60);
+
+        minutes = minutes < 10 ? `0${minutes}` : minutes;
+        seconds = seconds < 10 ? `0${seconds}` : seconds;
+
+        myTimer.innerHTML = `${minutes}:${seconds}`;
+        document.querySelector(".quiz-timer").style.display = "block"
+
+        if (--duration < 0) {
+            clearInterval(countDown);
+            nextQuestion();
+        }
+    }, 1000);
+}
