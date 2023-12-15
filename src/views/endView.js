@@ -1,7 +1,7 @@
 export const createEndElement = () => {
-  // Create a new HTML div element
-  const element = document.createElement('div');
-  element.innerHTML = `
+    // Create a new HTML div element
+    const element = document.createElement('div');
+    element.innerHTML = `
   <h1>Congratulations! You've completed the quiz!</h1>
 
 <div class="count-div">
@@ -16,5 +16,5 @@ export const createEndElement = () => {
 
   <p>Thank you for participating.</p>
 `;
-  return element;
+    return element;
 };
