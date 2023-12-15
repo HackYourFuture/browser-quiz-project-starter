@@ -7,8 +7,5 @@ export const initResultPage = () => {
   const resultElement = createResultComponent();
   element.appendChild(resultElement);
 
-
   return element;
 };
-
-
