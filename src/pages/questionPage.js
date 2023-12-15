@@ -21,17 +21,10 @@ export const initQuestionPage = () => {
   const answerComponent = document.getElementById(ANSWERS_LIST_ID);
 
   for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
-    const answerElement = createAnswerComponent(
-      key,
-      answerText,
-      (selectedKey) => {
-        currentQuestion.selected = selectedKey;
-        setLocalStorage(
-          quizData.currentQuestionIndex,
-          currentQuestion.selected
-        );
-      }
-    );
+    const answerElement = createAnswerComponent(key, answerText, () => {
+      currentQuestion.selected = key;
+      setLocalStorage(quizData.currentQuestionIndex, currentQuestion.selected);
+    });
     answersListElement.appendChild(answerElement);
   }
 
