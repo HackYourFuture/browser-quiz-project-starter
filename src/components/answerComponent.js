@@ -10,6 +10,7 @@ export const createAnswerComponent = (
 ) => {
   const element = document.createElement('li');
   element.id = key;
+  element.classList.add('options');
   element.innerHTML = String.raw`
     <label for="${key}">
       <input type="radio" name="answerItem" value=${key} id="${key}" />
