@@ -10,17 +10,22 @@ import { initEndPage } from './endPage.js'; //importing initEndPage
 
 let videoLoaded = false;
 
-export const initQuestionPage = () => {
-   //  if(document.getElementById('coolBackground')){
-   //   document.body.removeChild(document.getElementById('coolBackground'));
-   //   videoLoaded = false;
-    //}
+//= pick random question
+const randomizeQuestions = (qArray) => {
+    for (let i = 0; i < qArray.length - 1; i++) {
+        const x = Math.floor(Math.random() * (i + 1));
+        [qArray[i], qArray[x]] = [qArray[x], qArray[i]] //swap it 
+    }
+};
 
-    //document.body.style.backgroundImage = ‘none’;
+export const initQuestionPage = () => {
+    
+    randomizeQuestions(quizData.questions);
+
     const userInterface = document.getElementById(USER_INTERFACE_ID);
     userInterface.innerHTML = '';
 
-    const currentQuestion = quizData.questions[quizData.currentQuestionIndex]; //need current question
+    const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
 
     const questionElement = createQuestionElement(currentQuestion.text);
 
@@ -33,7 +38,7 @@ export const initQuestionPage = () => {
     let myImg2 = document.querySelector(".img-2");
 
     for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
-        const answerElement = createAnswerElement(key, answerText); //need this also
+        const answerElement = createAnswerElement(key, answerText);
 
         //=========================
         //add attr to answerElement (ul-li)
@@ -79,11 +84,12 @@ export const initQuestionPage = () => {
         .addEventListener('click', nextQuestion);
 
     vidBackground();
+    createProgressBar();
 
     clearInterval(countDown);
 
     // Start the timer with a duration of 5 seconds
-    quizTimer(15,currentQuestion);
+    quizTimer(15, currentQuestion);
 };
 
 
@@ -98,69 +104,83 @@ const disableClick = () => {
 //=============
 
 const nextQuestion = () => {
-  const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
-  const selectedAnswer = currentQuestion.selected;
-
-  // Check if the selected answer is correct
-  if (selectedAnswer === currentQuestion.correct) {
-    quizData.userScore += currentQuestion.points; // Add points to the user's score
-  }
-
-  quizData.currentQuestionIndex += 1; // Move to the next question
-
- // Debugging logs
-  console.log('userScore:', quizData.userScore);
-  console.log('currentQuestion:', currentQuestion);
-  console.log('selectedAnswer:', selectedAnswer);
+    quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1; // moving to the next question
 
     if (quizData.currentQuestionIndex < quizData.questions.length) {
-    initQuestionPage();
+        initQuestionPage();
+
     } else {
-    // If there are no more questions, quiz is completed, go to the end page
-    quizData.quizCompleted = true;
-    initEndPage(); // calls the initEndPage function and displaying a congratulations message
+        // If there are no more questions, quiz is completed, go to the end page
+        quizData.quizCompleted = true;
+        initEndPage(); // calls the initEndPage function and displaying a congratulations message
     }
+
+    incrementProgressBar();
 };
 
 
 //Add a video background 
 const vidBackground = () => {
-    if(!videoLoaded){
-    //<video autoplay loop> 
-    //<source src=.. type=..> </vid>
-    const videoBG = document.createElement('video'); //<video>
-    videoBG.setAttribute('autoplay', true);
-    videoBG.setAttribute('loop', true);
-    videoBG.setAttribute('id', 'coolBackground');
-    //we need to remove it from body, we need a welcome backgronud. give an id, videoBG get this back, u need a reference. removechild method
+    if (!videoLoaded) {
+        //<video autoplay loop> 
+        //<source src=.. type=..> </vid>
+        const videoBG = document.createElement('video'); //<video>
+        videoBG.setAttribute('autoplay', true);
+        videoBG.setAttribute('loop', true);
 
+        const vidSource = document.createElement('source');
+        vidSource.setAttribute('src', '/assets/neon-light.mp4');
+        vidSource.setAttribute('type', 'video/mp4');
 
-    const vidSource = document.createElement('source');
-    vidSource.setAttribute('src', '/assets/neon-light.mp4');
-    vidSource.setAttribute('type', 'video/mp4');
-
-    videoBG.appendChild(vidSource);
-    document.body.appendChild(videoBG);
-    videoLoaded = true ;
+        videoBG.appendChild(vidSource);
+        document.body.appendChild(videoBG);
+        videoLoaded = true;
     }
 };
+
+let progress;
+let currentWidth = 0;
+
+const createProgressBar = () => {
+    //<div id ='containerBar'><div id='progress'></div></div>
+    const container = document.createElement('div');
+    container.setAttribute('id', 'containerBar');
+
+    progress = document.createElement('div');
+    progress.setAttribute('id', 'progress');
+    progress.style.width = '0%';
+
+    document.body.appendChild(container);
+    container.appendChild(progress);
+
+};
+
+const incrementProgressBar = () => {
+    if (currentWidth < 100) {
+        currentWidth += (100 / quizData.questions.length);
+        progress.style.width = `${currentWidth}%`;
+    }
+};
+
+
+
 
 
 let myTimer = document.querySelector(".time");
 let countDown;
 
-function quizTimer(duration,count) {
+function quizTimer(duration, count) {
     let minutes;
     let seconds;
     countDown = setInterval(function () {
-    minutes = parseInt(duration / 60);
-    seconds = parseInt(duration % 60);
+        minutes = parseInt(duration / 60);
+        seconds = parseInt(duration % 60);
 
-    minutes = minutes < 10 ? `0${minutes}` : minutes;
-    seconds = seconds < 10 ? `0${seconds}` : seconds;
+        minutes = minutes < 10 ? `0${minutes}` : minutes;
+        seconds = seconds < 10 ? `0${seconds}` : seconds;
 
-    myTimer.innerHTML = `${minutes}:${seconds}`;
-    document.querySelector(".quiz-timer").style.display = "block"
+        myTimer.innerHTML = `${minutes}:${seconds}`;
+        document.querySelector(".quiz-timer").style.display = "block"
 
     if (--duration < 0) {
         clearInterval(countDown);

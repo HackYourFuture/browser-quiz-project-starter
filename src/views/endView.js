@@ -10,7 +10,7 @@ export const createEndElement = () => {
   <div class="count1">
     <div class="number1">${quizData.correctAnswersCount}</div>
   </div>
-  <p>From</p>
+  <p>Correct Answers From</p>
   <div class="count2">
     <div class="number2">${quizData.questions.length}</div>
   </div>

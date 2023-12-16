@@ -7,8 +7,8 @@ import { quizData } from '../data.js';
 
 export const initEndPage = () => {
 
-  const userInterface = document.getElementById(USER_INTERFACE_ID);
-  userInterface.innerHTML = '';
+    const userInterface = document.getElementById(USER_INTERFACE_ID);
+    userInterface.innerHTML = '';
 
  //restartQuiz function as a callback to createEndElement
   const endElement = createEndElement(restartQuiz);
