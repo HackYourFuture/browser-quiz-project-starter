@@ -13,3 +13,5 @@ export const QUESTION_NUMBER_TRACKER_ID = 'question-number-tracker';
 export const RETRY_BUTTON_ID = 'retry-button';
 export const TIMER_COMPONENT_ID = 'timer-component';
 export const TIMER_SECONDS = 20;
+export const CORRECT = 'correct';
+export const WRONG = 'wrong';
