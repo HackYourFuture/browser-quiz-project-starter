@@ -1,7 +1,15 @@
+import { checkAnswer } from '../utils/checkAnswer';
+
 let clickHandlerFunctions = new Map();
 
-export const createAnswerComponent = (key, answerText, onSelect) => {
+export const createAnswerComponent = (
+  key,
+  answerText,
+  onSelect,
+  checkAnswer
+) => {
   const element = document.createElement('li');
+  element.id = key;
   element.innerHTML = String.raw`
     <label for="${key}">
       <input type="radio" name="answerItem" value=${key} id="${key}" />
