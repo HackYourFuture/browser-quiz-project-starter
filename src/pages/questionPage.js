@@ -127,7 +127,7 @@ let progress;
 let currentWidth = 0;
 
 const createProgressBar = () => {
-    //<div id ='containerBar'><dive id='progress'></dive></div>
+    //<div id ='containerBar'><div id='progress'></div></div>
     const container = document.createElement('div');
     container.setAttribute('id', 'containerBar');
 
@@ -137,11 +137,12 @@ const createProgressBar = () => {
 
     document.body.appendChild(container);
     container.appendChild(progress);
+
 };
 
 const incrementProgressBar = () => {
-    if (currentWidth <= 100) {
-        currentWidth += 10;
+    if (currentWidth < 100) {
+        currentWidth += (100 / quizData.questions.length);
         progress.style.width = `${currentWidth}%`;
     }
 };
