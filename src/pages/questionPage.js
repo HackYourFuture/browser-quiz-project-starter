@@ -10,7 +10,18 @@ import { initEndPage } from './endPage.js'; //importing initEndPage
 
 let videoLoaded = false;
 
+//= pick random question
+const randomizeQuestions = (qArray) => {
+    for (let i = 0; i < qArray.length - 1; i++) {
+        const x = Math.floor(Math.random() * (i + 1));
+        [qArray[i], qArray[x]] = [qArray[x], qArray[i]] //swap it 
+    }
+};
+
 export const initQuestionPage = () => {
+    
+    randomizeQuestions(quizData.questions);
+
     const userInterface = document.getElementById(USER_INTERFACE_ID);
     userInterface.innerHTML = '';
 
@@ -34,32 +45,36 @@ export const initQuestionPage = () => {
         answerElement.setAttribute('data-answer', key);
 
         //Add an eventListener here for checking the answers
-        answersListElement.addEventListener('click', (e) => {
-            if (selectedAnswer === null) {
+       answersListElement.addEventListener('click', (e) => {
+        if (selectedAnswer === null) {
+        const clickedAnswer = e.target.getAttribute('data-answer');
+        const index = Array.from(answersListElement.children).indexOf(e.target);
 
-                const clickedAnswer = e.target.getAttribute('data-answer');
-                const index = Array.from(answersListElement.children).indexOf(e.target);
+        //The error you're encountering indicates that the answersListElement.children[index] is returning undefined at some point. This could happen if the index value is not within the valid range of children elements in your answersListElement.
+        if (index !== -1) {
+            if (clickedAnswer === currentQuestion.correct) {
+                quizData.correctAnswersCount++;
+                myImg1.src = "https://cliply.co/wp-content/uploads/2021/09/CLIPLY_372109170_FREE_FIREWORKS_400.gif";
+                myImg1.style.display = "block"
+                myImg2.src = "https://cliply.co/wp-content/uploads/2021/09/CLIPLY_372109170_FREE_FIREWORKS_400.gif";
+                myImg2.style.display = "block"
+                answersListElement.children[index].style.boxShadow = '0 0 10px 10px #00FF00';
+                answersListElement.children[index].style.transition = 'none';
+            } else {
+                answersListElement.children[index].style.boxShadow = '0 0 10px 10px #FF0000';
 
-                if (clickedAnswer === currentQuestion.correct) {
-                    quizData.correctAnswersCount++
-                    myImg1.src = "https://cliply.co/wp-content/uploads/2021/09/CLIPLY_372109170_FREE_FIREWORKS_400.gif";
-                    myImg1.style.display = "block"
-                    myImg2.src = "https://cliply.co/wp-content/uploads/2021/09/CLIPLY_372109170_FREE_FIREWORKS_400.gif";
-                    myImg2.style.display = "block"
-                    answersListElement.children[index].style.boxShadow = '0 0 10px 10px #00FF00';
-                    answersListElement.children[index].style.transition = 'none';
-                } else {
-
-                    answersListElement.children[index].style.boxShadow = '0 0 10px 10px #FF0000';
-
-                    const correctAnswer = document.querySelector(`[data-answer="${currentQuestion.correct}"]`);
+                const correctAnswer = document.querySelector(`[data-answer="${currentQuestion.correct}"]`);
+                if (correctAnswer) {
                     correctAnswer.style.boxShadow = '0 0 10px 10px #00FF00';
                 }
-
-                disableClick(); //define it Don't forget
-                selectedAnswer = clickedAnswer
             }
-        });
+
+            disableClick();
+            selectedAnswer = clickedAnswer;
+        }
+    }
+});
+
         //========================
         answersListElement.appendChild(answerElement);
     }
@@ -167,9 +182,14 @@ function quizTimer(duration, count) {
         myTimer.innerHTML = `${minutes}:${seconds}`;
         document.querySelector(".quiz-timer").style.display = "block"
 
-        if (--duration < 0) {
-            clearInterval(countDown);
-            nextQuestion();
-        }
-    }, 1000);
+    if (--duration < 0) {
+        clearInterval(countDown);
+        nextQuestion();
+    }
+}, 1000);
 }
+
+export const stopTimer = () => {
+    clearInterval(countDown);
+    document.querySelector(".quiz-timer").style.display = "none";
+};

@@ -2,7 +2,8 @@
 body {
     margin: 0;
     overflow: hidden;
-    background-image: url(https://steamuserimages-a.akamaihd.net/ugc/1769332879207296766/98747F04B20194A89A3E59780734E32E2E7A2516/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true);
+   background-image: url(https://steamuserimages-a.akamaihd.net/ugc/1769332879207296766/98747F04B20194A89A3E59780734E32E2E7A2516/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true);
+    background-position: center;
     height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
@@ -201,4 +202,13 @@ h1 {
 
 p {
     color: #ff44cc;
+}
+
+#restart-quiz-button{
+    border-style: none;
+        text-transform: uppercase;
+        background-color: black;
+        color: wheat;
+        font-size: 20px;
+        cursor: pointer;
 }
