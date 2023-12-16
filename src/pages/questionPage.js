@@ -11,7 +11,7 @@ import { quizData } from '../data.js';
 import { initResultPage } from './resultPage.js';
 import { setLocalStorage } from '../utils/setLocalStorage.js';
 import { checkAnswer } from '../utils/checkAnswer.js';
-import { disableBtn } from '../utils/enableAndDisableBtn.js';
+import { disableBtn, enableBtn } from '../utils/enableAndDisableBtn.js';
 
 export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
@@ -21,6 +21,12 @@ export const initQuestionPage = () => {
   userInterface.appendChild(questionComponent);
   const answerComponent = document.getElementById(ANSWERS_LIST_ID);
 
+  /**************************create  Answers*************************************
+   * save the selected answer to local storage
+   * check if the answer is correct
+   * enable the next question button
+   *************************************************************************** */
+
   for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
     const answerElement = createAnswerComponent(key, answerText, () => {
       currentQuestion.selected = key;
@@ -29,6 +35,7 @@ export const initQuestionPage = () => {
         currentQuestion.selected,
         checkAnswer
       );
+      enableBtn(NEXT_QUESTION_BUTTON_ID);
     });
     answerComponent.appendChild(answerElement);
   }
