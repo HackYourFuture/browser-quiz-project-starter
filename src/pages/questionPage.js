@@ -10,6 +10,7 @@ import { createTimerComponent } from '../components/timerComponent.js';
 import { quizData } from '../data.js';
 import { initResultPage } from './resultPage.js';
 import { setLocalStorage } from '../utils/setLocalStorage.js';
+import { checkAnswer } from '../utils/checkAnswer.js';
 
 export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
@@ -22,7 +23,11 @@ export const initQuestionPage = () => {
   for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
     const answerElement = createAnswerComponent(key, answerText, () => {
       currentQuestion.selected = key;
-      setLocalStorage(quizData.currentQuestionIndex, currentQuestion.selected);
+      setLocalStorage(
+        quizData.currentQuestionIndex,
+        currentQuestion.selected,
+        checkAnswer
+      );
     });
     answerComponent.appendChild(answerElement);
   }

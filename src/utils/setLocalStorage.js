@@ -1,4 +1,8 @@
-export const setLocalStorage = (currentQuestionIndex, selectedAnswer) => {
+export const setLocalStorage = (
+  currentQuestionIndex,
+  selectedAnswer,
+  checkAnswer
+) => {
   let answeredQuestions =
     JSON.parse(localStorage.getItem('answeredQuestions')) || [];
   if (answeredQuestions) {
@@ -14,4 +18,5 @@ export const setLocalStorage = (currentQuestionIndex, selectedAnswer) => {
       JSON.stringify(answeredQuestions)
     );
   }
+  checkAnswer(currentQuestionIndex);
 };
