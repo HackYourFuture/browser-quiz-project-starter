@@ -22,5 +22,6 @@ export const createResultComponent = () => {
 const restartQuiz = () => {
   localStorage.setItem('answeredQuestions', JSON.stringify([]));
   quizData.currentQuestionIndex = 0;
+  quizData.totalScore = 0;
   initQuestionPage();
 };
