@@ -11,6 +11,7 @@ import { quizData } from '../data.js';
 import { initResultPage } from './resultPage.js';
 import { setLocalStorage } from '../utils/setLocalStorage.js';
 import { checkAnswer } from '../utils/checkAnswer.js';
+import { disableBtn } from '../utils/enableAndDisableBtn.js';
 
 export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
@@ -40,6 +41,9 @@ export const initQuestionPage = () => {
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
     .addEventListener('click', nextQuestion);
+
+  /**************************Disable Next Question Button ************************************* */
+  disableBtn(NEXT_QUESTION_BUTTON_ID);
 
   /**************************Question number tracker ************************************* */
   const questionNumberTrackerComponent = questionNumberTracker(
