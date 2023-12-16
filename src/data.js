@@ -11,11 +11,8 @@
 
 export const quizData = {
   currentQuestionIndex: 0,
-  quizCompleted: false, 
-  userScore: 0,
-  
-  //quizCompleted property defined here. I put false, because if the application starts it should be false
-  //to store and update the user's total score throughout the quiz
+  correctAnswersCount: 0,
+  quizCompleted: false, //quizCompleted property defined here. I put false, because if the application starts it should be false
   
   // the questions in the quiz
   questions: [

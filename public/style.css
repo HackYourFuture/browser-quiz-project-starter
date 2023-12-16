@@ -2,7 +2,7 @@
 body {
     margin: 0;
     overflow: hidden;
-    background-image: url(https://steamuserimages-a.akamaihd.net/ugc/1769332879207296766/98747F04B20194A89A3E59780734E32E2E7A2516/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true);
+    background-image: url(https://steamuserimages-a.akamaihd.net/ugc/1769332879207296766/98747F04B20194A89A3E59780734E32E2E7A2516/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true); 
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -83,6 +83,7 @@ h1{
 
 #start-quiz-button{
     text-transform: uppercase;
+    cursor: pointer;
     font-size: 20px;
     font-weight: bold;
     background-color: black;
@@ -105,12 +106,69 @@ h1{
     cursor: pointer;
 }
 /*======*/
+/* button style */
 
-.score {
-    color: #ff44cc;
-    /* Change the color to match your desired style */
-    font-size: 20px;
-    font-weight: bold;
-    margin-top: 10px;
-    /* Adjust the margin as needed */
+.quiz-timer{
+    display: none;
+    position:relative;
+    left: 84%;
+    top: -50px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 0px 3px 10px #00cff4;
 }
+
+.time{
+    
+    position: relative;
+    left: 56%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 30px;
+    color: #ff44cc;
+    margin: auto;
+}
+
+.img-div{
+    
+    display: flex;
+    justify-content: space-evenly;
+    position: absolute;
+    top: -40px;
+    left: -61px;
+}
+
+.img-div .img-1{
+    display: none;
+    width: 400px;
+    height: 250px;
+}
+.img-div .img-2{
+    display: none;
+    width: 400px;
+    height: 250px;
+}
+
+.count-div {
+    display: flex; 
+    justify-content: space-evenly;
+}
+
+.count1, .count2 {
+    width: 50px; 
+    height: 50px; 
+    color: #ff44cc;
+    font-size: 25px; 
+    border-radius: 50%;
+    box-shadow: 0px 3px 10px #00cff4; 
+    margin-right: 10px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+p{
+    color: #ff44cc;
+}
+
