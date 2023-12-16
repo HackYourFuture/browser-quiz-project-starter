@@ -133,13 +133,13 @@ h2 {
 }
 
 .correct {
-  border: 2px solid $correct;
-  box-shadow: 0 0 2px 1px $green-shadow;
+  border: 2px solid $correct !important;
+  box-shadow: 0 0 2px 1px $green-shadow !important;
 }
 
 .wrong {
-  border: 2px solid $wrong;
-  box-shadow: 0 0 2px 1px $red-shadow;
+  border: 2px solid $wrong !important;
+  box-shadow: 0 0 2px 1px $red-shadow !important;
 }
 /************************* Timer Component *************************
 * progress bar must act like a timer with 20 seconds

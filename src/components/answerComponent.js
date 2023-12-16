@@ -14,7 +14,7 @@ export const createAnswerComponent = (
   element.innerHTML = String.raw`
     <label for="${key}">
       <input type="radio" name="answerItem" value=${key} id="${key}" />
-    ${answerText}
+      ${key.toUpperCase()}:  ${answerText}
     </label>
   `;
   const clickHandlerFunction = clickHandler(onSelect);
@@ -38,7 +38,7 @@ const disableClick = () => {
     const clickHandlerFunction = clickHandlerFunctions.get(element);
     if (clickHandlerFunction) {
       element.removeEventListener('click', clickHandlerFunction);
-      element.style.cssText += 'opacity: 0.5';
+      element.style.cssText += 'opacity: 0.7';
     }
   });
 };
