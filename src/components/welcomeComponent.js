@@ -8,7 +8,7 @@ export const createWelcomeComponent = () => {
   const element = document.createElement('div');
   element.classList.add('card');
   element.innerHTML = String.raw`
-  <img src="../public/logo.webp" alt="quiz" class='logo' />
+  <img src="./logo.webp" alt="quiz" class='logo' />
   <h2>Welcome - (TEAM LEGO)</h2>
   <p>
   This is HackYourFuture's JavaScript quiz project. <br />
