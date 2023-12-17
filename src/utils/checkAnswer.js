@@ -10,6 +10,7 @@ export const checkAnswer = (questionIndex) => {
     answerList.forEach((answer) => {
       if (answer.id == userCurrentSelected) {
         answer.classList.add(CORRECT);
+        quizData.totalScore += 10;
       }
     });
   } else {
