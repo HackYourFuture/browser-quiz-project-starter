@@ -10,7 +10,9 @@ import { initEndPage } from './endPage.js'; //importing initEndPage
 
 let videoLoaded = false;
 
+
 export const initQuestionPage = () => {
+
     const userInterface = document.getElementById(USER_INTERFACE_ID);
     userInterface.innerHTML = '';
 
@@ -70,6 +72,7 @@ export const initQuestionPage = () => {
 
     vidBackground();
     createProgressBar();
+
 
     clearInterval(countDown);
 
