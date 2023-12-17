@@ -9,13 +9,16 @@ export const createWelcomeComponent = () => {
   element.classList.add('card');
   element.innerHTML = String.raw`
   <img src="../public/logo.webp" alt="quiz" class='logo' />
-  <h2>Welcome</h2>
+  <h2>TEAM LEGO</h2>
   <p>
-  This is Hackyourfuture's JavaScript quiz. <br />
-  This is a quiz about JavaScript. <br />
-  There are 10 questions. <br /><br />
-  Credits: Person A (Mentor) and Person B (Student) <br />
-  Good luck!</p>
+  This is HackYourFuture's JavaScript quiz project. <br />
+  There are 10 questions. <br />
+  You have 20 seconds to answer each question. <br />
+  <br />
+  Team: <br/> Nouran Mahmoud(Mentor) <br/> 
+  Erhan (Student) and 
+  Tenzin Kunchok (Student) <br />
+  </p>
   
     <button id="${START_QUIZ_BUTTON_ID}" class='start-btn'>start quiz</button>
 

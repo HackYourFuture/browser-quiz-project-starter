@@ -32,6 +32,18 @@ body {
   background-color: #ffd7b0;
 }
 
+body:before {
+  content: '';
+  background-image: url('./lego.png');
+  background-repeat: repeat;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.1;
+}
+
 .centered {
   position: fixed;
   top: 50%;
@@ -128,6 +140,25 @@ body {
   &:hover iframe {
     transition: opacity $transition-main;
     opacity: 1;
+  }
+
+  .score {
+    font-size: 2rem;
+    font-family: $font-family-alt;
+    font-weight: normal;
+    text-align: center;
+    color: $color-primary-white;
+    background-color: $dark;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+  .score span {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 5rem;
+    color: $color-primary-white;
   }
 }
 
@@ -248,13 +279,12 @@ ul {
 /************************* Mobile max@768px *************************/
 @media (max-width: 768px) {
   .card {
-    width: 24rem;
-    height: 48rem;
+    width: 95%;
     font-size: 1rem;
     padding: 1rem;
   }
   .centered {
-    width: 90%;
+    width: 98%;
   }
   ul {
     margin: 0.5rem;
