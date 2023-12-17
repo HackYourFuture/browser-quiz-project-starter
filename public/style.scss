@@ -151,7 +151,7 @@ h2 {
   height: 20px;
   position: absolute;
   width: 90%;
-  bottom: -3%;
+  bottom: -5%;
   left: 50%;
   transform: translate(-50%, -50%);
   background: #555;
@@ -187,6 +187,19 @@ h2 {
 }
 
 /************************* End of Timer style**************************/
+
+/************************* Question number tracker *************************/
+.questionNumberTracker {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #1d1d1d;
+  border-radius: 0 0 0 10px;
+}
 
 /************************* Desktop View *************************/
 ul {
