@@ -7,6 +7,7 @@ import { createQuestionComponent } from '../components/questionComponent.js';
 import { createAnswerComponent } from '../components/answerComponent.js';
 import { questionNumberTracker } from '../components/questionNumTracker.js';
 import { createTimerComponent } from '../components/timerComponent.js';
+import { firework } from '../components/fireworkComponents.js';
 import { quizData } from '../data.js';
 import { initResultPage } from './resultPage.js';
 import { setLocalStorage } from '../utils/setLocalStorage.js';
@@ -42,7 +43,7 @@ export const initQuestionPage = () => {
 
   /************************** Timer ************************************* */
   const timerElement = createTimerComponent(nextQuestion);
-  questionComponent.appendChild(timerElement);
+  userInterface.appendChild(timerElement);
 
   /**************************Next Question ************************************* */
   document
@@ -58,8 +59,12 @@ export const initQuestionPage = () => {
     quizData.questions.length
   );
   userInterface.appendChild(questionNumberTrackerComponent);
-};
 
+  /**************************Firework ************************************* */
+  const fireworkComponent = firework();
+  userInterface.appendChild(fireworkComponent);
+};
+/**************************Next Question ************************************* */
 const nextQuestion = () => {
   quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
 

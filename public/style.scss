@@ -1,10 +1,21 @@
 /************************* Variables *************************/
-// all the global variables are defined here
 $correct: green;
 $green-shadow: rgb(156, 245, 156);
+$button-color: #5e5df0;
 $wrong: red;
+$dark: #003;
 $red-shadow: rgb(253, 154, 154);
-/************************* Variables *************************/
+$color-primary-white: rgb(240, 240, 240);
+$font-family-main: Inter, Helvetica, 'Apple Color Emoji', 'Segoe UI Emoji',
+  NotoColorEmoji, 'Noto Color Emoji', 'Segoe UI Symbol', 'Android Emoji',
+  EmojiSymbols, -apple-system, system-ui, 'Segoe UI', Roboto, 'Helvetica Neue',
+  'Noto Sans', sans-serif;
+$font-family-alt: 'Roboto Condensed', sans-serif;
+$background-color-main: #ffd7b0;
+$background-color-gradient: linear-gradient(0deg, #ffd7b0, #eb9458);
+$box-shadow-main: 0 10px 30px 5px rgba(0, 0, 0, 0.2);
+$transition-main: 0.3s ease-out;
+$transition-delayed: 0.5s 0.1s ease-in;
 
 /************************* Global *************************/
 * {
@@ -13,46 +24,230 @@ $red-shadow: rgb(253, 154, 154);
   box-sizing: border-box;
 }
 
+body {
+  font-family: Inter, Helvetica, 'Apple Color Emoji', 'Segoe UI Emoji',
+    NotoColorEmoji, 'Noto Color Emoji', 'Segoe UI Symbol', 'Android Emoji',
+    EmojiSymbols, -apple-system, system-ui, 'Segoe UI', Roboto, 'Helvetica Neue',
+    'Noto Sans', sans-serif;
+  background-color: #ffd7b0;
+}
+
+body:before {
+  content: '';
+  background-image: url('./lego.png');
+  background-repeat: repeat;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.1;
+}
+
 .centered {
   position: fixed;
-  width: 80%;
-  max-width: 900px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  text-align: center;
 }
 
-.scrollable {
-  height: auto;
-  max-height: 80vh;
-  overflow: auto;
+.logo {
+  position: absolute;
+  object-fit: cover;
+  width: 80%;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-h1 {
-  font-size: 2rem;
-  margin: 1rem;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 34rem;
+  height: 46rem;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  background: #ffd7b0;
+  background: linear-gradient(0deg, #ffd7b0, #eb9458);
+  box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.2);
+  margin: auto;
+  padding: 2rem;
+
+  .start-btn,
+  .next-btn {
+    background: $button-color;
+    border-radius: 999px;
+    // box-shadow: #5e5df0 0 10px 20px -10px;
+    box-shadow: $box-shadow-main;
+    box-sizing: border-box;
+    cursor: pointer;
+    padding: 8px 18px;
+    width: fit-content;
+    border: 0;
+    color: white !important;
+  }
+
+  h1,
+  h2 {
+    font-size: 2rem;
+    font-family: $font-family-alt;
+    font-weight: normal;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  h2 {
+    position: absolute;
+    inset: auto auto 30px 30px;
+    margin: 0;
+    transition: inset $transition-main;
+  }
+
+  p,
+  .start-btn {
+    position: absolute;
+    opacity: 0;
+    max-width: 80%;
+    transition: opacity 0.3s ease-out;
+  }
+
+  p {
+    inset: auto auto 80px 30px;
+  }
+
+  .start-btn {
+    inset: auto auto 40px 30px;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  &:hover h2 {
+    inset: auto auto 220px 30px;
+    transition: inset $transition-main;
+  }
+
+  &:hover p,
+  &:hover button {
+    opacity: 1;
+    transition: opacity $transition-delayed;
+  }
+
+  &:hover img,
+  &:hover iframe {
+    transition: opacity $transition-main;
+    opacity: 1;
+  }
+
+  .score {
+    font-size: 2rem;
+    font-family: $font-family-alt;
+    font-weight: normal;
+    text-align: center;
+    color: $color-primary-white;
+    background-color: $dark;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+  .score span {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 5rem;
+    color: $color-primary-white;
+  }
 }
 
 .correct {
-  border: 2px solid $correct;
-  box-shadow: 0 0 2px 1px $green-shadow;
+  border: 2px solid $correct !important;
+  box-shadow: 0 0 2px 1px $green-shadow !important;
 }
 
 .wrong {
-  border: 2px solid $wrong;
-  box-shadow: 0 0 2px 1px $red-shadow;
+  border: 2px solid $wrong !important;
+  box-shadow: 0 0 2px 1px $red-shadow !important;
+}
+
+.finalMessage {
+  font-size: 1.5rem;
+  font-family: $font-family-alt;
+  font-weight: normal;
+  text-transform: uppercase;
+  text-align: center;
+  color: $color-primary-white;
+}
+/************************* Timer Component *************************
+* progress bar must act like a timer with 20 seconds
+********************************************************************/
+
+.statusbar {
+  box-sizing: content-box;
+  height: 20px;
+  position: absolute;
+  width: 90%;
+  bottom: -5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #555;
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3);
+  & > span {
+    display: block;
+    height: 100%;
+    border-radius: 20px;
+    box-shadow: inset 0 2px 9px rgba(255, 255, 255, 0.3),
+      inset 0 -2px 6px rgba(0, 0, 0, 0.4);
+    position: relative;
+    overflow: hidden;
+  }
+}
+
+.animate > span:after {
+  display: none;
+}
+
+@keyframes move {
+  0% {
+    background-position: 0 1;
+  }
+  100% {
+    background-position: 50px 50px;
+  }
+}
+
+.orange > span {
+  background-image: linear-gradient(#f1a165, #f36d0a);
+}
+
+/************************* End of Timer style**************************/
+
+/************************* Question number tracker *************************/
+.questionNumberTracker {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: $color-primary-white;
+  background-color: $dark;
+  border-radius: 0 0 0 10px;
 }
 
 /************************* Desktop View *************************/
 ul {
   list-style: none;
   display: grid;
-  gap: 0.5rem;
-  // grid with max 2 columns and min 1 column with equal width
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  grid-template-columns: 1fr;
   li {
-    padding: 1rem;
-    border: 1px solid black;
+    padding: 1.2rem;
+    border: 1px solid $dark;
     border-radius: 5px;
     input[type='radio'] {
       opacity: 0;
@@ -65,36 +260,34 @@ ul {
   }
 }
 
-button {
-  padding: 0.5rem;
-  margin: 0.5rem;
-  border: 1px solid black;
-  border-radius: 5px;
-  background-color: white;
-  &:hover {
-    cursor: pointer;
-    opacity: 0.5;
-  }
-}
-
-#evaluation {
-  background-color: antiquewhite;
-  border: 1px solid black;
-  border-radius: 5px;
-  margin: auto;
-  padding: 10px;
-}
-
-#totalScore {
-  color: blue;
+.options {
+  background-color: transparent;
+  background-image: linear-gradient(to bottom, #fff, #f8eedb);
+  border: 0 solid $color-primary-white;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 100%;
+  font-weight: 700;
+  line-height: 24px;
+  margin: 0;
+  padding: 1rem 1.5rem;
+  text-align: center;
+  box-shadow: -6px 8px 10px rgba(81, 41, 10, 0.1),
+    0px 2px 2px rgba(81, 41, 10, 0.2);
 }
 
 /************************* Mobile max@768px *************************/
 @media (max-width: 768px) {
+  .card {
+    width: 95%;
+    font-size: 1rem;
+    padding: 1rem;
+  }
   .centered {
-    width: 90%;
+    width: 98%;
   }
   ul {
+    margin: 0.5rem;
     li {
       padding: 0.5rem;
     }

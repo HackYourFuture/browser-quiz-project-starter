@@ -7,7 +7,7 @@ import { NEXT_QUESTION_BUTTON_ID } from '../constants.js';
  */
 export const createQuestionComponent = (question) => {
   const element = document.createElement('div');
-
+  element.classList.add('card');
   // I use String.raw just to get fancy colors for the HTML in VS Code.
   element.innerHTML = String.raw`
     <h1>${question}</h1>
@@ -15,7 +15,7 @@ export const createQuestionComponent = (question) => {
     <ul id="${ANSWERS_LIST_ID}">
     </ul>
 
-    <button id="${NEXT_QUESTION_BUTTON_ID}">
+    <button id="${NEXT_QUESTION_BUTTON_ID}" class='next-btn'>
       Next question
     </button>
   `;
