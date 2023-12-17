@@ -1,11 +1,21 @@
 /************************* Variables *************************/
-// all the global variables are defined here
 $correct: green;
 $green-shadow: rgb(156, 245, 156);
+$button-color: #5e5df0;
 $wrong: red;
+$dark: #003;
 $red-shadow: rgb(253, 154, 154);
 $color-primary-white: rgb(240, 240, 240);
-/************************* Variables *************************/
+$font-family-main: Inter, Helvetica, 'Apple Color Emoji', 'Segoe UI Emoji',
+  NotoColorEmoji, 'Noto Color Emoji', 'Segoe UI Symbol', 'Android Emoji',
+  EmojiSymbols, -apple-system, system-ui, 'Segoe UI', Roboto, 'Helvetica Neue',
+  'Noto Sans', sans-serif;
+$font-family-alt: 'Roboto Condensed', sans-serif;
+$background-color-main: #ffd7b0;
+$background-color-gradient: linear-gradient(0deg, #ffd7b0, #eb9458);
+$box-shadow-main: 0 10px 30px 5px rgba(0, 0, 0, 0.2);
+$transition-main: 0.3s ease-out;
+$transition-delayed: 0.5s 0.1s ease-in;
 
 /************************* Global *************************/
 * {
@@ -57,9 +67,10 @@ body {
 
   .start-btn,
   .next-btn {
-    background: #5e5df0;
+    background: $button-color;
     border-radius: 999px;
-    box-shadow: #5e5df0 0 10px 20px -10px;
+    // box-shadow: #5e5df0 0 10px 20px -10px;
+    box-shadow: $box-shadow-main;
     box-sizing: border-box;
     cursor: pointer;
     padding: 8px 18px;
@@ -68,9 +79,10 @@ body {
     color: white !important;
   }
 
-  h1 {
+  h1,
+  h2 {
     font-size: 2rem;
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: $font-family-alt;
     font-weight: normal;
     text-transform: uppercase;
     text-align: center;
@@ -80,10 +92,7 @@ body {
     position: absolute;
     inset: auto auto 30px 30px;
     margin: 0;
-    transition: inset 0.3s 0.3s ease-out;
-    font-family: 'Roboto Condensed', sans-serif;
-    font-weight: normal;
-    text-transform: uppercase;
+    transition: inset $transition-main;
   }
 
   p,
@@ -106,31 +115,20 @@ body {
 
   &:hover h2 {
     inset: auto auto 220px 30px;
-    transition: inset 0.3s ease-out;
+    transition: inset $transition-main;
   }
 
   &:hover p,
   &:hover button {
     opacity: 1;
-    transition: opacity 0.5s 0.1s ease-in;
+    transition: opacity $transition-delayed;
   }
 
   &:hover img,
   &:hover iframe {
-    transition: opacity 0.3s ease-in;
+    transition: opacity $transition-main;
     opacity: 1;
   }
-}
-
-.scrollable {
-  height: auto;
-  max-height: 80vh;
-  overflow: auto;
-}
-
-h2 {
-  font-size: 2rem;
-  margin: 1rem;
 }
 
 .correct {
@@ -141,6 +139,15 @@ h2 {
 .wrong {
   border: 2px solid $wrong !important;
   box-shadow: 0 0 2px 1px $red-shadow !important;
+}
+
+.finalMessage {
+  font-size: 1.5rem;
+  font-family: $font-family-alt;
+  font-weight: normal;
+  text-transform: uppercase;
+  text-align: center;
+  color: $color-primary-white;
 }
 /************************* Timer Component *************************
 * progress bar must act like a timer with 20 seconds
@@ -196,8 +203,8 @@ h2 {
   padding: 0.5rem;
   font-size: 1.5rem;
   font-weight: bold;
-  color: #fff;
-  background-color: #1d1d1d;
+  color: $color-primary-white;
+  background-color: $dark;
   border-radius: 0 0 0 10px;
 }
 
@@ -209,7 +216,7 @@ ul {
   grid-template-columns: 1fr;
   li {
     padding: 1.2rem;
-    border: 1px solid black;
+    border: 1px solid $dark;
     border-radius: 5px;
     input[type='radio'] {
       opacity: 0;
@@ -225,7 +232,7 @@ ul {
 .options {
   background-color: transparent;
   background-image: linear-gradient(to bottom, #fff, #f8eedb);
-  border: 0 solid #e5e7eb;
+  border: 0 solid $color-primary-white;
   border-radius: 0.5rem;
   cursor: pointer;
   font-size: 100%;
@@ -236,18 +243,6 @@ ul {
   text-align: center;
   box-shadow: -6px 8px 10px rgba(81, 41, 10, 0.1),
     0px 2px 2px rgba(81, 41, 10, 0.2);
-}
-
-#evaluation {
-  background-color: antiquewhite;
-  border: 1px solid black;
-  border-radius: 5px;
-  margin: auto;
-  padding: 10px;
-}
-
-#totalScore {
-  color: blue;
 }
 
 /************************* Mobile max@768px *************************/
