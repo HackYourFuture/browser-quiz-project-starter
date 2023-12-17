@@ -5,8 +5,10 @@ export const createAnswerComponent = (key, answerText, onSelect) => {
   element.id = key;
   element.classList.add('options');
   element.innerHTML = String.raw`
+  <label>
       <input type="radio" name="answerItem" value=${key} id="${key}" />
       ${key.toUpperCase()}:  ${answerText}
+      </label>
   `;
   const clickHandlerFunction = clickHandler(onSelect);
   element.addEventListener('click', clickHandlerFunction);
