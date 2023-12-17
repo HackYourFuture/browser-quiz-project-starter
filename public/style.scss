@@ -19,6 +19,7 @@ body {
     NotoColorEmoji, 'Noto Color Emoji', 'Segoe UI Symbol', 'Android Emoji',
     EmojiSymbols, -apple-system, system-ui, 'Segoe UI', Roboto, 'Helvetica Neue',
     'Noto Sans', sans-serif;
+  background-color: #ffd7b0;
 }
 
 .centered {
@@ -150,7 +151,7 @@ h2 {
   height: 20px;
   position: absolute;
   width: 90%;
-  bottom: 0;
+  bottom: -3%;
   left: 50%;
   transform: translate(-50%, -50%);
   background: #555;
@@ -192,8 +193,6 @@ ul {
   list-style: none;
   display: grid;
   gap: 2rem;
-  // grid with max 2 columns and min 1 column with equal width
-  // grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   grid-template-columns: 1fr;
   li {
     padding: 1.2rem;
@@ -242,12 +241,15 @@ ul {
 @media (max-width: 768px) {
   .card {
     width: 24rem;
-    height: 38rem;
+    height: 48rem;
+    font-size: 1rem;
+    padding: 1rem;
   }
   .centered {
     width: 90%;
   }
   ul {
+    margin: 0.5rem;
     li {
       padding: 0.5rem;
     }
