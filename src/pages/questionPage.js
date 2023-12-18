@@ -131,7 +131,7 @@ const vidBackground = () => {
         videoBG.setAttribute('loop', true);
 
         const vidSource = document.createElement('source');
-        vidSource.setAttribute('src', '/assets/neon-light.mp4');
+        vidSource.setAttribute('src', 'https://res.cloudinary.com/dm4vls99s/video/upload/v1702931258/neon-light_lmioon.mp4');
         vidSource.setAttribute('type', 'video/mp4');
 
         videoBG.appendChild(vidSource);
