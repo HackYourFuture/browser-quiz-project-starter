@@ -36,6 +36,7 @@ export const initQuestionPage = () => {
         currentQuestion.selected,
         checkAnswer
       );
+      clearInterval(quizData.timerId);
       enableBtn(NEXT_QUESTION_BUTTON_ID);
     });
     answerComponent.appendChild(answerElement);
