@@ -5,6 +5,12 @@
 - npm install
 - npm run dev
   - host: localhost:3000
+- npm run build
+  - build: dist
+
+## HOSTING to NETLIFY
+
+[quiz-hyf.netlify.app](https://quiz-hyf.netlify.app/)
 
 # Getting Started
 
@@ -33,9 +39,13 @@ Let's run through the folders:
 
 ```
 public
+└── assets
+└── styles
+
 src
 └── pages
-└── views
+└── components
+└── utils
 └── app.js
 └── constants.js
 └── data.js
@@ -43,12 +53,15 @@ index.html
 ```
 
 - `public` this contains the static files that can be used by our `index.html` file
+  - `assets` this contains images and other files that are used in the website
+  - `styles` this contains our css files
 - `src` this contains all of our JavaScript code
   - `pages` this folder contains our functions that handle user interactions. You can also see it as the code that processes and updates the data or DOM
     it also contains our code that links up our handler code to the DOM.
-  - `views` this contains code to define what the DOM will look like. They will create the DOM element and give it back. They should never read from/write to the dom, that is what the pages do.
+  - `components` this contains code to define what the DOM will look like. They will create the DOM element and give it back. They should never read from/write to the dom, that is what the pages do.
   - `app.js` this file our initialisation code. Generally this code should only run once and starts the application
   - `data.js` this is our data model. Anything we need to store in the browser we place inside the data file
+  - `utils` this contains code that is used in multiple places.
 
 # Goal and Backlog
 
@@ -70,13 +83,13 @@ When you have chosen your goal, you can create tasks as issues on Github and ass
 Tasks could look like this, using the [MoSCoW](https://en.wikipedia.org/wiki/MoSCoW_method) labels for prioritization
 
 - [x] (must have) A user can see one question at a time, stepping through the quiz
-- [ ] (must have) A user can select an answer for each question
-- [ ] (must have) Change the <title>
-- [ ] (must have) add a favicon
-- [ ] (should have) A user can see what the correct answer is after they selected their answer.
-- [ ] (should have) A user can see their score update in real-time as they select answers
-- [ ] (should have) A user can refresh the page and still have his/her given answers available
-- [ ] (could have) A user can "skip" the question and learn the correct answer, this forfeits the question
-- [ ] (could have) Transition between pages or question look fancy like TypeForm for example
+- [x] (must have) A user can select an answer for each question
+- [x] (must have) Change the <title>
+- [x] (must have) add a favicon
+- [x] (should have) A user can see what the correct answer is after they selected their answer.
+- [-] (should have) A user can see their score update in real-time as they select answers
+- [-] (should have) A user can refresh the page and still have his/her given answers available
+- [-] (could have) A user can "skip" the question and learn the correct answer, this forfeits the question
+- [-] (could have) Transition between pages or question look fancy like TypeForm for example
 
 You should create tasks that fit with your goal, these tasks serve just as an example.
