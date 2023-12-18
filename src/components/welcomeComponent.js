@@ -12,10 +12,9 @@ export const createWelcomeComponent = () => {
   <h2>Welcome - (TEAM LEGO)</h2>
   <p>
   This is HackYourFuture's JavaScript quiz project. <br />
-  There are 10 questions with 10 points each. <br />
   You have 20 seconds to answer each question. <br />
   <br />
-  Team: <br/> Nouran Mahmoud(Mentor) <br/> 
+  Team: Nouran Mahmoud(Mentor) <br/> 
   Erhan (Student) and 
   Tenzin Kunchok (Student) <br />
   </p>
