@@ -19,7 +19,9 @@ const randomizeQuestions = (qArray) => {
 };
 
 export const initQuestionPage = () => {
-    
+    if (document.body.style.backgroundImage) {
+        document.body.style.backgroundImage = 'none';
+    }
     randomizeQuestions(quizData.questions);
 
     const userInterface = document.getElementById(USER_INTERFACE_ID);
