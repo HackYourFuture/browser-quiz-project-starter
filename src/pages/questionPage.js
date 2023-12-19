@@ -31,6 +31,8 @@ export const initQuestionPage = () => {
 
     userInterface.appendChild(questionElement);
 
+    gsap.from(questionElement, { opacity: 0, y: -50, duration: 1, ease: 'power4.out' });
+
     const answersListElement = document.getElementById(ANSWERS_LIST_ID);
 
     let selectedAnswer = null; // Added variable to store the selected answer
@@ -41,14 +43,14 @@ export const initQuestionPage = () => {
         const answerElement = createAnswerElement(key, answerText);
 
         //=========================
-        //add attr to answerElement (ul-li)
+        //add attr to answerElement (ul-li) 
         answerElement.setAttribute('data-answer', key);
 
         //Add an eventListener here for checking the answers
         answersListElement.addEventListener('click', (e) => {
             if (selectedAnswer === null) {
-                const clickedAnswer = e.target.getAttribute('data-answer');
-                const index = Array.from(answersListElement.children).indexOf(e.target);
+                const clickedAnswer = e.target.getAttribute('data-answer');//a b c d
+                const index = Array.from(answersListElement.children).indexOf(e.target);//0 1 2 3
 
                 //The error you're encountering indicates that the answersListElement.children[index] is returning undefined at some point. This could happen if the index value is not within the valid range of children elements in your answersListElement.
                 if (index !== -1) {
@@ -63,7 +65,9 @@ export const initQuestionPage = () => {
                     } else {
                         answersListElement.children[index].style.boxShadow = '0 0 10px 10px #FF0000';
 
+
                         const correctAnswer = document.querySelector(`[data-answer="${currentQuestion.correct}"]`);
+
                         if (correctAnswer) {
                             correctAnswer.style.boxShadow = '0 0 10px 10px #00FF00';
                         }

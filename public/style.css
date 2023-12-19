@@ -7,6 +7,7 @@ body {
     height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
+
 }
 
 img {
@@ -274,7 +275,7 @@ p {
     li,
     #questionHeader,
     #next-question-button {
-        font-size: 18px;
+        font-size: 25px;
     }
 
     #containerBar {
