@@ -11,22 +11,11 @@ export const initEndPage = () => {
     userInterface.innerHTML = '';
 
  //restartQuiz function as a callback to createEndElement
-  const endElement = createEndElement(restartQuiz);
+  const endElement = createEndElement();
   userInterface.appendChild(endElement);
 
   // Call stopTimer to make the timer stopped on the end page
-    stopTimer();
+  stopTimer();
 };
 
-// Callback function to restart the quiz
-const restartQuiz = () => {
-  // Resetting quiz data
-  quizData.currentQuestionIndex = 0;
-  quizData.quizCompleted = false;
-  quizData.userScore = 0; // Reset userScore to 0   
-
-  
-  console.log('Restarting the quiz...');
-  initWelcomePage(); // Go back to the welcome page
-};
 

@@ -15,10 +15,6 @@ export const initWelcomePage = () => {
         .getElementById(START_QUIZ_BUTTON_ID)
         .addEventListener('click', startQuiz);
 
-
-     // Calling stopTimer to ensure the timer is stopped when go back to the welcome page from restart button
-    stopTimer();
-
 };
 
 const startQuiz = () => {

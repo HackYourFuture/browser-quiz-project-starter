@@ -31,6 +31,8 @@ export const initQuestionPage = () => {
 
     userInterface.appendChild(questionElement);
 
+    gsap.from(questionElement, { opacity: 0, y: -50, duration: 1, ease: 'power4.out' });
+
     const answersListElement = document.getElementById(ANSWERS_LIST_ID);
 
     let selectedAnswer = null; // Added variable to store the selected answer

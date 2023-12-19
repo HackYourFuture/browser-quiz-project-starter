@@ -3,11 +3,11 @@ body {
     margin: 0;
     overflow: hidden;
     background-image: url(https://steamuserimages-a.akamaihd.net/ugc/1728794025261657975/AA7A8B9C922425D211B3E33A3B397627A314743B/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true);
-    background-image: url(https://steamuserimages-a.akamaihd.net/ugc/1728794025261657975/AA7A8B9C922425D211B3E33A3B397627A314743B/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true);
     background-position: center;
     height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
+
 }
 
 img {
