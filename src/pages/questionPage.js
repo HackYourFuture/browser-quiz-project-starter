@@ -20,6 +20,10 @@ const randomizeQuestions = (qArray) => {
 
 export const initQuestionPage = () => {
 
+    if (document.body.style.backgroundImage) {
+        document.body.style.backgroundImage = 'none';
+    }
+
     randomizeQuestions(quizData.questions);
 
     const userInterface = document.getElementById(USER_INTERFACE_ID);
@@ -46,7 +50,10 @@ export const initQuestionPage = () => {
         //add attr to answerElement (ul-li) 
         answerElement.setAttribute('data-answer', key);
 
+        gsap.from(answerElement, { opacity: 0, y: 50, duration: 2, ease: 'power4.out' });
+
         //Add an eventListener here for checking the answers
+
         answersListElement.addEventListener('click', (e) => {
             if (selectedAnswer === null) {
                 const clickedAnswer = e.target.getAttribute('data-answer');//a b c d
@@ -75,6 +82,7 @@ export const initQuestionPage = () => {
 
                     disableClick();
                     selectedAnswer = clickedAnswer;
+
                 }
             }
         });
@@ -133,7 +141,7 @@ const vidBackground = () => {
         videoBG.setAttribute('loop', true);
 
         const vidSource = document.createElement('source');
-        vidSource.setAttribute('src', '/assets/neon-light.mp4');
+        vidSource.setAttribute('src', 'https://res.cloudinary.com/dm4vls99s/video/upload/v1702931258/neon-light_lmioon.mp4');
         vidSource.setAttribute('type', 'video/mp4');
 
         //===to remove default controls when we open from phone
@@ -199,6 +207,7 @@ function quizTimer(duration, count) {
         }
     }, 1000);
 }
+
 
 export const stopTimer = () => {
     clearInterval(countDown);

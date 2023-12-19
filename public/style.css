@@ -10,7 +10,7 @@ body {
 
 }
 
-img {
+.HYF {
     width: 300px;
     height: 100px;
     margin-left: 20px;
@@ -63,6 +63,11 @@ video {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+}
+
+.end-cont{
+    box-shadow: 0px 3px 10px #00cff4;
+    padding: 10px;
 }
 
 .scrollable {
@@ -123,7 +128,7 @@ h1 {
     padding: 10px 25px;
     box-shadow: 0px 3px 10px #00cff4;
     color: #ff44cc;
-    transition: transform 0.2;
+    /* transition: transform 0.2; */
 }
 
 #next-question-button {
@@ -166,8 +171,9 @@ h1 {
     display: flex;
     justify-content: space-evenly;
     position: absolute;
-    top: -40px;
-    left: -61px;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
 
 .img-div .img-1 {
