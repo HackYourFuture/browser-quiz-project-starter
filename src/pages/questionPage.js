@@ -33,6 +33,8 @@ export const initQuestionPage = () => {
 
     userInterface.appendChild(questionElement);
 
+    gsap.from(questionElement, { opacity: 0, y: -50, duration: 1, ease: 'power4.out' });
+
     const answersListElement = document.getElementById(ANSWERS_LIST_ID);
 
     let selectedAnswer = null; // Added variable to store the selected answer
@@ -46,6 +48,8 @@ export const initQuestionPage = () => {
         //add attr to answerElement (ul-li)
         answerElement.setAttribute('data-answer', key);
 
+        gsap.from(answerElement, { opacity: 0, y: 50, duration: 2, ease: 'power4.out' });
+
         //Add an eventListener here for checking the answers
        answersListElement.addEventListener('click', (e) => {
         if (selectedAnswer === null) {
@@ -56,6 +60,7 @@ export const initQuestionPage = () => {
         if (index !== -1) {
             if (clickedAnswer === currentQuestion.correct) {
                 quizData.correctAnswersCount++;
+                console.log(quizData.correctAnswersCount)
                 myImg1.src = "https://cliply.co/wp-content/uploads/2021/09/CLIPLY_372109170_FREE_FIREWORKS_400.gif";
                 myImg1.style.display = "block"
                 myImg2.src = "https://cliply.co/wp-content/uploads/2021/09/CLIPLY_372109170_FREE_FIREWORKS_400.gif";
@@ -190,6 +195,7 @@ function quizTimer(duration, count) {
     }
 }, 1000);
 }
+
 
 export const stopTimer = () => {
     clearInterval(countDown);
