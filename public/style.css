@@ -7,6 +7,7 @@ body {
     height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
+
 }
 
 .HYF {
@@ -210,13 +211,13 @@ p {
     color: #ff44cc;
 }
 
-#restart-quiz-button{
+#restart-quiz-button {
     border-style: none;
-        text-transform: uppercase;
-        background-color: black;
-        color: wheat;
-        font-size: 20px;
-        cursor: pointer;
+    text-transform: uppercase;
+    background-color: black;
+    color: wheat;
+    font-size: 20px;
+    cursor: pointer;
 }
 
 @media screen and (max-width:650px) {
@@ -311,4 +312,5 @@ p {
     #containerBar {
         height: 8px;
         margin-top: 0;
-    }}
+    }
+}

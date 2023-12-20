@@ -26,16 +26,16 @@ export const createEndElement = () => {
 const restartButton = element.querySelector('#restart-quiz-button');
   if (restartButton) {
     restartButton.addEventListener('click', () => {
-      // Resetting quiz data
-      quizData.currentQuestionIndex = 0;
-      quizData.quizCompleted = false;
-      quizData.userScore = 0; // Reset userScore to 0   
+    // Resetting quiz data
+    // quizData.currentQuestionIndex = 0;
+    //quizData.quizCompleted = false;
+    //quizData.userScore = 0; // Reset userScore to 0   
       
 
       console.log('Restarting the quiz...');
       
     // Navigate back to the welcome page
-    // initWelcomePage();
+    //initWelcomePage();
     location.reload();
     });
   }
