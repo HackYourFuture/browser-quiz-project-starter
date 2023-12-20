@@ -35,7 +35,7 @@ export const initQuestionPage = () => {
 
     userInterface.appendChild(questionElement);
 
-    gsap.from(questionElement, { opacity: 0, y: -50, duration: 1, ease: 'power4.out' });
+    gsap.from(questionElement, { opacity: 0, y: -50, duration: 2, ease: 'power4.out' });
 
     const answersListElement = document.getElementById(ANSWERS_LIST_ID);
 
@@ -50,7 +50,6 @@ export const initQuestionPage = () => {
         //add attr to answerElement (ul-li) 
         answerElement.setAttribute('data-answer', key);
 
-        gsap.from(answerElement, { opacity: 0, y: 50, duration: 2, ease: 'power4.out' });
 
         //Add an eventListener here for checking the answers
 
