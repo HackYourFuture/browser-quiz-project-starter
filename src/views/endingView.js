@@ -1,7 +1,10 @@
-import { RESTART_BUTTON_ID } from "../constants.js";
+import { START_QUIZ_BUTTON_ID } from '../constants.js';
 
-export const endingView = `
-  <h1>Test Bitti!</h1>
-  <p>Tebrikler, quiz tamamlandı.</p>
-  <button id="${RESTART_BUTTON_ID}">Yeniden Başla</button>
-`;
+export const createEnding = () => {
+  const element = document.createElement('div');
+  element.innerHTML = String.raw`
+    <h1>It's the end of the quiz</h1>
+    <button id="${START_QUIZ_BUTTON_ID}">Restart Quiz</button>
+  `;
+  return element;
+};
