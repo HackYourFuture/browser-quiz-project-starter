@@ -5,12 +5,14 @@ import {
   USER_INTERFACE_ID,
   RESTART_BUTTON_ID,
   START_QUIZ_BUTTON_ID,
+  SCORE_ID,
 } from '../constants.js';
 import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
 import { createEnding } from '../views/endingView.js'; // Adjust path as needed
 import { initWelcomePage } from './welcomePage.js';
+import { crea } from '../constants.js';
 
 // Define functions
 export const initQuestionPage = () => {

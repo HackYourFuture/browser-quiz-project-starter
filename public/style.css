@@ -28,3 +28,14 @@ ul {
 h1{
   background-color: yellowgreen;
 }
+
+.answer-choice:hover {
+  background-color: gray;
+}
+
+.answer-choice.selected {
+  background-color: #cccccc; /* Light gray for selected answer */
+}
+#score-id{
+  background-color: brown;
+}
